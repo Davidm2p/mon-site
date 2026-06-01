@@ -58,3 +58,38 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "M²P Coaching & Développement",
+  "description": "Coach professionnel certifié RNCP niveau 6. Accompagnement de cadres, managers et dirigeants en Occitanie et visio France entière.",
+  "url": "https://www.m2p-coaching.fr",
+  "telephone": "+33675747456",
+  "email": "david.delord@m2p-coaching.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Occitanie",
+    "addressCountry": "FR"
+  },
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "Occitanie"
+    },
+    {
+      "@type": "Country",
+      "name": "France"
+    }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "David Delord",
+    "jobTitle": "Coach Professionnel Certifié RNCP 6",
+    "hasCredential": "RNCP Niveau 6"
+  },
+  "priceRange": "€€€",
+  "knowsAbout": ["coaching professionnel", "développement managérial", "coaching dirigeants", "ressources humaines"]
+}
+</script>
