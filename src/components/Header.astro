@@ -1,0 +1,37 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<header>
+	<nav>
+		<a href="/">
+			<img src="/logo.png" alt="M²P Coaching & Développement" style="height: 80px; width: auto;" />
+		</a>
+		<div class="internal-links">
+			<HeaderLink href="/">Accueil</HeaderLink>
+			<HeaderLink href="/about">À propos</HeaderLink>
+		</div>
+	</nav>
+</header>
+
+<style>
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	.internal-links {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+	}
+</style>

@@ -1,0 +1,378 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const SITE_TITLE = 'M²P Coaching & Développement';
+const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, managers et dirigeants — Occitanie et visio France entière';
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+
+			<!-- SECTION 1 : HERO -->
+			<section class="hero">
+				<div class="hero-content">
+					<p class="surtitre">Coach Professionnel Certifié RNCP 6 · 22 ans de direction RH</p>
+					<h1>Vous gérez tout.<br/>Sauf votre propre trajectoire.</h1>
+					<p class="sous-titre">Je ne décide pas à votre place. Je crée le cadre dans lequel vous trouvez votre direction.</p>
+					<a href="mailto:david.delord@m2p-coaching.fr" class="cta">Conversation de 30 min — sans engagement</a>
+				</div>
+			</section>
+
+			<!-- SECTION 2 : LE PROBLÈME -->
+			<section class="probleme">
+				<div class="container">
+					<h2>Vous reconnaissez-vous dans l'une de ces situations ?</h2>
+					<div class="cards">
+						<div class="card">
+							<p>Vous avez été promu pour votre expertise. Aujourd'hui on vous demande de manager, décider, arbitrer — sans que personne ne vous ait vraiment préparé à ça.</p>
+						</div>
+						<div class="card">
+							<p>Vous portez l'établissement, les équipes, les injonctions contradictoires. La charge est réelle. L'espace pour souffler, lui, n'existe pas.</p>
+						</div>
+						<div class="card">
+							<p>Vous savez que quelque chose doit changer dans votre trajectoire. Vous ne savez pas encore quoi, ni comment. Et vous n'avez personne à qui le dire vraiment.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 3 : QUI EST DAVID -->
+			<section class="david">
+				<div class="container david-grid">
+					<div class="david-texte">
+						<p class="label">Qui je suis</p>
+						<h2>Un praticien RH de haut niveau. Pas un coach généraliste.</h2>
+						<p>Pendant 22 ans, j'ai exercé en ressources humaines à des niveaux de responsabilité croissants — dont la direction du recrutement d'un groupe de santé privée de 21 établissements.</p>
+						<p>J'ai côtoyé des cadres brillants s'épuiser sous le poids des injonctions contradictoires. J'ai vu des managers promus perdre pied faute d'espace pour préparer ce passage.</p>
+						<p>Je connais votre environnement de l'intérieur. Vous n'avez pas à tout réexpliquer.</p>
+						<p class="certification">Coach Professionnel Certifié RNCP niveau 6 · Pratique supervisée · Charte Éthique du Coaching</p>
+					</div>
+					<div class="david-photo">
+<img src="/david.jpg" alt="David Delord, Coach Professionnel Certifié RNCP 6" class="photo-david" />					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 4 : MÉTHODE M²P -->
+			<section class="methode">
+				<div class="container">
+					<p class="label">La méthode</p>
+					<h2>M²P : Maîtrise, Mouvement, Progression</h2>
+					<p class="methode-intro">Trois étapes. Un cadre rigoureux. Une direction que vous tenez dans la durée.</p>
+					<div class="methode-grid">
+						<div class="methode-item">
+							<span class="methode-lettre">M²</span>
+							<h3>Maîtrise</h3>
+							<p>Retrouver l'assise. Transformer la saturation mentale en clarté stratégique. Créer un espace de régulation où la pensée retrouve son ancrage.</p>
+						</div>
+						<div class="methode-item">
+							<span class="methode-lettre">M</span>
+							<h3>Mouvement</h3>
+							<p>Passer de la réflexion à l'action juste. Un questionnement qui fait émerger vos propres solutions — dont vous êtes le seul auteur.</p>
+						</div>
+						<div class="methode-item">
+							<span class="methode-lettre">P</span>
+							<h3>Progression</h3>
+							<p>Ancrer la durée. Sécuriser l'indépendance. À la fin du parcours, vous avancez par vous-même — sans avoir besoin de moi.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 5 : ACCOMPAGNEMENTS -->
+			<section class="offres">
+				<div class="container">
+					<p class="label">Les accompagnements</p>
+					<h2>Pour qui ?</h2>
+					<div class="offres-grid">
+						<div class="offre-card">
+							<h3>Cadres et managers</h3>
+							<p>Prise de poste, surcharge décisionnelle, questionnement de trajectoire. Du secteur privé et de la santé.</p>
+							<p class="offre-phrase">De la surcharge à la clarté décisionnelle, puis à une posture que vous tenez dans la durée.</p>
+						</div>
+						<div class="offre-card">
+							<h3>Dirigeants santé privée</h3>
+							<p>Directeurs d'établissements, cadres de direction en tension entre performance organisationnelle et épuisement personnel.</p>
+							<p class="offre-phrase">De la saturation institutionnelle à un leadership qui tient dans la durée.</p>
+						</div>
+						<div class="offre-card">
+							<h3>DRH et organisations</h3>
+							<p>Accompagnement externe pour managers promus ou cadres en difficulté. Ateliers collectifs, conseil RH, formation au recrutement.</p>
+							<p class="offre-phrase">Un regard extérieur. Une expertise RH de l'intérieur.</p>
+						</div>
+						<div class="offre-card">
+							<h3>Particuliers</h3>
+							<p>Transition professionnelle, reconversion, questionnement personnel. Vous savez que quelque chose doit changer.</p>
+							<p class="offre-phrase">De la confusion à la clarté, puis de la clarté à l'action.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 6 : POURQUOI MOI -->
+			<section class="pourquoi">
+				<div class="container">
+					<p class="label">Pourquoi me choisir</p>
+					<h2>Ce qui me distingue concrètement</h2>
+					<div class="pourquoi-grid">
+						<div class="pourquoi-item">
+							<h3>Je lis votre environnement sans que vous ayez à tout réexpliquer</h3>
+							<p>22 ans de terrain RH, dont la direction d'un groupe de 21 établissements de santé privée. Je connais les codes, les tensions, les non-dits.</p>
+						</div>
+						<div class="pourquoi-item">
+							<h3>Vous restez l'auteur de vos décisions</h3>
+							<p>Je ne trace pas votre chemin. Je crée l'espace dans lequel vous trouvez votre propre direction. Approche humaniste non-directive.</p>
+						</div>
+						<div class="pourquoi-item">
+							<h3>Une pratique encadrée et certifiée</h3>
+							<p>Certification RNCP niveau 6. Pratique supervisée. Charte Éthique du Coaching. Étanchéité absolue entre la séance et l'institution.</p>
+						</div>
+						<div class="pourquoi-item">
+							<h3>Disponible où vous êtes</h3>
+							<p>Présentiel en Occitanie. Visio France entière. Séances calibrées (1h à 1h15) pour s'adapter à la réalité de votre agenda.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 7 : CONTACT -->
+			<section class="contact">
+				<div class="container contact-inner">
+					<p class="label">Première étape</p>
+					<h2>Une conversation de 30 minutes.<br/>Sans engagement.</h2>
+					<p>On explore votre situation. Vous repartez avec une perspective différente, que vous décidiez de travailler avec moi ou non.</p>
+					<a href="mailto:david.delord@m2p-coaching.fr" class="cta cta-light">Prendre contact</a>
+					<div class="coordonnees">
+						<p>David Delord · Coach Professionnel Certifié RNCP 6</p>
+						<p>06 75 74 74 56 · david.delord@m2p-coaching.fr</p>
+						<p>Présentiel Occitanie · Visio France entière</p>
+						<p>M²P Coaching & Développement SASU · RC Pro</p>
+					</div>
+				</div>
+			</section>
+
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	* { box-sizing: border-box; }
+
+	.container {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	/* HERO */
+	.hero {
+		background: #2C3028;
+		color: #F4F1EA;
+		padding: 6rem 2rem;
+		text-align: center;
+	}
+	.hero-content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	.surtitre {
+		font-size: 0.85rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #C18E52;
+		margin-bottom: 1.5rem;
+	}
+	.hero h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1.15;
+		color: #F4F1EA;
+		margin-bottom: 1.5rem;
+	}
+	.sous-titre {
+		font-size: 1.2rem;
+		color: #C8C4B8;
+		margin-bottom: 2.5rem;
+		font-style: italic;
+	}
+	.cta {
+		display: inline-block;
+		background: #C18E52;
+		color: #fff;
+		padding: 1rem 2rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1rem;
+		transition: background 0.2s;
+	}
+	.cta:hover { background: #a97a42; }
+
+	/* PROBLÈME */
+	.probleme {
+		background: #F4F1EA;
+		padding: 5rem 2rem;
+	}
+	.probleme h2 {
+		text-align: center;
+		font-size: 1.8rem;
+		color: #2C3028;
+		margin-bottom: 3rem;
+	}
+	.cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+	}
+	.card {
+		background: #fff;
+		border-left: 4px solid #C18E52;
+		padding: 1.5rem;
+		border-radius: 4px;
+	}
+	.card p { color: #4A4F4B; line-height: 1.7; }
+
+	/* DAVID */
+	.david {
+		background: #fff;
+		padding: 5rem 2rem;
+	}
+	.david-grid {
+		display: grid;
+		grid-template-columns: 1fr 320px;
+		gap: 4rem;
+		align-items: center;
+	}
+	.david-texte p { color: #4A4F4B; line-height: 1.8; margin-bottom: 1rem; }
+	.david-texte h2 { font-size: 1.8rem; color: #2C3028; margin-bottom: 1.5rem; }
+	.certification {
+		font-size: 0.85rem;
+		color: #6E8774;
+		font-weight: 500;
+		border-top: 1px solid #e0ddd6;
+		padding-top: 1rem;
+		margin-top: 1rem;
+	}
+	.photo-placeholder {
+		background: #e8e4dc;
+		height: 400px;
+		border-radius: 4px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #888;
+		font-size: 0.9rem;
+		text-align: center;
+	}
+
+	/* MÉTHODE */
+	.methode {
+		background: #2C3028;
+		color: #F4F1EA;
+		padding: 5rem 2rem;
+	}
+	.methode h2 { font-size: 1.8rem; color: #F4F1EA; margin-bottom: 0.5rem; }
+	.methode-intro { color: #C8C4B8; margin-bottom: 3rem; }
+	.methode-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+	}
+	.methode-item {
+		border-top: 2px solid #C18E52;
+		padding-top: 1.5rem;
+	}
+	.methode-lettre {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #C18E52;
+		display: block;
+		margin-bottom: 0.5rem;
+	}
+	.methode-item h3 { color: #F4F1EA; margin-bottom: 0.75rem; font-size: 1.2rem; }
+	.methode-item p { color: #C8C4B8; line-height: 1.7; }
+
+	/* OFFRES */
+	.offres {
+		background: #F4F1EA;
+		padding: 5rem 2rem;
+	}
+	.offres h2 { font-size: 1.8rem; color: #2C3028; margin-bottom: 3rem; }
+	.offres-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 1.5rem;
+	}
+	.offre-card {
+		background: #fff;
+		padding: 2rem;
+		border-radius: 4px;
+		border-top: 3px solid #6E8774;
+	}
+	.offre-card h3 { color: #2C3028; margin-bottom: 1rem; font-size: 1.1rem; }
+	.offre-card p { color: #4A4F4B; line-height: 1.7; font-size: 0.95rem; }
+	.offre-phrase { color: #6E8774; font-style: italic; margin-top: 1rem; font-size: 0.9rem; }
+
+	/* POURQUOI */
+	.pourquoi {
+		background: #fff;
+		padding: 5rem 2rem;
+	}
+	.pourquoi h2 { font-size: 1.8rem; color: #2C3028; margin-bottom: 3rem; }
+	.pourquoi-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 2rem;
+	}
+	.pourquoi-item h3 { color: #2C3028; font-size: 1rem; margin-bottom: 0.75rem; border-left: 3px solid #C18E52; padding-left: 0.75rem; }
+	.pourquoi-item p { color: #4A4F4B; line-height: 1.7; font-size: 0.95rem; }
+
+	/* CONTACT */
+	.contact {
+		background: #6E8774;
+		color: #fff;
+		padding: 5rem 2rem;
+		text-align: center;
+	}
+	.contact-inner { max-width: 700px; }
+	.contact h2 { font-size: 2rem; color: #fff; margin-bottom: 1rem; }
+	.contact p { color: #dde8e0; margin-bottom: 1rem; line-height: 1.7; }
+	.cta-light {
+		background: #fff;
+		color: #2C3028;
+		margin: 1.5rem 0 2.5rem;
+	}
+	.cta-light:hover { background: #f0ede6; }
+	.coordonnees p { font-size: 0.9rem; color: #c8dcd0; margin-bottom: 0.3rem; }
+
+	/* COMMUN */
+	.label {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: #C18E52;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero h1 { font-size: 2rem; }
+		.david-grid { grid-template-columns: 1fr; }
+		.david-photo { order: -1; }
+		.photo-placeholder { height: 250px; }
+	}
+	.photo-david {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 4px;
+}
+</style>
