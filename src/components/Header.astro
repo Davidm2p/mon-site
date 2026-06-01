@@ -10,7 +10,8 @@ import { SITE_TITLE } from '../consts';
 		</a>
 		<div class="internal-links">
 			<HeaderLink href="/">Accueil</HeaderLink>
-			<HeaderLink href="/about">À propos</HeaderLink>
+			<HeaderLink href="/about">David Delord</HeaderLink>
+			<a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" class="cta-nav">Réserver 30 min</a>
 		</div>
 	</nav>
 </header>
@@ -18,20 +19,51 @@ import { SITE_TITLE } from '../consts';
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		padding: 0 1.5em;
+		background: #1e2419;
+		box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+		position: sticky;
+		top: 0;
+		z-index: 100;
 	}
+
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		max-width: 1200px;
+		max-width: 1100px;
 		margin: 0 auto;
 	}
+
 	.internal-links {
 		display: flex;
-		gap: 1rem;
 		align-items: center;
+		gap: 1.5rem;
+	}
+
+	.internal-links a {
+		color: #d4c9b0;
+		text-decoration: none;
+		font-size: 0.9rem;
+		transition: color 0.2s;
+	}
+
+	.internal-links a:hover {
+		color: #b8975a;
+	}
+
+	.cta-nav {
+		background: #b8975a;
+		color: #fff !important;
+		padding: 0.5rem 1.1rem;
+		border-radius: 4px;
+		font-weight: 600;
+		font-size: 0.85rem !important;
+		white-space: nowrap;
+	}
+
+	.cta-nav:hover {
+		opacity: 0.88;
+		color: #fff !important;
 	}
 </style>
