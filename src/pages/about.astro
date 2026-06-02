@@ -1,4 +1,4 @@
----
+﻿---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -82,22 +82,19 @@ import Footer from '../components/Footer.astro';
             <div class="step">
               <div class="step-lettre">M</div>
               <div class="step-content">
-                <h3>Maîtrise</h3>
-                <p>Retrouver l'assise. Transformer la saturation mentale en clarté stratégique. Créer un espace de régulation où la pensée retrouve son ancrage.</p>
+                <h3>Maîtrise</h3><p class="step-avant">Avant : saturation, réaction, perte de hauteur stratégique.</p><p>Après : vous nommez ce que vous portez. La saturation devient clarté. Vous retrouvez l'assise que votre fonction exige.</p>
               </div>
             </div>
             <div class="step">
               <div class="step-lettre">M</div>
               <div class="step-content">
-                <h3>Mouvement</h3>
-                <p>Passer de la réflexion à l'action juste. Un questionnement qui fait émerger vos propres solutions, dont vous êtes le seul auteur.</p>
+                <h3>Mouvement</h3><p class="step-avant">Avant : vous savez ce qui doit changer. Vous n'agissez pas, ou sans conviction.</p><p>Après : vos ressources émergent. Vous prenez des décisions assumées, dont vous êtes le seul auteur.</p>
               </div>
             </div>
             <div class="step">
               <div class="step-lettre">P</div>
               <div class="step-content">
-                <h3>Progression</h3>
-                <p>Ancrer la durée. Sécuriser l'indépendance. À la fin du parcours, vous avancez par vous-même, sans avoir besoin de moi.</p>
+                <h3>Progression</h3><p class="step-avant">Avant : vous tenez grâce au cadre du coaching. Vous ne savez pas si vous tiendrez sans.</p><p>Après : vous avancez par vous-même. Le parcours réussit quand vous n'avez plus besoin de moi.</p>
               </div>
             </div>
           </div>
@@ -308,7 +305,7 @@ import Footer from '../components/Footer.astro';
     color: #fff;
   }
 
-  .step-content p {
+  .step-avant { color: #7a8a72; font-style: italic; font-size: 0.88rem; margin-bottom: 0.4rem; } .step-content p {
     color: #b0a898;
     line-height: 1.7;
     font-size: 0.95rem;
@@ -369,3 +366,4 @@ import Footer from '../components/Footer.astro';
     }
   }
 </style>
+
