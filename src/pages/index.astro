@@ -1,4 +1,4 @@
----
+﻿---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -71,15 +71,15 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
     <div class="m2p-visual">
       <div class="m2p-step">
         <div class="m2p-circle"><span class="m2p-lettre">M</span></div>
-        <div class="m2p-content"><h3>Maîtrise</h3><p>Retrouver l'assise. Transformer la saturation mentale en clarté stratégique. Créer un espace de régulation où la pensée retrouve son ancrage.</p></div>
+        <div class="m2p-content"><h3>Maîtrise</h3><p class="m2p-avant">Avant : saturation, réaction, perte de hauteur stratégique.</p><p>Après : vous nommez ce que vous portez. La saturation devient clarté. Vous retrouvez l'assise que votre fonction exige.</p></div>
       </div>
       <div class="m2p-step">
         <div class="m2p-circle"><span class="m2p-lettre">M</span></div>
-        <div class="m2p-content"><h3>Mouvement</h3><p>Passer de la réflexion à l'action juste. Un questionnement qui fait émerger vos propres solutions, dont vous êtes le seul auteur.</p></div>
+        <div class="m2p-content"><h3>Mouvement</h3><p class="m2p-avant">Avant : vous savez ce qui doit changer. Vous n'agissez pas, ou sans conviction.</p><p>Après : vos ressources émergent. Vous prenez des décisions assumées, dont vous êtes le seul auteur.</p></div>
       </div>
       <div class="m2p-step">
         <div class="m2p-circle"><span class="m2p-lettre">P</span></div>
-        <div class="m2p-content"><h3>Progression</h3><p>Ancrer la durée. Sécuriser l'indépendance. À la fin du parcours, vous avancez par vous-même, sans avoir besoin de moi.</p></div>
+        <div class="m2p-content"><h3>Progression</h3><p class="m2p-avant">Avant : vous tenez grâce au cadre du coaching. Vous ne savez pas si vous tiendrez sans.</p><p>Après : vous avancez par vous-même. Le parcours réussit quand vous n'avez plus besoin de moi.</p></div>
       </div>
     </div>
   </div>
@@ -321,6 +321,7 @@ gap: 0 2rem;
 .m2p-step:hover .m2p-lettre { color: #fff; }
 .m2p-content { padding-top: 0.8rem; min-width: 0; overflow-wrap: break-word; }
 .m2p-content p { color: #b0a898; font-size: 0.95rem; line-height: 1.7; }
+.m2p-avant { color: #7a8a72; font-style: italic; font-size: 0.88rem; margin-bottom: 0.4rem; }
 	/* OFFRES */
 	.offres {
 		background: #F4F1EA;
