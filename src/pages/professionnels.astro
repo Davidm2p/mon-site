@@ -1,0 +1,157 @@
+﻿---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const SITE_TITLE = 'Accompagnements professionnels — M²P Coaching & Développement';
+const SITE_DESCRIPTION = 'Coaching professionnel certifié pour cadres, managers, dirigeants et DRH. Tarifs HT, contrat tripartite possible.';
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+
+      <section class="acc-hero">
+        <div class="acc-hero-inner">
+          <p class="acc-surtitre">ACCOMPAGNEMENTS PROFESSIONNELS</p>
+          <h1>Vous gérez tout. Sauf votre propre trajectoire.</h1>
+          <p class="acc-intro">Cadres, managers, dirigeants, DRH. Le cadre M²P s'adapte à votre fonction et à votre secteur. Chaque forfait suit la même logique : Maîtrise, Mouvement, Progression.</p>
+        </div>
+      </section>
+
+      <section class="acc-offre" id="cadres">
+        <div class="acc-container">
+          <div class="acc-offre-header">
+            <p class="acc-label">CADRES ET MANAGERS</p>
+            <h2>Vous gérez tout. Sauf votre propre trajectoire.</h2>
+            <p class="acc-desc">Surcharge décisionnelle, prise de poste, questionnement de trajectoire. Vous portez des décisions que vous ne pouvez partager. Ce cadre est fait pour ça.</p>
+          </div>
+          <div class="acc-forfaits">
+            <div class="acc-forfait">
+              <p class="acc-forfait-nom">Maîtrise</p>
+              <p class="acc-forfait-sous">De la surcharge à la clarté</p>
+              <p class="acc-forfait-prix">1 800 € HT</p>
+              <p class="acc-forfait-detail">6 séances · 300 € / séance</p>
+            </div>
+            <div class="acc-forfait acc-forfait--mid">
+              <p class="acc-forfait-nom">Mouvement</p>
+              <p class="acc-forfait-sous">De la clarté à la décision assumée</p>
+              <p class="acc-forfait-prix">2 200 € HT</p>
+              <p class="acc-forfait-detail">8 séances · 275 € / séance</p>
+            </div>
+            <div class="acc-forfait">
+              <p class="acc-forfait-nom">Progression</p>
+              <p class="acc-forfait-sous">De la décision à la posture tenue</p>
+              <p class="acc-forfait-prix">2 500 € HT</p>
+              <p class="acc-forfait-detail">10 séances · 250 € / séance</p>
+            </div>
+          </div>
+          <p class="acc-modalites">45 à 60 min · 40% à la signature · 30% à mi-parcours · 30% à la dernière séance · Visio France entière ou présentiel Occitanie</p>
+          <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" class="acc-cta">Réserver ma conversation de 30 min</a>
+        </div>
+      </section>
+
+      <section class="acc-offre acc-offre--alt" id="sante">
+        <div class="acc-container">
+          <div class="acc-offre-header">
+            <p class="acc-label">DIRIGEANTS SANTÉ PRIVÉE</p>
+            <h2>Vous portez l'institution. Qui vous porte ?</h2>
+            <p class="acc-desc">45 % des cadres et dirigeants de santé évoluent en état d'épuisement (DREES, 2025). Vous gérez les urgences. Vous avez perdu de vue pourquoi vous avez choisi ce métier.</p>
+          </div>
+          <div class="acc-forfaits">
+            <div class="acc-forfait">
+              <p class="acc-forfait-nom">Maîtrise</p>
+              <p class="acc-forfait-sous">De l'épuisement à la clarté</p>
+              <p class="acc-forfait-prix">1 800 € HT</p>
+              <p class="acc-forfait-detail">6 séances · 300 € / séance</p>
+            </div>
+            <div class="acc-forfait acc-forfait--mid">
+              <p class="acc-forfait-nom">Mouvement</p>
+              <p class="acc-forfait-sous">De la clarté à la décision assumée</p>
+              <p class="acc-forfait-prix">2 200 € HT</p>
+              <p class="acc-forfait-detail">8 séances · 275 € / séance</p>
+            </div>
+            <div class="acc-forfait">
+              <p class="acc-forfait-nom">Progression</p>
+              <p class="acc-forfait-sous">De la décision à la posture tenue</p>
+              <p class="acc-forfait-prix">2 500 € HT</p>
+              <p class="acc-forfait-detail">10 séances · 250 € / séance</p>
+            </div>
+          </div>
+          <div class="acc-conseil">
+            <p class="acc-conseil-titre">Conseil stratégique RH · 1 500 € HT / jour</p>
+            <p class="acc-conseil-texte">Marque employeur, recrutement, QVT. Pour les groupes qui ont besoin d'un regard expert en plus du cadre de coaching.</p>
+          </div>
+          <p class="acc-modalites">45 à 60 min · 40% à la signature · 30% à mi-parcours · 30% à la dernière séance · Confidentialité absolue</p>
+          <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" class="acc-cta">Réserver ma conversation de 30 min</a>
+        </div>
+      </section>
+
+      <section class="acc-offre" id="drh">
+        <div class="acc-container">
+          <div class="acc-offre-header">
+            <p class="acc-label">DRH ET ORGANISATIONS</p>
+            <h2>Vous promouvez un expert. Trois mois plus tard, l'équipe décroche.</h2>
+            <p class="acc-desc">Un manager promu sans accompagnement coûte plus qu'un accompagnement raté. Je travaille en contrat tripartite avec la direction et les RH. Entretiens de cadrage et de bilan inclus.</p>
+          </div>
+          <div class="acc-forfaits">
+            <div class="acc-forfait">
+              <p class="acc-forfait-nom">Maîtrise</p>
+              <p class="acc-forfait-sous">De l'expert au manager : poser les bases</p>
+              <p class="acc-forfait-prix">1 800 € HT</p>
+              <p class="acc-forfait-detail">6 séances · 300 € / séance</p>
+            </div>
+            <div class="acc-forfait acc-forfait--mid">
+              <p class="acc-forfait-nom">Mouvement</p>
+              <p class="acc-forfait-sous">Construire sa posture et la tenir</p>
+              <p class="acc-forfait-prix">2 200 € HT</p>
+              <p class="acc-forfait-detail">8 séances · 275 € / séance</p>
+            </div>
+            <div class="acc-forfait">
+              <p class="acc-forfait-nom">Progression</p>
+              <p class="acc-forfait-sous">Ancrer un leadership durable</p>
+              <p class="acc-forfait-prix">2 500 € HT</p>
+              <p class="acc-forfait-detail">10 séances · 250 € / séance</p>
+            </div>
+          </div>
+          <p class="acc-modalites">Gestion contractuelle tripartite incluse · Entretiens de cadrage et de bilan · 40% signature · 30% mi-parcours · 30% dernière séance</p>
+          <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" class="acc-cta">Discutons de votre besoin</a>
+        </div>
+      </section>
+
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+.acc-hero { background: #2d3328; color: #f5f2eb; padding: 5rem 2rem 4rem; text-align: center; }
+.acc-hero-inner { max-width: 800px; margin: 0 auto; }
+.acc-surtitre { font-size: 0.75rem; letter-spacing: 0.15em; color: #C18E52; text-transform: uppercase; margin-bottom: 1rem; font-weight: 600; }
+.acc-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.25rem; }
+.acc-intro { font-size: 1.05rem; color: #c8dcd0; line-height: 1.7; }
+.acc-offre { padding: 5rem 2rem; background: #f5f2eb; }
+.acc-offre--alt { background: #fff; }
+.acc-container { max-width: 1100px; margin: 0 auto; }
+.acc-offre-header { margin-bottom: 3rem; }
+.acc-label { font-size: 0.75rem; letter-spacing: 0.15em; color: #C18E52; text-transform: uppercase; font-weight: 600; margin-bottom: 0.75rem; }
+.acc-offre-header h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 700; color: #2d3328; margin-bottom: 1rem; line-height: 1.25; }
+.acc-desc { font-size: 1rem; color: #4a4f4b; line-height: 1.7; max-width: 700px; }
+.acc-forfaits { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+.acc-forfait { background: #fff; border: 1px solid #e8e3d8; border-top: 3px solid #C18E52; padding: 2rem 1.75rem; border-radius: 2px; }
+.acc-offre--alt .acc-forfait { background: #f5f2eb; border-color: #ddd8cc; }
+.acc-forfait--mid { border-top-color: #2d3328; }
+.acc-forfait-nom { font-size: 1.1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.4rem; }
+.acc-forfait-sous { font-size: 0.88rem; color: #6e8774; margin-bottom: 1.25rem; font-style: italic; }
+.acc-forfait-prix { font-size: 1.75rem; font-weight: 700; color: #C18E52; margin-bottom: 0.3rem; }
+.acc-forfait-detail { font-size: 0.82rem; color: #7a8a72; }
+.acc-conseil { background: #2d3328; color: #f5f2eb; padding: 1.5rem 2rem; border-radius: 2px; margin-bottom: 1.5rem; }
+.acc-conseil-titre { font-size: 1rem; font-weight: 600; color: #C18E52; margin-bottom: 0.5rem; }
+.acc-conseil-texte { font-size: 0.9rem; color: #c8dcd0; line-height: 1.6; }
+.acc-modalites { font-size: 0.82rem; color: #7a8a72; margin-bottom: 2rem; line-height: 1.6; }
+.acc-cta { display: inline-block; background: #C18E52; color: #fff; padding: 0.9rem 2rem; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 2px; }
+.acc-cta:hover { background: #a97a42; }
+</style>
