@@ -1,0 +1,152 @@
+﻿---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const SITE_TITLE = 'Coaching particuliers — M²P Coaching & Développement';
+const SITE_DESCRIPTION = 'Vous êtes à un tournant. Ce cadre vous permet de nommer ce que vous traversez et d avancer par vous-même.';
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+
+      <section class="part-hero">
+        <div class="part-hero-inner">
+          <p class="part-surtitre">COACHING INDIVIDUEL · PARTICULIERS</p>
+          <h1>Vous êtes à un tournant.<br/>Vous voulez bien le négocier.</h1>
+          <p class="part-intro">Votre travail ne vous correspond plus. La fatigue s'installe. L'élan manque. Ce n'est pas une crise — c'est un signal. Ce cadre vous permet de nommer ce que vous traversez et d'avancer par vous-même.</p>
+          <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" class="part-cta-hero">Réserver ma conversation de 30 min</a>
+        </div>
+      </section>
+
+      <section class="part-parcours">
+        <div class="part-container">
+          <p class="part-label">LE PARCOURS M²P EN 3 TEMPS</p>
+          <div class="part-etapes">
+            <div class="part-etape">
+              <div class="part-etape-num">01</div>
+              <h3>Maîtrise</h3>
+              <p>Vous nommez ce que vous vivez. Le flou se réduit.</p>
+            </div>
+            <div class="part-etape">
+              <div class="part-etape-num">02</div>
+              <h3>Mouvement</h3>
+              <p>Vos ressources émergent. Vous passez à l'action.</p>
+            </div>
+            <div class="part-etape">
+              <div class="part-etape-num">03</div>
+              <h3>Progression</h3>
+              <p>Vous ancrez vos changements. Vous avancez par vous-même.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="part-forfaits">
+        <div class="part-container">
+          <p class="part-label">LES FORFAITS</p>
+          <h2>Un cadre adapté à votre situation.</h2>
+          <div class="part-grid">
+            <div class="part-forfait">
+              <p class="part-forfait-nom">Maîtrise</p>
+              <p class="part-forfait-sous">De la confusion à la clarté</p>
+              <p class="part-forfait-prix">720 € TTC</p>
+              <p class="part-forfait-detail">6 séances · 120 € / séance</p>
+            </div>
+            <div class="part-forfait part-forfait--mid">
+              <p class="part-forfait-nom">Mouvement</p>
+              <p class="part-forfait-sous">De la clarté à la décision</p>
+              <p class="part-forfait-prix">800 € TTC</p>
+              <p class="part-forfait-detail">8 séances · 100 € / séance</p>
+            </div>
+            <div class="part-forfait">
+              <p class="part-forfait-nom">Progression</p>
+              <p class="part-forfait-sous">De la décision à l'autonomie</p>
+              <p class="part-forfait-prix">950 € TTC</p>
+              <p class="part-forfait-detail">10 séances · 95 € / séance</p>
+            </div>
+          </div>
+          <p class="part-modalites">45 à 60 min · 40% à la signature · 30% à mi-parcours · 30% à la dernière séance · Visio France entière ou présentiel Occitanie</p>
+        </div>
+      </section>
+
+      <section class="part-cadre">
+        <div class="part-container">
+          <p class="part-label">LE CADRE DE TRAVAIL</p>
+          <div class="part-cadre-grid">
+            <div class="part-cadre-item">
+              <h3>Confidentialité absolue</h3>
+              <p>Ce que vous partagez n'existe qu'en séance. Aucun lien avec votre employeur, votre entourage ou quiconque.</p>
+            </div>
+            <div class="part-cadre-item">
+              <h3>Je ne décide pas à votre place</h3>
+              <p>Je crée le cadre dans lequel vos propres réponses émergent. Vous restez l'auteur de chaque décision.</p>
+            </div>
+            <div class="part-cadre-item">
+              <h3>Pratique supervisée</h3>
+              <p>Supervision mensuelle. Charte Éthique du Coaching. Certification RNCP niveau 6.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="part-contact">
+        <div class="part-container">
+          <p class="part-label">PREMIÈRE ÉTAPE</p>
+          <h2>Une conversation de 30 minutes.<br/>Sans engagement.</h2>
+          <p>On explore votre situation. Vous repartez avec une perspective différente, que vous décidiez de travailler avec moi ou non.</p>
+          <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" class="part-cta">Réserver ma conversation de 30 min</a>
+        </div>
+      </section>
+
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+.part-hero { background: #2d3328; color: #f5f2eb; padding: 6rem 2rem 5rem; text-align: center; }
+.part-hero-inner { max-width: 800px; margin: 0 auto; }
+.part-surtitre { font-size: 0.75rem; letter-spacing: 0.15em; color: #C18E52; text-transform: uppercase; margin-bottom: 1rem; font-weight: 600; }
+.part-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.25; margin-bottom: 1.5rem; }
+.part-intro { font-size: 1.05rem; color: #c8dcd0; line-height: 1.7; margin-bottom: 2rem; }
+.part-cta-hero { display: inline-block; background: #C18E52; color: #fff; padding: 0.9rem 2rem; font-weight: 600; text-decoration: none; border-radius: 2px; font-size: 0.95rem; }
+.part-cta-hero:hover { background: #a97a42; }
+
+.part-parcours { background: #f5f2eb; padding: 5rem 2rem; }
+.part-container { max-width: 1100px; margin: 0 auto; }
+.part-label { font-size: 0.75rem; letter-spacing: 0.15em; color: #C18E52; text-transform: uppercase; font-weight: 600; margin-bottom: 2rem; }
+.part-etapes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+.part-etape { text-align: center; }
+.part-etape-num { font-size: 2.5rem; font-weight: 700; color: #C18E52; opacity: 0.4; font-family: Georgia, serif; line-height: 1; margin-bottom: 0.75rem; }
+.part-etape h3 { font-size: 1.1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.5rem; }
+.part-etape p { font-size: 0.92rem; color: #4a4f4b; line-height: 1.6; }
+
+.part-forfaits { background: #fff; padding: 5rem 2rem; }
+.part-forfaits h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 700; color: #2d3328; margin-bottom: 2.5rem; }
+.part-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+.part-forfait { background: #f5f2eb; border: 1px solid #e8e3d8; border-top: 3px solid #C18E52; padding: 2rem 1.75rem; border-radius: 2px; }
+.part-forfait--mid { border-top-color: #2d3328; }
+.part-forfait-nom { font-size: 1.1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.4rem; }
+.part-forfait-sous { font-size: 0.88rem; color: #6e8774; margin-bottom: 1.25rem; font-style: italic; }
+.part-forfait-prix { font-size: 1.75rem; font-weight: 700; color: #C18E52; margin-bottom: 0.3rem; }
+.part-forfait-detail { font-size: 0.82rem; color: #7a8a72; }
+.part-modalites { font-size: 0.82rem; color: #7a8a72; line-height: 1.6; }
+
+.part-cadre { background: #f5f2eb; padding: 5rem 2rem; }
+.part-cadre-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+.part-cadre-item { background: #fff; border-left: 3px solid #C18E52; padding: 1.75rem; }
+.part-cadre-item h3 { font-size: 1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.6rem; }
+.part-cadre-item p { font-size: 0.9rem; color: #4a4f4b; line-height: 1.65; margin: 0; }
+
+.part-contact { background: #6E8774; color: #fff; padding: 5rem 2rem; text-align: center; }
+.part-contact .part-label { color: #f5f2eb; opacity: 0.7; }
+.part-contact h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; margin-bottom: 1rem; line-height: 1.25; }
+.part-contact p { font-size: 1rem; color: #dde8e0; margin-bottom: 2rem; line-height: 1.7; }
+.part-cta { display: inline-block; background: #fff; color: #2d3328; padding: 0.9rem 2rem; font-weight: 600; text-decoration: none; border-radius: 2px; font-size: 0.95rem; }
+.part-cta:hover { background: #f0ede6; }
+</style>
