@@ -128,30 +128,129 @@ const SITE_DESCRIPTION = 'Coaching professionnel certifié pour cadres, managers
 </html>
 
 <style>
-.acc-hero { background: #2d3328; color: #f5f2eb; padding: 5rem 2rem 4rem; text-align: center; }
-.acc-hero-inner { max-width: 800px; margin: 0 auto; }
-.acc-surtitre { font-size: 0.75rem; letter-spacing: 0.15em; color: #C18E52; text-transform: uppercase; margin-bottom: 1rem; font-weight: 600; }
-.acc-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.25rem; }
-.acc-intro { font-size: 1.05rem; color: #c8dcd0; line-height: 1.7; }
-.acc-offre { padding: 5rem 2rem; background: #f5f2eb; }
-.acc-offre--alt { background: #fff; }
-.acc-container { max-width: 1100px; margin: 0 auto; }
-.acc-offre-header { margin-bottom: 3rem; }
-.acc-label { font-size: 0.75rem; letter-spacing: 0.15em; color: #C18E52; text-transform: uppercase; font-weight: 600; margin-bottom: 0.75rem; }
-.acc-offre-header h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 700; color: #2d3328; margin-bottom: 1rem; line-height: 1.25; }
-.acc-desc { font-size: 1rem; color: #4a4f4b; line-height: 1.7; max-width: 700px; }
-.acc-forfaits { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
-.acc-forfait { background: #fff; border: 1px solid #e8e3d8; border-top: 3px solid #C18E52; padding: 2rem 1.75rem; border-radius: 2px; }
-.acc-offre--alt .acc-forfait { background: #f5f2eb; border-color: #ddd8cc; }
-.acc-forfait--mid { border-top-color: #2d3328; }
-.acc-forfait-nom { font-size: 1.1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.4rem; }
-.acc-forfait-sous { font-size: 0.88rem; color: #6e8774; margin-bottom: 1.25rem; font-style: italic; }
-.acc-forfait-prix { font-size: 1.75rem; font-weight: 700; color: #C18E52; margin-bottom: 0.3rem; }
-.acc-forfait-detail { font-size: 0.82rem; color: #7a8a72; }
-.acc-conseil { background: #2d3328; color: #f5f2eb; padding: 1.5rem 2rem; border-radius: 2px; margin-bottom: 1.5rem; }
-.acc-conseil-titre { font-size: 1rem; font-weight: 600; color: #C18E52; margin-bottom: 0.5rem; }
-.acc-conseil-texte { font-size: 0.9rem; color: #c8dcd0; line-height: 1.6; }
-.acc-modalites { font-size: 0.82rem; color: #7a8a72; margin-bottom: 2rem; line-height: 1.6; }
-.acc-cta { display: inline-block; background: #C18E52; color: #fff; padding: 0.9rem 2rem; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 2px; }
-.acc-cta:hover { background: #a97a42; }
+  * { box-sizing: border-box; }
+
+  /* HERO */
+  .acc-hero {
+    background: #2d3328;
+    color: #f5f2eb;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+  }
+  .acc-hero-inner { max-width: 800px; margin: 0 auto; }
+  .acc-surtitre {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #C18E52;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  .acc-hero h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    color: #f5f2eb;
+  }
+  .acc-intro { font-size: 1.05rem; color: #c8dcd0; line-height: 1.7; }
+
+  /* SECTIONS OFFRES */
+  .acc-offre { padding: 5rem 2rem; background: #f5f2eb; }
+  .acc-offre--alt { background: #fff; }
+  .acc-container { max-width: 1100px; margin: 0 auto; }
+  .acc-offre-header { margin-bottom: 3rem; }
+  .acc-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #C18E52;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .acc-offre-header h2 {
+    font-size: clamp(1.5rem, 2.8vw, 2rem);
+    font-weight: 700;
+    color: #2d3328;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+  }
+  .acc-desc { font-size: 1rem; color: #4a4f4b; line-height: 1.7; max-width: 700px; }
+
+  /* FORFAITS */
+  .acc-forfaits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .acc-forfait {
+    background: #fff;
+    border: 1px solid #e8e3d8;
+    border-top: 3px solid #C18E52;
+    padding: 2rem 1.75rem;
+    border-radius: 2px;
+  }
+  .acc-offre--alt .acc-forfait { background: #f5f2eb; border-color: #ddd8cc; }
+  .acc-forfait--mid { border-top-color: #2d3328; }
+  .acc-forfait-nom { font-size: 1.1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.4rem; }
+  .acc-forfait-sous { font-size: 0.88rem; color: #6e8774; margin-bottom: 1.25rem; font-style: italic; }
+  .acc-forfait-prix { font-size: 1.75rem; font-weight: 700; color: #C18E52; margin-bottom: 0.3rem; }
+  .acc-forfait-detail { font-size: 0.82rem; color: #7a8a72; margin: 0; }
+
+  /* CONSEIL */
+  .acc-conseil {
+    background: #2d3328;
+    color: #f5f2eb;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+  .acc-conseil-titre { font-size: 1rem; font-weight: 600; color: #C18E52; margin-bottom: 0.5rem; }
+  .acc-conseil-texte { font-size: 0.9rem; color: #c8dcd0; line-height: 1.6; margin: 0; }
+
+  .acc-modalites { font-size: 0.82rem; color: #7a8a72; margin-bottom: 2rem; line-height: 1.6; }
+
+  .acc-cta {
+    display: inline-block;
+    background: #C18E52;
+    color: #fff;
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .acc-cta:hover { background: #a97a42; color: #fff; }
+
+  /* ── RESPONSIVE MOBILE ── */
+  @media (max-width: 768px) {
+
+    /* Hero */
+    .acc-hero { padding: 3.5rem 1.25rem 3rem; }
+    .acc-intro { font-size: 0.95rem; }
+
+    /* Sections */
+    .acc-offre { padding: 3rem 1.25rem; }
+    .acc-offre-header { margin-bottom: 2rem; }
+
+    /* Forfaits */
+    .acc-forfaits {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .acc-forfait { padding: 1.5rem 1.25rem; }
+    .acc-forfait-prix { font-size: 1.5rem; }
+
+    /* Conseil */
+    .acc-conseil { padding: 1.25rem; }
+
+    /* CTA */
+    .acc-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
 </style>

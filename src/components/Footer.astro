@@ -4,7 +4,7 @@ const today = new Date();
 
 <footer>
   <p>© {today.getFullYear()} M²P Coaching & Développement · SASU · RC Pro</p>
-  <p>David Delord · 06 75 74 74 56 · <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a></p>
+  <p>David Delord · <a href="tel:+33675747456">06 75 74 74 56</a> · <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a></p>
   <p class="footer-linkedin">
     <a href="https://www.linkedin.com/in/david-delord-m2p-coaching" target="_blank" rel="noopener" class="linkedin-link">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -49,5 +49,12 @@ const today = new Date();
 
   .linkedin-link svg {
     flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      padding: 1.5rem 1.25rem;
+      font-size: 0.82rem;
+    }
   }
 </style>
