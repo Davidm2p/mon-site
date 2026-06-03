@@ -16,17 +16,45 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
 		<Header />
 		<main>
 
-			<!-- SECTION 1 : HERO -->
+			<!-- ════════════════════════════════════════
+			     SECTION 1 — HERO
+			     Mobile-first : photo au-dessus sur mobile,
+			     côte à côte sur desktop (texte gauche / photo droite)
+			     ════════════════════════════════════════ -->
 			<section class="hero">
-				<div class="hero-content">
-					<p class="surtitre">Coach Professionnel Certifié RNCP 6 · 22 ans de direction RH</p>
-					<h1>Vous gérez tout.<br/>Sauf votre propre trajectoire.</h1>
-					<p class="sous-titre">Je ne décide pas à votre place. Je crée le cadre dans lequel vous trouvez votre direction.</p>
-					<a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" class="cta">Réserver ma conversation de 30 min</a>
+				<div class="hero-inner">
+
+					<div class="hero-texte">
+						<p class="surtitre">Coach Professionnel Certifié RNCP 6 · 22 ans de direction RH</p>
+						<h1>Vous gérez tout.<br/>Sauf votre propre trajectoire.</h1>
+						<p class="sous-titre">Je ne décide pas à votre place. Je crée le cadre dans lequel vous trouvez votre direction.</p>
+						<a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="cta">
+							Réserver ma conversation de 30 min
+						</a>
+						<p class="cta-note">Sans engagement · Visio ou présentiel Occitanie</p>
+					</div>
+
+					<div class="hero-photo-wrap">
+						<img
+							src="/david.jpg"
+							alt="David Delord, Coach Professionnel Certifié RNCP 6, fondateur de M²P Coaching"
+							class="hero-photo"
+							width="420"
+							height="520"
+							loading="eager"
+						/>
+						<div class="hero-badge">
+							<span class="badge-titre">RNCP Niveau 6</span>
+							<span class="badge-sous">Coach Certifié</span>
+						</div>
+					</div>
+
 				</div>
 			</section>
 
-			<!-- SECTION 2 : LE PROBLÈME -->
+			<!-- ════════════════════════════════════════
+			     SECTION 2 — LE PROBLÈME
+			     ════════════════════════════════════════ -->
 			<section class="probleme">
 				<div class="container">
 					<h2>Vous reconnaissez-vous dans l'une de ces situations ?</h2>
@@ -44,47 +72,83 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
 				</div>
 			</section>
 
-			<!-- SECTION 3 : QUI EST DAVID -->
+			<!-- ════════════════════════════════════════
+			     SECTION 3 — QUI EST DAVID
+			     Mobile : texte d'abord, puis bloc certif
+			     Desktop : grille texte / certif
+			     ════════════════════════════════════════ -->
 			<section class="david">
 				<div class="container david-grid">
 					<div class="david-texte">
 						<p class="label">Qui je suis</p>
-						<h2>Un expert RH de haut niveau. Pas un coach généraliste.</h2>
+						<h2>Un expert RH de haut niveau.<br class="br-desktop"/>Pas un coach généraliste.</h2>
 						<p>Pendant 22 ans, j'ai exercé en ressources humaines à des niveaux de responsabilité croissants — dont la direction du recrutement d'un groupe de santé privée de 21 établissements.</p>
 						<p>J'ai côtoyé des cadres brillants s'épuiser sous le poids des injonctions contradictoires. J'ai vu des managers promus perdre pied faute d'espace pour préparer ce passage.</p>
 						<p>Je connais votre environnement de l'intérieur. Vous n'avez pas à tout réexpliquer.</p>
 						<p class="certification">Coach Professionnel Certifié RNCP niveau 6 · Pratique supervisée · Charte Éthique du Coaching</p>
 					</div>
-					<div class="david-photo">
-						<img src="/david.jpg" alt="David Delord, Coach Professionnel Certifié RNCP 6" class="photo-david" />
+					<div class="david-encart">
+						<div class="david-chiffre">
+							<span class="chiffre-grand">22</span>
+							<span class="chiffre-label">ans d'expérience RH</span>
+						</div>
+						<div class="david-chiffre">
+							<span class="chiffre-grand">21</span>
+							<span class="chiffre-label">établissements de santé dirigés</span>
+						</div>
+						<div class="david-chiffre">
+							<span class="chiffre-grand">RNCP 6</span>
+							<span class="chiffre-label">certification coach</span>
+						</div>
 					</div>
 				</div>
 			</section>
 
-			<!-- SECTION 4 : LA MÉTHODE M²P -->
+			<!-- ════════════════════════════════════════
+			     SECTION 4 — LA MÉTHODE M²P
+			     ════════════════════════════════════════ -->
 			<section class="methode">
 				<div class="container">
-					<p class="label">La méthode</p>
+					<p class="label label-gold">La méthode</p>
 					<h2>M²P : Maîtrise, Mouvement, Progression</h2>
 					<p class="methode-intro">Trois étapes. Un cadre rigoureux. Une direction que vous tenez dans la durée.</p>
 					<div class="m2p-visual">
 						<div class="m2p-step">
-							<div class="m2p-circle"><span class="m2p-lettre">M</span></div>
-							<div class="m2p-content"><h3>Maîtrise</h3><p>Retrouver l'assise. Transformer la saturation mentale en clarté stratégique. Créer un espace de régulation où la pensée retrouve son ancrage.</p></div>
+							<div class="m2p-cercle" aria-hidden="true">
+								<span class="m2p-lettre">M</span>
+							</div>
+							<div class="m2p-content">
+								<h3>Maîtrise</h3>
+								<p>Retrouver l'assise. Transformer la saturation mentale en clarté stratégique. Créer un espace de régulation où la pensée retrouve son ancrage.</p>
+							</div>
 						</div>
+						<div class="m2p-connecteur" aria-hidden="true"></div>
 						<div class="m2p-step">
-							<div class="m2p-circle"><span class="m2p-lettre">M</span></div>
-							<div class="m2p-content"><h3>Mouvement</h3><p>Passer de la réflexion à l'action juste. Un questionnement qui fait émerger vos propres solutions, dont vous êtes le seul auteur.</p></div>
+							<div class="m2p-cercle" aria-hidden="true">
+								<span class="m2p-lettre">M</span>
+							</div>
+							<div class="m2p-content">
+								<h3>Mouvement</h3>
+								<p>Passer de la réflexion à l'action juste. Un questionnement qui fait émerger vos propres solutions, dont vous êtes le seul auteur.</p>
+							</div>
 						</div>
+						<div class="m2p-connecteur" aria-hidden="true"></div>
 						<div class="m2p-step">
-							<div class="m2p-circle"><span class="m2p-lettre">P</span></div>
-							<div class="m2p-content"><h3>Progression</h3><p>Ancrer la durée. Sécuriser l'indépendance. À la fin du parcours, vous avancez par vous-même, sans avoir besoin de moi.</p></div>
+							<div class="m2p-cercle" aria-hidden="true">
+								<span class="m2p-lettre">P</span>
+							</div>
+							<div class="m2p-content">
+								<h3>Progression</h3>
+								<p>Ancrer la durée. Sécuriser l'indépendance. À la fin du parcours, vous avancez par vous-même, sans avoir besoin de moi.</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<!-- SECTION 5 : ACCOMPAGNEMENTS -->
+			<!-- ════════════════════════════════════════
+			     SECTION 5 — ACCOMPAGNEMENTS
+			     ════════════════════════════════════════ -->
 			<section class="offres">
 				<div class="container">
 					<p class="label">Les accompagnements</p>
@@ -114,7 +178,10 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
 				</div>
 			</section>
 
-			<!-- SECTION 6 : POURQUOI MOI -->
+			<!-- ════════════════════════════════════════
+			     SECTION 6 — POURQUOI MOI
+			     + CTA répété en bas de section
+			     ════════════════════════════════════════ -->
 			<section class="pourquoi">
 				<div class="container">
 					<p class="label">Pourquoi me choisir</p>
@@ -137,10 +204,20 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
 							<p>Présentiel en Occitanie. Visio France entière. Séances calibrées (1h à 1h15) pour s'adapter à la réalité de votre agenda.</p>
 						</div>
 					</div>
+
+					<div class="cta-bloc">
+						<p class="cta-accroche">Un doute. Une transition. Une question de trajectoire.<br/>Trente minutes suffisent pour voir si cet espace peut être le vôtre.</p>
+						<a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="cta">
+							Réserver ma conversation de 30 min
+						</a>
+						<p class="cta-note">Sans engagement · Visio ou présentiel Occitanie</p>
+					</div>
 				</div>
 			</section>
 
-			<!-- SECTION 7 : CONTACT -->
+			<!-- ════════════════════════════════════════
+			     SECTION 7 — CONTACT
+			     ════════════════════════════════════════ -->
 			<ContactForm />
 
 		</main>
@@ -149,234 +226,519 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
 </html>
 
 <style>
-	* { box-sizing: border-box; }
+	/* ── RESET & BASE ── */
+	*, *::before, *::after { box-sizing: border-box; }
+	img { display: block; max-width: 100%; height: auto; }
 
+	/* ── VARIABLES PALETTE M²P ── */
+	:root {
+		--kaki:        #2C3028;
+		--kaki-profond:#1e2419;
+		--or:          #C18E52;
+		--or-clair:    #D4AA72;
+		--or-pale:     #b8975a;
+		--creme:       #F4F1EA;
+		--creme-off:   #EDE9E0;
+		--vert-sage:   #6E8774;
+		--texte:       #4A4F4B;
+		--blanc:       #ffffff;
+		--rayon:       4px;
+	}
+
+	/* ── CONTAINER ── */
 	.container {
 		max-width: 1100px;
 		margin: 0 auto;
-		padding: 0 2rem;
+		padding: 0 1.5rem;
 	}
 
-	/* ── HERO ── */
+	/* ── LABEL ── */
+	.label {
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.14em;
+		color: var(--vert-sage);
+		font-weight: 600;
+		margin-bottom: 0.4rem;
+		display: block;
+	}
+	.label-gold { color: var(--or-pale); }
+
+	/* ════════════════════════════════════════
+	   HERO — mobile-first
+	   ════════════════════════════════════════ */
 	.hero {
-		background: #2C3028;
-		color: #F4F1EA;
-		padding: 6rem 2rem;
-		text-align: center;
+		background: var(--kaki);
+		color: var(--creme);
+		padding: 0;
+		overflow: hidden;
 	}
-	.hero-content {
-		max-width: 800px;
+
+	.hero-inner {
+		max-width: 1100px;
 		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
 	}
+
+	/* ── Photo : en tête sur mobile ── */
+	.hero-photo-wrap {
+		position: relative;
+		width: 100%;
+		order: -1;
+	}
+
+	.hero-photo {
+		width: 100%;
+		height: 340px;
+		object-fit: cover;
+		object-position: center 20%;
+		display: block;
+	}
+
+	.hero-badge {
+		position: absolute;
+		bottom: 1rem;
+		right: 1rem;
+		background: var(--or);
+		color: var(--blanc);
+		padding: 0.5rem 0.85rem;
+		border-radius: var(--rayon);
+		text-align: center;
+		line-height: 1.3;
+	}
+	.badge-titre {
+		display: block;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+	}
+	.badge-sous {
+		display: block;
+		font-size: 0.7rem;
+		opacity: 0.85;
+	}
+
+	/* ── Texte hero ── */
+	.hero-texte {
+		padding: 2.5rem 1.5rem 3rem;
+		order: 1;
+	}
+
 	.surtitre {
-		font-size: 0.85rem;
+		font-size: 0.72rem;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
-		color: #C18E52;
-		margin-bottom: 1.5rem;
+		color: var(--or);
+		margin-bottom: 1rem;
+		display: block;
 	}
+
 	.hero h1 {
-		font-size: 3rem;
+		font-size: 2.2rem;
 		font-weight: 700;
-		line-height: 1.15;
-		color: #F4F1EA;
-		margin-bottom: 1.5rem;
+		line-height: 1.12;
+		color: var(--creme);
+		margin-bottom: 1.25rem;
 	}
+
 	.sous-titre {
-		font-size: 1.2rem;
+		font-size: 1rem;
 		color: #C8C4B8;
-		margin-bottom: 2.5rem;
+		margin-bottom: 2rem;
 		font-style: italic;
+		line-height: 1.6;
 	}
+
 	.cta {
-		display: inline-block;
-		background: #C18E52;
-		color: #fff;
-		padding: 1rem 2rem;
-		border-radius: 4px;
+		display: block;
+		width: 100%;
+		background: var(--or);
+		color: var(--blanc);
+		padding: 1rem 1.5rem;
+		border-radius: var(--rayon);
 		text-decoration: none;
 		font-weight: 600;
-		font-size: 1rem;
-		transition: background 0.2s;
+		font-size: 0.95rem;
+		text-align: center;
+		transition: background 0.2s ease;
+		letter-spacing: 0.01em;
 	}
-	.cta:hover { background: #a97a42; color: #fff; }
+	.cta:hover { background: #a97a42; color: var(--blanc); }
 
-	/* ── PROBLÈME ── */
-	.probleme {
-		background: #F4F1EA;
-		padding: 5rem 2rem;
+	.cta-note {
+		font-size: 0.75rem;
+		color: #9A9590;
+		text-align: center;
+		margin-top: 0.6rem;
+		margin-bottom: 0;
 	}
+
+	/* ── Desktop hero : côte à côte ── */
+	@media (min-width: 860px) {
+		.hero-inner {
+			flex-direction: row;
+			align-items: stretch;
+			min-height: 580px;
+		}
+
+		.hero-texte {
+			flex: 1;
+			padding: 5rem 4rem 5rem 2rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			order: 0;
+		}
+
+		.hero-photo-wrap {
+			width: 380px;
+			flex-shrink: 0;
+			order: 1;
+		}
+
+		.hero-photo {
+			width: 100%;
+			height: 100%;
+			object-position: center 15%;
+		}
+
+		.hero h1 { font-size: 3rem; }
+		.sous-titre { font-size: 1.15rem; }
+
+		.cta {
+			display: inline-block;
+			width: auto;
+			padding: 1rem 2rem;
+		}
+
+		.cta-note { text-align: left; }
+
+		.br-desktop { display: block; }
+	}
+
+	/* ════════════════════════════════════════
+	   SECTION PROBLÈME
+	   ════════════════════════════════════════ */
+	.probleme {
+		background: var(--creme);
+		padding: 4rem 1.5rem;
+	}
+
 	.probleme h2 {
 		text-align: center;
-		font-size: 1.8rem;
-		color: #2C3028;
-		margin-bottom: 3rem;
+		font-size: 1.5rem;
+		color: var(--kaki);
+		margin-bottom: 2.5rem;
+		line-height: 1.3;
 	}
+
 	.cards {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 1.5rem;
+		grid-template-columns: 1fr;
+		gap: 1rem;
 	}
-	.card {
-		background: #fff;
-		border-left: 4px solid #C18E52;
-		padding: 1.5rem;
-		border-radius: 4px;
-	}
-	.card p { color: #4A4F4B; line-height: 1.7; margin: 0; }
 
-	/* ── DAVID ── */
-	.david {
-		background: #fff;
-		padding: 5rem 2rem;
+	.card {
+		background: var(--blanc);
+		border-left: 3px solid var(--or);
+		padding: 1.5rem;
+		border-radius: 0 var(--rayon) var(--rayon) 0;
 	}
+	.card p { color: var(--texte); line-height: 1.75; margin: 0; font-size: 0.95rem; }
+
+	@media (min-width: 700px) {
+		.probleme { padding: 5rem 2rem; }
+		.probleme h2 { font-size: 1.8rem; }
+		.cards { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+	}
+
+	/* ════════════════════════════════════════
+	   SECTION DAVID
+	   ════════════════════════════════════════ */
+	.david {
+		background: var(--blanc);
+		padding: 4rem 1.5rem;
+	}
+
 	.david-grid {
 		display: grid;
-		grid-template-columns: 1fr 320px;
-		gap: 4rem;
-		align-items: center;
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
 	}
-	.david-texte p { color: #4A4F4B; line-height: 1.8; margin-bottom: 1rem; }
-	.david-texte h2 { font-size: 1.8rem; color: #2C3028; margin-bottom: 1.5rem; }
+
+	.david-texte p { color: var(--texte); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
+	.david-texte h2 {
+		font-size: 1.5rem;
+		color: var(--kaki);
+		margin-bottom: 1.25rem;
+		line-height: 1.25;
+	}
+
 	.certification {
-		font-size: 0.85rem;
-		color: #6E8774;
+		font-size: 0.8rem;
+		color: var(--vert-sage);
 		font-weight: 500;
 		border-top: 1px solid #e0ddd6;
 		padding-top: 1rem;
-		margin-top: 1rem;
-	}
-	.photo-david {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    display: block;
-}
+		margin-top: 0.5rem;
 	}
 
-	/* ── MÉTHODE M²P ── */
-	.methode {
-		background: #1e2419;
-		color: #f0ebe0;
-		padding: 5rem 2rem;
+	.david-encart {
+		display: flex;
+		flex-direction: row;
+		gap: 1.5rem;
+		flex-wrap: wrap;
 	}
-	.methode h2 { font-size: 1.8rem; color: #F4F1EA; margin-bottom: 0.5rem; }
-	.methode-intro { color: #b8975a; margin-bottom: 3rem; }
+
+	.david-chiffre {
+		background: var(--creme);
+		border-radius: var(--rayon);
+		padding: 1.25rem 1.5rem;
+		flex: 1;
+		min-width: 130px;
+		text-align: center;
+	}
+
+	.chiffre-grand {
+		display: block;
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--or);
+		line-height: 1.1;
+		margin-bottom: 0.35rem;
+	}
+
+	.chiffre-label {
+		display: block;
+		font-size: 0.78rem;
+		color: var(--texte);
+		line-height: 1.4;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+
+	@media (min-width: 860px) {
+		.david { padding: 5rem 2rem; }
+		.david-grid {
+			grid-template-columns: 1fr 300px;
+			gap: 4rem;
+			align-items: center;
+		}
+		.david-encart { flex-direction: column; }
+		.david-texte h2 { font-size: 1.8rem; }
+	}
+
+	/* ════════════════════════════════════════
+	   SECTION MÉTHODE
+	   ════════════════════════════════════════ */
+	.methode {
+		background: var(--kaki-profond);
+		color: #f0ebe0;
+		padding: 4rem 1.5rem;
+	}
+
+	.methode h2 {
+		font-size: 1.5rem;
+		color: var(--creme);
+		margin-bottom: 0.5rem;
+		line-height: 1.25;
+	}
+
+	.methode-intro {
+		color: var(--or-pale);
+		margin-bottom: 2.5rem;
+		font-size: 0.95rem;
+	}
+
+	/* Étapes en colonne sur mobile, ligne sur desktop */
 	.m2p-visual {
 		display: flex;
 		flex-direction: column;
-		max-width: 680px;
+		gap: 0;
+		max-width: 760px;
 	}
+
 	.m2p-step {
-		display: grid;
-		grid-template-columns: 90px 1fr;
-		gap: 0 2rem;
-		position: relative;
-		padding-bottom: 2.5rem;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 1.25rem;
 	}
-	.m2p-step:not(:last-child)::before {
-		content: '';
-		position: absolute;
-		left: 35px;
-		top: 72px;
+
+	.m2p-connecteur {
 		width: 2px;
-		height: calc(100% - 72px);
-		background: linear-gradient(to bottom, #b8975a44, transparent);
+		height: 2rem;
+		background: linear-gradient(to bottom, #b8975a55, transparent);
+		margin-left: 30px;
 	}
-	.m2p-circle {
-		width: 72px;
-		height: 72px;
+
+	.m2p-cercle {
+		width: 62px;
+		height: 62px;
 		border-radius: 50%;
-		border: 2px solid #b8975a;
+		border: 2px solid var(--or-pale);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-shrink: 0;
-		transition: background 0.3s;
+		transition: background 0.25s;
 	}
-	.m2p-step:hover .m2p-circle { background: #b8975a; }
-	.m2p-lettre {
-		font-size: 1.4rem;
-		font-weight: 700;
-		color: #b8975a;
-		transition: color 0.3s;
-	}
-	.m2p-step:hover .m2p-lettre { color: #fff; }
-	.m2p-content { padding-top: 0.8rem; min-width: 0; overflow-wrap: break-word; }
-	.m2p-content h3 { color: #F4F1EA; font-size: 1.1rem; margin-bottom: 0.5rem; }
-	.m2p-content p { color: #b0a898; font-size: 0.95rem; line-height: 1.7; margin: 0; }
 
-	/* ── OFFRES ── */
-	.offres {
-		background: #F4F1EA;
-		padding: 5rem 2rem;
+	.m2p-step:hover .m2p-cercle { background: var(--or-pale); }
+
+	.m2p-lettre {
+		font-size: 1.3rem;
+		font-weight: 700;
+		color: var(--or-pale);
+		transition: color 0.25s;
 	}
-	.offres h2 { font-size: 1.8rem; color: #2C3028; margin-bottom: 3rem; }
+	.m2p-step:hover .m2p-lettre { color: var(--blanc); }
+
+	.m2p-content { padding-top: 0.6rem; }
+	.m2p-content h3 { color: var(--creme); font-size: 1.05rem; margin-bottom: 0.4rem; }
+	.m2p-content p { color: #b0a898; font-size: 0.92rem; line-height: 1.7; margin: 0; }
+
+	@media (min-width: 700px) {
+		.methode { padding: 5rem 2rem; }
+		.methode h2 { font-size: 1.8rem; }
+		.m2p-cercle { width: 72px; height: 72px; }
+		.m2p-lettre { font-size: 1.4rem; }
+		.m2p-connecteur { margin-left: 35px; height: 2.5rem; }
+	}
+
+	/* ════════════════════════════════════════
+	   SECTION OFFRES
+	   ════════════════════════════════════════ */
+	.offres {
+		background: var(--creme);
+		padding: 4rem 1.5rem;
+	}
+
+	.offres h2 {
+		font-size: 1.5rem;
+		color: var(--kaki);
+		margin-bottom: 2rem;
+	}
+
 	.offres-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		gap: 1.5rem;
+		grid-template-columns: 1fr;
+		gap: 1rem;
 	}
-	.offre-card {
-		background: #fff;
-		padding: 2rem;
-		border-radius: 4px;
-		border-top: 3px solid #6E8774;
-	}
-	.offre-card h3 { color: #2C3028; margin-bottom: 1rem; font-size: 1.1rem; }
-	.offre-card p { color: #4A4F4B; line-height: 1.7; font-size: 0.95rem; }
-	.offre-phrase { color: #6E8774; font-style: italic; margin-top: 1rem; font-size: 0.9rem; }
 
-	/* ── POURQUOI ── */
-	.pourquoi {
-		background: #fff;
-		padding: 5rem 2rem;
+	.offre-card {
+		background: var(--blanc);
+		padding: 1.5rem;
+		border-radius: var(--rayon);
+		border-top: 3px solid var(--vert-sage);
 	}
-	.pourquoi h2 { font-size: 1.8rem; color: #2C3028; margin-bottom: 3rem; }
+
+	.offre-card h3 {
+		color: var(--kaki);
+		margin-bottom: 0.75rem;
+		font-size: 1rem;
+	}
+
+	.offre-card p {
+		color: var(--texte);
+		line-height: 1.7;
+		font-size: 0.92rem;
+	}
+
+	.offre-phrase {
+		color: var(--vert-sage);
+		font-style: italic;
+		margin-top: 0.75rem;
+		font-size: 0.88rem;
+		border-top: 1px solid #e0ddd6;
+		padding-top: 0.75rem;
+	}
+
+	@media (min-width: 600px) {
+		.offres-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+	}
+
+	@media (min-width: 900px) {
+		.offres { padding: 5rem 2rem; }
+		.offres h2 { font-size: 1.8rem; }
+		.offres-grid { grid-template-columns: repeat(4, 1fr); }
+	}
+
+	/* ════════════════════════════════════════
+	   SECTION POURQUOI + CTA RÉPÉTÉ
+	   ════════════════════════════════════════ */
+	.pourquoi {
+		background: var(--blanc);
+		padding: 4rem 1.5rem;
+	}
+
+	.pourquoi h2 {
+		font-size: 1.5rem;
+		color: var(--kaki);
+		margin-bottom: 2rem;
+	}
+
 	.pourquoi-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		gap: 2rem;
-	}
-	.pourquoi-item h3 { color: #2C3028; font-size: 1rem; margin-bottom: 0.75rem; border-left: 3px solid #C18E52; padding-left: 0.75rem; }
-	.pourquoi-item p { color: #4A4F4B; line-height: 1.7; font-size: 0.95rem; }
-
-	/* ── COMMUN ── */
-	.label {
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.12em;
-		color: #C18E52;
-		font-weight: 600;
-		margin-bottom: 0.5rem;
+		grid-template-columns: 1fr;
+		gap: 1.75rem;
 	}
 
-	/* ── RESPONSIVE MOBILE ── */
-	@media (max-width: 768px) {
-		.hero { padding: 3.5rem 1.25rem; }
-		.surtitre { font-size: 0.75rem; letter-spacing: 0.07em; }
-		.hero h1 { font-size: 2rem; margin-bottom: 1rem; }
-		.sous-titre { font-size: 1rem; margin-bottom: 2rem; }
-		.cta { display: block; width: 100%; text-align: center; padding: 1rem; }
-		.probleme { padding: 3rem 1.25rem; }
-		.probleme h2 { font-size: 1.4rem; margin-bottom: 2rem; }
-		.cards { grid-template-columns: 1fr; gap: 1rem; }
-		.david { padding: 3rem 1.25rem; }
-		.david-grid { grid-template-columns: 1fr; gap: 2rem; }
-		.david-photo { order: -1; }
-				.david-texte h2 { font-size: 1.4rem; }
-		.methode { padding: 3rem 1.25rem; }
-		.methode h2 { font-size: 1.4rem; }
-		.m2p-step { grid-template-columns: 60px 1fr; gap: 0 1.25rem; }
-		.m2p-circle { width: 52px; height: 52px; }
-		.m2p-lettre { font-size: 1.1rem; }
-		.m2p-step:not(:last-child)::before { left: 25px; top: 52px; height: calc(100% - 52px); }
-		.offres { padding: 3rem 1.25rem; }
-		.offres h2 { font-size: 1.4rem; margin-bottom: 1.5rem; }
-		.offres-grid { grid-template-columns: 1fr; gap: 1rem; }
-		.offre-card { padding: 1.5rem 1.25rem; }
-		.pourquoi { padding: 3rem 1.25rem; }
-		.pourquoi h2 { font-size: 1.4rem; margin-bottom: 1.5rem; }
-		.pourquoi-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+	.pourquoi-item h3 {
+		color: var(--kaki);
+		font-size: 0.95rem;
+		margin-bottom: 0.6rem;
+		border-left: 3px solid var(--or);
+		padding-left: 0.75rem;
+		line-height: 1.4;
+	}
+
+	.pourquoi-item p {
+		color: var(--texte);
+		line-height: 1.75;
+		font-size: 0.92rem;
+	}
+
+	/* ── CTA répété ── */
+	.cta-bloc {
+		margin-top: 3.5rem;
+		background: var(--kaki);
+		border-radius: var(--rayon);
+		padding: 2.5rem 2rem;
+		text-align: center;
+	}
+
+	.cta-accroche {
+		color: #C8C4B8;
+		font-size: 1rem;
+		line-height: 1.65;
+		margin-bottom: 1.5rem;
+		font-style: italic;
+	}
+
+	.cta-bloc .cta {
+		display: inline-block;
+		width: auto;
+		padding: 1rem 2rem;
+	}
+
+	.cta-bloc .cta-note { color: #7A7570; }
+
+	@media (min-width: 700px) {
+		.pourquoi { padding: 5rem 2rem; }
+		.pourquoi h2 { font-size: 1.8rem; }
+		.pourquoi-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+	}
+
+	@media (min-width: 900px) {
+		.pourquoi-grid { grid-template-columns: repeat(4, 1fr); }
+	}
+
+	/* ── Utilitaire ── */
+	.br-desktop { display: none; }
+
+	@media (min-width: 860px) {
+		.br-desktop { display: block; }
 	}
 </style>

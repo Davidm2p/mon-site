@@ -2,354 +2,532 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const SITE_TITLE = 'David Delord — Coach Professionnel Certifié RNCP 6 | M²P Coaching';
+const SITE_DESCRIPTION = 'Ancien directeur RH d'un groupe de santé privée de 21 établissements, coach professionnel certifié RNCP niveau 6. Découvrez la philosophie et le parcours de David Delord.';
 ---
 
 <!doctype html>
 <html lang="fr">
   <head>
-    <BaseHead
-      title="À propos — David Delord | Coach Professionnel Certifié RNCP 6"
-      description="22 ans d'expérience RH, dont la direction du recrutement d'un groupe de santé privée de 21 établissements. Coach certifié RNCP niveau 6."
-    />
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <Header />
+    <main>
 
-    <main class="about-page">
-
-      <!-- HERO -->
+      <!-- ════════════════════════════════
+           HERO ABOUT — sobre, textuel
+           ════════════════════════════════ -->
       <section class="about-hero">
         <div class="container">
-          <p class="label">À propos</p>
-          <h1>Je ne suis pas arrivé au coaching par défaut.<br/>J'y suis arrivé par conviction.</h1>
+          <p class="label">David Delord</p>
+          <h1>Je ne suis pas arrivé au coaching par vocation.<br class="br-d"/>J'y suis arrivé par observation.</h1>
+          <p class="hero-sous">Vingt-deux ans à voir des cadres brillants s'épuiser. Des managers promus perdre pied. Des dirigeants tenir à bout de bras des institutions entières — sans jamais d'espace pour souffler. C'est ce terrain qui m'a conduit ici.</p>
         </div>
       </section>
 
-      <!-- PARCOURS -->
-      <section class="about-parcours">
-        <div class="container parcours-grid">
-          <div class="parcours-photo">
-            <img src="/david.jpg" alt="David Delord, Coach Professionnel Certifié RNCP 6" />
+      <!-- ════════════════════════════════
+           SECTION PHILOSOPHIE
+           ════════════════════════════════ -->
+      <section class="philosophie">
+        <div class="container philo-grid">
+
+          <div class="philo-texte">
+            <p class="label">Ma philosophie</p>
+            <h2>Je suis architecte du cadre. Pas conseiller.</h2>
+            <p>Mon approche est humaniste non-directive. Ce que cela signifie concrètement : je ne vous dis pas quoi faire. Je ne trace pas votre chemin. Je construis l'espace dans lequel vous retrouvez votre propre puissance d'agir.</p>
+            <p>Ma conviction profonde : vous avez déjà les ressources. Ce qui manque, c'est un cadre rigoureux pour les mobiliser — sans la pression du quotidien, sans l'injonction de performance immédiate, sans avoir à justifier chaque doute.</p>
+            <p>La réussite de mon intervention se mesure à un seul indicateur : à la fin du parcours, vous n'avez plus besoin de moi.</p>
           </div>
-          <div class="parcours-texte">
-            <p class="label">Le parcours</p>
-            <h2>22 ans dans les ressources humaines. Pas derrière un bureau.</h2>
-            <p>Pendant plus de deux décennies, j'ai exercé en ressources humaines à des niveaux de responsabilité croissants. Le point culminant : la direction du recrutement d'un groupe de santé privée de 21 établissements. Des centaines de recrutements, des dizaines de managers en prise de poste, des situations de tension organisationnelle que j'ai vécues de l'intérieur.</p>
-            <p>J'ai vu des cadres brillants s'épuiser sous le poids des injonctions contradictoires. J'ai vu des experts promus perdre pied faute d'espace pour préparer ce passage. J'ai compris que la performance durable ne se décrète pas. Elle se construit, dans un cadre, avec quelqu'un qui connaît le terrain.</p>
-            <p>C'est ce qui m'a amené au coaching. Pas comme reconversion de confort. Comme prolongement logique d'une conviction : les personnes ont en elles les ressources pour avancer. Elles ont besoin d'un espace pour les trouver.</p>
-            <div class="certifications">
-              <span>Coach Professionnel Certifié RNCP niveau 6</span>
-              <span>Master 2 Management Stratégique RH</span>
-              <span>Pratique supervisée</span>
-              <span>Charte Éthique du Coaching</span>
+
+          <div class="philo-citation">
+            <blockquote>
+              <p>"Je ne décide pas à votre place. Je crée le cadre dans lequel vous trouvez votre direction."</p>
+            </blockquote>
+            <div class="philo-valeurs">
+              <div class="valeur-item">
+                <span class="valeur-dot"></span>
+                <span>Primauté de l'individu sur le système</span>
+              </div>
+              <div class="valeur-item">
+                <span class="valeur-dot"></span>
+                <span>Autonomie comme horizon, pas comme point de départ</span>
+              </div>
+              <div class="valeur-item">
+                <span class="valeur-dot"></span>
+                <span>Étanchéité absolue entre la séance et l'institution</span>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 
-      <!-- VALEURS -->
-      <section class="about-valeurs">
+      <!-- ════════════════════════════════
+           PARCOURS RH CHRONOLOGIQUE
+           ════════════════════════════════ -->
+      <section class="parcours">
         <div class="container">
-          <p class="label">Ce en quoi je crois</p>
-          <h2>Trois convictions qui guident chaque séance.</h2>
-          <div class="valeurs-grid">
-            <div class="valeur-card">
-              <span class="valeur-num">01</span>
-              <h3>Vous êtes l'auteur de vos décisions.</h3>
-              <p>Je ne trace pas votre chemin. Je crée l'espace dans lequel vous trouvez votre propre direction. Mon rôle n'est pas de vous dire quoi faire. C'est de vous permettre de le découvrir vous-même.</p>
+          <p class="label label-gold">Parcours</p>
+          <h2>22 ans de terrain. Avant d'être coach, j'étais de l'autre côté.</h2>
+          <p class="parcours-intro">Mon parcours en ressources humaines m'a conduit à des niveaux de responsabilité croissants dans le secteur privé, jusqu'à la direction du recrutement d'un groupe de santé privée de 21 établissements. Ce que j'y ai appris ne s'enseigne pas en formation.</p>
+
+          <div class="timeline">
+
+            <div class="tl-item">
+              <div class="tl-marqueur">
+                <div class="tl-point"></div>
+                <div class="tl-ligne"></div>
+              </div>
+              <div class="tl-contenu">
+                <p class="tl-periode">Début de carrière</p>
+                <h3>Les fondations RH</h3>
+                <p>Premiers postes en ressources humaines dans le secteur privé. Construction progressive d'une expertise terrain : recrutement, gestion des parcours, accompagnement des équipes. Apprentissage des codes, des tensions, des non-dits.</p>
+              </div>
             </div>
-            <div class="valeur-card">
-              <span class="valeur-num">02</span>
-              <h3>Le terrain compte plus que la théorie.</h3>
-              <p>22 ans d'expérience RH, ce n'est pas une ligne sur un CV. C'est une lecture des situations managériales que vous n'avez pas à m'expliquer. Je connais les codes, les tensions, les non-dits.</p>
+
+            <div class="tl-item">
+              <div class="tl-marqueur">
+                <div class="tl-point"></div>
+                <div class="tl-ligne"></div>
+              </div>
+              <div class="tl-contenu">
+                <p class="tl-periode">Montée en responsabilité</p>
+                <h3>Le recrutement à grande échelle</h3>
+                <p>Prise de responsabilité sur des périmètres élargis. Direction du recrutement d'un groupe de santé privée de 21 établissements. J'ai recruté et accompagné des centaines de profils médicaux et paramédicaux. C'est là que j'ai mesuré l'ampleur de l'épuisement silencieux des cadres.</p>
+              </div>
             </div>
-            <div class="valeur-card">
-              <span class="valeur-num">03</span>
-              <h3>La durée est la vraie mesure.</h3>
-              <p>Un accompagnement réussi, c'est celui dont vous n'avez plus besoin. L'objectif de chaque parcours est votre autonomie. Pas votre dépendance à un coach.</p>
+
+            <div class="tl-item">
+              <div class="tl-marqueur">
+                <div class="tl-point"></div>
+                <div class="tl-ligne"></div>
+              </div>
+              <div class="tl-contenu">
+                <p class="tl-periode">Le constat</p>
+                <h3>Ce que 22 ans m'ont appris</h3>
+                <p>45 % des cadres et dirigeants de santé évoluent en état d'épuisement professionnel. J'ai vu des managers brillants s'effondrer sous le poids des injonctions contradictoires. J'ai observé des directeurs tenir leur institution à bout de bras — sans jamais d'espace pour réguler, pour penser, pour choisir leur direction.</p>
+              </div>
             </div>
+
+            <div class="tl-item tl-item-final">
+              <div class="tl-marqueur">
+                <div class="tl-point tl-point-or"></div>
+              </div>
+              <div class="tl-contenu">
+                <p class="tl-periode">Aujourd'hui</p>
+                <h3>M²P Coaching & Développement</h3>
+                <p>La création de M²P est l'aboutissement de ce parcours : transformer la saturation systémique en levier de souveraineté décisionnelle. Passer de partenaire RH à coach — pour créer l'espace que personne n'avait créé pour ceux que j'avais accompagnés.</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <!-- APPROCHE -->
-      <section class="about-approche">
+      <!-- ════════════════════════════════
+           CERTIFICATIONS & ÉTHIQUE
+           ════════════════════════════════ -->
+      <section class="certifications">
         <div class="container">
-          <p class="label">La méthode</p>
-          <h2>M²P : Maîtrise, Mouvement, Progression.</h2>
-          <p class="approche-intro">Trois étapes. Un cadre rigoureux. Une direction que vous tenez dans la durée.</p>
-          <div class="approche-steps">
-            <div class="step">
-              <div class="step-lettre">M</div>
-              <div class="step-content">
-                <h3>Maîtrise</h3>
-                <p class="step-avant">Avant : saturation, réaction, perte de hauteur stratégique.</p>
-                <p>Après : vous nommez ce que vous portez. La saturation devient clarté. Vous retrouvez l'assise que votre fonction exige.</p>
+          <p class="label">Garanties</p>
+          <h2>Une pratique encadrée. Pas une promesse.</h2>
+          <p class="certif-intro">Le coaching est un secteur non réglementé. La certification RNCP niveau 6 et l'inscription à une charte éthique ne sont pas des ornements — ce sont les seuls repères objectifs qui permettent de distinguer une pratique sérieuse.</p>
+
+          <div class="certif-grid">
+
+            <div class="certif-card">
+              <div class="certif-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="8" r="6"/><path d="M9 13l-2 7 5-3 5 3-2-7"/>
+                </svg>
               </div>
+              <h3>Certification RNCP Niveau 6</h3>
+              <p>Titre professionnel reconnu par l'État, équivalent licence. Référentiel de compétences validé, formation encadrée, jury externe. Pas une attestation de stage.</p>
             </div>
-            <div class="step">
-              <div class="step-lettre">M</div>
-              <div class="step-content">
-                <h3>Mouvement</h3>
-                <p class="step-avant">Avant : vous savez ce qui doit changer. Vous n'agissez pas, ou sans conviction.</p>
-                <p>Après : vos ressources émergent. Vous prenez des décisions assumées, dont vous êtes le seul auteur.</p>
+
+            <div class="certif-card">
+              <div class="certif-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
               </div>
+              <h3>Pratique supervisée</h3>
+              <p>Supervision régulière par un coach senior. La supervision n'est pas une obligation légale — c'est une exigence éthique que je m'impose pour garantir la qualité de ma pratique.</p>
             </div>
-            <div class="step">
-              <div class="step-lettre">P</div>
-              <div class="step-content">
-                <h3>Progression</h3>
-                <p class="step-avant">Avant : vous tenez grâce au cadre du coaching. Vous ne savez pas si vous tiendrez sans.</p>
-                <p>Après : vous avancez par vous-même. Le parcours réussit quand vous n'avez plus besoin de moi.</p>
+
+            <div class="certif-card">
+              <div class="certif-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
               </div>
+              <h3>Confidentialité absolue</h3>
+              <p>Étanchéité totale entre la séance et l'institution. Ce qui se dit en séance reste en séance — y compris dans le cadre des contrats tripartites avec les organisations.</p>
             </div>
+
+            <div class="certif-card">
+              <div class="certif-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </div>
+              <h3>Charte Éthique du Coaching</h3>
+              <p>Engagement formel sur les principes déontologiques de la profession : respect de l'autonomie du client, absence de manipulation, clarté des rôles et des limites d'intervention.</p>
+            </div>
+
+          </div>
+
+          <div class="rc-pro">
+            <p>SASU · RC Pro souscrite · Siret disponible sur demande</p>
           </div>
         </div>
       </section>
 
-      <!-- CTA -->
+      <!-- ════════════════════════════════
+           CTA FINAL
+           ════════════════════════════════ -->
       <section class="about-cta">
         <div class="container">
-          <p class="label">Première étape</p>
-          <h2>Une conversation de 30 minutes.<br/>Sans engagement.</h2>
-          <p>On explore votre situation. Vous repartez avec une perspective différente, que vous décidiez de travailler avec moi ou non.</p>
-          <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" class="cta">Réserver ma conversation de 30 min</a>
+          <p class="cta-accroche">Envie d'en savoir plus ? 30 minutes suffisent.</p>
+          <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="cta">
+            Réserver 30 minutes
+          </a>
+          <p class="cta-note">Sans engagement · Visio ou présentiel Occitanie</p>
         </div>
       </section>
 
     </main>
-
     <Footer />
   </body>
 </html>
 
 <style>
-  * { box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img { display: block; max-width: 100%; }
 
-  .about-page { font-family: var(--font-body, sans-serif); }
+  :root {
+    --kaki:      #2C3028;
+    --kaki-p:    #1e2419;
+    --or:        #C18E52;
+    --or-p:      #b8975a;
+    --creme:     #F4F1EA;
+    --sage:      #6E8774;
+    --texte:     #4A4F4B;
+    --blanc:     #ffffff;
+    --rayon:     4px;
+  }
 
   .container {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
   }
 
   .label {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    color: #b8975a;
-    margin-bottom: 0.75rem;
+    letter-spacing: 0.14em;
+    color: var(--sage);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    display: block;
   }
+  .label-gold { color: var(--or-p); }
+  .br-d { display: none; }
 
-  /* HERO */
+  /* ── HERO ── */
   .about-hero {
-    background: #1e2419;
-    color: #f0ebe0;
-    padding: 6rem 0 5rem;
-    text-align: center;
+    background: var(--kaki);
+    color: var(--creme);
+    padding: 4rem 1.5rem 3.5rem;
   }
   .about-hero h1 {
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-size: 2rem;
     font-weight: 700;
-    line-height: 1.25;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #f0ebe0;
+    line-height: 1.15;
+    color: var(--creme);
+    margin-bottom: 1.25rem;
   }
-
-  /* PARCOURS */
-  .about-parcours {
-    background: #fff;
-    padding: 5rem 0;
-  }
-  .parcours-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  .parcours-photo img {
-    width: 100%;
-    border-radius: 4px;
-    display: block;
-  }
-  .parcours-texte h2 {
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    font-weight: 700;
-    color: #1e2419;
-    margin-bottom: 1.5rem;
-    line-height: 1.3;
-  }
-  .parcours-texte p {
-    color: #444;
-    line-height: 1.8;
-    margin-bottom: 1.2rem;
+  .hero-sous {
     font-size: 1rem;
-  }
-  .certifications {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 2rem;
-  }
-  .certifications span {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.8rem;
-    border: 1px solid #b8975a;
-    color: #b8975a;
-    border-radius: 20px;
-    letter-spacing: 0.03em;
+    color: #C8C4B8;
+    line-height: 1.75;
+    max-width: 680px;
+    font-style: italic;
   }
 
-  /* VALEURS */
-  .about-valeurs {
-    background: #f5f2eb;
-    padding: 5rem 0;
+  /* ── PHILOSOPHIE ── */
+  .philosophie {
+    background: var(--blanc);
+    padding: 4rem 1.5rem;
   }
-  .about-valeurs h2 {
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    font-weight: 700;
-    color: #1e2419;
-    margin-bottom: 3rem;
-    max-width: 600px;
-  }
-  .valeurs-grid {
+  .philo-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  .valeur-card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 4px;
-    border-top: 3px solid #b8975a;
+  .philo-texte h2 {
+    font-size: 1.5rem;
+    color: var(--kaki);
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
   }
-  .valeur-num {
-    font-size: 0.75rem;
-    color: #b8975a;
-    letter-spacing: 0.1em;
-    display: block;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
+  .philo-texte p {
+    color: var(--texte);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
   }
-  .valeur-card h3 {
+  blockquote {
+    margin: 0 0 2rem;
+    padding: 1.5rem;
+    background: var(--kaki);
+    border-radius: var(--rayon);
+  }
+  blockquote p {
+    color: var(--creme);
     font-size: 1.05rem;
-    font-weight: 700;
-    color: #1e2419;
-    margin-bottom: 0.75rem;
-    line-height: 1.3;
+    font-style: italic;
+    line-height: 1.65;
+    margin: 0;
   }
-  .valeur-card p { color: #555; font-size: 0.9rem; line-height: 1.7; margin: 0; }
+  .philo-valeurs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .valeur-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--texte);
+    line-height: 1.5;
+  }
+  .valeur-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--or);
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
 
-  /* APPROCHE */
-  .about-approche {
-    background: #1e2419;
-    color: #f0ebe0;
-    padding: 5rem 0;
+  /* ── PARCOURS TIMELINE ── */
+  .parcours {
+    background: var(--creme);
+    padding: 4rem 1.5rem;
   }
-  .about-approche h2 {
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    font-weight: 700;
+  .parcours h2 {
+    font-size: 1.5rem;
+    color: var(--kaki);
     margin-bottom: 0.75rem;
-    color: #f0ebe0;
+    line-height: 1.25;
   }
-  .approche-intro { color: #b8975a; margin-bottom: 3rem; font-size: 1rem; }
-  .approche-steps { display: flex; flex-direction: column; gap: 2rem; }
-  .step {
+  .parcours-intro {
+    color: var(--texte);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+    max-width: 680px;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tl-item {
     display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 2rem;
-    align-items: start;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    grid-template-columns: 32px 1fr;
+    gap: 0 1.25rem;
   }
-  .step:last-child { border-bottom: none; }
-  .step-lettre {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #b8975a;
-    line-height: 1;
-    padding-top: 0.2rem;
-  }
-  .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff; }
-  .step-avant { color: #7a8a72; font-style: italic; font-size: 0.88rem; margin-bottom: 0.4rem; }
-  .step-content p { color: #b0a898; line-height: 1.7; font-size: 0.95rem; }
 
-  /* CTA */
+  .tl-marqueur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tl-point {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--or);
+    background: var(--creme);
+    flex-shrink: 0;
+    margin-top: 0.3rem;
+  }
+  .tl-point-or {
+    background: var(--or);
+  }
+
+  .tl-ligne {
+    flex: 1;
+    width: 1.5px;
+    background: rgba(193,142,82,0.3);
+    margin: 4px 0 0;
+    min-height: 2rem;
+  }
+
+  .tl-contenu {
+    padding-bottom: 2.5rem;
+  }
+
+  .tl-item-final .tl-contenu {
+    padding-bottom: 0;
+  }
+
+  .tl-periode {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--or);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .tl-contenu h3 {
+    font-size: 1.05rem;
+    color: var(--kaki);
+    margin-bottom: 0.5rem;
+  }
+
+  .tl-contenu p {
+    font-size: 0.92rem;
+    color: var(--texte);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .certifications {
+    background: var(--blanc);
+    padding: 4rem 1.5rem;
+  }
+  .certifications h2 {
+    font-size: 1.5rem;
+    color: var(--kaki);
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+  }
+  .certif-intro {
+    color: var(--texte);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    max-width: 680px;
+  }
+
+  .certif-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .certif-card {
+    border: 1px solid #e8e4db;
+    border-radius: var(--rayon);
+    padding: 1.5rem;
+    background: var(--blanc);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .certif-icon {
+    color: var(--or);
+  }
+
+  .certif-card h3 {
+    font-size: 1rem;
+    color: var(--kaki);
+    margin: 0;
+  }
+
+  .certif-card p {
+    font-size: 0.9rem;
+    color: var(--texte);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .rc-pro {
+    padding-top: 1.25rem;
+    border-top: 1px solid #e8e4db;
+  }
+  .rc-pro p {
+    font-size: 0.78rem;
+    color: var(--sage);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0;
+  }
+
+  /* ── CTA FINAL ── */
   .about-cta {
-    background: #6b7c5a;
-    color: #fff;
-    padding: 5rem 0;
+    background: var(--kaki-p);
+    padding: 4rem 1.5rem;
     text-align: center;
   }
-  .about-cta h2 {
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    color: #fff;
+
+  .cta-accroche {
+    font-size: 1.3rem;
+    color: var(--creme);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    line-height: 1.5;
   }
-  .about-cta p {
-    max-width: 520px;
-    margin: 0 auto 2rem;
-    opacity: 0.9;
-    line-height: 1.7;
-  }
+
   .cta {
     display: inline-block;
-    background: #b8975a;
-    color: #fff;
+    background: var(--or);
+    color: var(--blanc);
     padding: 1rem 2rem;
-    border-radius: 4px;
+    border-radius: var(--rayon);
+    text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    text-decoration: none;
-    transition: opacity 0.2s;
+    transition: background 0.2s;
   }
-  .cta:hover { opacity: 0.88; color: #fff; }
+  .cta:hover { background: #a97a42; color: var(--blanc); }
 
-  /* ── RESPONSIVE MOBILE ── */
-  @media (max-width: 768px) {
-
-    /* Hero */
-    .about-hero { padding: 3.5rem 1.25rem 3rem; }
-
-    /* Parcours */
-    .about-parcours { padding: 3rem 0; }
-    .parcours-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 0 1.25rem;
-    }
-    .parcours-photo { order: -1; }
-
-    /* Valeurs */
-    .about-valeurs { padding: 3rem 0; }
-    .about-valeurs .container { padding: 0 1.25rem; }
-    .about-valeurs h2 { margin-bottom: 1.5rem; }
-    .valeurs-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    .valeur-card { padding: 1.5rem 1.25rem; }
-
-    /* Approche */
-    .about-approche { padding: 3rem 0; }
-    .about-approche .container { padding: 0 1.25rem; }
-    .approche-intro { margin-bottom: 2rem; }
-    .step {
-      grid-template-columns: 56px 1fr;
-      gap: 1rem;
-    }
-    .step-lettre { font-size: 1.8rem; }
-
-    /* CTA */
-    .about-cta { padding: 3rem 1.25rem; }
-    .cta {
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
+  .cta-note {
+    font-size: 0.75rem;
+    color: #7A7570;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
   }
-</style>
+
+  /* ── RESPONSIVE DESKTOP ── */
+ @media (min-width: 860px) {
+    .br-d { display: block; }
+
+    .about-hero { padding: 6rem 2rem 5rem; }
+    .about-hero h1 { font-size: 2.8rem; }
+    .hero-sous { font-size: 1.1rem; }
+
+    .philosophie { padding: 6rem 2rem; }
+    .philo-grid {
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+      align-items: start;
+    }
+    .philo-texte h2 { font-size: 1.8rem; }
+
+    .parcours { padding: 6rem 2rem; }
+    .parcours h2 { font-size: 1.8rem; }
+    .tl-item { grid-template-columns: 48px 1fr; gap: 0 1.75rem; }
+    .tl-point { width: 16px; height: 16px; }
+
+    .certifications { padding: 6rem 2rem; }
+    .certifications h2 { font-size: 1.8rem; }
+    .certif-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .about-cta { padding: 6rem 2rem; }
+    .cta-accroche { font-size: 1.5rem; }
+  }
