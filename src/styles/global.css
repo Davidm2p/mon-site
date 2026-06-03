@@ -3,8 +3,10 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
-
-:root {
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}:root {
 	--accent: #6E8774;
 	--accent-dark: #4A4F4B;
 	--black: 15, 18, 25;
@@ -113,12 +115,14 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
-@media (max-width: 720px) {
+
+/* ── Responsive global ── */
+@media (max-width: 768px) {
 	body {
 		font-size: 18px;
 	}
 	main {
-		padding: 1em;
+		padding: 0; /* pas de padding global — chaque section gère le sien */
 	}
 }
 
@@ -130,13 +134,9 @@ hr {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
 	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
 	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
 	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
 header {
@@ -146,19 +146,17 @@ header {
 a {
 	color: #6E8774;
 }
-
 a:hover {
 	color: #C18E52;
 }
-
 h1, h2, h3, h4, h5, h6 {
 	color: #4A4F4B;
 }
-
 h1 {
 	font-size: 2em;
 }
-/* GARANTIES */
+
+/* ── GARANTIES ── */
 .garanties-section {
   background-color: #f5f2eb;
   padding: 5rem 2rem;
@@ -188,8 +186,8 @@ h1 {
 
 .garanties-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
 }
 
 .garantie-item {
@@ -222,4 +220,17 @@ h1 {
   color: #4a4f4b;
   line-height: 1.65;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .garanties-section {
+    padding: 3rem 1.25rem;
+  }
+  .garanties-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .garantie-item {
+    padding: 1.5rem 1.25rem;
+  }
 }
