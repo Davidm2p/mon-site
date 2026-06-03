@@ -109,44 +109,195 @@ const SITE_DESCRIPTION = 'Vous êtes à un tournant. Ce cadre vous permet de nom
 </html>
 
 <style>
-.part-hero { background: #2d3328; color: #f5f2eb; padding: 6rem 2rem 5rem; text-align: center; }
-.part-hero-inner { max-width: 800px; margin: 0 auto; }
-.part-surtitre { font-size: 0.75rem; letter-spacing: 0.15em; color: #C18E52; text-transform: uppercase; margin-bottom: 1rem; font-weight: 600; }
-.part-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.25; margin-bottom: 1.5rem; }
-.part-intro { font-size: 1.05rem; color: #c8dcd0; line-height: 1.7; margin-bottom: 2rem; }
-.part-cta-hero { display: inline-block; background: #C18E52; color: #fff; padding: 0.9rem 2rem; font-weight: 600; text-decoration: none; border-radius: 2px; font-size: 0.95rem; }
-.part-cta-hero:hover { background: #a97a42; }
+  * { box-sizing: border-box; }
 
-.part-parcours { background: #f5f2eb; padding: 5rem 2rem; }
-.part-container { max-width: 1100px; margin: 0 auto; }
-.part-label { font-size: 0.75rem; letter-spacing: 0.15em; color: #C18E52; text-transform: uppercase; font-weight: 600; margin-bottom: 2rem; }
-.part-etapes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
-.part-etape { text-align: center; }
-.part-etape-num { font-size: 2.5rem; font-weight: 700; color: #C18E52; opacity: 0.4; font-family: Georgia, serif; line-height: 1; margin-bottom: 0.75rem; }
-.part-etape h3 { font-size: 1.1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.5rem; }
-.part-etape p { font-size: 0.92rem; color: #4a4f4b; line-height: 1.6; }
+  /* HERO */
+  .part-hero {
+    background: #2d3328;
+    color: #f5f2eb;
+    padding: 6rem 2rem 5rem;
+    text-align: center;
+  }
+  .part-hero-inner { max-width: 800px; margin: 0 auto; }
+  .part-surtitre {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #C18E52;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  .part-hero h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    color: #f5f2eb;
+  }
+  .part-intro {
+    font-size: 1.05rem;
+    color: #c8dcd0;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .part-cta-hero {
+    display: inline-block;
+    background: #C18E52;
+    color: #fff;
+    padding: 0.9rem 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .part-cta-hero:hover { background: #a97a42; color: #fff; }
 
-.part-forfaits { background: #fff; padding: 5rem 2rem; }
-.part-forfaits h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 700; color: #2d3328; margin-bottom: 2.5rem; }
-.part-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
-.part-forfait { background: #f5f2eb; border: 1px solid #e8e3d8; border-top: 3px solid #C18E52; padding: 2rem 1.75rem; border-radius: 2px; }
-.part-forfait--mid { border-top-color: #2d3328; }
-.part-forfait-nom { font-size: 1.1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.4rem; }
-.part-forfait-sous { font-size: 0.88rem; color: #6e8774; margin-bottom: 1.25rem; font-style: italic; }
-.part-forfait-prix { font-size: 1.75rem; font-weight: 700; color: #C18E52; margin-bottom: 0.3rem; }
-.part-forfait-detail { font-size: 0.82rem; color: #7a8a72; }
-.part-modalites { font-size: 0.82rem; color: #7a8a72; line-height: 1.6; }
+  /* PARCOURS */
+  .part-parcours { background: #f5f2eb; padding: 5rem 2rem; }
+  .part-container { max-width: 1100px; margin: 0 auto; }
+  .part-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #C18E52;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  .part-etapes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+  .part-etape { text-align: center; }
+  .part-etape-num {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #C18E52;
+    opacity: 0.4;
+    font-family: Georgia, serif;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .part-etape h3 { font-size: 1.1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.5rem; }
+  .part-etape p { font-size: 0.92rem; color: #4a4f4b; line-height: 1.6; margin: 0; }
 
-.part-cadre { background: #f5f2eb; padding: 5rem 2rem; }
-.part-cadre-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
-.part-cadre-item { background: #fff; border-left: 3px solid #C18E52; padding: 1.75rem; }
-.part-cadre-item h3 { font-size: 1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.6rem; }
-.part-cadre-item p { font-size: 0.9rem; color: #4a4f4b; line-height: 1.65; margin: 0; }
+  /* FORFAITS */
+  .part-forfaits { background: #fff; padding: 5rem 2rem; }
+  .part-forfaits h2 {
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-weight: 700;
+    color: #2d3328;
+    margin-bottom: 2.5rem;
+  }
+  .part-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .part-forfait {
+    background: #f5f2eb;
+    border: 1px solid #e8e3d8;
+    border-top: 3px solid #C18E52;
+    padding: 2rem 1.75rem;
+    border-radius: 2px;
+  }
+  .part-forfait--mid { border-top-color: #2d3328; }
+  .part-forfait-nom { font-size: 1.1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.4rem; }
+  .part-forfait-sous { font-size: 0.88rem; color: #6e8774; margin-bottom: 1.25rem; font-style: italic; }
+  .part-forfait-prix { font-size: 1.75rem; font-weight: 700; color: #C18E52; margin-bottom: 0.3rem; }
+  .part-forfait-detail { font-size: 0.82rem; color: #7a8a72; margin: 0; }
+  .part-modalites { font-size: 0.82rem; color: #7a8a72; line-height: 1.6; }
 
-.part-contact { background: #6E8774; color: #fff; padding: 5rem 2rem; text-align: center; }
-.part-contact .part-label { color: #f5f2eb; opacity: 0.7; }
-.part-contact h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; margin-bottom: 1rem; line-height: 1.25; }
-.part-contact p { font-size: 1rem; color: #dde8e0; margin-bottom: 2rem; line-height: 1.7; }
-.part-cta { display: inline-block; background: #fff; color: #2d3328; padding: 0.9rem 2rem; font-weight: 600; text-decoration: none; border-radius: 2px; font-size: 0.95rem; }
-.part-cta:hover { background: #f0ede6; }
+  /* CADRE */
+  .part-cadre { background: #f5f2eb; padding: 5rem 2rem; }
+  .part-cadre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+  }
+  .part-cadre-item {
+    background: #fff;
+    border-left: 3px solid #C18E52;
+    padding: 1.75rem;
+  }
+  .part-cadre-item h3 { font-size: 1rem; font-weight: 700; color: #2d3328; margin-bottom: 0.6rem; }
+  .part-cadre-item p { font-size: 0.9rem; color: #4a4f4b; line-height: 1.65; margin: 0; }
+
+  /* CONTACT */
+  .part-contact {
+    background: #6E8774;
+    color: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  .part-contact .part-label { color: #f5f2eb; opacity: 0.7; }
+  .part-contact h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+    color: #fff;
+  }
+  .part-contact p { font-size: 1rem; color: #dde8e0; margin-bottom: 2rem; line-height: 1.7; }
+  .part-cta {
+    display: inline-block;
+    background: #fff;
+    color: #2d3328;
+    padding: 0.9rem 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .part-cta:hover { background: #f0ede6; color: #2d3328; }
+
+  /* ── RESPONSIVE MOBILE ── */
+  @media (max-width: 768px) {
+
+    /* Hero */
+    .part-hero { padding: 3.5rem 1.25rem 3rem; }
+    .part-intro { font-size: 0.95rem; }
+    .part-cta-hero {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Parcours */
+    .part-parcours { padding: 3rem 1.25rem; }
+    .part-etapes {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .part-etape { text-align: left; }
+    .part-etape-num { font-size: 2rem; }
+
+    /* Forfaits */
+    .part-forfaits { padding: 3rem 1.25rem; }
+    .part-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .part-forfait { padding: 1.5rem 1.25rem; }
+    .part-forfait-prix { font-size: 1.5rem; }
+
+    /* Cadre */
+    .part-cadre { padding: 3rem 1.25rem; }
+    .part-cadre-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .part-cadre-item { padding: 1.25rem; }
+
+    /* Contact */
+    .part-contact { padding: 3rem 1.25rem; }
+    .part-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
 </style>

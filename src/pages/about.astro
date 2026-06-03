@@ -82,19 +82,25 @@ import Footer from '../components/Footer.astro';
             <div class="step">
               <div class="step-lettre">M</div>
               <div class="step-content">
-                <h3>Maîtrise</h3><p class="step-avant">Avant : saturation, réaction, perte de hauteur stratégique.</p><p>Après : vous nommez ce que vous portez. La saturation devient clarté. Vous retrouvez l'assise que votre fonction exige.</p>
+                <h3>Maîtrise</h3>
+                <p class="step-avant">Avant : saturation, réaction, perte de hauteur stratégique.</p>
+                <p>Après : vous nommez ce que vous portez. La saturation devient clarté. Vous retrouvez l'assise que votre fonction exige.</p>
               </div>
             </div>
             <div class="step">
               <div class="step-lettre">M</div>
               <div class="step-content">
-                <h3>Mouvement</h3><p class="step-avant">Avant : vous savez ce qui doit changer. Vous n'agissez pas, ou sans conviction.</p><p>Après : vos ressources émergent. Vous prenez des décisions assumées, dont vous êtes le seul auteur.</p>
+                <h3>Mouvement</h3>
+                <p class="step-avant">Avant : vous savez ce qui doit changer. Vous n'agissez pas, ou sans conviction.</p>
+                <p>Après : vos ressources émergent. Vous prenez des décisions assumées, dont vous êtes le seul auteur.</p>
               </div>
             </div>
             <div class="step">
               <div class="step-lettre">P</div>
               <div class="step-content">
-                <h3>Progression</h3><p class="step-avant">Avant : vous tenez grâce au cadre du coaching. Vous ne savez pas si vous tiendrez sans.</p><p>Après : vous avancez par vous-même. Le parcours réussit quand vous n'avez plus besoin de moi.</p>
+                <h3>Progression</h3>
+                <p class="step-avant">Avant : vous tenez grâce au cadre du coaching. Vous ne savez pas si vous tiendrez sans.</p>
+                <p>Après : vous avancez par vous-même. Le parcours réussit quand vous n'avez plus besoin de moi.</p>
               </div>
             </div>
           </div>
@@ -118,9 +124,9 @@ import Footer from '../components/Footer.astro';
 </html>
 
 <style>
-  .about-page {
-    font-family: var(--font-body, sans-serif);
-  }
+  * { box-sizing: border-box; }
+
+  .about-page { font-family: var(--font-body, sans-serif); }
 
   .container {
     max-width: 1100px;
@@ -143,13 +149,13 @@ import Footer from '../components/Footer.astro';
     padding: 6rem 0 5rem;
     text-align: center;
   }
-
   .about-hero h1 {
     font-size: clamp(1.8rem, 3.5vw, 2.8rem);
     font-weight: 700;
     line-height: 1.25;
     max-width: 800px;
     margin: 0 auto;
+    color: #f0ebe0;
   }
 
   /* PARCOURS */
@@ -157,20 +163,17 @@ import Footer from '../components/Footer.astro';
     background: #fff;
     padding: 5rem 0;
   }
-
   .parcours-grid {
     display: grid;
     grid-template-columns: 1fr 1.6fr;
     gap: 4rem;
     align-items: start;
   }
-
   .parcours-photo img {
     width: 100%;
     border-radius: 4px;
     display: block;
   }
-
   .parcours-texte h2 {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 700;
@@ -178,21 +181,18 @@ import Footer from '../components/Footer.astro';
     margin-bottom: 1.5rem;
     line-height: 1.3;
   }
-
   .parcours-texte p {
     color: #444;
     line-height: 1.8;
     margin-bottom: 1.2rem;
     font-size: 1rem;
   }
-
   .certifications {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 2rem;
   }
-
   .certifications span {
     font-size: 0.75rem;
     padding: 0.3rem 0.8rem;
@@ -207,7 +207,6 @@ import Footer from '../components/Footer.astro';
     background: #f5f2eb;
     padding: 5rem 0;
   }
-
   .about-valeurs h2 {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 700;
@@ -215,20 +214,17 @@ import Footer from '../components/Footer.astro';
     margin-bottom: 3rem;
     max-width: 600px;
   }
-
   .valeurs-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
-
   .valeur-card {
     background: #fff;
     padding: 2rem;
     border-radius: 4px;
     border-top: 3px solid #b8975a;
   }
-
   .valeur-num {
     font-size: 0.75rem;
     color: #b8975a;
@@ -237,7 +233,6 @@ import Footer from '../components/Footer.astro';
     margin-bottom: 0.75rem;
     font-weight: 600;
   }
-
   .valeur-card h3 {
     font-size: 1.05rem;
     font-weight: 700;
@@ -245,12 +240,7 @@ import Footer from '../components/Footer.astro';
     margin-bottom: 0.75rem;
     line-height: 1.3;
   }
-
-  .valeur-card p {
-    color: #555;
-    font-size: 0.9rem;
-    line-height: 1.7;
-  }
+  .valeur-card p { color: #555; font-size: 0.9rem; line-height: 1.7; margin: 0; }
 
   /* APPROCHE */
   .about-approche {
@@ -258,25 +248,14 @@ import Footer from '../components/Footer.astro';
     color: #f0ebe0;
     padding: 5rem 0;
   }
-
   .about-approche h2 {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 700;
     margin-bottom: 0.75rem;
+    color: #f0ebe0;
   }
-
-  .approche-intro {
-    color: #b8975a;
-    margin-bottom: 3rem;
-    font-size: 1rem;
-  }
-
-  .approche-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
+  .approche-intro { color: #b8975a; margin-bottom: 3rem; font-size: 1rem; }
+  .approche-steps { display: flex; flex-direction: column; gap: 2rem; }
   .step {
     display: grid;
     grid-template-columns: 80px 1fr;
@@ -285,11 +264,7 @@ import Footer from '../components/Footer.astro';
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
-
-  .step:last-child {
-    border-bottom: none;
-  }
-
+  .step:last-child { border-bottom: none; }
   .step-lettre {
     font-size: 2.5rem;
     font-weight: 700;
@@ -297,19 +272,9 @@ import Footer from '../components/Footer.astro';
     line-height: 1;
     padding-top: 0.2rem;
   }
-
-  .step-content h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #fff;
-  }
-
-  .step-avant { color: #7a8a72; font-style: italic; font-size: 0.88rem; margin-bottom: 0.4rem; } .step-content p {
-    color: #b0a898;
-    line-height: 1.7;
-    font-size: 0.95rem;
-  }
+  .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff; }
+  .step-avant { color: #7a8a72; font-style: italic; font-size: 0.88rem; margin-bottom: 0.4rem; }
+  .step-content p { color: #b0a898; line-height: 1.7; font-size: 0.95rem; }
 
   /* CTA */
   .about-cta {
@@ -318,21 +283,19 @@ import Footer from '../components/Footer.astro';
     padding: 5rem 0;
     text-align: center;
   }
-
   .about-cta h2 {
     font-size: clamp(1.6rem, 3vw, 2.4rem);
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.3;
+    color: #fff;
   }
-
   .about-cta p {
     max-width: 520px;
     margin: 0 auto 2rem;
     opacity: 0.9;
     line-height: 1.7;
   }
-
   .cta {
     display: inline-block;
     background: #b8975a;
@@ -344,26 +307,49 @@ import Footer from '../components/Footer.astro';
     text-decoration: none;
     transition: opacity 0.2s;
   }
+  .cta:hover { opacity: 0.88; color: #fff; }
 
-  .cta:hover {
-    opacity: 0.88;
-  }
-
-  /* RESPONSIVE */
+  /* ── RESPONSIVE MOBILE ── */
   @media (max-width: 768px) {
+
+    /* Hero */
+    .about-hero { padding: 3.5rem 1.25rem 3rem; }
+
+    /* Parcours */
+    .about-parcours { padding: 3rem 0; }
     .parcours-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
+      padding: 0 1.25rem;
     }
+    .parcours-photo { order: -1; }
 
+    /* Valeurs */
+    .about-valeurs { padding: 3rem 0; }
+    .about-valeurs .container { padding: 0 1.25rem; }
+    .about-valeurs h2 { margin-bottom: 1.5rem; }
     .valeurs-grid {
       grid-template-columns: 1fr;
-    }
-
-    .step {
-      grid-template-columns: 60px 1fr;
       gap: 1rem;
+    }
+    .valeur-card { padding: 1.5rem 1.25rem; }
+
+    /* Approche */
+    .about-approche { padding: 3rem 0; }
+    .about-approche .container { padding: 0 1.25rem; }
+    .approche-intro { margin-bottom: 2rem; }
+    .step {
+      grid-template-columns: 56px 1fr;
+      gap: 1rem;
+    }
+    .step-lettre { font-size: 1.8rem; }
+
+    /* CTA */
+    .about-cta { padding: 3rem 1.25rem; }
+    .cta {
+      display: block;
+      width: 100%;
+      text-align: center;
     }
   }
 </style>
-
