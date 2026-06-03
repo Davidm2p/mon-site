@@ -118,22 +118,34 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 expert santé pri
               <p class="offre-desc">De la saturation institutionnelle à la clarté décisionnelle, puis à un leadership qui tient dans la durée.</p>
               <div class="forfaits">
                 <div class="forfait">
-                  <span class="forfait-nom">Maîtrise</span>
-                  <span class="forfait-detail">6 séances</span>
-                  <span class="forfait-prix">3 000 € HT</span>
-                  <span class="forfait-unite">500 €/séance</span>
+                  <div class="forfait-top">
+                    <span class="forfait-nom">Maîtrise</span>
+                    <span class="forfait-prix">3 000 € HT</span>
+                  </div>
+                  <div class="forfait-bottom">
+                    <span class="forfait-detail">6 séances</span>
+                    <span class="forfait-unite">500 €/séance</span>
+                  </div>
                 </div>
                 <div class="forfait">
-                  <span class="forfait-nom">Mouvement</span>
-                  <span class="forfait-detail">8 séances</span>
-                  <span class="forfait-prix">3 600 € HT</span>
-                  <span class="forfait-unite">450 €/séance</span>
+                  <div class="forfait-top">
+                    <span class="forfait-nom">Mouvement</span>
+                    <span class="forfait-prix">3 600 € HT</span>
+                  </div>
+                  <div class="forfait-bottom">
+                    <span class="forfait-detail">8 séances</span>
+                    <span class="forfait-unite">450 €/séance</span>
+                  </div>
                 </div>
                 <div class="forfait">
-                  <span class="forfait-nom">Progression</span>
-                  <span class="forfait-detail">10 séances</span>
-                  <span class="forfait-prix">4 000 € HT</span>
-                  <span class="forfait-unite">400 €/séance</span>
+                  <div class="forfait-top">
+                    <span class="forfait-nom">Progression</span>
+                    <span class="forfait-prix">4 000 € HT</span>
+                  </div>
+                  <div class="forfait-bottom">
+                    <span class="forfait-detail">10 séances</span>
+                    <span class="forfait-unite">400 €/séance</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -142,22 +154,34 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 expert santé pri
               <p class="offre-desc">De l'épuisement systémique à une posture de cadre que vous tenez dans la durée. Vous donnez autant, sans vous vider.</p>
               <div class="forfaits">
                 <div class="forfait">
-                  <span class="forfait-nom">Maîtrise</span>
-                  <span class="forfait-detail">6 séances</span>
-                  <span class="forfait-prix">1 800 € HT</span>
-                  <span class="forfait-unite">300 €/séance</span>
+                  <div class="forfait-top">
+                    <span class="forfait-nom">Maîtrise</span>
+                    <span class="forfait-prix">1 800 € HT</span>
+                  </div>
+                  <div class="forfait-bottom">
+                    <span class="forfait-detail">6 séances</span>
+                    <span class="forfait-unite">300 €/séance</span>
+                  </div>
                 </div>
                 <div class="forfait">
-                  <span class="forfait-nom">Mouvement</span>
-                  <span class="forfait-detail">8 séances</span>
-                  <span class="forfait-prix">2 200 € HT</span>
-                  <span class="forfait-unite">275 €/séance</span>
+                  <div class="forfait-top">
+                    <span class="forfait-nom">Mouvement</span>
+                    <span class="forfait-prix">2 200 € HT</span>
+                  </div>
+                  <div class="forfait-bottom">
+                    <span class="forfait-detail">8 séances</span>
+                    <span class="forfait-unite">275 €/séance</span>
+                  </div>
                 </div>
                 <div class="forfait">
-                  <span class="forfait-nom">Progression</span>
-                  <span class="forfait-detail">10 séances</span>
-                  <span class="forfait-prix">2 500 € HT</span>
-                  <span class="forfait-unite">250 €/séance</span>
+                  <div class="forfait-top">
+                    <span class="forfait-nom">Progression</span>
+                    <span class="forfait-prix">2 500 € HT</span>
+                  </div>
+                  <div class="forfait-bottom">
+                    <span class="forfait-detail">10 séances</span>
+                    <span class="forfait-unite">250 €/séance</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -172,7 +196,7 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 expert santé pri
           <h2>Une conversation de 30 minutes.<br/>Sans engagement.</h2>
           <p>On explore votre situation. Vous repartez avec une perspective différente, que vous décidiez de travailler avec moi ou non.</p>
           <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" class="cta">Réserver ma conversation de 30 min</a>
-          <p class="contact-info">David Delord · 06 75 74 74 56 · david.delord@m2p-coaching.fr</p>
+          <p class="contact-info"><a href="tel:+33675747456">06 75 74 74 56</a> · <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a></p>
           <p class="contact-info">Visio France entière · Présentiel Occitanie</p>
         </div>
       </section>
@@ -229,7 +253,7 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 expert santé pri
     font-size: 0.95rem;
     transition: background 0.2s;
   }
-  .cta:hover { background: #a07d45; }
+  .cta:hover { background: #a07d45; color: #fff; }
 
   .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
   .label {
@@ -240,6 +264,7 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 expert santé pri
     margin-bottom: 0.75rem;
   }
 
+  /* SITUATIONS */
   .situations {
     padding: 5rem 2rem;
     background: #f4f1ea;
@@ -261,8 +286,9 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 expert santé pri
     padding: 1.25rem 1.5rem;
     border-radius: 0 6px 6px 0;
   }
-  .card p { font-size: 0.95rem; color: #4a4f4b; line-height: 1.7; }
+  .card p { font-size: 0.95rem; color: #4a4f4b; line-height: 1.7; margin: 0; }
 
+  /* EXPERTISE */
   .expertise-sante {
     padding: 5rem 2rem;
     background: #fff;
@@ -280,7 +306,6 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 expert santé pri
     gap: 3rem;
     align-items: start;
   }
-  @media (max-width: 680px) { .expertise-grid { grid-template-columns: 1fr; } }
   .expertise-texte p {
     font-size: 0.95rem;
     color: #4a4f4b;
@@ -304,6 +329,7 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 expert santé pri
   }
   .garantie-desc { font-size: 0.88rem; color: #4a4f4b; line-height: 1.6; }
 
+  /* MÉTHODE */
   .methode-sante {
     padding: 5rem 2rem;
     background: #2c3028;
@@ -344,6 +370,7 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 expert santé pri
   }
   .mstep-body .apres { font-size: 0.95rem; color: #f0ebe0; line-height: 1.7; }
 
+  /* OFFRES */
   .offres-sante {
     padding: 5rem 2rem;
     background: #f4f1ea;
@@ -382,23 +409,34 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 expert santé pri
     border-bottom: 1px solid #e8e2d8;
     padding-bottom: 1.5rem;
   }
-  .forfaits { display: flex; flex-direction: column; gap: 0.75rem; }
+  .forfaits { display: flex; flex-direction: column; gap: 0; }
+
+  /* Forfait : layout flex colonne */
   .forfait {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    grid-template-rows: auto auto;
-    gap: 2px 8px;
-    align-items: baseline;
-    padding: 0.6rem 0;
+    padding: 0.75rem 0;
     border-bottom: 1px solid #f0ebe0;
   }
   .forfait:last-child { border-bottom: none; }
-  .forfait-nom { font-size: 0.9rem; font-weight: 600; color: #2c3028; grid-row: 1; }
-  .forfait-detail { font-size: 0.8rem; color: #7a8a72; grid-row: 1; }
-  .forfait-prix { font-size: 1rem; font-weight: 700; color: #2c3028; grid-row: 1; }
-  .forfait-unite { font-size: 0.75rem; color: #7a8a72; grid-column: 2 / 4; grid-row: 2; text-align: right; }
-  .offres-note { font-size: 0.8rem; color: #7a8a72; margin-top: 0.5rem; }
+  .forfait-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .forfait-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 3px;
+  }
+  .forfait-nom { font-size: 0.95rem; font-weight: 600; color: #2c3028; }
+  .forfait-prix { font-size: 1rem; font-weight: 700; color: #2c3028; white-space: nowrap; }
+  .forfait-detail { font-size: 0.8rem; color: #7a8a72; }
+  .forfait-unite { font-size: 0.78rem; color: #7a8a72; }
 
+  .offres-note { font-size: 0.8rem; color: #7a8a72; margin-top: 0.5rem; line-height: 1.6; }
+
+  /* CTA */
   .cta-sante {
     padding: 5rem 2rem;
     background: #1e2a1a;
@@ -423,5 +461,74 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 expert santé pri
     font-size: 0.85rem;
     color: #7a8a72;
     margin-bottom: 0.25rem;
+  }
+  .contact-info a { color: #b8975a; text-decoration: none; }
+  .contact-info a:hover { text-decoration: underline; }
+
+  /* ── RESPONSIVE MOBILE ── */
+  @media (max-width: 768px) {
+
+    /* Hero */
+    .hero-sante {
+      padding: 3.5rem 1.25rem 3rem;
+    }
+    .cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Situations */
+    .situations {
+      padding: 3rem 1.25rem;
+    }
+    .situations h2 { font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .cards {
+      grid-template-columns: 1fr;
+    }
+
+    /* Expertise */
+    .expertise-sante {
+      padding: 3rem 1.25rem;
+    }
+    .expertise-sante h2 { font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .expertise-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    /* Méthode */
+    .methode-sante {
+      padding: 3rem 1.25rem;
+    }
+    .methode-sante h2 { font-size: 1.3rem; margin-bottom: 2rem; }
+    .mstep {
+      grid-template-columns: 48px 1fr;
+      gap: 1rem;
+    }
+    .mstep-lettre {
+      width: 48px;
+      height: 48px;
+      font-size: 1.1rem;
+    }
+
+    /* Offres */
+    .offres-sante {
+      padding: 3rem 1.25rem;
+    }
+    .offres-sante h2 { font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .offres-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .offre-bloc {
+      padding: 1.5rem 1.25rem;
+    }
+
+    /* CTA */
+    .cta-sante {
+      padding: 3rem 1.25rem;
+    }
+    .cta-sante h2 { font-size: 1.4rem; }
   }
 </style>
