@@ -10,7 +10,6 @@
     </div>
 
     <div class="contact-form-grid">
-      <!-- Formulaire -->
       <form
         id="contact-form"
         action="https://formspree.io/f/mbderpke"
@@ -43,7 +42,6 @@
           <textarea id="message" name="message" required rows="5" placeholder="Décrivez brièvement ce que vous traversez et ce que vous cherchez..."></textarea>
         </div>
 
-        <!-- Champ honeypot anti-spam -->
         <input type="text" name="_gotcha" style="display:none" />
 
         <button type="submit" class="form-submit" id="form-submit-btn">
@@ -54,7 +52,6 @@
         <p class="form-mention">* Champs obligatoires · Vos données restent strictement confidentielles</p>
       </form>
 
-      <!-- Infos contact -->
       <div class="contact-infos">
         <div class="contact-info-item">
           <span class="contact-info-label">Téléphone</span>
@@ -80,12 +77,9 @@
       </div>
     </div>
 
-    <!-- Message de confirmation -->
     <div id="form-success" class="form-success" style="display:none">
       <p>✓ Message envoyé. Je vous réponds sous 48h.</p>
     </div>
-
-    <!-- Message d'erreur -->
     <div id="form-error" class="form-error" style="display:none">
       <p>Une erreur s'est produite. Merci de réessayer ou de me contacter directement par email.</p>
     </div>
@@ -103,19 +97,15 @@
   if (form && submitBtn) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-
-      // État chargement
       if (btnText) btnText.style.display = 'none';
       if (btnLoading) btnLoading.style.display = 'inline';
       submitBtn.disabled = true;
-
       try {
         const response = await fetch(form.action, {
           method: 'POST',
           body: new FormData(form),
           headers: { 'Accept': 'application/json' }
         });
-
         if (response.ok) {
           form.style.display = 'none';
           if (successMsg) successMsg.style.display = 'block';
@@ -136,14 +126,19 @@
 </script>
 
 <style>
+  * { box-sizing: border-box; }
+
   .contact-form-section {
     background: #2C3028;
     padding: 5rem 2rem;
+    width: 100%;
+    overflow: hidden;
   }
 
   .contact-form-container {
     max-width: 1100px;
     margin: 0 auto;
+    width: 100%;
   }
 
   .contact-form-header {
@@ -176,23 +171,30 @@
     margin: 0 auto;
   }
 
-  /* Grid formulaire + infos */
   .contact-form-grid {
     display: grid;
     grid-template-columns: 1fr 280px;
     gap: 4rem;
     align-items: start;
+    width: 100%;
   }
 
   /* Formulaire */
+  form {
+    width: 100%;
+    min-width: 0;
+  }
+
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    width: 100%;
   }
 
   .form-group {
     margin-bottom: 1.25rem;
+    width: 100%;
   }
 
   .form-group label {
@@ -207,6 +209,7 @@
   .form-group input,
   .form-group textarea {
     width: 100%;
+    max-width: 100%;
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 3px;
@@ -264,6 +267,7 @@
     flex-direction: column;
     gap: 1.25rem;
     padding-top: 0.5rem;
+    min-width: 0;
   }
 
   .contact-info-item {
@@ -285,6 +289,7 @@
     color: #F4F1EA;
     text-decoration: none;
     line-height: 1.5;
+    word-break: break-word;
   }
 
   .contact-info-value:hover { color: #C18E52; }
@@ -301,7 +306,7 @@
   }
 
   .contact-calendly {
-    display: inline-block;
+    display: block;
     border: 1px solid #C18E52;
     color: #C18E52;
     padding: 0.65rem 1.25rem;
@@ -318,7 +323,6 @@
     color: #fff;
   }
 
-  /* Confirmation / Erreur */
   .form-success {
     background: rgba(110, 135, 116, 0.2);
     border: 1px solid #6E8774;
@@ -328,11 +332,7 @@
     margin-top: 1rem;
   }
 
-  .form-success p {
-    color: #9aab92;
-    font-size: 1rem;
-    margin: 0;
-  }
+  .form-success p { color: #9aab92; font-size: 1rem; margin: 0; }
 
   .form-error {
     background: rgba(180, 80, 80, 0.15);
@@ -342,11 +342,7 @@
     margin-top: 1rem;
   }
 
-  .form-error p {
-    color: #e08080;
-    font-size: 0.9rem;
-    margin: 0;
-  }
+  .form-error p { color: #e08080; font-size: 0.9rem; margin: 0; }
 
   /* ── RESPONSIVE MOBILE ── */
   @media (max-width: 768px) {
@@ -361,16 +357,12 @@
 
     .form-row {
       grid-template-columns: 1fr;
+      gap: 0;
     }
 
     .contact-infos {
       border-top: 1px solid rgba(255,255,255,0.1);
       padding-top: 2rem;
-    }
-
-    .contact-calendly {
-      display: block;
-      text-align: center;
     }
   }
 </style>
