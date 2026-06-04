@@ -37,10 +37,22 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
       .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; }
       .hero-photo-wrap { position: relative; width: 100%; order: -1; }
       .hero-photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 5%; display: block; }
-      .hero-badge { position: absolute; bottom: -1.25rem; right: 1rem; background: var(--ocre); color: var(--blanc); padding: .5rem 1rem; border-radius: 50px; text-align: center; line-height: 1.3; }
+      .hero-badge {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+        background: var(--ocre);
+        color: var(--blanc);
+        padding: .5rem 1.25rem;
+        border-radius: 50px;
+        text-align: center;
+        line-height: 1.3;
+        position: relative;
+        top: -1.25rem;
+      }
       .badge-titre { display: block; font-size: .8rem; font-weight: 700; }
       .badge-sous { display: block; font-size: .7rem; opacity: .85; }
-      .hero-texte { padding: 2.5rem 1.5rem 3rem; order: 1; }
+      .hero-texte { padding: 0 1.5rem 3rem; order: 1; }
       .surtitre { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ocre); margin-bottom: 1rem; display: block; }
       .hero h1 { font-size: 2.2rem; font-weight: 700; line-height: 1.12; color: var(--fond); margin-bottom: 1.25rem; }
       .sous-titre { font-size: 1rem; color: #C8C4B8; margin-bottom: 2rem; font-style: italic; line-height: 1.6; }
@@ -91,7 +103,7 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
         cursor: pointer; transition: background .2s;
       }
       .btn-continuer:hover:not([disabled]) { background: var(--ocre-h); }
-   .btn-continuer[disabled] { background: var(--anthracite); color: var(--ocre); cursor: not-allowed; }
+      .btn-continuer[disabled] { background: var(--anthracite); color: var(--ocre); cursor: not-allowed; }
       .btn-retour {
         background: transparent; border: 2px solid #C8C3BA;
         border-radius: 50px; padding: .9rem 1.25rem;
@@ -107,6 +119,14 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
       .result-phrase { border-left: 3px solid var(--ocre); padding-left: 1rem; font-size: .92rem; color: var(--ocre-h); font-style: italic; line-height: 1.6; margin: 0; }
       .btn-restart { display: block; width: 100%; background: transparent; border: 2px solid #C8C3BA; border-radius: 50px; padding: .75rem; font-size: .88rem; color: var(--sage); cursor: pointer; margin-top: .75rem; }
       .btn-restart:hover { border-color: var(--sage); }
+
+      /* RÉSULTATS CLIENTS */
+      .resultats { background: var(--anthracite); padding: 5rem 1.5rem; }
+      .resultats-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; max-width: 900px; margin: 2rem auto 0; }
+      .resultat-item { display: flex; align-items: flex-start; gap: 1rem; background: rgba(255,255,255,.06); border-left: 3px solid var(--ocre); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; }
+      .resultat-icone { font-size: 1.5rem; flex-shrink: 0; margin-top: .1rem; }
+      .resultat-texte { font-size: 1rem; color: var(--fond); line-height: 1.5; font-weight: 500; }
+      .resultats h2 { font-size: 1.7rem; color: var(--fond); font-weight: 700; line-height: 1.2; text-align: center; }
 
       /* MÉTHODE */
       .methode { background: var(--blanc); padding: 5rem 1.5rem; }
@@ -126,14 +146,14 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
       .chiffres-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; max-width: 800px; margin: 0 auto; }
       .chiffre-bloc { text-align: center; }
       .chiffre-n { display: block; font-size: 3rem; font-weight: 700; color: var(--blanc); line-height: 1; margin-bottom: .5rem; }
-      .chiffre-l { display: block; font-size: .82rem; color: rgba(255,255,255,.85); text-transform: uppercase; letter-spacing: .08em; }
+      .chiffre-l { display: block; font-size: .82rem; color: rgba(255,255,255,.85); text-transform: uppercase; letter-spacing: .08em; line-height: 1.4; }
       .chiffres-lien { text-align: center; margin-top: 3rem; }
       .chiffres-lien a { color: var(--fond); font-size: .9rem; text-decoration: none; border-bottom: 1px solid rgba(244,241,234,.4); padding-bottom: 2px; }
       .chiffres-lien a:hover { border-color: var(--fond); }
 
       /* CTA FINAL */
-      .cta-final { background: var(--anthracite); padding: 6rem 1.5rem; text-align: center; }
-      .cta-phrase { font-size: 1.3rem; color: var(--fond); margin-bottom: 2rem; line-height: 1.6; font-style: italic; }
+      .cta-final { background: var(--fond); padding: 6rem 1.5rem; text-align: center; }
+      .cta-phrase { font-size: 1.3rem; color: var(--anthracite); margin-bottom: 2rem; line-height: 1.6; font-style: italic; }
 
       /* RESPONSIVE */
       @media (min-width: 860px) {
@@ -141,11 +161,13 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
         .hero-texte { flex: 1; padding: 5rem 4rem 5rem 2rem; display: flex; flex-direction: column; justify-content: center; order: 0; }
         .hero-photo-wrap { width: 420px; flex-shrink: 0; order: 1; }
         .hero-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center center; display: block; }
+        .hero-badge { position: absolute; top: auto; bottom: 1rem; right: 1rem; margin: 0; width: auto; }
         .hero h1 { font-size: 3rem; }
         .sous-titre { font-size: 1.1rem; }
         .m2p-trio { flex-direction: row; }
         .m2p-arrow { transform: rotate(0deg); display: flex; align-items: center; padding: 0 .25rem; }
         .chiffres-grid { grid-template-columns: repeat(3, 1fr); }
+        .resultats-grid { grid-template-columns: 1fr 1fr; }
       }
     </style>
   </head>
@@ -161,7 +183,7 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
             <h1>Vous gérez tout.<br/>Sauf votre propre trajectoire.</h1>
             <p class="sous-titre">Je ne décide pas à votre place. Je crée le cadre dans lequel vous trouvez votre direction.</p>
             <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="btn-ocre">
-              Envie d'en savoir plus ? 30 minutes suffisent.
+              30 minutes pour voir si on travaille ensemble.
             </a>
             <p class="note">Sans engagement · Visio ou présentiel Occitanie</p>
           </div>
@@ -179,7 +201,7 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
       <section class="diagnostic">
         <div class="container">
           <p class="eyebrow-ocre">Et vous, où en êtes-vous ?</p>
-          <h2 class="diag-h2">Quatre questions pour identifier votre situation.</h2>
+          <h2 class="diag-h2">Deux minutes pour identifier ce qui vous freine.</h2>
           <div class="diag-wrap">
             <div class="diag-progress-row">
               <div class="diag-track"><div id="diag-bar"></div></div>
@@ -199,10 +221,40 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
                 <p id="diag-rphrase" class="result-phrase"></p>
               </div>
               <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="btn-ocre btn-block">
-                Envie d'en savoir plus ? 30 minutes suffisent.
+                30 minutes pour voir si on travaille ensemble.
               </a>
               <p class="note" style="text-align:center">Sans engagement · Visio ou présentiel Occitanie</p>
               <button class="btn-restart" onclick="diagRestart()">Recommencer le diagnostic</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CE QUE MES CLIENTS ATTEIGNENT -->
+      <section class="resultats">
+        <div class="container">
+          <p class="eyebrow-ocre" style="color: var(--the);">Ce que mes clients atteignent</p>
+          <h2>Des résultats qui semblaient hors de portée.</h2>
+          <div class="resultats-grid">
+            <div class="resultat-item">
+              <span class="resultat-icone">🎯</span>
+              <p class="resultat-texte">Ils prennent enfin la décision qu'ils repoussaient depuis des mois — avec clarté et sans regret.</p>
+            </div>
+            <div class="resultat-item">
+              <span class="resultat-icone">🧭</span>
+              <p class="resultat-texte">Ils retrouvent une trajectoire qui leur ressemble, pas celle qu'on attendait d'eux.</p>
+            </div>
+            <div class="resultat-item">
+              <span class="resultat-icone">💡</span>
+              <p class="resultat-texte">Ils redonnent du sens à leur poste — sans tout quitter, sans tout subir.</p>
+            </div>
+            <div class="resultat-item">
+              <span class="resultat-icone">🔄</span>
+              <p class="resultat-texte">Ils changent une chose concrète dans leur façon de travailler ou de décider. Une seule. Mais la bonne.</p>
+            </div>
+            <div class="resultat-item">
+              <span class="resultat-icone">🏆</span>
+              <p class="resultat-texte">Ils atteignent un objectif qu'ils pensaient inatteignable — et le tiennent dans la durée.</p>
             </div>
           </div>
         </div>
@@ -217,19 +269,19 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
             <div class="m2p-item m2p-1">
               <div class="m2p-num">M</div>
               <h3>Maîtrise</h3>
-              <p>Retrouver l'assise. De la saturation à la clarté.</p>
+              <p>Poser le diagnostic juste. Comprendre ce qui bloque vraiment — pas ce qui se voit en surface.</p>
             </div>
             <div class="m2p-arrow">→</div>
             <div class="m2p-item m2p-2">
               <div class="m2p-num">M</div>
               <h3>Mouvement</h3>
-              <p>Passer à l'action juste. Vos solutions, pas les miennes.</p>
+              <p>Passer à l'action juste. Vos décisions, vos solutions. Je crée le cadre — vous trouvez la voie.</p>
             </div>
             <div class="m2p-arrow">→</div>
             <div class="m2p-item m2p-3">
               <div class="m2p-num">P</div>
               <h3>Progression</h3>
-              <p>Tenir dans la durée. Sans avoir besoin de moi.</p>
+              <p>Ancrer ce qui a changé. Pour tenir dans la durée — sans avoir besoin de moi.</p>
             </div>
           </div>
         </div>
@@ -245,11 +297,11 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
             </div>
             <div class="chiffre-bloc">
               <span class="chiffre-n">RNCP 6</span>
-              <span class="chiffre-l">certification coach</span>
+              <span class="chiffre-l">certification coach professionnel</span>
             </div>
             <div class="chiffre-bloc">
-              <span class="chiffre-n">PCM</span>
-              <span class="chiffre-l">Process Communication Model</span>
+              <span class="chiffre-n">21</span>
+              <span class="chiffre-l">établissements pilotés — recrutement, QVT, marque employeur</span>
             </div>
           </div>
           <p class="chiffres-lien"><a href="/about">En savoir plus sur le parcours de David →</a></p>
@@ -259,9 +311,9 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
       <!-- CTA FINAL -->
       <section class="cta-final">
         <div class="container">
-          <p class="cta-phrase">Un doute. Un projet. Une transition.<br/>Trente minutes pour voir si cet espace est fait pour vous.</p>
+          <p class="cta-phrase">Vous avez un doute, un projet, une décision qui attend.<br/>Trente minutes suffisent pour savoir si je suis la bonne personne.</p>
           <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="btn-ocre btn-grand">
-            Envie d'en savoir plus ? 30 minutes suffisent.
+            30 minutes pour voir si on travaille ensemble.
           </a>
           <p class="note" style="text-align:center; margin-top:.75rem">Sans engagement · Visio ou présentiel Occitanie</p>
         </div>
@@ -278,35 +330,35 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
 document.addEventListener('DOMContentLoaded', function() {
   var Q = [
     { q: "Quelle situation vous rejoint le plus ?", opts: [
-      { t: "Je gere, mais je ne sais plus tres bien pourquoi.", s: [2,1,0,0] },
+      { t: "Je gère, mais je ne sais plus très bien pourquoi.", s: [2,1,0,0] },
       { t: "Je porte l'institution. Personne ne me porte.", s: [0,3,0,0] },
       { t: "Mes managers ont besoin d'un espace que je ne peux pas leur donner.", s: [0,0,3,0] },
-      { t: "J'ai une direction. Je veux mettre toutes les chances de mon cote.", s: [0,0,0,3] }
+      { t: "J'ai une direction. Je veux mettre toutes les chances de mon côté.", s: [0,0,0,3] }
     ]},
     { q: "Votre principale source de tension ?", opts: [
-      { t: "La prise de decision sous pression constante", s: [2,2,0,0] },
-      { t: "Le sentiment de ne pas etre a ma place", s: [3,0,0,0] },
-      { t: "Trouver les bons leviers pour mes equipes", s: [0,1,3,0] },
-      { t: "Une envie de passer a l'etape suivante", s: [0,0,0,3] }
+      { t: "La prise de décision sous pression constante", s: [2,2,0,0] },
+      { t: "Le sentiment de ne pas être à ma place", s: [3,0,0,0] },
+      { t: "Trouver les bons leviers pour mes équipes", s: [0,1,3,0] },
+      { t: "Une envie de passer à l'étape suivante", s: [0,0,0,3] }
     ]},
-    { q: "Si vous pouviez changer une chose des demain ?", opts: [
-      { t: "Retrouver de la clarte sur ma trajectoire", s: [3,1,0,1] },
-      { t: "Avoir un espace pour reflechir", s: [1,3,0,0] },
-      { t: "Mieux accompagner les managers", s: [0,0,3,0] },
-      { t: "Structurer le projet que j'ai en tete", s: [0,0,0,3] }
+    { q: "Si vous pouviez changer une chose dès demain ?", opts: [
+      { t: "Retrouver de la clarté sur ma trajectoire", s: [3,1,0,1] },
+      { t: "Avoir un espace pour réfléchir sans être jugé", s: [1,3,0,0] },
+      { t: "Mieux accompagner mes managers", s: [0,0,3,0] },
+      { t: "Structurer le projet que j'ai en tête", s: [0,0,0,3] }
     ]},
-    { q: "Vous representez plutot...", opts: [
+    { q: "Vous représentez plutôt...", opts: [
       { t: "Un cadre ou manager en questionnement", s: [5,0,0,0] },
-      { t: "Un dirigeant ou directeur d'etablissement", s: [0,5,0,0] },
+      { t: "Un dirigeant ou directeur d'établissement", s: [0,5,0,0] },
       { t: "Un DRH ou responsable RH", s: [0,0,5,0] },
       { t: "Quelqu'un avec un projet ou une envie de progresser", s: [0,0,0,5] }
     ]}
   ];
   var P = [
-    { tag: "Cadre & Manager", titre: "Vous avez l'expertise. Pas toujours l'espace pour l'exercer.", desc: "Prise de poste, surcharge decisionnelle, questionnement de trajectoire. C'est precisement la qu'un cadre rigoureux fait la difference.", phrase: "De la surcharge a la clarte, puis a une posture que vous tenez dans la duree." },
-    { tag: "Dirigeant", titre: "Vous tenez le systeme. Mais qui tient l'espace pour vous ?", desc: "Vous etes en premiere ligne des injonctions contradictoires. La performance ne peut pas se construire sur l'epuisement.", phrase: "De la saturation institutionnelle a un leadership durable." },
-    { tag: "DRH & Organisation", titre: "Vous voyez ce dont vos managers ont besoin.", desc: "Un regard exterieur avec une expertise RH de l'interieur. C'est exactement ce que M2P apporte.", phrase: "Un regard exterieur. Une expertise RH de l'interieur." },
-    { tag: "Porteur de projet", titre: "Vous avez un projet. Vous voulez mettre toutes les chances de votre cote.", desc: "Transition choisie, ambition a structurer. Vous etes en mouvement. Le coaching fait la difference entre vouloir et reussir.", phrase: "De la clarte a l'action, puis a la reussite durable." }
+    { tag: "Cadre & Manager", titre: "Vous avez l'expertise. Il vous manque l'espace pour l'exercer pleinement.", desc: "Prise de poste, surcharge décisionnelle, questionnement de trajectoire. Je connais ces situations de l'intérieur. On va identifier ce qui bloque — et trouver la décision juste.", phrase: "De la surcharge à la clarté. Puis à une posture que vous tenez dans la durée." },
+    { tag: "Dirigeant", titre: "Vous tenez le système. Mais qui tient l'espace pour vous ?", desc: "Vous êtes en première ligne des injonctions contradictoires. La performance durable ne se construit pas sur l'épuisement. Je sais ce que c'est — j'y ai été.", phrase: "De la saturation à un leadership que vous habitez vraiment." },
+    { tag: "DRH & Organisation", titre: "Vous voyez exactement ce dont vos managers ont besoin.", desc: "Un regard extérieur avec une expertise RH de l'intérieur — 22 ans, 21 établissements. Vous n'aurez pas à tout réexpliquer. On va droit à l'essentiel.", phrase: "Un regard extérieur. Une expertise RH de l'intérieur." },
+    { tag: "Porteur de projet", titre: "Vous avez un objectif. Vous voulez qu'il devienne réel.", desc: "Transition choisie, ambition à structurer, décision à prendre. Vous êtes en mouvement. Je crée le cadre pour que cet objectif — celui qui vous semblait hors de portée — devienne atteignable.", phrase: "De la clarté à l'action. De l'action à la réussite durable." }
   ];
   var cur=0, sc=[0,0,0,0], ans=[-1,-1,-1,-1];
 
