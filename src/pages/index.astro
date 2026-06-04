@@ -11,6 +11,143 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
 <html lang="fr">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style is:global>
+      *, *::before, *::after { box-sizing: border-box; }
+      img { display: block; max-width: 100%; height: auto; }
+      :root {
+        --fond: #F4F1EA;
+        --anthracite: #4A4F4B;
+        --sage: #6E8774;
+        --the: #A3B39F;
+        --ocre: #C18E52;
+        --ocre-h: #a97a42;
+        --blanc: #ffffff;
+      }
+      .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+      .eyebrow { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--sage); font-weight: 600; margin-bottom: .5rem; display: block; }
+      .eyebrow-ocre { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--ocre); font-weight: 600; margin-bottom: .5rem; display: block; text-align: center; }
+      .btn-ocre { display: inline-block; background: var(--ocre); color: var(--blanc); padding: .95rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: .95rem; text-align: center; transition: background .2s; border: none; cursor: pointer; }
+      .btn-ocre:hover { background: var(--ocre-h); color: var(--blanc); }
+      .btn-block { display: block; width: 100%; margin-top: 1rem; }
+      .btn-grand { font-size: 1.05rem; padding: 1.1rem 2.5rem; }
+      .note { font-size: .75rem; color: #9A9590; margin-top: .6rem; }
+
+      /* HERO */
+      .hero { background: var(--anthracite); color: var(--fond); overflow: hidden; }
+      .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; }
+      .hero-photo-wrap { position: relative; width: 100%; order: -1; }
+      .hero-photo { width: 100%; aspect-ratio: 3/2; object-fit: cover; object-position: center 15%; display: block; }
+      .hero-badge { position: absolute; bottom: 1rem; right: 1rem; background: var(--ocre); color: var(--blanc); padding: .5rem 1rem; border-radius: 50px; text-align: center; line-height: 1.3; }
+      .badge-titre { display: block; font-size: .8rem; font-weight: 700; }
+      .badge-sous { display: block; font-size: .7rem; opacity: .85; }
+      .hero-texte { padding: 2.5rem 1.5rem 3rem; order: 1; }
+      .surtitre { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ocre); margin-bottom: 1rem; display: block; }
+      .hero h1 { font-size: 2.2rem; font-weight: 700; line-height: 1.12; color: var(--fond); margin-bottom: 1.25rem; }
+      .sous-titre { font-size: 1rem; color: #C8C4B8; margin-bottom: 2rem; font-style: italic; line-height: 1.6; }
+
+      /* DIAGNOSTIC */
+      .diagnostic { background: var(--fond); padding: 5rem 1.5rem; }
+      .diag-h2 { font-size: 1.6rem; color: var(--anthracite); margin-bottom: 2.5rem; line-height: 1.25; font-weight: 700; text-align: center; }
+      .diag-wrap { max-width: 620px; margin: 0 auto; }
+      .diag-progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
+      .diag-track { flex: 1; height: 6px; background: #DDD9D0; border-radius: 3px; overflow: hidden; }
+      .diag-track div { height: 100%; width: 0; background: var(--ocre); border-radius: 3px; transition: width .4s ease; }
+      .diag-step { font-size: .78rem; color: var(--sage); font-weight: 600; white-space: nowrap; margin: 0; }
+      .diag-question { font-size: 1.2rem; font-weight: 700; color: var(--anthracite); line-height: 1.4; margin-bottom: 1.5rem; }
+
+      /* OPTIONS */
+      .diag-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.5rem; }
+      .diag-opt {
+        display: flex; align-items: center; gap: 14px;
+        background: var(--blanc);
+        border: 2px solid #C8C3BA;
+        border-radius: 12px;
+        padding: 14px 18px;
+        cursor: pointer; text-align: left; width: 100%;
+        transition: border-color .18s, background .18s, transform .12s;
+      }
+      .diag-opt:hover { border-color: var(--ocre); background: #FDF0E0; transform: translateX(4px); }
+      .diag-opt.active { border-color: var(--ocre); background: #FDF0E0; }
+      .diag-opt.active .opt-num { background: var(--ocre); color: var(--blanc); }
+      .opt-num {
+        width: 32px; height: 32px; min-width: 32px;
+        border-radius: 50%;
+        background: var(--fond);
+        color: var(--ocre);
+        font-size: 13px; font-weight: 700;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+        border: 2px solid var(--ocre);
+        transition: background .18s, color .18s;
+      }
+      .opt-txt { font-size: 1rem; color: var(--anthracite); line-height: 1.4; font-weight: 500; }
+
+      /* BOUTONS DIAGNOSTIC */
+      .diag-nav { display: flex; gap: 10px; align-items: center; }
+      .btn-continuer {
+        flex: 1; background: var(--ocre); color: var(--blanc);
+        border: none; border-radius: 50px;
+        padding: .9rem 1.5rem; font-size: 1rem; font-weight: 600;
+        cursor: pointer; transition: background .2s;
+      }
+      .btn-continuer:hover:not([disabled]) { background: var(--ocre-h); }
+   .btn-continuer[disabled] { background: var(--anthracite); color: var(--ocre); cursor: not-allowed; }
+      .btn-retour {
+        background: transparent; border: 2px solid #C8C3BA;
+        border-radius: 50px; padding: .9rem 1.25rem;
+        font-size: .9rem; color: var(--sage); cursor: pointer;
+      }
+      .btn-retour:hover { border-color: var(--sage); }
+
+      /* RÉSULTAT */
+      .result-card { background: var(--blanc); border: 2px solid var(--ocre); border-radius: 16px; padding: 2rem 1.75rem; margin-bottom: 1.25rem; }
+      .result-tag { display: inline-block; background: var(--ocre); color: var(--blanc); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 12px; border-radius: 50px; margin-bottom: 1rem; }
+      .result-titre { font-size: 1.15rem; font-weight: 700; color: var(--anthracite); line-height: 1.3; margin-bottom: .75rem; }
+      .result-desc { font-size: .95rem; color: #5A5F5B; line-height: 1.75; margin-bottom: 1.25rem; }
+      .result-phrase { border-left: 3px solid var(--ocre); padding-left: 1rem; font-size: .92rem; color: var(--ocre-h); font-style: italic; line-height: 1.6; margin: 0; }
+      .btn-restart { display: block; width: 100%; background: transparent; border: 2px solid #C8C3BA; border-radius: 50px; padding: .75rem; font-size: .88rem; color: var(--sage); cursor: pointer; margin-top: .75rem; }
+      .btn-restart:hover { border-color: var(--sage); }
+
+      /* MÉTHODE */
+      .methode { background: var(--blanc); padding: 5rem 1.5rem; }
+      .methode-h2 { font-size: 1.7rem; color: var(--anthracite); margin-bottom: 2.5rem; line-height: 1.2; font-weight: 700; }
+      .m2p-trio { display: flex; flex-direction: column; gap: 0; }
+      .m2p-item { padding: 2.5rem 2rem; text-align: center; }
+      .m2p-1 { background: var(--anthracite); }
+      .m2p-2 { background: var(--sage); }
+      .m2p-3 { background: var(--the); }
+      .m2p-num { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,.2); color: var(--blanc); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+      .m2p-item h3 { font-size: 1.15rem; color: var(--blanc); margin-bottom: .5rem; font-weight: 700; }
+      .m2p-item p { font-size: .95rem; color: rgba(255,255,255,.85); line-height: 1.6; margin: 0; }
+      .m2p-arrow { text-align: center; font-size: 1.5rem; color: var(--ocre); padding: .5rem; transform: rotate(90deg); display: block; }
+
+      /* CHIFFRES */
+      .chiffres { background: var(--sage); padding: 5rem 1.5rem; }
+      .chiffres-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; max-width: 800px; margin: 0 auto; }
+      .chiffre-bloc { text-align: center; }
+      .chiffre-n { display: block; font-size: 3rem; font-weight: 700; color: var(--blanc); line-height: 1; margin-bottom: .5rem; }
+      .chiffre-l { display: block; font-size: .82rem; color: rgba(255,255,255,.85); text-transform: uppercase; letter-spacing: .08em; }
+      .chiffres-lien { text-align: center; margin-top: 3rem; }
+      .chiffres-lien a { color: var(--fond); font-size: .9rem; text-decoration: none; border-bottom: 1px solid rgba(244,241,234,.4); padding-bottom: 2px; }
+      .chiffres-lien a:hover { border-color: var(--fond); }
+
+      /* CTA FINAL */
+      .cta-final { background: var(--anthracite); padding: 6rem 1.5rem; text-align: center; }
+      .cta-phrase { font-size: 1.3rem; color: var(--fond); margin-bottom: 2rem; line-height: 1.6; font-style: italic; }
+
+      /* RESPONSIVE */
+      @media (min-width: 860px) {
+        .hero-inner { flex-direction: row; align-items: stretch; min-height: 560px; }
+        .hero-texte { flex: 1; padding: 5rem 4rem 5rem 2rem; display: flex; flex-direction: column; justify-content: center; order: 0; }
+        .hero-photo-wrap { width: 420px; flex-shrink: 0; order: 1; }
+        .hero-photo { width: 100%; height: 100%; aspect-ratio: unset; }
+        .hero h1 { font-size: 3rem; }
+        .sous-titre { font-size: 1.1rem; }
+        .m2p-trio { flex-direction: row; }
+        .m2p-arrow { transform: rotate(0deg); display: flex; align-items: center; padding: 0 .25rem; }
+        .chiffres-grid { grid-template-columns: repeat(3, 1fr); }
+      }
+    </style>
   </head>
   <body>
     <Header />
@@ -20,16 +157,16 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
       <section class="hero">
         <div class="hero-inner">
           <div class="hero-texte">
-            <p class="surtitre">Coach Professionnel Certifié RNCP 6 · 22 ans de direction RH</p>
+            <p class="surtitre">Coach Professionnel Certifié RNCP 6 · 22 ans d'expérience RH</p>
             <h1>Vous gérez tout.<br/>Sauf votre propre trajectoire.</h1>
             <p class="sous-titre">Je ne décide pas à votre place. Je crée le cadre dans lequel vous trouvez votre direction.</p>
-            <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="cta">
+            <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="btn-ocre">
               Envie d'en savoir plus ? 30 minutes suffisent.
             </a>
-            <p class="cta-note">Sans engagement · Visio ou présentiel Occitanie</p>
+            <p class="note">Sans engagement · Visio ou présentiel Occitanie</p>
           </div>
           <div class="hero-photo-wrap">
-            <img src="/david.jpg" alt="David Delord, Coach Professionnel Certifié RNCP 6" class="hero-photo" width="420" height="520" loading="eager" />
+            <img src="/david.jpg" alt="David Delord, Coach Professionnel Certifié RNCP 6" class="hero-photo" loading="eager" />
             <div class="hero-badge">
               <span class="badge-titre">RNCP Niveau 6</span>
               <span class="badge-sous">Coach Certifié</span>
@@ -41,34 +178,31 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
       <!-- DIAGNOSTIC -->
       <section class="diagnostic">
         <div class="container">
-          <p class="section-label">Et vous, où en êtes-vous ?</p>
+          <p class="eyebrow-ocre">Et vous, où en êtes-vous ?</p>
+          <h2 class="diag-h2">Quatre questions pour identifier votre situation.</h2>
           <div class="diag-wrap">
-            <div class="diag-header">
-              <p class="diag-label">Auto-diagnostic</p>
-              <p class="diag-titre">Quatre questions. Un profil. Une direction.</p>
-              <div class="diag-progress"><div id="diag-bar"></div></div>
+            <div class="diag-progress-row">
+              <div class="diag-track"><div id="diag-bar"></div></div>
+              <p id="diag-num" class="diag-step"></p>
             </div>
-            <div id="diag-quiz">
-              <p id="diag-num" class="diag-num"></p>
-              <p id="diag-question" class="diag-question"></p>
-              <div id="diag-options" class="diag-options"></div>
-              <div class="diag-nav">
-                <button id="diag-back" class="diag-btn-back" onclick="diagBack()">Retour</button>
-                <button id="diag-next" class="diag-btn-next" onclick="diagNext()" disabled>Continuer</button>
-              </div>
+            <p id="diag-question" class="diag-question"></p>
+            <div id="diag-options" class="diag-options"></div>
+            <div class="diag-nav" id="diag-nav">
+              <button id="diag-back" class="btn-retour" onclick="diagBack()" style="display:none">← Retour</button>
+              <button id="diag-next" class="btn-continuer" onclick="diagNext()" disabled>Continuer →</button>
             </div>
             <div id="diag-result" style="display:none">
-              <div class="diag-result-card">
-                <span id="diag-tag" class="diag-tag"></span>
-                <p id="diag-rtitle" class="diag-rtitle"></p>
-                <p id="diag-rdesc" class="diag-rdesc"></p>
-                <p id="diag-rphrase" class="diag-rphrase"></p>
+              <div class="result-card">
+                <span id="diag-tag" class="result-tag"></span>
+                <p id="diag-rtitle" class="result-titre"></p>
+                <p id="diag-rdesc" class="result-desc"></p>
+                <p id="diag-rphrase" class="result-phrase"></p>
               </div>
-              <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="diag-cta">
+              <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="btn-ocre btn-block">
                 Envie d'en savoir plus ? 30 minutes suffisent.
               </a>
-              <p class="diag-cta-note">Sans engagement · Visio ou présentiel Occitanie</p>
-              <button class="diag-restart" onclick="diagRestart()">Recommencer le diagnostic</button>
+              <p class="note" style="text-align:center">Sans engagement · Visio ou présentiel Occitanie</p>
+              <button class="btn-restart" onclick="diagRestart()">Recommencer le diagnostic</button>
             </div>
           </div>
         </div>
@@ -77,23 +211,23 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
       <!-- MÉTHODE -->
       <section class="methode">
         <div class="container">
-          <p class="section-label">La méthode</p>
-          <h2>M²P — Maîtrise. Mouvement. Progression.</h2>
+          <p class="eyebrow">La méthode</p>
+          <h2 class="methode-h2">M²P — Maîtrise. Mouvement. Progression.</h2>
           <div class="m2p-trio">
-            <div class="m2p-item">
-              <div class="m2p-cercle">M</div>
+            <div class="m2p-item m2p-1">
+              <div class="m2p-num">M</div>
               <h3>Maîtrise</h3>
               <p>Retrouver l'assise. De la saturation à la clarté.</p>
             </div>
-            <div class="m2p-fleche">→</div>
-            <div class="m2p-item">
-              <div class="m2p-cercle">M</div>
+            <div class="m2p-arrow">→</div>
+            <div class="m2p-item m2p-2">
+              <div class="m2p-num">M</div>
               <h3>Mouvement</h3>
               <p>Passer à l'action juste. Vos solutions, pas les miennes.</p>
             </div>
-            <div class="m2p-fleche">→</div>
-            <div class="m2p-item">
-              <div class="m2p-cercle">P</div>
+            <div class="m2p-arrow">→</div>
+            <div class="m2p-item m2p-3">
+              <div class="m2p-num">P</div>
               <h3>Progression</h3>
               <p>Tenir dans la durée. Sans avoir besoin de moi.</p>
             </div>
@@ -110,12 +244,12 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
               <span class="chiffre-l">ans d'expérience RH</span>
             </div>
             <div class="chiffre-bloc">
-              <span class="chiffre-n">21</span>
-              <span class="chiffre-l">établissements de santé dirigés</span>
-            </div>
-            <div class="chiffre-bloc">
               <span class="chiffre-n">RNCP 6</span>
               <span class="chiffre-l">certification coach</span>
+            </div>
+            <div class="chiffre-bloc">
+              <span class="chiffre-n">PCM</span>
+              <span class="chiffre-l">Process Communication Model</span>
             </div>
           </div>
           <p class="chiffres-lien"><a href="/about">En savoir plus sur le parcours de David →</a></p>
@@ -125,11 +259,11 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
       <!-- CTA FINAL -->
       <section class="cta-final">
         <div class="container">
-          <p class="cta-final-phrase">Un doute. Un projet. Une transition.<br/>Trente minutes pour voir si cet espace est fait pour vous.</p>
-          <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="cta">
+          <p class="cta-phrase">Un doute. Un projet. Une transition.<br/>Trente minutes pour voir si cet espace est fait pour vous.</p>
+          <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" rel="noopener" class="btn-ocre btn-grand">
             Envie d'en savoir plus ? 30 minutes suffisent.
           </a>
-          <p class="cta-note">Sans engagement · Visio ou présentiel Occitanie</p>
+          <p class="note" style="text-align:center; margin-top:.75rem">Sans engagement · Visio ou présentiel Occitanie</p>
         </div>
       </section>
 
@@ -170,176 +304,87 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
   var P = [
     { tag: "Cadre & Manager", titre: "Vous avez l'expertise. Pas toujours l'espace pour l'exercer.", desc: "Prise de poste, surcharge decisionnelle, questionnement de trajectoire. C'est precisement la qu'un cadre rigoureux fait la difference.", phrase: "De la surcharge a la clarte, puis a une posture que vous tenez dans la duree." },
-    { tag: "Dirigeant sante privee", titre: "Vous tenez le systeme. Mais qui tient l'espace pour vous ?", desc: "Vous etes en premiere ligne des injonctions contradictoires. La performance ne peut pas se construire sur l'epuisement.", phrase: "De la saturation institutionnelle a un leadership durable." },
+    { tag: "Dirigeant", titre: "Vous tenez le systeme. Mais qui tient l'espace pour vous ?", desc: "Vous etes en premiere ligne des injonctions contradictoires. La performance ne peut pas se construire sur l'epuisement.", phrase: "De la saturation institutionnelle a un leadership durable." },
     { tag: "DRH & Organisation", titre: "Vous voyez ce dont vos managers ont besoin.", desc: "Un regard exterieur avec une expertise RH de l'interieur. C'est exactement ce que M2P apporte.", phrase: "Un regard exterieur. Une expertise RH de l'interieur." },
     { tag: "Porteur de projet", titre: "Vous avez un projet. Vous voulez mettre toutes les chances de votre cote.", desc: "Transition choisie, ambition a structurer. Vous etes en mouvement. Le coaching fait la difference entre vouloir et reussir.", phrase: "De la clarte a l'action, puis a la reussite durable." }
   ];
   var cur=0, sc=[0,0,0,0], ans=[-1,-1,-1,-1];
+
   function render() {
-    var q=Q[cur];
-    document.getElementById('diag-num').textContent='Question '+(cur+1)+' sur '+Q.length;
-    document.getElementById('diag-question').textContent=q.q;
-    document.getElementById('diag-bar').style.width=(cur/Q.length*100)+'%';
-    var el=document.getElementById('diag-options');
-    el.innerHTML='';
-    q.opts.forEach(function(o,i){
-      var b=document.createElement('button');
-      b.className='diag-opt'+(ans[cur]===i?' active':'');
-      b.textContent=o.t;
-      b.onclick=function(){pick(i);};
-      el.appendChild(b);
+    var q = Q[cur];
+    document.getElementById('diag-num').textContent = 'Question '+(cur+1)+' sur '+Q.length;
+    document.getElementById('diag-question').textContent = q.q;
+    document.getElementById('diag-bar').style.width = (cur/Q.length*100)+'%';
+    var el = document.getElementById('diag-options');
+    el.innerHTML = '';
+    q.opts.forEach(function(o, i) {
+      var btn = document.createElement('button');
+      btn.className = 'diag-opt' + (ans[cur]===i ? ' active' : '');
+      var numSpan = document.createElement('span');
+      numSpan.className = 'opt-num';
+      numSpan.textContent = i+1;
+      var txtSpan = document.createElement('span');
+      txtSpan.className = 'opt-txt';
+      txtSpan.textContent = o.t;
+      btn.appendChild(numSpan);
+      btn.appendChild(txtSpan);
+      btn.onclick = function() { pick(i); };
+      el.appendChild(btn);
     });
-    document.getElementById('diag-next').disabled=ans[cur]<0;
-    document.getElementById('diag-back').style.display=cur>0?'inline-block':'none';
-    document.getElementById('diag-next').textContent=cur===Q.length-1?'Voir mon profil':'Continuer';
+    var btnNext = document.getElementById('diag-next');
+    btnNext.disabled = ans[cur] < 0;
+    btnNext.textContent = cur === Q.length-1 ? 'Voir mon profil →' : 'Continuer →';
+    document.getElementById('diag-back').style.display = cur > 0 ? 'inline-block' : 'none';
+    document.getElementById('diag-result').style.display = 'none';
+    document.getElementById('diag-options').style.display = 'flex';
+    document.getElementById('diag-nav').style.display = 'flex';
+    document.getElementById('diag-question').style.display = 'block';
+    document.getElementById('diag-num').style.display = 'block';
+    document.getElementById('diag-bar').parentElement.parentElement.style.display = 'flex';
   }
-  function pick(i){
-    ans[cur]=i;
-    document.querySelectorAll('.diag-opt').forEach(function(b,idx){b.classList.toggle('active',idx===i);});
-    document.getElementById('diag-next').disabled=false;
+
+  function pick(i) {
+    ans[cur] = i;
+    document.querySelectorAll('.diag-opt').forEach(function(b, idx) {
+      b.classList.toggle('active', idx === i);
+    });
+    document.getElementById('diag-next').disabled = false;
   }
-  window.diagNext=function(){
-    if(ans[cur]<0)return;
-    Q[cur].opts[ans[cur]].s.forEach(function(v,i){sc[i]+=v;});
-    if(cur<Q.length-1){cur++;render();}else{showResult();}
+
+  window.diagNext = function() {
+    if (ans[cur] < 0) return;
+    Q[cur].opts[ans[cur]].s.forEach(function(v, i) { sc[i] += v; });
+    if (cur < Q.length-1) { cur++; render(); } else { showResult(); }
   };
-  window.diagBack=function(){
-    if(cur===0)return;
-    Q[cur-1].opts[ans[cur-1]].s.forEach(function(v,i){sc[i]-=v;});
-    cur--;render();
+
+  window.diagBack = function() {
+    if (cur === 0) return;
+    Q[cur-1].opts[ans[cur-1]].s.forEach(function(v, i) { sc[i] -= v; });
+    cur--; render();
   };
-  window.diagRestart=function(){
-    cur=0;sc=[0,0,0,0];ans=[-1,-1,-1,-1];
-    document.getElementById('diag-quiz').style.display='block';
-    document.getElementById('diag-result').style.display='none';
+
+  window.diagRestart = function() {
+    cur=0; sc=[0,0,0,0]; ans=[-1,-1,-1,-1];
     render();
   };
-  function showResult(){
-    document.getElementById('diag-bar').style.width='100%';
-    var best=0;
-    sc.forEach(function(v,i){if(v>sc[best])best=i;});
-    var p=P[best];
-    document.getElementById('diag-tag').textContent=p.tag;
-    document.getElementById('diag-rtitle').textContent=p.titre;
-    document.getElementById('diag-rdesc').textContent=p.desc;
-    document.getElementById('diag-rphrase').textContent=p.phrase;
-    document.getElementById('diag-quiz').style.display='none';
-    document.getElementById('diag-result').style.display='block';
+
+  function showResult() {
+    document.getElementById('diag-bar').style.width = '100%';
+    var best = 0;
+    sc.forEach(function(v, i) { if (v > sc[best]) best = i; });
+    var p = P[best];
+    document.getElementById('diag-tag').textContent = p.tag;
+    document.getElementById('diag-rtitle').textContent = p.titre;
+    document.getElementById('diag-rdesc').textContent = p.desc;
+    document.getElementById('diag-rphrase').textContent = p.phrase;
+    document.getElementById('diag-options').style.display = 'none';
+    document.getElementById('diag-nav').style.display = 'none';
+    document.getElementById('diag-question').style.display = 'none';
+    document.getElementById('diag-num').style.display = 'none';
+    document.getElementById('diag-bar').parentElement.parentElement.style.display = 'none';
+    document.getElementById('diag-result').style.display = 'block';
   }
+
   render();
 });
 </script>
-
-<style>
-  *, *::before, *::after { box-sizing: border-box; }
-  img { display: block; max-width: 100%; height: auto; }
-
-  :root {
-    --kaki: #2C3028;
-    --kaki-p: #1e2419;
-    --or: #C18E52;
-    --or-p: #b8975a;
-    --creme: #F4F1EA;
-    --sage: #6E8774;
-    --texte: #4A4F4B;
-    --blanc: #ffffff;
-  }
-
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-
-  .section-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--sage);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  /* HERO */
-  .hero { background: var(--kaki); color: var(--creme); overflow: hidden; }
-  .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; }
-  .hero-photo-wrap { position: relative; width: 100%; order: -1; }
-  .hero-photo { width: 100%; height: 320px; object-fit: cover; object-position: center 20%; }
-  .hero-badge { position: absolute; bottom: 1rem; right: 1rem; background: var(--or); color: #fff; padding: 0.5rem 0.85rem; border-radius: 4px; text-align: center; line-height: 1.3; }
-  .badge-titre { display: block; font-size: 0.8rem; font-weight: 700; }
-  .badge-sous { display: block; font-size: 0.7rem; opacity: 0.85; }
-  .hero-texte { padding: 2.5rem 1.5rem 3rem; order: 1; }
-  .surtitre { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--or); margin-bottom: 1rem; display: block; }
-  .hero h1 { font-size: 2.2rem; font-weight: 700; line-height: 1.12; color: var(--creme); margin-bottom: 1.25rem; }
-  .sous-titre { font-size: 1rem; color: #C8C4B8; margin-bottom: 2rem; font-style: italic; line-height: 1.6; }
-  .cta { display: block; background: var(--or); color: #fff; padding: 1rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.95rem; text-align: center; transition: background 0.2s; }
-  .cta:hover { background: #a97a42; color: #fff; }
-  .cta-note { font-size: 0.75rem; color: #9A9590; text-align: center; margin-top: 0.6rem; }
-
-  /* DIAGNOSTIC */
-  .diagnostic { background: var(--kaki-p); padding: 5rem 1.5rem; }
-  .diagnostic .section-label { color: var(--or-p); }
-  .diag-wrap { max-width: 620px; margin: 0 auto; }
-  .diag-header { background: rgba(255,255,255,0.05); border: 1px solid rgba(184,151,90,0.2); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
-  .diag-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--or-p); font-weight: 600; margin-bottom: 0.35rem; display: block; }
-  .diag-titre { font-size: 1.1rem; font-weight: 700; color: var(--creme); margin: 0; }
-  .diag-progress { height: 3px; background: rgba(184,151,90,0.2); border-radius: 2px; margin-top: 1rem; }
-  .diag-progress div { height: 100%; width: 0; background: var(--or); border-radius: 2px; transition: width 0.4s; }
-  .diag-num { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage); font-weight: 600; margin-bottom: 0.5rem; }
-  .diag-question { font-size: 1.05rem; font-weight: 600; color: var(--creme); line-height: 1.4; margin-bottom: 1rem; }
-  .diag-options { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
-  .diag-opt { background: rgba(255,255,255,0.05); border: 1px solid rgba(184,151,90,0.2); border-radius: 6px; padding: 0.85rem 1rem; cursor: pointer; font-size: 0.92rem; color: #C8C4B8; text-align: left; line-height: 1.45; width: 100%; transition: border-color 0.15s, background 0.15s; }
-  .diag-opt:hover { border-color: var(--or); background: rgba(193,142,82,0.1); }
-  .diag-opt.active { border-color: var(--or); background: var(--or); color: #fff; }
-  .diag-nav { display: flex; gap: 0.75rem; }
-  .diag-btn-next { flex: 1; background: var(--or); color: #fff; border: none; border-radius: 6px; padding: 0.8rem 1.25rem; font-size: 0.92rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
-  .diag-btn-next:hover { background: #a97a42; }
-  .diag-btn-next:disabled { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); cursor: not-allowed; }
-  .diag-btn-back { display: none; background: transparent; border: 1px solid rgba(184,151,90,0.3); border-radius: 6px; padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--or-p); cursor: pointer; }
-  .diag-result-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(184,151,90,0.3); border-radius: 8px; padding: 1.75rem 1.5rem; margin-bottom: 1rem; }
-  .diag-tag { display: inline-block; background: var(--or); color: #fff; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 4px; margin-bottom: 0.85rem; }
-  .diag-rtitle { font-size: 1.05rem; font-weight: 700; color: var(--creme); line-height: 1.3; margin-bottom: 0.75rem; }
-  .diag-rdesc { font-size: 0.9rem; color: #b0a898; line-height: 1.75; margin-bottom: 1.25rem; }
-  .diag-rphrase { border-left: 2px solid var(--or); padding-left: 0.75rem; font-size: 0.88rem; color: var(--or-p); font-style: italic; line-height: 1.6; margin: 0; }
-  .diag-cta { display: block; background: var(--or); color: #fff; padding: 1rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; text-align: center; margin-top: 1rem; transition: background 0.2s; }
-  .diag-cta:hover { background: #a97a42; color: #fff; }
-  .diag-cta-note { font-size: 0.72rem; color: #7A7570; text-align: center; margin: 0.5rem 0 0; }
-  .diag-restart { display: block; width: 100%; background: transparent; border: 1px solid rgba(184,151,90,0.3); border-radius: 6px; padding: 0.7rem; font-size: 0.88rem; color: var(--or-p); cursor: pointer; margin-top: 0.75rem; }
-
-  /* MÉTHODE */
-  .methode { background: var(--creme); padding: 5rem 1.5rem; }
-  .methode h2 { font-size: 1.8rem; color: var(--kaki); margin-bottom: 3rem; line-height: 1.2; }
-  .m2p-trio { display: flex; flex-direction: column; gap: 2rem; align-items: center; }
-  .m2p-item { text-align: center; max-width: 260px; }
-  .m2p-cercle { width: 72px; height: 72px; border-radius: 50%; border: 2px solid var(--or); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700; color: var(--or); margin: 0 auto 1rem; }
-  .m2p-item h3 { color: var(--kaki); font-size: 1.1rem; margin-bottom: 0.5rem; }
-  .m2p-item p { color: var(--texte); font-size: 0.92rem; line-height: 1.6; margin: 0; }
-  .m2p-fleche { font-size: 1.5rem; color: var(--or); transform: rotate(90deg); }
-
-  /* CHIFFRES */
-  .chiffres { background: var(--kaki); padding: 5rem 1.5rem; }
-  .chiffres-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 800px; margin: 0 auto; }
-  .chiffre-bloc { text-align: center; }
-  .chiffre-n { display: block; font-size: 3rem; font-weight: 700; color: var(--or); line-height: 1; margin-bottom: 0.5rem; }
-  .chiffre-l { display: block; font-size: 0.85rem; color: #C8C4B8; text-transform: uppercase; letter-spacing: 0.08em; }
-  .chiffres-lien { text-align: center; margin-top: 3rem; }
-  .chiffres-lien a { color: var(--or-p); font-size: 0.9rem; text-decoration: none; border-bottom: 1px solid rgba(184,151,90,0.3); padding-bottom: 2px; }
-  .chiffres-lien a:hover { border-color: var(--or); color: var(--or); }
-
-  /* CTA FINAL */
-  .cta-final { background: var(--kaki-p); padding: 6rem 1.5rem; text-align: center; }
-  .cta-final-phrase { font-size: 1.3rem; color: var(--creme); margin-bottom: 2rem; line-height: 1.6; font-style: italic; }
-  .cta-final .cta { display: inline-block; width: auto; padding: 1rem 2.5rem; }
-  .cta-final .cta-note { text-align: center; }
-
-  /* RESPONSIVE */
-  @media (min-width: 860px) {
-    .hero-inner { flex-direction: row; align-items: stretch; min-height: 560px; }
-    .hero-texte { flex: 1; padding: 5rem 4rem 5rem 2rem; display: flex; flex-direction: column; justify-content: center; order: 0; }
-    .hero-photo-wrap { width: 400px; flex-shrink: 0; order: 1; }
-    .hero-photo { width: 100%; height: 100%; object-position: center 15%; }
-    .hero h1 { font-size: 3rem; }
-    .cta { display: inline-block; width: auto; padding: 1rem 2rem; }
-    .cta-note { text-align: left; }
-    .m2p-trio { flex-direction: row; align-items: flex-start; justify-content: center; gap: 1rem; }
-    .m2p-fleche { transform: rotate(0deg); margin-top: 2rem; }
-    .chiffres-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-</style>
