@@ -35,9 +35,8 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
       /* HERO */
       .hero { background: var(--anthracite); color: var(--fond); overflow: hidden; }
       .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; }
-      .hero-photo-wrap { position: relative; width: 100%; order: -1; }
-      .hero-photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 5%; display: block; }
-      .hero-badge {
+      .hero-photo-wrap { width: 300px; flex-shrink: 0; overflow: hidden; position: relative; order: 1; }
+      .hero-photo { width: 100%; height: 100%; aspect-ratio: unset; object-fit: cover; object-position: center 12%; display: block; }
         display: block;
         width: fit-content;
         margin: 0 auto;
@@ -50,8 +49,6 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
         position: relative;
         top: -1.25rem;
       }
-      .badge-titre { display: block; font-size: .8rem; font-weight: 700; }
-      .badge-sous { display: block; font-size: .7rem; opacity: .85; }
       .hero-texte { padding: 0 1.5rem 3rem; order: 1; }
       .surtitre { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ocre); margin-bottom: 1rem; display: block; }
       .hero h1 { font-size: 2.2rem; font-weight: 700; line-height: 1.12; color: var(--fond); margin-bottom: 1.25rem; }
@@ -172,21 +169,8 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
     justify-content: center;
     order: 0;
   }
-  .hero-photo-wrap {
-    width: 300px;
-    flex-shrink: 0;
-    overflow: hidden;
-    position: relative;
-    order: 1;
-  }
-  .hero-photo {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: unset;
-    object-fit: cover;
-    object-position: center 12%;
-    display: block;
-  }
+  .hero-photo-wrap { width: 300px; flex-shrink: 0; overflow: hidden; position: relative; order: 1; }
+  .hero-photo { width: 100%; height: 100%; aspect-ratio: unset; object-fit: cover; object-position: center 12%; display: block; }
   .hero h1 {
     font-size: 2.6rem;
   }
@@ -211,9 +195,6 @@ const SITE_DESCRIPTION = 'Coach professionnel certifié RNCP 6 — Cadres, manag
           </div>
           <div class="hero-photo-wrap">
             <img src="/david.jpg" alt="David Delord, Coach Professionnel Certifié RNCP 6" class="hero-photo" loading="eager" />
-            <div class="hero-badge">
-              <span class="badge-titre">RNCP Niveau 6</span>
-              <span class="badge-sous">Coach Certifié</span>
             </div>
           </div>
         </div>
@@ -462,3 +443,5 @@ document.addEventListener('DOMContentLoaded', function() {
   render();
 });
 </script>
+
+
