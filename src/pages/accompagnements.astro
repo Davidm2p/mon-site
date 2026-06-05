@@ -42,20 +42,117 @@ const SITE_DESCRIPTION = 'Coaching professionnel certifié pour professionnels e
 </html>
 
 <style>
-.aig-hero { background: #2d3328; color: #f5f2eb; padding: 5rem 2rem 4rem; text-align: center; }
-.aig-inner { max-width: 700px; margin: 0 auto; }
-.aig-surtitre { font-size: 0.75rem; letter-spacing: 0.15em; color: #C18E52; text-transform: uppercase; font-weight: 600; margin-bottom: 1rem; }
-.aig-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1.25rem; }
-.aig-intro { font-size: 1.05rem; color: #c8dcd0; line-height: 1.7; }
-.aig-choix { background: #f5f2eb; padding: 5rem 2rem; }
-.aig-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-.aig-carte { display: block; background: #fff; border-top: 4px solid #C18E52; padding: 2.5rem 2rem; text-decoration: none; color: inherit; border-radius: 2px; transition: transform 0.2s, box-shadow 0.2s; }
-.aig-carte:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-.aig-carte--alt { border-top-color: #6E8774; }
-.aig-carte-label { font-size: 0.72rem; letter-spacing: 0.12em; color: #C18E52; text-transform: uppercase; font-weight: 600; margin-bottom: 0.75rem; }
-.aig-carte--alt .aig-carte-label { color: #6E8774; }
-.aig-carte h2 { font-size: 1.3rem; font-weight: 700; color: #2d3328; margin-bottom: 1rem; line-height: 1.3; }
-.aig-carte p { font-size: 0.92rem; color: #4a4f4b; line-height: 1.7; margin-bottom: 1.5rem; }
-.aig-carte-cta { font-size: 0.88rem; font-weight: 600; color: #C18E52; text-decoration: underline; }
-.aig-carte--alt .aig-carte-cta { color: #6E8774; }
+  * { box-sizing: border-box; }
+
+  .aig-hero {
+    background: #2d3328;
+    color: #f5f2eb;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+  }
+  .aig-inner { max-width: 700px; margin: 0 auto; }
+  .aig-surtitre {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #C18E52;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .aig-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: #f5f2eb;
+  }
+  .aig-intro {
+    font-size: 1.05rem;
+    color: #c8dcd0;
+    line-height: 1.7;
+  }
+
+  .aig-choix {
+    background: #f5f2eb;
+    padding: 5rem 2rem;
+  }
+  .aig-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  .aig-carte {
+    display: block;
+    background: #fff;
+    border-top: 4px solid #C18E52;
+    padding: 2.5rem 2rem;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 2px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .aig-carte:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .aig-carte--alt { border-top-color: #6E8774; }
+  .aig-carte-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: #C18E52;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .aig-carte--alt .aig-carte-label { color: #6E8774; }
+  .aig-carte h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3328;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .aig-carte p {
+    font-size: 0.92rem;
+    color: #4a4f4b;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .aig-carte-cta {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #C18E52;
+    text-decoration: underline;
+  }
+  .aig-carte--alt .aig-carte-cta { color: #6E8774; }
+
+  /* ── RESPONSIVE MOBILE ── */
+  @media (max-width: 768px) {
+    .aig-hero {
+      padding: 3rem 1.25rem 2.5rem;
+    }
+    .aig-intro {
+      font-size: 0.95rem;
+    }
+    .aig-choix {
+      padding: 2.5rem 1.25rem;
+    }
+    .aig-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .aig-carte {
+      padding: 1.75rem 1.25rem;
+      /* Pas d'effet hover sur tactile */
+      transform: none;
+    }
+    .aig-carte:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    .aig-carte h2 {
+      font-size: 1.15rem;
+    }
+  }
 </style>
