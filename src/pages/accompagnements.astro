@@ -3,7 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 const SITE_TITLE = 'Accompagnements Coaching | Professionnels & Particuliers | M²P Coaching';
-const SITE_DESCRIPTION = 'Choisissez votre accompagnement : coaching professionnel pour cadres, managers et dirigeants (B2B), ou coaching individuel pour particuliers en transition (B2C). Coach certifié RNCP 6, Occitanie.';
+const SITE_DESCRIPTION = 'Choisissez votre accompagnement : coaching professionnel pour cadres, managers et dirigeants, ou coaching individuel pour particuliers. Coach certifié RNCP 6, Occitanie et visio France entière.';
 ---
 <!doctype html>
 <html lang="fr">
@@ -16,7 +16,7 @@ const SITE_DESCRIPTION = 'Choisissez votre accompagnement : coaching professionn
       <section class="aig-hero">
         <div class="aig-inner">
           <p class="aig-surtitre">LES ACCOMPAGNEMENTS M²P</p>
-          <h1>De qui s'agit-il ?</h1>
+          <h1>Selon où vous en êtes.</h1>
           <p class="aig-intro">Le cadre de travail est le même. La situation, les enjeux et les tarifs diffèrent. Choisissez ce qui correspond à votre réalité.</p>
         </div>
       </section>
@@ -25,13 +25,13 @@ const SITE_DESCRIPTION = 'Choisissez votre accompagnement : coaching professionn
           <a href="/professionnels" class="aig-carte">
             <p class="aig-carte-label">CADRES · MANAGERS · DIRIGEANTS · DRH</p>
             <h2>Vous êtes un professionnel ou une organisation</h2>
-            <p>Prise de poste, surcharge décisionnelle, accompagnement de managers promus, direction d'établissements de santé. Tarifs HT, contrat tripartite possible.</p>
+            <p>Prise de poste, trajectoire à construire, accompagnement de managers promus, direction d'établissements de santé. Tarifs HT, contrat tripartite possible.</p>
             <span class="aig-carte-cta">Voir les accompagnements professionnels</span>
           </a>
           <a href="/particuliers" class="aig-carte aig-carte--alt">
             <p class="aig-carte-label">PARTICULIERS</p>
             <h2>Vous cherchez un accompagnement pour vous-même</h2>
-            <p>Vous êtes à un tournant. Votre travail ne vous correspond plus. Vous voulez avancer par vous-même, sans que cela implique votre employeur.</p>
+            <p>Vous êtes à un moment où les choix comptent. Une direction à clarifier, une étape à franchir, une décision à prendre en restant pleinement l'auteur de ce qui vient.</p>
             <span class="aig-carte-cta">Voir les accompagnements particuliers</span>
           </a>
         </div>
@@ -144,7 +144,6 @@ const SITE_DESCRIPTION = 'Choisissez votre accompagnement : coaching professionn
     }
     .aig-carte {
       padding: 1.75rem 1.25rem;
-      /* Pas d'effet hover sur tactile */
       transform: none;
     }
     .aig-carte:hover {
