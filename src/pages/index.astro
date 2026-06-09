@@ -148,6 +148,13 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
       .chiffres-lien a { color: var(--fond); font-size: .9rem; text-decoration: none; border-bottom: 1px solid rgba(244,241,234,.4); padding-bottom: 2px; }
       .chiffres-lien a:hover { border-color: var(--fond); }
 
+      /* AVIS */
+      .avis-section { background: var(--fond); padding: 4rem 1.5rem; }
+      .avis-card { max-width: 680px; margin: 0 auto; background: var(--blanc); border: 2px solid var(--ocre); border-radius: 16px; padding: 2rem 2rem 1.75rem; }
+      .avis-etoiles { color: var(--ocre); font-size: 1.2rem; margin-bottom: 1rem; letter-spacing: .1em; }
+      .avis-texte { font-size: 1rem; color: var(--anthracite); line-height: 1.75; font-style: italic; margin-bottom: 1.25rem; }
+      .avis-auteur { font-size: .82rem; color: var(--sage); font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
+
       /* CTA FINAL */
       .cta-final { background: var(--fond); padding: 6rem 1.5rem; text-align: center; }
       .cta-phrase { font-size: 1.3rem; color: var(--anthracite); margin-bottom: 2rem; line-height: 1.6; font-style: italic; }
@@ -308,6 +315,18 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
             </div>
           </div>
           <p class="chiffres-lien"><a href="/about">En savoir plus sur le parcours de David →</a></p>
+        </div>
+      </section>
+
+      <!-- AVIS -->
+      <section class="avis-section">
+        <div class="container">
+          <p class="eyebrow-ocre">Ce qu'ils disent</p>
+          <div class="avis-card">
+            <div class="avis-etoiles">★★★★★</div>
+            <p class="avis-texte">"Mon accompagnement avec M. Delord a été de qualité. Cela m'a permis de comprendre quelles étaient mes forces et comment les mettre en pratique dans mon quotidien. Les séances ont toujours été faites avec une grande implication. Je recommande vivement."</p>
+            <p class="avis-auteur">Clément · Client M²P Coaching</p>
+          </div>
         </div>
       </section>
 
