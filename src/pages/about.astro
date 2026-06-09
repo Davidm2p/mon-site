@@ -19,7 +19,7 @@ const SITE_DESCRIPTION = "22 ans de terrain RH, dont responsable RH recrutement 
       <!-- ════════════════════════════════
            HERO ABOUT — sobre, textuel
            ════════════════════════════════ -->
-      <section class="about-hero">
+      <section class="about-hero" style="background: #535861; color: #F4F1EA;">
         <div class="container">
           <p class="label">David Delord</p>
           <h1>22 ans de terrain RH.<br/> Aujourd'hui coach certifié.<br/> C'est ça qui change tout.</h1>
@@ -220,13 +220,13 @@ const SITE_DESCRIPTION = "22 ans de terrain RH, dont responsable RH recrutement 
   img { display: block; max-width: 100%; }
 
   :root {
-    --kaki:      #2C3028;
+    --kaki:      #535861;
     --kaki-p:    #1e2419;
-    --or:        #C18E52;
-    --or-p:      #b8975a;
+    --or:        #C99763;
+    --or-p:      #b07d45;
     --creme:     #F4F1EA;
-    --sage:      #6E8774;
-    --texte:     #4A4F4B;
+    --sage:      #7F9B88;
+    --texte:     #535861;
     --blanc:     #ffffff;
     --rayon:     4px;
   }
@@ -251,7 +251,7 @@ const SITE_DESCRIPTION = "22 ans de terrain RH, dont responsable RH recrutement 
 
   /* ── HERO ── */
   .about-hero {
-    background: #535861;
+    background: var(--anthracite);
     color: var(--creme);
     padding: 4rem 1.5rem 3.5rem;
   }
@@ -295,7 +295,7 @@ const SITE_DESCRIPTION = "22 ans de terrain RH, dont responsable RH recrutement 
   blockquote {
     margin: 0 0 2rem;
     padding: 1.5rem;
-    background: #535861;
+    background: var(--anthracite);
     border-radius: var(--rayon);
   }
   blockquote p {
