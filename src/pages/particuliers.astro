@@ -23,6 +23,10 @@ const SITE_DESCRIPTION = 'Vous êtes à un moment où les choix comptent. Coach 
         </div>
       </section>
 
+      <div class="nav-switch">
+        <p>Vous êtes un professionnel ou une organisation ? <a href="/professionnels">Voir les accompagnements professionnels</a></p>
+      </div>
+
       <section class="part-parcours">
         <div class="part-container">
           <p class="part-label">LE PARCOURS M²P EN 3 TEMPS</p>
@@ -110,6 +114,26 @@ const SITE_DESCRIPTION = 'Vous êtes à un moment où les choix comptent. Coach 
 
 <style>
   * { box-sizing: border-box; }
+
+  /* NAV SWITCH */
+  .nav-switch {
+    background: #C99763;
+    padding: 0.85rem 2rem;
+    text-align: center;
+  }
+  .nav-switch p {
+    font-size: 0.88rem;
+    color: #fff;
+    margin: 0;
+  }
+  .nav-switch a {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .nav-switch a:hover {
+    opacity: 0.85;
+  }
 
   /* HERO */
   .part-hero {
@@ -252,52 +276,26 @@ const SITE_DESCRIPTION = 'Vous êtes à un moment où les choix comptent. Coach 
     font-size: 0.95rem;
     transition: background 0.2s;
   }
-  .part-cta:hover { background: #f0ede6; color: #535861; }
+  .part-cta:hover { background: #a07d45; color: #fff; }
 
-  /* ── RESPONSIVE MOBILE ── */
+  /* RESPONSIVE MOBILE */
   @media (max-width: 768px) {
-
-    /* Hero */
     .part-hero { padding: 3.5rem 1.25rem 3rem; }
     .part-intro { font-size: 0.95rem; }
-    .part-cta-hero {
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
-
-    /* Parcours */
+    .part-cta-hero { display: block; width: 100%; text-align: center; }
     .part-parcours { padding: 3rem 1.25rem; }
-    .part-etapes {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
+    .part-etapes { grid-template-columns: 1fr; gap: 1.5rem; }
     .part-etape { text-align: left; }
     .part-etape-num { font-size: 2rem; }
-
-    /* Forfaits */
     .part-forfaits { padding: 3rem 1.25rem; }
-    .part-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
+    .part-grid { grid-template-columns: 1fr; gap: 1rem; }
     .part-forfait { padding: 1.5rem 1.25rem; }
     .part-forfait-prix { font-size: 1.5rem; }
-
-    /* Cadre */
     .part-cadre { padding: 3rem 1.25rem; }
-    .part-cadre-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
+    .part-cadre-grid { grid-template-columns: 1fr; gap: 1rem; }
     .part-cadre-item { padding: 1.25rem; }
-
-    /* Contact */
     .part-contact { padding: 3rem 1.25rem; }
-    .part-cta {
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
+    .part-cta { display: block; width: 100%; text-align: center; }
+    .nav-switch { padding: 0.85rem 1.25rem; }
   }
 </style>

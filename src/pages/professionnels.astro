@@ -22,6 +22,10 @@ const SITE_DESCRIPTION = 'Vous gérez un périmètre exigeant. Coach certifié R
         </div>
       </section>
 
+      <div class="nav-switch">
+        <p>Vous cherchez un accompagnement à titre personnel ? <a href="/particuliers">Voir les accompagnements particuliers</a></p>
+      </div>
+
       <section class="acc-offre" id="cadres">
         <div class="acc-container">
           <div class="acc-offre-header">
@@ -130,6 +134,26 @@ const SITE_DESCRIPTION = 'Vous gérez un périmètre exigeant. Coach certifié R
 <style>
   * { box-sizing: border-box; }
 
+  /* NAV SWITCH */
+  .nav-switch {
+    background: #C99763;
+    padding: 0.85rem 2rem;
+    text-align: center;
+  }
+  .nav-switch p {
+    font-size: 0.88rem;
+    color: #fff;
+    margin: 0;
+  }
+  .nav-switch a {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .nav-switch a:hover {
+    opacity: 0.85;
+  }
+
   /* HERO */
   .acc-hero {
     background: #535861;
@@ -213,8 +237,6 @@ const SITE_DESCRIPTION = 'Vous gérez un périmètre exigeant. Coach certifié R
 
   .acc-cta {
     display: block;
-width: fit-content;
-margin: 0 auto;
     background: #C99763;
     color: #fff;
     padding: 0.9rem 2rem;
@@ -227,36 +249,20 @@ margin: 0 auto;
     margin: 0 auto;
     width: fit-content;
     min-width: 180px;
-}
+  }
   .acc-cta:hover { background: #a07d45; color: #fff; }
 
-  /* ── RESPONSIVE MOBILE ── */
+  /* RESPONSIVE MOBILE */
   @media (max-width: 768px) {
-
-    /* Hero */
     .acc-hero { padding: 3.5rem 1.25rem 3rem; }
     .acc-intro { font-size: 0.95rem; }
-
-    /* Sections */
     .acc-offre { padding: 3rem 1.25rem; }
     .acc-offre-header { margin-bottom: 2rem; }
-
-    /* Forfaits */
-    .acc-forfaits {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
+    .acc-forfaits { grid-template-columns: 1fr; gap: 1rem; }
     .acc-forfait { padding: 1.5rem 1.25rem; }
     .acc-forfait-prix { font-size: 1.5rem; }
-
-    /* Conseil */
     .acc-conseil { padding: 1.25rem; }
-
-    /* CTA */
-    .acc-cta {
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
+    .acc-cta { display: block; width: 100%; text-align: center; }
+    .nav-switch { padding: 0.85rem 1.25rem; }
   }
 </style>
