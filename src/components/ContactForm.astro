@@ -3,28 +3,20 @@
 
 <section class="contact-form-section">
   <div class="contact-form-container">
-    <div class="contact-form-header">
-      <p class="contact-form-label">PREMIÈRE ÉTAPE</p>
-      <h2>Une conversation de 30 minutes.<br/>Sans engagement.</h2>
-      <p class="contact-form-intro">Décrivez votre situation en quelques lignes. Je vous réponds sous 48h pour convenir d'un moment.</p>
-    </div>
 
-    <div class="contact-form-grid">
+    <div class="contact-form-left">
+      <p class="contact-surtitre">CONTACT</p>
+      <h2>Parlons de votre situation.</h2>
+      <p class="contact-intro">Remplissez ce formulaire ou réservez directement un échange de 30 minutes. Je vous réponds sous 48h ouvrées.</p>
+
       <form
         id="contact-form"
         action="https://formspree.io/f/mbderpke"
         method="POST"
-        novalidate
       >
-        <div class="form-row">
-          <div class="form-group">
-            <label for="prenom">Prénom *</label>
-            <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom" />
-          </div>
-          <div class="form-group">
-            <label for="nom">Nom *</label>
-            <input type="text" id="nom" name="nom" required placeholder="Votre nom" />
-          </div>
+        <div class="form-group">
+          <label for="name">Nom et prénom *</label>
+          <input type="text" id="name" name="name" required placeholder="Votre nom" />
         </div>
 
         <div class="form-group">
@@ -42,47 +34,41 @@
           <textarea id="message" name="message" required rows="5" placeholder="Décrivez brièvement ce que vous traversez et ce que vous cherchez..."></textarea>
         </div>
 
-        <input type="text" name="_gotcha" style="display:none" />
-
-        <button type="submit" class="form-submit" id="form-submit-btn">
-          <span class="btn-text">Envoyer ma demande</span>
-          <span class="btn-loading" style="display:none">Envoi en cours...</span>
-        </button>
-
+        <button type="submit" class="form-submit">Envoyer ma demande</button>
         <p class="form-mention">* Champs obligatoires · Vos données restent strictement confidentielles</p>
+
+        <div id="form-success" class="form-success" style="display:none;">
+          Votre message a bien été envoyé. Je vous réponds sous 48h ouvrées.
+        </div>
+        <div id="form-error" class="form-error" style="display:none;">
+          Une erreur s'est produite. Merci de réessayer ou de me contacter directement par email.
+        </div>
       </form>
+    </div>
 
-      <div class="contact-infos">
-        <div class="contact-info-item">
-          <span class="contact-info-label">Téléphone</span>
-          <a href="tel:+33675747456" class="contact-info-value">06 75 74 74 56</a>
-        </div>
-        <div class="contact-info-item">
-          <span class="contact-info-label">Email</span>
-          <a href="mailto:david.delord@m2p-coaching.fr" class="contact-info-value">david.delord@m2p-coaching.fr</a>
-        </div>
-        <div class="contact-info-item">
-          <span class="contact-info-label">Disponibilité</span>
-          <span class="contact-info-value">Visio France entière<br/>Présentiel Occitanie</span>
-        </div>
-        <div class="contact-info-item">
-          <span class="contact-info-label">Réponse</span>
-          <span class="contact-info-value">Sous 48h ouvrées</span>
-        </div>
-        <div class="contact-info-divider"></div>
-        <p class="contact-info-ou">Ou réservez directement un créneau :</p>
-        <a href="https://calendly.com/david-delord-m2p-coaching/30min" target="_blank" class="contact-calendly">
-          Je réserve
-        </a>
+    <div class="contact-form-right">
+      <div class="contact-info-bloc">
+        <p class="contact-info-label">DISPONIBILITÉ</p>
+        <p>Visio France entière</p>
+        <p>Présentiel Occitanie</p>
       </div>
+
+      <div class="contact-info-bloc">
+        <p class="contact-info-label">RÉPONSE</p>
+        <p>Sous 48h ouvrées</p>
+      </div>
+
+      <hr class="contact-separator" />
+
+      <p class="contact-ou">Ou réservez directement un créneau :</p>
+      <a
+        href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching"
+        target="_blank"
+        rel="noopener"
+        class="contact-cta-direct"
+      >Je réserve</a>
     </div>
 
-    <div id="form-success" class="form-success" style="display:none">
-      <p>✓ Message envoyé. Je vous réponds sous 48h.</p>
-    </div>
-    <div id="form-error" class="form-error" style="display:none">
-      <p>Une erreur s'est produite. Merci de réessayer ou de me contacter directement par email.</p>
-    </div>
   </div>
 </section>
 
@@ -90,279 +76,215 @@
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const successMsg = document.getElementById('form-success');
   const errorMsg = document.getElementById('form-error');
-  const submitBtn = document.getElementById('form-submit-btn') as HTMLButtonElement | null;
-  const btnText = submitBtn?.querySelector('.btn-text') as HTMLElement | null;
-  const btnLoading = submitBtn?.querySelector('.btn-loading') as HTMLElement | null;
 
-  if (form && submitBtn) {
+  if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (btnText) btnText.style.display = 'none';
-      if (btnLoading) btnLoading.style.display = 'inline';
-      submitBtn.disabled = true;
+      const data = new FormData(form);
+
       try {
         const response = await fetch(form.action, {
           method: 'POST',
-          body: new FormData(form),
+          body: data,
           headers: { 'Accept': 'application/json' }
         });
+
         if (response.ok) {
-          form.style.display = 'none';
+          form.reset();
           if (successMsg) successMsg.style.display = 'block';
+          if (errorMsg) errorMsg.style.display = 'none';
         } else {
           if (errorMsg) errorMsg.style.display = 'block';
-          if (btnText) btnText.style.display = 'inline';
-          if (btnLoading) btnLoading.style.display = 'none';
-          submitBtn.disabled = false;
+          if (successMsg) successMsg.style.display = 'none';
         }
       } catch {
         if (errorMsg) errorMsg.style.display = 'block';
-        if (btnText) btnText.style.display = 'inline';
-        if (btnLoading) btnLoading.style.display = 'none';
-        submitBtn.disabled = false;
+        if (successMsg) successMsg.style.display = 'none';
       }
     });
   }
 </script>
 
 <style>
-  * { box-sizing: border-box; }
-
   .contact-form-section {
-    background: #2C3028;
+    background: #F4F1EA;
     padding: 5rem 2rem;
-    width: 100%;
-    overflow: hidden;
   }
 
   .contact-form-container {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
-    width: 100%;
-  }
-
-  .contact-form-header {
-    margin-bottom: 3rem;
-    text-align: center;
-  }
-
-  .contact-form-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    color: #C18E52;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-  }
-
-  .contact-form-header h2 {
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
-    font-weight: 700;
-    color: #F4F1EA;
-    line-height: 1.25;
-    margin-bottom: 0.75rem;
-  }
-
-  .contact-form-intro {
-    font-size: 1rem;
-    color: #9aab92;
-    line-height: 1.7;
-    max-width: 560px;
-    margin: 0 auto;
-  }
-
-  .contact-form-grid {
     display: grid;
     grid-template-columns: 1fr 280px;
     gap: 4rem;
     align-items: start;
-    width: 100%;
   }
 
-  /* Formulaire */
-  form {
-    width: 100%;
-    min-width: 0;
+  .contact-surtitre {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #C99763;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    width: 100%;
+  .contact-form-left h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #535861;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+  }
+
+  .contact-intro {
+    font-size: 0.95rem;
+    color: #535861;
+    line-height: 1.7;
+    margin-bottom: 2rem;
   }
 
   .form-group {
     margin-bottom: 1.25rem;
-    width: 100%;
   }
 
   .form-group label {
     display: block;
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: #c8c4b8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #535861;
     margin-bottom: 0.4rem;
-    letter-spacing: 0.02em;
   }
 
   .form-group input,
   .form-group textarea {
     width: 100%;
-    max-width: 100%;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 3px;
     padding: 0.75rem 1rem;
-    color: #F4F1EA;
+    border: 1px solid #d8d3c8;
+    border-radius: 4px;
+    background: #fff;
     font-size: 0.95rem;
-    font-family: inherit;
+    color: #535861;
+    font-family: 'Inter', sans-serif;
     transition: border-color 0.2s;
-    outline: none;
-  }
-
-  .form-group input::placeholder,
-  .form-group textarea::placeholder {
-    color: rgba(255,255,255,0.25);
   }
 
   .form-group input:focus,
   .form-group textarea:focus {
-    border-color: #C18E52;
-    background: rgba(255,255,255,0.09);
+    outline: none;
+    border-color: #C99763;
   }
 
   .form-group textarea {
     resize: vertical;
-    min-height: 130px;
+    min-height: 120px;
   }
 
   .form-submit {
     width: 100%;
-    background: #C18E52;
+    background: #C99763;
     color: #fff;
     border: none;
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    border-radius: 3px;
+    border-radius: 0.5rem;
     cursor: pointer;
     transition: background 0.2s;
-    font-family: inherit;
+    font-family: 'Inter', sans-serif;
   }
 
-  .form-submit:hover { background: #a97a42; }
-  .form-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+  .form-submit:hover {
+    background: #a07d45;
+  }
 
   .form-mention {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.3);
+    font-size: 0.78rem;
+    color: #7F9B88;
     margin-top: 0.75rem;
     text-align: center;
   }
 
-  /* Infos contact */
-  .contact-infos {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    padding-top: 0.5rem;
-    min-width: 0;
+  .form-success {
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    background: #eaf2ed;
+    border-left: 3px solid #7F9B88;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #3a5c45;
   }
 
-  .contact-info-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+  .form-error {
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    background: #fdf0f0;
+    border-left: 3px solid #c0392b;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #c0392b;
+  }
+
+  .contact-info-bloc {
+    margin-bottom: 1.5rem;
   }
 
   .contact-info-label {
     font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: #C99763;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #C18E52;
     font-weight: 600;
+    margin-bottom: 0.4rem;
   }
 
-  .contact-info-value {
-    font-size: 0.95rem;
-    color: #F4F1EA;
-    text-decoration: none;
-    line-height: 1.5;
-    word-break: break-word;
+  .contact-info-bloc p {
+    font-size: 0.92rem;
+    color: #535861;
+    margin: 0.1rem 0;
   }
 
-  .contact-info-value:hover { color: #C18E52; }
-
-  .contact-info-divider {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    margin: 0.5rem 0;
+  .contact-separator {
+    border: none;
+    border-top: 1px solid #d8d3c8;
+    margin: 1.5rem 0;
   }
 
-  .contact-info-ou {
-    font-size: 0.85rem;
-    color: #9aab92;
-    margin: 0;
-  }
-
-  .contact-calendly {
-    display: block;
-    border: 1px solid #C18E52;
-    color: #C18E52;
-    padding: 0.65rem 1.25rem;
-    border-radius: 3px;
+  .contact-ou {
     font-size: 0.88rem;
-    font-weight: 600;
-    text-decoration: none;
+    color: #535861;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-cta-direct {
+    display: block;
     text-align: center;
+    background: transparent;
+    border: 2px solid #C99763;
+    color: #C99763;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
     transition: background 0.2s, color 0.2s;
   }
 
-  .contact-calendly:hover {
-    background: #C18E52;
+  .contact-cta-direct:hover {
+    background: #C99763;
     color: #fff;
   }
 
-  .form-success {
-    background: rgba(110, 135, 116, 0.2);
-    border: 1px solid #6E8774;
-    border-radius: 4px;
-    padding: 1.5rem 2rem;
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  .form-success p { color: #9aab92; font-size: 1rem; margin: 0; }
-
-  .form-error {
-    background: rgba(180, 80, 80, 0.15);
-    border: 1px solid rgba(180, 80, 80, 0.4);
-    border-radius: 4px;
-    padding: 1rem 1.5rem;
-    margin-top: 1rem;
-  }
-
-  .form-error p { color: #e08080; font-size: 0.9rem; margin: 0; }
-
-  /* ── RESPONSIVE MOBILE ── */
   @media (max-width: 768px) {
     .contact-form-section {
       padding: 3rem 1.25rem;
     }
-
-    .contact-form-grid {
+    .contact-form-container {
       grid-template-columns: 1fr;
       gap: 2.5rem;
     }
-
-    .form-row {
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-
-    .contact-infos {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 2rem;
+    .contact-form-right {
+      order: -1;
     }
   }
 </style>
