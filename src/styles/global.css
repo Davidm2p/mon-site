@@ -142,13 +142,13 @@ hr {
 }
 header {
 	background-color: #F4F1EA;
-	border-bottom: 2px solid #6E8774;
+	border-bottom: 2px solid #7F9B88;
 }
 a {
-	color: #6E8774;
+	color: #7F9B88;
 }
 a:hover {
-	color: #C18E52;
+	color: #C99763;
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #4A4F4B;
@@ -171,7 +171,7 @@ h1 {
 .garanties-surtitre {
   font-size: 0.75rem;
   letter-spacing: 0.15em;
-  color: #C18E52;
+  color: #C99763;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
   font-weight: 600;
@@ -179,7 +179,7 @@ h1 {
 
 .garanties-titre {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  color: #2d3328;
+  color: #535861;
   font-weight: 700;
   margin-bottom: 3rem;
   line-height: 1.2;
@@ -193,7 +193,7 @@ h1 {
 
 .garantie-item {
   background: #fff;
-  border-left: 3px solid #C18E52;
+  border-left: 3px solid #C99763;
   padding: 2rem 1.75rem;
   border-radius: 2px;
 }
@@ -201,7 +201,7 @@ h1 {
 .garantie-numero {
   font-size: 2rem;
   font-weight: 700;
-  color: #C18E52;
+  color: #C99763;
   opacity: 0.35;
   line-height: 1;
   margin-bottom: 0.75rem;
@@ -211,7 +211,7 @@ h1 {
 .garantie-label {
   font-size: 1rem;
   font-weight: 600;
-  color: #2d3328;
+  color: #535861;
   margin-bottom: 0.75rem;
   line-height: 1.3;
 }
