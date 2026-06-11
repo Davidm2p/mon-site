@@ -1,9 +1,9 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 
 const SITE_TITLE = "Coaching DRH et RRH PME | M²P Coaching";
 const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH et RRH de PME et ETI. Des indicateurs concrets dès la séance 1 pour défendre l'investissement auprès de votre direction. David Delord, 22 ans de terrain RH.";
+const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching";
 ---
 
 <!doctype html>
@@ -14,390 +14,295 @@ const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH e
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
       body {
-        font-family: 'Atkinson Hyperlegible', 'Inter', system-ui, sans-serif;
+        font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
         background: #F4F1EA;
         color: #535861;
+        line-height: 1.6;
       }
 
       .lp-header {
         background: #535861;
-        padding: 1rem 2rem;
+        padding: 0.875rem 2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-      .lp-header .logo {
-        font-size: 18px;
-        font-weight: 600;
-        color: #F4F1EA;
-        letter-spacing: 0.02em;
-        text-decoration: none;
-      }
-      .lp-header .logo span { color: #C99763; }
-      .lp-header .header-cta {
+      .lp-logo img { height: 48px; display: block; }
+      .lp-cta {
         background: #C99763;
         color: #fff;
+        font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
         font-size: 13px;
-        font-weight: 500;
-        padding: 8px 18px;
+        font-weight: 700;
+        padding: 10px 20px;
         border-radius: 0.5rem;
         text-decoration: none;
+        white-space: nowrap;
       }
 
-      .lp { max-width: 720px; margin: 0 auto; }
-
-      /* HERO */
-      .hero {
-        background: #535861;
-        padding: 3rem 2.5rem 2.5rem;
-      }
+      .hero { background: #535861; padding: 3rem 2rem 2.5rem; }
+      .hero-inner { max-width: 680px; margin: 0 auto; }
       .hero-tag {
         display: inline-block;
         background: #C99763;
         color: #fff;
         font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.05em;
-        padding: 4px 14px;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        padding: 5px 14px;
         border-radius: 0.5rem;
         margin-bottom: 1.5rem;
-        text-transform: uppercase;
       }
       .hero h1 {
         font-size: 26px;
-        font-weight: 500;
+        font-weight: 700;
         color: #F4F1EA;
-        line-height: 1.4;
+        line-height: 1.35;
         margin-bottom: 1.25rem;
-        max-width: 580px;
       }
       .hero-sub {
         font-size: 16px;
         color: #A8B8A2;
         line-height: 1.75;
         margin-bottom: 2rem;
-        max-width: 540px;
       }
-      .hero-cta {
+      .btn-primary {
         display: inline-block;
         background: #C99763;
         color: #fff;
+        font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
         font-size: 15px;
-        font-weight: 500;
+        font-weight: 700;
         padding: 14px 28px;
         border-radius: 0.5rem;
         text-decoration: none;
       }
       .hero-proof {
         display: flex;
-        gap: 2rem;
+        gap: 2.5rem;
         margin-top: 2rem;
         padding-top: 1.75rem;
-        border-top: 0.5px solid rgba(163,179,159,0.25);
+        border-top: 1px solid rgba(168,184,162,0.2);
+        flex-wrap: wrap;
       }
-      .proof-item { font-size: 12px; color: #A8B8A2; line-height: 1.5; }
-      .proof-val { font-size: 17px; font-weight: 500; color: #F4F1EA; display: block; margin-bottom: 2px; }
+      .proof-val {
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+        color: #F4F1EA;
+        margin-bottom: 3px;
+      }
+      .proof-lbl { font-size: 12px; color: #A8B8A2; }
 
-      /* SECTIONS */
-      .section { background: #F4F1EA; padding: 2.5rem; }
-      .section-white { background: #fff; padding: 2.5rem; }
-      .sep { border: none; border-top: 0.5px solid #D6D2C8; margin: 0; }
-
+      .wrap { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem; }
       .eyebrow {
         font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.07em;
-        color: #C99763;
+        font-weight: 700;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
+        color: #C99763;
         margin-bottom: 0.75rem;
       }
-      .section h2, .section-white h2 {
+      h2 {
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 700;
         color: #535861;
-        line-height: 1.4;
-        margin-bottom: 1.25rem;
+        line-height: 1.35;
+        margin-bottom: 1.5rem;
       }
-      .section p, .section-white p {
-        font-size: 15px;
-        color: #535861;
-        line-height: 1.75;
-      }
+      .bg-creme { background: #F4F1EA; }
+      .bg-white { background: #ffffff; }
+      .sep { border: none; border-top: 1px solid #E0DDD6; margin: 0; }
 
-      /* PAIN GRID */
-      .pain-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        margin-top: 1.25rem;
-      }
+      .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
       .pain-card {
         background: #fff;
-        border: 0.5px solid #D6D2C8;
+        border: 1px solid #E0DDD6;
         border-radius: 0.5rem;
-        padding: 16px 18px;
+        padding: 16px;
+        font-size: 14px;
+        color: #535861;
+        line-height: 1.6;
       }
-      .pain-card p { font-size: 13px; color: #535861; line-height: 1.65; }
 
-      /* ALERT */
       .alert-box {
         background: #EDD9B4;
         border-radius: 0.75rem;
-        padding: 16px 20px;
+        padding: 16px 18px;
         margin-top: 14px;
         display: flex;
         gap: 14px;
         align-items: flex-start;
       }
-      .alert-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
-      .alert-box p { font-size: 13px; color: #7A5020; line-height: 1.65; }
+      .alert-icon { font-size: 20px; flex-shrink: 0; }
+      .alert-box p { font-size: 14px; color: #7A5020; line-height: 1.65; }
 
-      /* ROI GRID */
-      .roi-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        margin-top: 1.25rem;
-      }
+      .roi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
       .roi-card {
-        background: #F4F1EA;
-        border: 0.5px solid #D6D2C8;
+        background: #fff;
+        border: 1px solid #E0DDD6;
         border-radius: 0.5rem;
-        padding: 16px;
+        padding: 18px 14px;
       }
-      .roi-val { font-size: 24px; font-weight: 500; color: #535861; margin-bottom: 6px; }
+      .roi-val { font-size: 24px; font-weight: 700; color: #535861; margin-bottom: 6px; }
       .roi-lbl { font-size: 12px; color: #535861; line-height: 1.55; }
 
-      /* BEN LIST */
-      .ben-list { display: flex; flex-direction: column; gap: 14px; margin-top: 1.25rem; }
+      .ben-list { display: flex; flex-direction: column; gap: 12px; }
       .ben-item {
         display: flex;
         gap: 16px;
         align-items: flex-start;
-        padding: 16px 18px;
         background: #F4F1EA;
-        border: 0.5px solid #D6D2C8;
-        border-radius: 0.75rem;
-      }
-      .ben-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 0.5rem;
-        background: #EDD9B4;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        font-size: 20px;
-      }
-      .ben-body h3 { font-size: 15px; font-weight: 500; color: #535861; margin-bottom: 5px; }
-      .ben-body p { font-size: 13px; color: #535861; line-height: 1.65; }
-
-      /* TRIG LIST */
-      .trig-list { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
-      .trig-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 12px 16px;
-        background: #F4F1EA;
-        border: 0.5px solid #D6D2C8;
-        border-radius: 0.5rem;
-      }
-      .trig-arrow { color: #C99763; font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-      .trig-item p { font-size: 13px; color: #535861; line-height: 1.65; }
-
-      /* PARCOURS */
-      .parcours-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        margin-top: 1.25rem;
-      }
-      .parcours-card {
-        border: 0.5px solid #D6D2C8;
+        border: 1px solid #E0DDD6;
         border-radius: 0.75rem;
         padding: 16px;
-        background: #F4F1EA;
       }
-      .parcours-card.star { border: 1.5px solid #C99763; background: #fff; }
-      .parcours-label {
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-        color: #C99763;
-        margin-bottom: 6px;
+      .ben-icon {
+        width: 40px; height: 40px; min-width: 40px;
+        border-radius: 0.5rem;
+        background: #EDD9B4;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 20px;
       }
-      .parcours-card h3 { font-size: 14px; font-weight: 500; color: #535861; margin-bottom: 6px; line-height: 1.4; }
-      .parcours-card .seances { font-size: 12px; color: #535861; margin-bottom: 10px; }
-      .parcours-card .prix { font-size: 19px; font-weight: 500; color: #535861; }
-      .parcours-card .prix span { font-size: 12px; font-weight: 400; color: #535861; }
-      .parcours-card .desc { font-size: 12px; color: #535861; line-height: 1.6; margin-top: 10px; }
-      .parcours-note { font-size: 12px; color: #535861; margin-top: 14px; }
+      .ben-body h3 { font-size: 15px; font-weight: 700; color: #535861; margin-bottom: 5px; }
+      .ben-body p { font-size: 13px; color: #535861; line-height: 1.65; }
 
-      /* PROCESS */
-      .process-list { display: flex; flex-direction: column; margin-top: 1.25rem; }
-      .process-step {
-        display: flex;
-        gap: 18px;
-        padding: 16px 0;
-        border-bottom: 0.5px solid #D6D2C8;
+      .trig-list { display: flex; flex-direction: column; gap: 10px; }
+      .trig-item {
+        display: flex; gap: 14px; align-items: flex-start;
+        background: #fff; border: 1px solid #E0DDD6;
+        border-radius: 0.5rem; padding: 14px 16px;
       }
+      .trig-arrow { color: #C99763; font-size: 18px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+      .trig-item p { font-size: 14px; color: #535861; line-height: 1.6; }
+
+      .parcours-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .parcours-card {
+        background: #fff; border: 1px solid #E0DDD6;
+        border-radius: 0.75rem; padding: 18px 14px;
+      }
+      .parcours-card.star { border: 2px solid #C99763; }
+      .parcours-label {
+        font-size: 10px; font-weight: 700; letter-spacing: 0.07em;
+        text-transform: uppercase; color: #C99763; margin-bottom: 8px;
+      }
+      .parcours-card h3 { font-size: 14px; font-weight: 700; color: #535861; line-height: 1.35; margin-bottom: 8px; }
+      .parcours-seances { font-size: 12px; color: #7F9B88; margin-bottom: 10px; }
+      .parcours-prix { font-size: 20px; font-weight: 700; color: #535861; }
+      .parcours-prix span { font-size: 12px; font-weight: 400; color: #7F9B88; }
+      .parcours-desc { font-size: 12px; color: #535861; line-height: 1.6; margin-top: 10px; }
+      .parcours-note { font-size: 12px; color: #7F9B88; margin-top: 14px; }
+
+      .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .diff-card {
+        background: #fff; border: 1px solid #E0DDD6;
+        border-radius: 0.75rem; padding: 16px;
+      }
+      .diff-card h3 { font-size: 14px; font-weight: 700; color: #535861; margin-bottom: 6px; }
+      .diff-card p { font-size: 13px; color: #535861; line-height: 1.6; }
+
+      .process-list { display: flex; flex-direction: column; }
+      .process-step { display: flex; gap: 18px; padding: 18px 0; border-bottom: 1px solid #E0DDD6; }
       .process-step:last-child { border-bottom: none; }
       .step-num {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: #EDD9B4;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 13px;
-        font-weight: 500;
-        color: #7A5020;
-        flex-shrink: 0;
-        margin-top: 2px;
+        width: 32px; height: 32px; min-width: 32px;
+        border-radius: 50%; background: #EDD9B4;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 13px; font-weight: 700; color: #7A5020; margin-top: 2px;
       }
-      .step-body h3 { font-size: 15px; font-weight: 500; color: #535861; margin-bottom: 5px; }
+      .step-body h3 { font-size: 15px; font-weight: 700; color: #535861; margin-bottom: 5px; }
       .step-body p { font-size: 13px; color: #535861; line-height: 1.65; }
 
-      /* DIFF GRID */
-      .diff-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        margin-top: 1.25rem;
-      }
-      .diff-card {
-        padding: 16px 18px;
-        background: #F4F1EA;
-        border: 0.5px solid #D6D2C8;
-        border-radius: 0.75rem;
-      }
-      .diff-card h3 { font-size: 14px; font-weight: 500; color: #535861; margin-bottom: 6px; }
-      .diff-card p { font-size: 12px; color: #535861; line-height: 1.65; }
-
-      /* DAVID */
       .david-block {
-        display: flex;
-        gap: 18px;
-        align-items: flex-start;
-        margin-top: 1.25rem;
-        padding: 18px;
-        background: #F4F1EA;
-        border: 0.5px solid #D6D2C8;
-        border-radius: 0.75rem;
+        display: flex; gap: 18px; align-items: flex-start;
+        background: #F4F1EA; border: 1px solid #E0DDD6;
+        border-radius: 0.75rem; padding: 20px;
       }
       .david-avatar {
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        background: #7F9B88;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 17px;
-        font-weight: 500;
-        color: #F4F1EA;
-        flex-shrink: 0;
+        width: 52px; height: 52px; min-width: 52px;
+        border-radius: 50%; background: #7F9B88;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 16px; font-weight: 700; color: #F4F1EA;
       }
-      .david-body h3 { font-size: 15px; font-weight: 500; color: #535861; margin-bottom: 6px; }
+      .david-body h3 { font-size: 15px; font-weight: 700; color: #535861; margin-bottom: 8px; }
       .david-body p { font-size: 13px; color: #535861; line-height: 1.65; }
-      .david-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+      .david-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
       .david-tag {
-        font-size: 11px;
-        padding: 3px 10px;
-        border-radius: 0.5rem;
-        background: #EDD9B4;
-        color: #7A5020;
+        font-size: 11px; padding: 4px 10px; border-radius: 0.5rem;
+        background: #EDD9B4; color: #7A5020; font-weight: 600;
       }
 
-      /* CTA */
-      .cta-section {
-        background: #535861;
-        padding: 3rem 2.5rem;
-        text-align: center;
-      }
-      .cta-section h2 { font-size: 22px; font-weight: 500; color: #F4F1EA; margin-bottom: 1rem; }
-      .cta-section p { font-size: 15px; color: #A8B8A2; line-height: 1.75; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
-      .cta-btn {
-        display: inline-block;
-        background: #C99763;
-        color: #fff;
-        font-size: 15px;
-        font-weight: 500;
-        padding: 16px 32px;
-        border-radius: 0.5rem;
-        text-decoration: none;
-      }
+      .cta-section { background: #535861; padding: 3rem 2rem; text-align: center; }
+      .cta-inner { max-width: 520px; margin: 0 auto; }
+      .cta-section h2 { font-size: 22px; font-weight: 700; color: #F4F1EA; margin-bottom: 1rem; }
+      .cta-section p { font-size: 15px; color: #A8B8A2; line-height: 1.75; margin-bottom: 2rem; }
       .cta-sub { font-size: 12px; color: #A8B8A2; margin-top: 1.25rem; }
 
-      /* LP FOOTER */
       .lp-footer {
         background: #535861;
-        border-top: 0.5px solid rgba(163,179,159,0.2);
-        padding: 1.5rem 2.5rem;
+        border-top: 1px solid rgba(168,184,162,0.15);
+        padding: 1.25rem 2rem;
         text-align: center;
+        font-size: 12px;
+        color: #A8B8A2;
       }
-      .lp-footer p { font-size: 12px; color: #A8B8A2; line-height: 1.6; }
       .lp-footer a { color: #C99763; text-decoration: none; }
 
       @media (max-width: 600px) {
-        .hero { padding: 2rem 1.25rem; }
         .hero h1 { font-size: 20px; }
-        .hero-proof { flex-direction: column; gap: 1rem; }
-        .section, .section-white { padding: 1.75rem 1.25rem; }
+        .hero-proof { gap: 1.25rem; }
         .pain-grid, .diff-grid { grid-template-columns: 1fr; }
         .roi-grid { grid-template-columns: 1fr 1fr; }
         .parcours-grid { grid-template-columns: 1fr; }
+        .wrap { padding: 2rem 1.25rem; }
+        .hero { padding: 2rem 1.25rem; }
         .cta-section { padding: 2rem 1.25rem; }
       }
     </style>
   </head>
-
   <body>
 
     <header class="lp-header">
-      <a href="/" class="logo"><img src="/logo.png" alt="M²P Coaching" style="height:52px;" /></a>
-      <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener" class="header-cta">Réserver 30 min &rarr;</a>
+      <a href="/" class="lp-logo"><img src="/logo.png" alt="M²P Coaching et Développement" /></a>
+      <a href={TCP} target="_blank" rel="noopener" class="lp-cta">Réserver 30 min &rarr;</a>
     </header>
 
-    <main class="lp">
-
-      <!-- HERO -->
-      <div class="hero">
+    <section class="hero">
+      <div class="hero-inner">
         <div class="hero-tag">DRH &middot; RRH &middot; PME &amp; ETI</div>
         <h1>Votre manager clé dysfonctionne. Vous savez que vous ne pouvez pas vous permettre de le perdre.</h1>
         <p class="hero-sub">Un coaching professionnel certifié avec des indicateurs concrets dès la séance 1, pour que vous puissiez défendre l'investissement auprès de votre direction et mesurer la progression sans entrer dans les séances.</p>
-        <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener" class="hero-cta">Réserver un échange de 30 min &rarr;</a>
+        <a href={TCP} target="_blank" rel="noopener" class="btn-primary">Réserver un échange de 30 min &rarr;</a>
         <div class="hero-proof">
-          <div class="proof-item"><span class="proof-val">22 ans</span>Expérience RH terrain</div>
-          <div class="proof-item"><span class="proof-val">RNCP 6</span>Certification coach</div>
-          <div class="proof-item"><span class="proof-val">PME &amp; grands groupes</span>Les deux côtés</div>
+          <div class="proof-item"><span class="proof-val">22 ans</span><span class="proof-lbl">Expérience RH terrain</span></div>
+          <div class="proof-item"><span class="proof-val">RNCP 6</span><span class="proof-lbl">Certification coach</span></div>
+          <div class="proof-item"><span class="proof-val">PME &amp; grands groupes</span><span class="proof-lbl">Les deux côtés</span></div>
         </div>
       </div>
+    </section>
 
-      <!-- CE QUE VOUS PORTEZ -->
-      <div class="section">
+    <section class="bg-creme">
+      <div class="wrap">
         <p class="eyebrow">Ce que vous portez seul</p>
         <h2>Vous n'avez pas de service développement RH. Vous êtes à la fois recruteur, gestionnaire et DRH stratégique.</h2>
         <div class="pain-grid">
-          <div class="pain-card"><p>Un ou deux managers en difficulté posturale que vous avez identifiés, mais sans solution interne disponible pour les traiter.</p></div>
-          <div class="pain-card"><p>Une croissance rapide qui a créé des promotions par défaut. Des experts devenus managers sans avoir été préparés au rôle.</p></div>
-          <div class="pain-card"><p>Des tensions d'équipe que ni vous ni le DG ne pouvez traiter directement sans perdre en neutralité.</p></div>
-          <div class="pain-card"><p>Un profil clé qui commence à décrocher. Vous le voyez dans les entretiens annuels. Vous ne savez pas quoi lui proposer.</p></div>
+          <div class="pain-card">Un ou deux managers en difficulté posturale que vous avez identifiés, mais sans solution interne disponible pour les traiter.</div>
+          <div class="pain-card">Une croissance rapide qui a créé des promotions par défaut. Des experts devenus managers sans avoir été préparés au rôle.</div>
+          <div class="pain-card">Des tensions d'équipe que ni vous ni le DG ne pouvez traiter directement sans perdre en neutralité.</div>
+          <div class="pain-card">Un profil clé qui commence à décrocher. Vous le voyez dans les entretiens annuels. Vous ne savez pas quoi lui proposer.</div>
         </div>
         <div class="alert-box">
           <span class="alert-icon">⚠️</span>
           <p>Votre DG ne signe pas pour du flou. Il veut savoir ce que ça change concrètement, en combien de temps, et ce que ça coûte de ne rien faire. C'est exactement le cadre dans lequel j'interviens.</p>
         </div>
       </div>
+    </section>
 
-      <hr class="sep" />
+    <hr class="sep" />
 
-      <!-- COUT INACTION -->
-      <div class="section-white">
+    <section class="bg-white">
+      <div class="wrap">
         <p class="eyebrow">Le coût réel de l'inaction</p>
         <h2>Ce que vous perdez à attendre.</h2>
         <div class="roi-grid">
@@ -415,11 +320,12 @@ const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH e
           </div>
         </div>
       </div>
+    </section>
 
-      <hr class="sep" />
+    <hr class="sep" />
 
-      <!-- CE QUE J'APPORTE -->
-      <div class="section">
+    <section class="bg-creme">
+      <div class="wrap">
         <p class="eyebrow">Ce que j'apporte</p>
         <h2>Un interlocuteur qui parle le même langage que votre DG.</h2>
         <div class="ben-list">
@@ -453,11 +359,12 @@ const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH e
           </div>
         </div>
       </div>
+    </section>
 
-      <hr class="sep" />
+    <hr class="sep" />
 
-      <!-- SITUATIONS -->
-      <div class="section-white">
+    <section class="bg-white">
+      <div class="wrap">
         <p class="eyebrow">Situations d'intervention</p>
         <h2>Quand est-ce que vous faites appel à moi ?</h2>
         <div class="trig-list">
@@ -467,43 +374,45 @@ const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH e
           <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un profil clé détecté en entretien annuel comme à risque de départ. Vous avez une fenêtre, vous voulez l'utiliser.</p></div>
         </div>
       </div>
+    </section>
 
-      <hr class="sep" />
+    <hr class="sep" />
 
-      <!-- PARCOURS -->
-      <div class="section">
+    <section class="bg-creme">
+      <div class="wrap">
         <p class="eyebrow">Les parcours M²P</p>
         <h2>Trois niveaux selon la situation et l'urgence.</h2>
         <div class="parcours-grid">
           <div class="parcours-card star">
             <div class="parcours-label">Maîtrise</div>
             <h3>Poser les bases, vite</h3>
-            <div class="seances">6 séances</div>
-            <div class="prix">1 800 € <span>HT &middot; 300 €/séance</span></div>
-            <p class="desc">Résultats observables sous 90 jours. Le bon choix quand votre DG veut voir avant de s'engager plus loin.</p>
+            <div class="parcours-seances">6 séances</div>
+            <div class="parcours-prix">1 800 € <span>HT &middot; 300 €/séance</span></div>
+            <p class="parcours-desc">Résultats observables sous 90 jours. Le bon choix quand votre DG veut voir avant de s'engager plus loin.</p>
           </div>
           <div class="parcours-card">
             <div class="parcours-label">Mouvement</div>
             <h3>Construire la posture</h3>
-            <div class="seances">8 séances</div>
-            <div class="prix">2 200 € <span>HT &middot; 275 €/séance</span></div>
-            <p class="desc">Pour les situations de tension active ou de prise de poste avec un enjeu d'équipe fort.</p>
+            <div class="parcours-seances">8 séances</div>
+            <div class="parcours-prix">2 200 € <span>HT &middot; 275 €/séance</span></div>
+            <p class="parcours-desc">Pour les situations de tension active ou de prise de poste avec un enjeu d'équipe fort.</p>
           </div>
           <div class="parcours-card">
             <div class="parcours-label">Progression</div>
             <h3>Ancrer dans la durée</h3>
-            <div class="seances">10 séances</div>
-            <div class="prix">2 500 € <span>HT &middot; 250 €/séance</span></div>
-            <p class="desc">Pour un profil stratégique sur lequel vous investissez à long terme. Leadership ancré, autonomie réelle.</p>
+            <div class="parcours-seances">10 séances</div>
+            <div class="parcours-prix">2 500 € <span>HT &middot; 250 €/séance</span></div>
+            <p class="parcours-desc">Pour un profil stratégique sur lequel vous investissez à long terme. Leadership ancré, autonomie réelle.</p>
           </div>
         </div>
         <p class="parcours-note">40% à la signature &middot; 30% mi-parcours &middot; 30% dernière séance.</p>
       </div>
+    </section>
 
-      <hr class="sep" />
+    <hr class="sep" />
 
-      <!-- PROCESS -->
-      <div class="section-white">
+    <section class="bg-white">
+      <div class="wrap">
         <p class="eyebrow">Comment ça fonctionne</p>
         <h2>Du premier contact à la fin du parcours.</h2>
         <div class="process-list">
@@ -525,11 +434,12 @@ const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH e
           </div>
         </div>
       </div>
+    </section>
 
-      <hr class="sep" />
+    <hr class="sep" />
 
-      <!-- POURQUOI MOI -->
-      <div class="section">
+    <section class="bg-creme">
+      <div class="wrap">
         <p class="eyebrow">Pourquoi moi plutôt qu'un autre</p>
         <h2>Pas de jargon. Pas de développement personnel. Des résultats dans le rôle.</h2>
         <div class="diff-grid">
@@ -551,11 +461,12 @@ const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH e
           </div>
         </div>
       </div>
+    </section>
 
-      <hr class="sep" />
+    <hr class="sep" />
 
-      <!-- QUI JE SUIS -->
-      <div class="section-white">
+    <section class="bg-white">
+      <div class="wrap">
         <p class="eyebrow">Qui je suis</p>
         <h2>Un professionnel RH devenu coach. Pas l'inverse.</h2>
         <div class="david-block">
@@ -573,23 +484,21 @@ const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH e
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- CTA FINAL -->
-      <div class="cta-section">
+    <section class="cta-section">
+      <div class="cta-inner">
         <h2>Parlons de votre manager. Et de ce que vous pouvez dire à votre DG.</h2>
         <p>Un échange de 30 minutes, sans engagement, pour qualifier la situation et poser les indicateurs concrets que vous pourrez présenter en interne.</p>
-        <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener" class="cta-btn">Réserver l'échange de 30 min &rarr;</a>
+        <a href={TCP} target="_blank" rel="noopener" class="btn-primary">Réserver l'échange de 30 min &rarr;</a>
         <p class="cta-sub">Visio France entière &middot; Présentiel Occitanie &middot; david.delord@m2p-coaching.fr</p>
       </div>
-
-    </main>
+    </section>
 
     <footer class="lp-footer">
-      <p>
-        M²P Coaching &amp; Développement &middot; SASU &middot; RC Pro &middot;
-        <a href="/">Retour au site</a> &middot;
-        <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a>
-      </p>
+      M²P Coaching &amp; Développement &middot; SASU &middot; RC Pro &middot;
+      <a href="/">Retour au site</a> &middot;
+      <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a>
     </footer>
 
   </body>
