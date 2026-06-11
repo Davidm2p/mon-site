@@ -1,8 +1,8 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 
-const SITE_TITLE = "Coaching DRH et RRH PME | M²P Coaching";
-const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH et RRH de PME et ETI. Des indicateurs concrets dès la séance 1 pour défendre l'investissement auprès de votre direction. David Delord, 22 ans de terrain RH.";
+const SITE_TITLE = "Coaching DRH Hospitalisation Privée | M²P Coaching";
+const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH de l'hospitalisation privée. Sécurisez vos prises de poste, stabilisez vos cadres en tension. David Delord, 22 ans de terrain RH.";
 const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching";
 ---
 
@@ -27,7 +27,7 @@ const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-m
         align-items: center;
         justify-content: space-between;
       }
-      .lp-logo img { height: 48px; display: block; }
+      .lp-logo img { height: 64px; display: block; padding: 4px; background: #F4F1EA; border-radius: 4px; }
       .lp-cta {
         background: #C99763;
         color: #fff;
@@ -126,28 +126,6 @@ const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-m
         line-height: 1.6;
       }
 
-      .alert-box {
-        background: #EDD9B4;
-        border-radius: 0.75rem;
-        padding: 16px 18px;
-        margin-top: 14px;
-        display: flex;
-        gap: 14px;
-        align-items: flex-start;
-      }
-      .alert-icon { font-size: 20px; flex-shrink: 0; }
-      .alert-box p { font-size: 14px; color: #7A5020; line-height: 1.65; }
-
-      .roi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-      .roi-card {
-        background: #fff;
-        border: 1px solid #E0DDD6;
-        border-radius: 0.5rem;
-        padding: 18px 14px;
-      }
-      .roi-val { font-size: 24px; font-weight: 700; color: #535861; margin-bottom: 6px; }
-      .roi-lbl { font-size: 12px; color: #535861; line-height: 1.55; }
-
       .ben-list { display: flex; flex-direction: column; gap: 12px; }
       .ben-item {
         display: flex;
@@ -193,14 +171,6 @@ const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-m
       .parcours-prix span { font-size: 12px; font-weight: 400; color: #7F9B88; }
       .parcours-desc { font-size: 12px; color: #535861; line-height: 1.6; margin-top: 10px; }
       .parcours-note { font-size: 12px; color: #7F9B88; margin-top: 14px; }
-
-      .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-      .diff-card {
-        background: #fff; border: 1px solid #E0DDD6;
-        border-radius: 0.75rem; padding: 16px;
-      }
-      .diff-card h3 { font-size: 14px; font-weight: 700; color: #535861; margin-bottom: 6px; }
-      .diff-card p { font-size: 13px; color: #535861; line-height: 1.6; }
 
       .process-list { display: flex; flex-direction: column; }
       .process-step { display: flex; gap: 18px; padding: 18px 0; border-bottom: 1px solid #E0DDD6; }
@@ -252,8 +222,7 @@ const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-m
       @media (max-width: 600px) {
         .hero h1 { font-size: 20px; }
         .hero-proof { gap: 1.25rem; }
-        .pain-grid, .diff-grid { grid-template-columns: 1fr; }
-        .roi-grid { grid-template-columns: 1fr 1fr; }
+        .pain-grid { grid-template-columns: 1fr; }
         .parcours-grid { grid-template-columns: 1fr; }
         .wrap { padding: 2rem 1.25rem; }
         .hero { padding: 2rem 1.25rem; }
@@ -270,31 +239,27 @@ const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-m
 
     <section class="hero">
       <div class="hero-inner">
-        <div class="hero-tag">DRH &middot; RRH &middot; PME &amp; ETI</div>
-        <h1>Votre manager clé dysfonctionne. Vous savez que vous ne pouvez pas vous permettre de le perdre.</h1>
-        <p class="hero-sub">Un coaching professionnel certifié avec des indicateurs concrets dès la séance 1, pour que vous puissiez défendre l'investissement auprès de votre direction et mesurer la progression sans entrer dans les séances.</p>
+        <div class="hero-tag">DRH &middot; Hospitalisation privée</div>
+        <h1>Vos managers clés décrochent avant même que vous le voyiez venir.</h1>
+        <p class="hero-sub">Un coaching expert, ancré dans les réalités de la santé privée, pour sécuriser vos prises de poste, stabiliser vos cadres en tension et réduire le coût humain des décrochages précoces.</p>
         <a href={TCP} target="_blank" rel="noopener" class="btn-primary">Réserver un échange de 30 min &rarr;</a>
         <div class="hero-proof">
           <div class="proof-item"><span class="proof-val">22 ans</span><span class="proof-lbl">Expérience RH terrain</span></div>
           <div class="proof-item"><span class="proof-val">RNCP 6</span><span class="proof-lbl">Certification coach</span></div>
-          <div class="proof-item"><span class="proof-val">PME &amp; grands groupes</span><span class="proof-lbl">Les deux côtés</span></div>
+          <div class="proof-item"><span class="proof-val">Santé privée</span><span class="proof-lbl">Secteur connu de l'intérieur</span></div>
         </div>
       </div>
     </section>
 
     <section class="bg-creme">
       <div class="wrap">
-        <p class="eyebrow">Ce que vous portez seul</p>
-        <h2>Vous n'avez pas de service développement RH. Vous êtes à la fois recruteur, gestionnaire et DRH stratégique.</h2>
+        <p class="eyebrow">Ce que vous gérez en ce moment</p>
+        <h2>Vous connaissez ces situations. Elles coûtent cher à ne pas traiter.</h2>
         <div class="pain-grid">
-          <div class="pain-card">Un ou deux managers en difficulté posturale que vous avez identifiés, mais sans solution interne disponible pour les traiter.</div>
-          <div class="pain-card">Une croissance rapide qui a créé des promotions par défaut. Des experts devenus managers sans avoir été préparés au rôle.</div>
-          <div class="pain-card">Des tensions d'équipe que ni vous ni le DG ne pouvez traiter directement sans perdre en neutralité.</div>
-          <div class="pain-card">Un profil clé qui commence à décrocher. Vous le voyez dans les entretiens annuels. Vous ne savez pas quoi lui proposer.</div>
-        </div>
-        <div class="alert-box">
-          <span class="alert-icon">⚠️</span>
-          <p>Votre DG ne signe pas pour du flou. Il veut savoir ce que ça change concrètement, en combien de temps, et ce que ça coûte de ne rien faire. C'est exactement le cadre dans lequel j'interviens.</p>
+          <div class="pain-card">Un manager promu qui perd pied dans les 12 premiers mois. Son équipe le sent avant que vous le sachiez.</div>
+          <div class="pain-card">Un directeur d'établissement sous pression groupe qui absorbe tout sans le dire. Jusqu'au jour où il ne peut plus.</div>
+          <div class="pain-card">Une prise de poste stratégique que vous voulez sécuriser. Mais vous n'avez pas de ressource interne disponible.</div>
+          <div class="pain-card">Un cadre de santé compétent, loyal, qui commence à décrocher. Le remplacer vous coûterait entre 6 et 18 mois de salaire.</div>
         </div>
       </div>
     </section>
@@ -303,75 +268,37 @@ const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-m
 
     <section class="bg-white">
       <div class="wrap">
-        <p class="eyebrow">Le coût réel de l'inaction</p>
-        <h2>Ce que vous perdez à attendre.</h2>
-        <div class="roi-grid">
-          <div class="roi-card">
-            <div class="roi-val">6 à 18</div>
-            <div class="roi-lbl">mois de salaire pour remplacer un manager clé, recrutement et intégration inclus</div>
-          </div>
-          <div class="roi-card">
-            <div class="roi-val">12 mois</div>
-            <div class="roi-lbl">pour qu'un remplaçant atteigne le niveau opérationnel de celui qu'il remplace</div>
-          </div>
-          <div class="roi-card">
-            <div class="roi-val">3 à 5</div>
-            <div class="roi-lbl">collaborateurs qui partent dans les 6 mois suivant le départ d'un manager qui fédérait</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="sep" />
-
-    <section class="bg-creme">
-      <div class="wrap">
         <p class="eyebrow">Ce que j'apporte</p>
-        <h2>Un interlocuteur qui parle le même langage que votre DG.</h2>
+        <h2>Un cadre d'intervention taillé pour votre contexte.</h2>
         <div class="ben-list">
           <div class="ben-item">
-            <div class="ben-icon">📊</div>
+            <div class="ben-icon">🏥</div>
             <div class="ben-body">
-              <h3>Des indicateurs définis dès la séance 1</h3>
-              <p>On pose ensemble les critères de progression observables : comportements managériaux, feedback d'équipe, posture en réunion. Votre DG a des éléments concrets à évaluer sans entrer dans le contenu des séances.</p>
-            </div>
-          </div>
-          <div class="ben-item">
-            <div class="ben-icon">🏭</div>
-            <div class="ben-body">
-              <h3>Je connais la réalité d'une PME en croissance</h3>
-              <p>22 ans en RH, dont des années à conseiller des dirigeants de PME et ETI chez Randstad. Je sais ce que ça veut dire de ne pas avoir de service RH développement, de devoir convaincre un DG pragmatique, et de travailler sur des profils qu'on ne peut pas se permettre de perdre.</p>
+              <h3>Je connais le secteur de l'intérieur</h3>
+              <p>22 ans en ressources humaines, dont une expérience directe dans la santé privée multi-sites. Pression ARS, turn-over soignant, dictature de l'urgence : je n'ai pas besoin qu'on me les explique. On va droit au sujet.</p>
             </div>
           </div>
           <div class="ben-item">
             <div class="ben-icon">🔒</div>
             <div class="ben-body">
-              <h3>Confidentialité totale, cadre tripartite clair</h3>
-              <p>Vous définissez l'objectif avec moi. Votre collaborateur travaille dans un espace confidentiel. Je garantis l'étanchéité contractuelle entre les séances et l'organisation. Vous mesurez l'impact, pas le contenu.</p>
+              <h3>Cadre tripartite sécurisé</h3>
+              <p>Vous définissez l'objectif institutionnel. Votre collaborateur travaille dans un espace confidentiel total. L'étanchéité entre les séances et l'organisation est contractuellement garantie.</p>
             </div>
           </div>
           <div class="ben-item">
-            <div class="ben-icon">📅</div>
+            <div class="ben-icon">📈</div>
             <div class="ben-body">
-              <h3>Des résultats visibles dans les 90 jours</h3>
-              <p>Le parcours Maîtrise (6 séances) produit des changements observables dans les 3 premiers mois. C'est la durée sur laquelle votre DG peut évaluer si l'investissement tient ses promesses.</p>
+              <h3>Des résultats mesurables dès le mi-parcours</h3>
+              <p>Un point de mi-parcours vous permet d'évaluer la progression sans entrer dans le contenu des séances. Vous investissez sur un profil, vous suivez l'évolution. Pas de boîte noire.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="sep" />
-
-    <section class="bg-white">
-      <div class="wrap">
-        <p class="eyebrow">Situations d'intervention</p>
-        <h2>Quand est-ce que vous faites appel à moi ?</h2>
-        <div class="trig-list">
-          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un manager que votre DG veut conserver mais qui dysfonctionne avec son équipe depuis plusieurs mois.</p></div>
-          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Une promotion récente sur un profil technique : l'expert est devenu manager, mais il gère encore comme un expert.</p></div>
-          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un responsable de site ou chef d'équipe en prise de poste que vous voulez sécuriser dans les 90 premiers jours.</p></div>
-          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un profil clé détecté en entretien annuel comme à risque de départ. Vous avez une fenêtre, vous voulez l'utiliser.</p></div>
+          <div class="ben-item">
+            <div class="ben-icon">🎓</div>
+            <div class="ben-body">
+              <h3>Certification et supervision</h3>
+              <p>Coach certifié RNCP niveau 6. Pratique supervisée mensuellement. Charte Éthique du Coaching respectée. Une prestation que vous pouvez présenter à votre direction comme un investissement sécurisé.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -380,29 +307,44 @@ const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-m
 
     <section class="bg-creme">
       <div class="wrap">
+        <p class="eyebrow">Situations d'intervention</p>
+        <h2>Quand est-ce que vous faites appel à moi ?</h2>
+        <div class="trig-list">
+          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un manager promu qui montre les premiers signes de décrochage, avant que ça devienne visible pour les équipes.</p></div>
+          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un directeur d'établissement ou directeur adjoint en prise de poste que vous voulez sécuriser dans les 90 premiers jours.</p></div>
+          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un cadre de santé en tension posturale que vous voulez retenir. Compétent, mais à bout.</p></div>
+          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un plan de développement RH à construire pour mobiliser une enveloppe formation sur des profils prioritaires.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep" />
+
+    <section class="bg-white">
+      <div class="wrap">
         <p class="eyebrow">Les parcours M²P</p>
-        <h2>Trois niveaux selon la situation et l'urgence.</h2>
+        <h2>Trois niveaux selon la situation.</h2>
         <div class="parcours-grid">
-          <div class="parcours-card star">
+          <div class="parcours-card">
             <div class="parcours-label">Maîtrise</div>
-            <h3>Poser les bases, vite</h3>
+            <h3>De la surcharge à la clarté</h3>
             <div class="parcours-seances">6 séances</div>
             <div class="parcours-prix">1 800 € <span>HT &middot; 300 €/séance</span></div>
-            <p class="parcours-desc">Résultats observables sous 90 jours. Le bon choix quand votre DG veut voir avant de s'engager plus loin.</p>
+            <p class="parcours-desc">Nommer ce qui se passe. Réduire la pression. Retrouver des appuis solides.</p>
           </div>
-          <div class="parcours-card">
+          <div class="parcours-card star">
             <div class="parcours-label">Mouvement</div>
-            <h3>Construire la posture</h3>
+            <h3>De la clarté à la décision assumée</h3>
             <div class="parcours-seances">8 séances</div>
             <div class="parcours-prix">2 200 € <span>HT &middot; 275 €/séance</span></div>
-            <p class="parcours-desc">Pour les situations de tension active ou de prise de poste avec un enjeu d'équipe fort.</p>
+            <p class="parcours-desc">Les ressources émergent. Les décisions se prennent. Adapté aux prises de poste et tensions actives.</p>
           </div>
           <div class="parcours-card">
             <div class="parcours-label">Progression</div>
-            <h3>Ancrer dans la durée</h3>
+            <h3>De la décision à la posture tenue</h3>
             <div class="parcours-seances">10 séances</div>
             <div class="parcours-prix">2 500 € <span>HT &middot; 250 €/séance</span></div>
-            <p class="parcours-desc">Pour un profil stratégique sur lequel vous investissez à long terme. Leadership ancré, autonomie réelle.</p>
+            <p class="parcours-desc">Ancrer un leadership durable. Sans dépendre d'un cadre extérieur.</p>
           </div>
         </div>
         <p class="parcours-note">40% à la signature &middot; 30% mi-parcours &middot; 30% dernière séance.</p>
@@ -411,53 +353,26 @@ const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-m
 
     <hr class="sep" />
 
-    <section class="bg-white">
+    <section class="bg-creme">
       <div class="wrap">
         <p class="eyebrow">Comment ça fonctionne</p>
         <h2>Du premier contact à la fin du parcours.</h2>
         <div class="process-list">
           <div class="process-step">
             <div class="step-num">1</div>
-            <div class="step-body"><h3>Échange de 30 minutes avec vous</h3><p>Vous décrivez la situation. On qualifie ensemble si le coaching est la bonne réponse. On pose les indicateurs que vous pourrez présenter à votre DG. Sans engagement.</p></div>
+            <div class="step-body"><h3>Échange de 30 minutes</h3><p>Vous décrivez la situation. Je qualifie si le coaching est la bonne réponse. On pose le cadre contractuel tripartite. Sans engagement.</p></div>
           </div>
           <div class="process-step">
             <div class="step-num">2</div>
-            <div class="step-body"><h3>Entretien préalable avec le manager</h3><p>Je rencontre votre collaborateur. On vérifie la coachabilité de la situation et la volonté d'engagement. Si ce n'est pas le bon moment, je vous le dis clairement.</p></div>
+            <div class="step-body"><h3>Entretien préalable avec le coaché</h3><p>Je rencontre votre collaborateur. On vérifie ensemble la coachabilité de la situation. Si ce n'est pas le bon moment, je vous le dis.</p></div>
           </div>
           <div class="process-step">
             <div class="step-num">3</div>
-            <div class="step-body"><h3>Parcours en séances individuelles</h3><p>45 à 60 minutes par séance, en visio ou en présentiel en Occitanie. Calendrier flexible, adapté aux contraintes opérationnelles de votre manager.</p></div>
+            <div class="step-body"><h3>Parcours en séances individuelles</h3><p>45 à 60 minutes par séance, en visio ou en présentiel en Occitanie. Confidentialité totale. Flexibilité calendaire adaptée aux contraintes du secteur.</p></div>
           </div>
           <div class="process-step">
             <div class="step-num">4</div>
-            <div class="step-body"><h3>Point de mi-parcours avec vous</h3><p>Un bilan intermédiaire sur la progression observable. Des éléments concrets à partager avec votre DG, sans entrer dans le contenu des séances.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="sep" />
-
-    <section class="bg-creme">
-      <div class="wrap">
-        <p class="eyebrow">Pourquoi moi plutôt qu'un autre</p>
-        <h2>Pas de jargon. Pas de développement personnel. Des résultats dans le rôle.</h2>
-        <div class="diff-grid">
-          <div class="diff-card">
-            <h3>Je parle le langage de votre DG</h3>
-            <p>Des indicateurs, des comportements observables, une progression mesurable. Votre DG comprend l'investissement dès la première conversation.</p>
-          </div>
-          <div class="diff-card">
-            <h3>Je connais la réalité PME</h3>
-            <p>Pas de ressource interne, pas de budget illimité, pas de droit à l'erreur sur les profils clés. Je travaille dans ce cadre, pas contre lui.</p>
-          </div>
-          <div class="diff-card">
-            <h3>22 ans de terrain RH</h3>
-            <p>J'ai vu des centaines de situations managériales des deux côtés : côté organisation et côté individu. Je lis vite ce qui se joue réellement.</p>
-          </div>
-          <div class="diff-card">
-            <h3>Certifié, supervisé, assuré</h3>
-            <p>RNCP niveau 6, supervision mensuelle, RC Pro. Vous présentez une prestation professionnelle sécurisée à votre direction.</p>
+            <div class="step-body"><h3>Point de mi-parcours avec vous</h3><p>Un bilan intermédiaire sur la progression observable. Vous mesurez l'impact sur la posture et le fonctionnement dans le rôle, sans entrer dans le contenu des séances.</p></div>
           </div>
         </div>
       </div>
@@ -468,17 +383,17 @@ const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-m
     <section class="bg-white">
       <div class="wrap">
         <p class="eyebrow">Qui je suis</p>
-        <h2>Un professionnel RH devenu coach. Pas l'inverse.</h2>
+        <h2>Pas un coach qui découvre le secteur santé.</h2>
         <div class="david-block">
           <div class="david-avatar">DD</div>
           <div class="david-body">
             <h3>David Delord &middot; Coach Professionnel Certifié RNCP 6</h3>
-            <p>22 ans en ressources humaines : consultant senior chez Randstad pendant près de deux décennies, aux côtés de dirigeants de PME et ETI sur leurs enjeux de recrutement et de développement managérial. J'ai siégé 15 ans dans des instances représentatives du personnel. J'ai vu les organisations des deux côtés de la table. Ce n'est pas une reconversion. C'est la suite logique de ce que j'ai toujours fait.</p>
+            <p>22 ans en ressources humaines. Consultant senior chez Randstad, puis Responsable RH Recrutement et Développement dans un groupe de santé privée multi-sites. J'ai travaillé aux côtés des directeurs d'établissements sur leurs enjeux managériaux, et siégé pendant 15 ans dans des instances représentatives du personnel. Je connais la réalité de votre secteur des deux côtés de la table.</p>
             <div class="david-tags">
               <span class="david-tag">Randstad 22 ans</span>
+              <span class="david-tag">Santé privée multi-sites</span>
               <span class="david-tag">RNCP Niveau 6</span>
               <span class="david-tag">Certifié PCM</span>
-              <span class="david-tag">IRP 15 ans</span>
               <span class="david-tag">Supervisé mensuellement</span>
             </div>
           </div>
@@ -488,8 +403,8 @@ const TCP = "https://thecoachpilot.com/book/david-delord/echange-decouverte-30-m
 
     <section class="cta-section">
       <div class="cta-inner">
-        <h2>Parlons de votre manager. Et de ce que vous pouvez dire à votre DG.</h2>
-        <p>Un échange de 30 minutes, sans engagement, pour qualifier la situation et poser les indicateurs concrets que vous pourrez présenter en interne.</p>
+        <h2>Parlons de votre situation.</h2>
+        <p>Un échange de 30 minutes, sans engagement, pour qualifier ensemble si le coaching est la bonne réponse et quel profil prioriser.</p>
         <a href={TCP} target="_blank" rel="noopener" class="btn-primary">Réserver l'échange de 30 min &rarr;</a>
         <p class="cta-sub">Visio France entière &middot; Présentiel Occitanie &middot; david.delord@m2p-coaching.fr</p>
       </div>
