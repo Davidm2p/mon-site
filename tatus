@@ -1,0 +1,7 @@
+[33mcommit 9909cad589a6f5542cd926caf3c2741a9646eb11[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: David Delord <david.delord@m2p-coaching.fr>
+Date:   Thu Jun 11 17:59:23 2026 +0200
+
+    Renommage fichier directeur établissement
+
+src/pages/directeur-etablissement.astro
