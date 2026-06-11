@@ -1,0 +1,498 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+
+const SITE_TITLE = "Coaching DRH Hospitalisation Privée | M²P Coaching";
+const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH de l'hospitalisation privée. Sécurisez vos prises de poste, stabilisez vos cadres en tension. David Delord, 22 ans de terrain RH.";
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: #F4F1EA;
+        color: #4A4F4B;
+      }
+
+      .lp-header {
+        background: #4A4F4B;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .lp-header .logo {
+        font-size: 18px;
+        font-weight: 600;
+        color: #F4F1EA;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+      }
+      .lp-header .logo span { color: #C18E52; }
+      .lp-header .header-cta {
+        background: #C18E52;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 8px 18px;
+        border-radius: 0.5rem;
+        text-decoration: none;
+      }
+
+      .lp { max-width: 720px; margin: 0 auto; }
+
+      /* HERO */
+      .hero {
+        background: #4A4F4B;
+        padding: 3rem 2.5rem 2.5rem;
+      }
+      .hero-tag {
+        display: inline-block;
+        background: #C18E52;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        padding: 4px 14px;
+        border-radius: 0.5rem;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        font-size: 26px;
+        font-weight: 500;
+        color: #F4F1EA;
+        line-height: 1.4;
+        margin-bottom: 1.25rem;
+        max-width: 580px;
+      }
+      .hero-sub {
+        font-size: 16px;
+        color: #A3B39F;
+        line-height: 1.75;
+        margin-bottom: 2rem;
+        max-width: 540px;
+      }
+      .hero-cta {
+        display: inline-block;
+        background: #C18E52;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 14px 28px;
+        border-radius: 0.5rem;
+        text-decoration: none;
+      }
+      .hero-proof {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+        padding-top: 1.75rem;
+        border-top: 0.5px solid rgba(163,179,159,0.25);
+      }
+      .proof-item { font-size: 12px; color: #A3B39F; line-height: 1.5; }
+      .proof-val { font-size: 17px; font-weight: 500; color: #F4F1EA; display: block; margin-bottom: 2px; }
+
+      /* SECTIONS */
+      .section { background: #F4F1EA; padding: 2.5rem; }
+      .section-white { background: #fff; padding: 2.5rem; }
+      .sep { border: none; border-top: 0.5px solid #D6D2C8; margin: 0; }
+
+      .eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.07em;
+        color: #C18E52;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+      }
+      .section h2, .section-white h2 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #4A4F4B;
+        line-height: 1.4;
+        margin-bottom: 1.25rem;
+      }
+      .section p, .section-white p {
+        font-size: 15px;
+        color: #4A4F4B;
+        line-height: 1.75;
+      }
+
+      /* PAIN GRID */
+      .pain-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 1.25rem;
+      }
+      .pain-card {
+        background: #fff;
+        border: 0.5px solid #D6D2C8;
+        border-radius: 0.5rem;
+        padding: 16px 18px;
+      }
+      .pain-card p { font-size: 13px; color: #4A4F4B; line-height: 1.65; }
+
+      /* BEN LIST */
+      .ben-list { display: flex; flex-direction: column; gap: 14px; margin-top: 1.25rem; }
+      .ben-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 16px 18px;
+        background: #F4F1EA;
+        border: 0.5px solid #D6D2C8;
+        border-radius: 0.75rem;
+      }
+      .ben-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 0.5rem;
+        background: #EDD9B8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 20px;
+      }
+      .ben-body h3 { font-size: 15px; font-weight: 500; color: #4A4F4B; margin-bottom: 5px; }
+      .ben-body p { font-size: 13px; color: #5A5F5B; line-height: 1.65; }
+
+      /* TRIG LIST */
+      .trig-list { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+      .trig-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 16px;
+        background: #fff;
+        border: 0.5px solid #D6D2C8;
+        border-radius: 0.5rem;
+      }
+      .trig-arrow { color: #C18E52; font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+      .trig-item p { font-size: 13px; color: #4A4F4B; line-height: 1.65; }
+
+      /* PARCOURS */
+      .parcours-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 1.25rem;
+      }
+      .parcours-card {
+        border: 0.5px solid #D6D2C8;
+        border-radius: 0.75rem;
+        padding: 16px;
+        background: #fff;
+      }
+      .parcours-card.star { border: 1.5px solid #C18E52; }
+      .parcours-label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #C18E52;
+        margin-bottom: 6px;
+      }
+      .parcours-card h3 { font-size: 14px; font-weight: 500; color: #4A4F4B; margin-bottom: 6px; line-height: 1.4; }
+      .parcours-card .seances { font-size: 12px; color: #7A7F7B; margin-bottom: 10px; }
+      .parcours-card .prix { font-size: 19px; font-weight: 500; color: #4A4F4B; }
+      .parcours-card .prix span { font-size: 12px; font-weight: 400; color: #7A7F7B; }
+      .parcours-card .desc { font-size: 12px; color: #5A5F5B; line-height: 1.6; margin-top: 10px; }
+      .parcours-note { font-size: 12px; color: #7A7F7B; margin-top: 14px; }
+
+      /* PROCESS */
+      .process-list { display: flex; flex-direction: column; margin-top: 1.25rem; }
+      .process-step {
+        display: flex;
+        gap: 18px;
+        padding: 16px 0;
+        border-bottom: 0.5px solid #D6D2C8;
+      }
+      .process-step:last-child { border-bottom: none; }
+      .step-num {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #EDD9B8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 500;
+        color: #854F0B;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .step-body h3 { font-size: 15px; font-weight: 500; color: #4A4F4B; margin-bottom: 5px; }
+      .step-body p { font-size: 13px; color: #5A5F5B; line-height: 1.65; }
+
+      /* DAVID */
+      .david-block {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        margin-top: 1.25rem;
+        padding: 18px;
+        background: #F4F1EA;
+        border: 0.5px solid #D6D2C8;
+        border-radius: 0.75rem;
+      }
+      .david-avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: #6E8774;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+        font-weight: 500;
+        color: #F4F1EA;
+        flex-shrink: 0;
+      }
+      .david-body h3 { font-size: 15px; font-weight: 500; color: #4A4F4B; margin-bottom: 6px; }
+      .david-body p { font-size: 13px; color: #5A5F5B; line-height: 1.65; }
+      .david-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+      .david-tag {
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 0.5rem;
+        background: #EDD9B8;
+        color: #854F0B;
+      }
+
+      /* CTA */
+      .cta-section {
+        background: #4A4F4B;
+        padding: 3rem 2.5rem;
+        text-align: center;
+      }
+      .cta-section h2 { font-size: 22px; font-weight: 500; color: #F4F1EA; margin-bottom: 1rem; }
+      .cta-section p { font-size: 15px; color: #A3B39F; line-height: 1.75; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+      .cta-btn {
+        display: inline-block;
+        background: #C18E52;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 16px 32px;
+        border-radius: 0.5rem;
+        text-decoration: none;
+      }
+      .cta-sub { font-size: 12px; color: #A3B39F; margin-top: 1.25rem; }
+
+      /* LP FOOTER */
+      .lp-footer {
+        background: #4A4F4B;
+        border-top: 0.5px solid rgba(163,179,159,0.2);
+        padding: 1.5rem 2.5rem;
+        text-align: center;
+      }
+      .lp-footer p { font-size: 12px; color: #A3B39F; line-height: 1.6; }
+      .lp-footer a { color: #C18E52; text-decoration: none; }
+
+      @media (max-width: 600px) {
+        .hero { padding: 2rem 1.25rem; }
+        .hero h1 { font-size: 20px; }
+        .hero-proof { flex-direction: column; gap: 1rem; }
+        .section, .section-white { padding: 1.75rem 1.25rem; }
+        .pain-grid { grid-template-columns: 1fr; }
+        .parcours-grid { grid-template-columns: 1fr; }
+        .cta-section { padding: 2rem 1.25rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <header class="lp-header">
+      <a href="/" class="logo">M<sup>2</sup><span>P</span></a>
+      <a href="https://calendly.com/david-delord-m2p-coaching/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener" class="header-cta">Réserver 30 min &rarr;</a>
+    </header>
+
+    <main class="lp">
+
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-tag">DRH &middot; Hospitalisation privée</div>
+        <h1>Vos managers clés décrochent avant même que vous le voyiez venir.</h1>
+        <p class="hero-sub">Un coaching expert, ancré dans les réalités de la santé privée, pour sécuriser vos prises de poste, stabiliser vos cadres en tension et réduire le coût humain des décrochages précoces.</p>
+        <a href="https://calendly.com/david-delord-m2p-coaching/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener" class="hero-cta">Réserver un échange de 30 min &rarr;</a>
+        <div class="hero-proof">
+          <div class="proof-item"><span class="proof-val">22 ans</span>Expérience RH terrain</div>
+          <div class="proof-item"><span class="proof-val">RNCP 6</span>Certification coach</div>
+          <div class="proof-item"><span class="proof-val">Santé privée</span>Secteur connu de l'intérieur</div>
+        </div>
+      </div>
+
+      <!-- CE QUE VOUS GEREZ -->
+      <div class="section">
+        <p class="eyebrow">Ce que vous gérez en ce moment</p>
+        <h2>Vous connaissez ces situations. Elles coûtent cher à ne pas traiter.</h2>
+        <div class="pain-grid">
+          <div class="pain-card"><p>Un manager promu qui perd pied dans les 12 premiers mois. Son équipe le sent avant que vous le sachiez.</p></div>
+          <div class="pain-card"><p>Un directeur d'établissement sous pression groupe qui absorbe tout sans le dire. Jusqu'au jour où il ne peut plus.</p></div>
+          <div class="pain-card"><p>Une prise de poste stratégique que vous voulez sécuriser. Mais vous n'avez pas de ressource interne disponible.</p></div>
+          <div class="pain-card"><p>Un cadre de santé compétent, loyal, qui commence à décrocher. Le remplacer vous coûterait entre 6 et 18 mois de salaire.</p></div>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <!-- CE QUE J'APPORTE -->
+      <div class="section-white">
+        <p class="eyebrow">Ce que j'apporte</p>
+        <h2>Un cadre d'intervention taillé pour votre contexte.</h2>
+        <div class="ben-list">
+          <div class="ben-item">
+            <div class="ben-icon">🏥</div>
+            <div class="ben-body">
+              <h3>Je connais le secteur de l'intérieur</h3>
+              <p>22 ans en ressources humaines, dont une expérience directe dans la santé privée multi-sites. Pression ARS, turn-over soignant, dictature de l'urgence : je n'ai pas besoin qu'on me les explique. On va droit au sujet.</p>
+            </div>
+          </div>
+          <div class="ben-item">
+            <div class="ben-icon">🔒</div>
+            <div class="ben-body">
+              <h3>Cadre tripartite sécurisé</h3>
+              <p>Vous définissez l'objectif institutionnel. Votre collaborateur travaille dans un espace confidentiel total. L'étanchéité entre les séances et l'organisation est contractuellement garantie.</p>
+            </div>
+          </div>
+          <div class="ben-item">
+            <div class="ben-icon">📈</div>
+            <div class="ben-body">
+              <h3>Des résultats mesurables dès le mi-parcours</h3>
+              <p>Un point de mi-parcours vous permet d'évaluer la progression sans entrer dans le contenu des séances. Vous investissez sur un profil, vous suivez l'évolution. Pas de boîte noire.</p>
+            </div>
+          </div>
+          <div class="ben-item">
+            <div class="ben-icon">🎓</div>
+            <div class="ben-body">
+              <h3>Certification et supervision</h3>
+              <p>Coach certifié RNCP niveau 6. Pratique supervisée mensuellement. Charte Éthique du Coaching respectée. Une prestation que vous pouvez présenter à votre direction comme un investissement sécurisé.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <!-- SITUATIONS -->
+      <div class="section">
+        <p class="eyebrow">Situations d'intervention</p>
+        <h2>Quand est-ce que vous faites appel à moi ?</h2>
+        <div class="trig-list">
+          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un manager promu qui montre les premiers signes de décrochage, avant que ça devienne visible pour les équipes.</p></div>
+          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un directeur d'établissement ou directeur adjoint en prise de poste que vous voulez sécuriser dans les 90 premiers jours.</p></div>
+          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un cadre de santé en tension posturale que vous voulez retenir. Compétent, mais à bout.</p></div>
+          <div class="trig-item"><span class="trig-arrow">&rarr;</span><p>Un plan de développement RH à construire pour mobiliser une enveloppe formation sur des profils prioritaires.</p></div>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <!-- PARCOURS -->
+      <div class="section-white">
+        <p class="eyebrow">Les parcours M²P</p>
+        <h2>Trois niveaux selon la situation.</h2>
+        <div class="parcours-grid">
+          <div class="parcours-card">
+            <div class="parcours-label">Maîtrise</div>
+            <h3>De la surcharge à la clarté</h3>
+            <div class="seances">6 séances</div>
+            <div class="prix">1 800 € <span>HT &middot; 300 €/séance</span></div>
+            <p class="desc">Nommer ce qui se passe. Réduire la pression. Retrouver des appuis solides.</p>
+          </div>
+          <div class="parcours-card star">
+            <div class="parcours-label">Mouvement</div>
+            <h3>De la clarté à la décision assumée</h3>
+            <div class="seances">8 séances</div>
+            <div class="prix">2 200 € <span>HT &middot; 275 €/séance</span></div>
+            <p class="desc">Les ressources émergent. Les décisions se prennent. Adapté aux prises de poste et tensions actives.</p>
+          </div>
+          <div class="parcours-card">
+            <div class="parcours-label">Progression</div>
+            <h3>De la décision à la posture tenue</h3>
+            <div class="seances">10 séances</div>
+            <div class="prix">2 500 € <span>HT &middot; 250 €/séance</span></div>
+            <p class="desc">Ancrer un leadership durable. Sans dépendre d'un cadre extérieur.</p>
+          </div>
+        </div>
+        <p class="parcours-note">40% à la signature &middot; 30% mi-parcours &middot; 30% dernière séance.</p>
+      </div>
+
+      <hr class="sep" />
+
+      <!-- PROCESS -->
+      <div class="section">
+        <p class="eyebrow">Comment ça fonctionne</p>
+        <h2>Du premier contact à la fin du parcours.</h2>
+        <div class="process-list">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div class="step-body"><h3>Échange de 30 minutes</h3><p>Vous décrivez la situation. Je qualifie si le coaching est la bonne réponse. On pose le cadre contractuel tripartite. Sans engagement.</p></div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div class="step-body"><h3>Entretien préalable avec le coaché</h3><p>Je rencontre votre collaborateur. On vérifie ensemble la coachabilité de la situation. Si ce n'est pas le bon moment, je vous le dis.</p></div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div class="step-body"><h3>Parcours en séances individuelles</h3><p>45 à 60 minutes par séance, en visio ou en présentiel en Occitanie. Confidentialité totale. Flexibilité calendaire adaptée aux contraintes du secteur.</p></div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div class="step-body"><h3>Point de mi-parcours avec vous</h3><p>Un bilan intermédiaire sur la progression observable. Vous mesurez l'impact sur la posture et le fonctionnement dans le rôle, sans entrer dans le contenu des séances.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <!-- QUI JE SUIS -->
+      <div class="section-white">
+        <p class="eyebrow">Qui je suis</p>
+        <h2>Pas un coach qui découvre le secteur santé.</h2>
+        <div class="david-block">
+          <div class="david-avatar">DD</div>
+          <div class="david-body">
+            <h3>David Delord &middot; Coach Professionnel Certifié RNCP 6</h3>
+            <p>22 ans en ressources humaines. Consultant senior chez Randstad, puis Responsable RH Recrutement et Développement dans un groupe de santé privée multi-sites. J'ai travaillé aux côtés des directeurs d'établissements sur leurs enjeux managériaux, et siégé pendant 15 ans dans des instances représentatives du personnel. Je connais la réalité de votre secteur des deux côtés de la table.</p>
+            <div class="david-tags">
+              <span class="david-tag">Randstad 22 ans</span>
+              <span class="david-tag">Santé privée multi-sites</span>
+              <span class="david-tag">RNCP Niveau 6</span>
+              <span class="david-tag">Certifié PCM</span>
+              <span class="david-tag">Supervisé mensuellement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA FINAL -->
+      <div class="cta-section">
+        <h2>Parlons de votre situation.</h2>
+        <p>Un échange de 30 minutes, sans engagement, pour qualifier ensemble si le coaching est la bonne réponse et quel profil prioriser.</p>
+        <a href="https://calendly.com/david-delord-m2p-coaching/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener" class="cta-btn">Réserver l'échange de 30 min &rarr;</a>
+        <p class="cta-sub">Visio France entière &middot; Présentiel Occitanie &middot; david.delord@m2p-coaching.fr</p>
+      </div>
+
+    </main>
+
+    <footer class="lp-footer">
+      <p>
+        M²P Coaching &amp; Développement &middot; SASU &middot; RC Pro &middot;
+        <a href="/">Retour au site</a> &middot;
+        <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a>
+      </p>
+    </footer>
+
+  </body>
+</html>
