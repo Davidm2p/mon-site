@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-const SITE_TITLE = 'Coaching Hospitalisation Privée · Dirigeants & Cadres | M²P';
+const SITE_TITLE = 'Coaching Dirigeants Santé Privée | Cliniques & Établissements | M²P';
 const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coach certifié RNCP 6, ancien Responsable RH Recrutement & Développement, Groupe Clinipole. Visio France, présentiel Occitanie.';
 ---
 <!doctype html>
@@ -187,38 +187,19 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
           <p class="offres-note">Conseil stratégique RH : 1 500 € HT/j · Formation recrutement / QVT : 1 300 € HT/j</p>
         </div>
       </section>
-
-      <section class="cta-sante">
-        <div class="container">
-          <h2>30 minutes pour explorer votre situation.<br/>Sans engagement.</h2>
-          <p>Un premier échange pour voir si la démarche fait sens pour vous et si nous avons envie de travailler ensemble. Vous repartez avec de la clarté sur votre situation, quelle que soit la suite.</p>
-          <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" class="cta">Je réserve</a>
-          <p class="contact-info"><a href="tel:+33675747456">06 75 74 74 56</a> · <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a></p>
-          <p class="contact-info">Visio France entière · Présentiel Occitanie</p>
-        </div>
-      </section>
-
-    </main>
-    <Footer />
-  </body>
-</html>
-
-<style>
-  * { box-sizing: border-box; }
-
-  .hero-sante {
-    background: #535861;
-    padding: 6rem 2rem 5rem;
-    text-align: center;
-  }
-  .hero-sante-content { max-width: 740px; margin: 0 auto; }
-  .surtitre {
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #C99763;
-    margin-bottom: 1.5rem;
-  }
+<section style="background:#F4F1EA; padding:2.5rem 1.5rem; border-top:1px solid #E0DDD6;">
+  <div style="max-width:740px; margin:0 auto; display:flex; flex-direction:column; gap:1rem;">
+    <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; color:#7F9B88; font-weight:600;">Pages dédiées</p>
+    <div style="display:flex; flex-wrap:wrap; gap:1rem;">
+      <a href="/directeur-etablissement" style="flex:1; min-width:200px; background:#fff; border:1px solid #E0DDD6; border-radius:0.5rem; padding:1rem 1.25rem; text-decoration:none; color:#535861; font-size:0.9rem; font-weight:600;">
+        Vous êtes directeur d'établissement ? <span style="color:#C99763;">Voir la page →</span>
+      </a>
+      <a href="/drh-pme" style="flex:1; min-width:200px; background:#fff; border:1px solid #E0DDD6; border-radius:0.5rem; padding:1rem 1.25rem; text-decoration:none; color:#535861; font-size:0.9rem; font-weight:600;">
+        Vous êtes DRH ou RRH en PME ? <span style="color:#C99763;">Voir la page →</span>
+      </a>
+    </div>
+  </div>
+</section>
   .hero-sante h1 {
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 700;
