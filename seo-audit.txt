@@ -1,0 +1,31 @@
+﻿
+src\pages\about.astro:6:const SITE_TITLE = "David Delord · Coach Certifié RNCP 6 | M²P Coaching";
+src\pages\about.astro:7:const SITE_DESCRIPTION = "22 ans de terrain RH, dont responsable RH recrutement d'un groupe de santé privée de 21 
+établissements. Aujourd'hui coach certifié. C'est ça qui change tout.";
+src\pages\accompagnements.astro:5:const SITE_TITLE = 'Accompagnements Coaching | Professionnels & Particuliers | M²P Coaching';
+src\pages\accompagnements.astro:6:const SITE_DESCRIPTION = 'Coaching professionnel pour cadres, managers et dirigeants, ou coaching 
+individuel pour particuliers. Coach certifié RNCP 6. Occitanie et visio France entière.';
+src\pages\directeur-etablissement.astro:4:const SITE_TITLE = "Coaching Directeur d'Établissement Santé Privée | M²P Coaching";
+src\pages\directeur-etablissement.astro:5:const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les directeurs 
+d'établissements de santé privée. Retrouvez de la clarté décisionnelle et une posture que vous tenez dans la durée. David Delord, 22 ans 
+de terrain RH en santé privée.";
+src\pages\drh-hospitalisation-privee.astro:4:const SITE_TITLE = "Coaching DRH Hospitalisation Privée | M²P Coaching";
+src\pages\drh-hospitalisation-privee.astro:5:const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH de 
+l'hospitalisation privée. Sécurisez vos prises de poste, stabilisez vos cadres en tension. David Delord, 22 ans de terrain RH.";
+src\pages\drh-pme.astro:4:const SITE_TITLE = "Coaching DRH et RRH PME | M²P Coaching";
+src\pages\drh-pme.astro:5:const SITE_DESCRIPTION = "Coaching professionnel certifié RNCP 6 pour les DRH et RRH de PME et ETI. Des 
+indicateurs concrets dès la séance 1 pour défendre l'investissement auprès de votre direction. David Delord, 22 ans de terrain RH.";
+src\pages\index.astro:6:const SITE_TITLE = 'Coach Professionnel Certifié RNCP 6 · David Delord · Occitanie';
+src\pages\index.astro:7:const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez la direction ? Coach certifié 
+RNCP 6, 22 ans d'expérience RH. Visio France entière, présentiel Occitanie.";
+src\pages\particuliers.astro:5:const SITE_TITLE = 'Coaching Individuel Particuliers | M²P Coaching Occitanie';
+src\pages\particuliers.astro:6:const SITE_DESCRIPTION = 'Vous êtes à un moment où les choix comptent. Coach certifié RNCP 6, je crée 
+l\'espace pour avancer avec clarté et intention. Visio France, présentiel Occitanie.';
+src\pages\professionnels.astro:5:const SITE_TITLE = 'Coaching Cadres, Managers & Dirigeants | M²P Coaching Occitanie';
+src\pages\professionnels.astro:6:const SITE_DESCRIPTION = 'Vous gérez un périmètre exigeant. Coach certifié RNCP 6, 22 ans de terrain RH. 
+Cadres, managers, dirigeants, DRH. Visio France, présentiel Occitanie.';
+src\pages\sante-privee.astro:5:const SITE_TITLE = 'Coaching Hospitalisation Privée · Dirigeants & Cadres | M²P';
+src\pages\sante-privee.astro:6:const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coach certifié RNCP 6, ancien 
+Responsable RH Recrutement & Développement, Groupe Clinipole. Visio France, présentiel Occitanie.';
+
+
