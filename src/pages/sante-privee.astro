@@ -15,7 +15,7 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
     <main>
 
       <section class="hero-sante" style="background: #535861;">
-        <div class="hero-sante-content">
+        <div class="container">
           <p class="surtitre">Coaching Exécutif · Hospitalisation Privée · RNCP 6</p>
           <h1>L'hospitalisation privée<br/>a ses propres règles.<br/>Je les connais.</h1>
           <p class="stat">Ancien Responsable RH Recrutement & Développement · Groupe Clinipole</p>
@@ -187,19 +187,20 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
           <p class="offres-note">Conseil stratégique RH : 1 500 € HT/j · Formation recrutement / QVT : 1 300 € HT/j</p>
         </div>
       </section>
-<section style="background:#F4F1EA; padding:2.5rem 1.5rem; border-top:1px solid #E0DDD6;">
-  <div style="max-width:740px; margin:0 auto; display:flex; flex-direction:column; gap:1rem;">
-    <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; color:#7F9B88; font-weight:600;">Pages dédiées</p>
-    <div style="display:flex; flex-wrap:wrap; gap:1rem;">
-      <a href="/directeur-etablissement" style="flex:1; min-width:200px; background:#fff; border:1px solid #E0DDD6; border-radius:0.5rem; padding:1rem 1.25rem; text-decoration:none; color:#535861; font-size:0.9rem; font-weight:600;">
-        Vous êtes directeur d'établissement ? <span style="color:#C99763;">Voir la page →</span>
-      </a>
-      <a href="/drh-pme" style="flex:1; min-width:200px; background:#fff; border:1px solid #E0DDD6; border-radius:0.5rem; padding:1rem 1.25rem; text-decoration:none; color:#535861; font-size:0.9rem; font-weight:600;">
-        Vous êtes DRH ou RRH en PME ? <span style="color:#C99763;">Voir la page →</span>
-      </a>
-    </div>
-  </div>
-</section>
+
+      <section style="background:#F4F1EA; padding:2.5rem 1.5rem; border-top:1px solid #E0DDD6;">
+        <div style="max-width:740px; margin:0 auto; display:flex; flex-direction:column; gap:1rem;">
+          <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; color:#7F9B88; font-weight:600;">Pages dédiées</p>
+          <div style="display:flex; flex-wrap:wrap; gap:1rem;">
+            <a href="/directeur-etablissement" style="flex:1; min-width:200px; background:#fff; border:1px solid #E0DDD6; border-radius:0.5rem; padding:1rem 1.25rem; text-decoration:none; color:#535861; font-size:0.9rem; font-weight:600;">
+              Vous êtes directeur d'établissement ? <span style="color:#C99763;">Voir la page →</span>
+            </a>
+            <a href="/drh-pme" style="flex:1; min-width:200px; background:#fff; border:1px solid #E0DDD6; border-radius:0.5rem; padding:1rem 1.25rem; text-decoration:none; color:#535861; font-size:0.9rem; font-weight:600;">
+              Vous êtes DRH ou RRH en PME ? <span style="color:#C99763;">Voir la page →</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
     </main>
     <Footer />
@@ -207,23 +208,18 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
 </html>
 
 <style>
- .hero-sante {
-  padding: 4rem 2rem 3.5rem;
-}
-.hero-sante-content {
-  width: 100%;
-  max-width: 740px;
-  margin: 0 auto;
-}
-.surtitre {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #7F9B88;
-  margin-bottom: 1.25rem;
-}
+  .hero-sante .container { max-width: 900px; margin-left: auto !important; margin-right: auto !important; padding: 0 2rem; }
 
+  /* HERO */
+  .hero-sante { padding: 4rem 0 3.5rem; }
+  .surtitre {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7F9B88;
+    margin-bottom: 1.25rem;
+  }
   .hero-sante h1 {
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 700;
@@ -237,13 +233,6 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
     margin-bottom: 2.5rem;
     font-weight: 500;
   }
-  .stat span {
-    font-size: 0.85rem;
-    color: #7F9B88;
-    font-weight: 400;
-    display: block;
-    margin-top: 4px;
-  }
   .cta {
     display: inline-block;
     background: #C99763;
@@ -255,9 +244,8 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
     font-size: 0.95rem;
     transition: background 0.2s;
   }
-  .cta:hover { background: #C99763; color: #fff; }
+  .cta:hover { background: #b8895a; color: #fff; }
 
-  .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
   .label {
     font-size: 0.72rem;
     letter-spacing: 0.1em;
@@ -267,10 +255,7 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
   }
 
   /* SITUATIONS */
-  .situations {
-    padding: 5rem 2rem;
-    background: #f4f1ea;
-  }
+  .situations { padding: 5rem 0; background: #f4f1ea; }
   .situations h2 {
     font-size: 1.6rem;
     font-weight: 700;
@@ -291,10 +276,7 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
   .card p { font-size: 0.95rem; color: #4a4f4b; line-height: 1.7; margin: 0; }
 
   /* EXPERTISE */
-  .expertise-sante {
-    padding: 5rem 2rem;
-    background: #fff;
-  }
+  .expertise-sante { padding: 5rem 0; background: #fff; }
   .expertise-sante h2 {
     font-size: 1.6rem;
     font-weight: 700;
@@ -331,11 +313,8 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
   }
   .garantie-desc { font-size: 0.88rem; color: #4a4f4b; line-height: 1.6; }
 
-  /* MÉTHODE */
-  .methode-sante {
-    padding: 5rem 2rem;
-    background: #535861;
-  }
+  /* METHODE */
+  .methode-sante { padding: 5rem 0; background: #535861; }
   .methode-sante h2 {
     font-size: 1.6rem;
     font-weight: 700;
@@ -364,19 +343,10 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
     flex-shrink: 0;
   }
   .mstep-body h3 { font-size: 1.1rem; font-weight: 600; color: #C99763; margin-bottom: 0.75rem; }
-  .mstep-body .avant {
-    font-size: 0.9rem;
-    color: #7F9B88;
-    margin-bottom: 0.5rem;
-    font-style: italic;
-  }
   .mstep-body .apres { font-size: 0.95rem; color: #F4F1EA; line-height: 1.7; }
 
   /* OFFRES */
-  .offres-sante {
-    padding: 5rem 2rem;
-    background: #f4f1ea;
-  }
+  .offres-sante { padding: 5rem 0; background: #f4f1ea; }
   .offres-sante h2 {
     font-size: 1.6rem;
     font-weight: 700;
@@ -412,7 +382,6 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
     padding-bottom: 1.5rem;
   }
   .forfaits { display: flex; flex-direction: column; gap: 0; }
-
   .forfait {
     padding: 0.75rem 0;
     border-bottom: 1px solid #F4F1EA;
@@ -434,67 +403,29 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
   .forfait-prix { font-size: 1rem; font-weight: 700; color: #535861; white-space: nowrap; }
   .forfait-detail { font-size: 0.8rem; color: #7F9B88; }
   .forfait-unite { font-size: 0.78rem; color: #7F9B88; }
-
   .offres-note { font-size: 0.8rem; color: #7F9B88; margin-top: 0.5rem; line-height: 1.6; }
 
-  /* CTA */
-  .cta-sante {
-    padding: 5rem 2rem;
-    background: #535861;
-    text-align: center;
-  }
-  .cta-sante h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #F4F1EA;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-  }
-  .cta-sante p {
-    font-size: 1rem;
-    color: #7F9B88;
-    margin-bottom: 2rem;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .contact-info {
-    font-size: 0.85rem;
-    color: #7F9B88;
-    margin-bottom: 0.25rem;
-  }
-  .contact-info a { color: #C99763; text-decoration: none; }
-  .contact-info a:hover { text-decoration: underline; }
-
-  /* ── RESPONSIVE MOBILE ── */
+  /* RESPONSIVE MOBILE */
   @media (max-width: 768px) {
+    .hero-sante { padding: 3rem 0 2.5rem; }
+    .cta { display: block; width: 100%; text-align: center; }
 
-    .hero-sante { padding: 3rem 1.25rem 2.5rem; }
-    .cta {
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
-
-    .situations { padding: 3rem 1.25rem; }
+    .situations { padding: 3rem 0; }
     .situations h2 { font-size: 1.3rem; margin-bottom: 1.5rem; }
     .cards { grid-template-columns: 1fr; }
 
-    .expertise-sante { padding: 3rem 1.25rem; }
+    .expertise-sante { padding: 3rem 0; }
     .expertise-sante h2 { font-size: 1.3rem; margin-bottom: 1.5rem; }
     .expertise-grid { grid-template-columns: 1fr; gap: 2rem; }
 
-    .methode-sante { padding: 3rem 1.25rem; }
+    .methode-sante { padding: 3rem 0; }
     .methode-sante h2 { font-size: 1.3rem; margin-bottom: 2rem; }
     .mstep { grid-template-columns: 48px 1fr; gap: 1rem; }
     .mstep-lettre { width: 48px; height: 48px; font-size: 1.1rem; }
 
-    .offres-sante { padding: 3rem 1.25rem; }
+    .offres-sante { padding: 3rem 0; }
     .offres-sante h2 { font-size: 1.3rem; margin-bottom: 1.5rem; }
     .offres-grid { grid-template-columns: 1fr; gap: 1.25rem; }
     .offre-bloc { padding: 1.5rem 1.25rem; }
-
-    .cta-sante { padding: 3rem 1.25rem; }
-    .cta-sante h2 { font-size: 1.4rem; }
   }
 </style>
