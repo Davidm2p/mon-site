@@ -208,11 +208,21 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
 
 <style>
  .hero-sante {
-  padding: 3.5rem 2rem 3rem;
+  padding: 4rem 2rem 3.5rem;
+  display: flex;
+  justify-content: center;
 }
 .hero-sante-content {
+  width: 100%;
   max-width: 740px;
-  margin: 0 auto;
+}
+.surtitre {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7F9B88;
+  margin-bottom: 1.25rem;
 }
 
   .hero-sante h1 {
@@ -460,7 +470,7 @@ const SITE_DESCRIPTION = 'L\'hospitalisation privée a ses propres règles. Coac
   /* ── RESPONSIVE MOBILE ── */
   @media (max-width: 768px) {
 
-    .hero-sante { padding: 3.5rem 1.25rem 3rem; }
+    .hero-sante { padding: 3rem 1.25rem 2.5rem; }
     .cta {
       display: block;
       width: 100%;
