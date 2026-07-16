@@ -1,0 +1,280 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+
+const SITE_TITLE = "Politique de confidentialité | M²P Coaching & Développement";
+const SITE_DESCRIPTION = "Politique de confidentialité et protection des données personnelles — M²P Coaching & Développement, David Delord.";
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+        background: #F4F1EA;
+        color: #535861;
+        line-height: 1.7;
+      }
+
+      .lp-header {
+        background: #535861;
+        padding: 0.875rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .lp-logo img { height: 64px; display: block; padding: 4px; background: #F4F1EA; border-radius: 4px; }
+      .lp-cta {
+        background: #C99763;
+        color: #fff;
+        font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px 20px;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .page-hero {
+        background: #535861;
+        padding: 3rem 2rem 2.5rem;
+      }
+      .page-hero-inner {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .page-hero h1 {
+        color: #F4F1EA;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+      }
+      .page-hero p {
+        color: #A8B8A2;
+        font-size: 1rem;
+      }
+
+      .page-body {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 3rem 2rem 4rem;
+      }
+
+      .legal-block {
+        margin-bottom: 2.5rem;
+      }
+      .legal-block h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #535861;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #C99763;
+      }
+      .legal-block p {
+        margin-bottom: 0.6rem;
+        font-size: 0.97rem;
+      }
+      .legal-block ul {
+        margin: 0.5rem 0 0.75rem 1.4rem;
+        font-size: 0.97rem;
+      }
+      .legal-block li {
+        margin-bottom: 0.35rem;
+      }
+      .legal-block a {
+        color: #7F9B88;
+        text-decoration: underline;
+      }
+      .legal-block a:hover { color: #C99763; }
+
+      .breadcrumb {
+        font-size: 0.85rem;
+        margin-bottom: 2rem;
+        color: #A8B8A2;
+      }
+      .breadcrumb a {
+        color: #7F9B88;
+        text-decoration: none;
+      }
+      .breadcrumb a:hover { text-decoration: underline; }
+
+      .lp-footer {
+        background: #535861;
+        color: #A8B8A2;
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 1.25rem 2rem;
+        line-height: 2;
+      }
+      .lp-footer a {
+        color: #C99763;
+        text-decoration: none;
+      }
+      .lp-footer a:hover { text-decoration: underline; }
+
+      .legal-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #C9976340;
+      }
+      .legal-nav a {
+        font-size: 0.85rem;
+        color: #7F9B88;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .page-body { padding: 2rem 1.25rem 3rem; }
+        .lp-header { padding: 0.75rem 1.25rem; }
+        .lp-cta { font-size: 12px; padding: 8px 14px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="lp-header">
+      <a href="/" class="lp-logo">
+        <img src="/logo.png" alt="M²P Coaching & Développement" />
+      </a>
+      <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching"
+         target="_blank" rel="noopener" class="lp-cta">
+        Échange découverte 30 min &rarr;
+      </a>
+    </header>
+
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Politique de confidentialité</h1>
+        <p>Protection de vos données personnelles — conformité RGPD</p>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a> &nbsp;&rsaquo;&nbsp; Politique de confidentialité
+      </nav>
+
+      <div class="legal-block">
+        <p>La présente politique de confidentialité décrit la manière dont M²P Coaching &amp; Développement collecte, utilise et protège les données personnelles des utilisateurs du site <a href="https://www.m2p-coaching.fr">www.m2p-coaching.fr</a>, conformément au Règlement Général sur la Protection des Données (RGPD &mdash; UE 2016/679).</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>1. Responsable du traitement</h2>
+        <p>Le responsable du traitement est :</p>
+        <p>M²P Coaching &amp; Développement &mdash; David Delord</p>
+        <p>Email : <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a></p>
+      </div>
+
+      <div class="legal-block">
+        <h2>2. Données collectées</h2>
+        <p>Les données personnelles susceptibles d'être collectées sont notamment :</p>
+        <ul>
+          <li>Nom et prénom</li>
+          <li>Adresse email</li>
+          <li>Numéro de téléphone</li>
+          <li>Données professionnelles (fonction, secteur)</li>
+          <li>Messages transmis via le formulaire de contact</li>
+          <li>Données de navigation (cookies, adresse IP, logs)</li>
+        </ul>
+      </div>
+
+      <div class="legal-block">
+        <h2>3. Finalités du traitement</h2>
+        <p>Les données sont collectées afin de :</p>
+        <ul>
+          <li>Répondre aux demandes de contact et organiser les échanges de découverte</li>
+          <li>Assurer le suivi des accompagnements en cours</li>
+          <li>Communiquer dans le cadre de la relation professionnelle</li>
+          <li>Améliorer l'expérience utilisateur sur le site</li>
+          <li>Réaliser des statistiques de fréquentation anonymisées</li>
+        </ul>
+      </div>
+
+      <div class="legal-block">
+        <h2>4. Base légale</h2>
+        <p>Les traitements reposent sur :</p>
+        <ul>
+          <li>Le consentement de l'utilisateur</li>
+          <li>L'exécution de mesures précontractuelles ou contractuelles</li>
+          <li>L'intérêt légitime de M²P Coaching &amp; Développement</li>
+          <li>Les obligations légales applicables</li>
+        </ul>
+      </div>
+
+      <div class="legal-block">
+        <h2>5. Durée de conservation</h2>
+        <ul>
+          <li>Données de contact : 3 ans après le dernier échange</li>
+          <li>Données liées à un accompagnement : durée de la relation contractuelle, puis 5 ans à des fins probatoires</li>
+          <li>Données techniques (cookies, logs) : 13 mois maximum</li>
+        </ul>
+      </div>
+
+      <div class="legal-block">
+        <h2>6. Destinataires des données</h2>
+        <p>Les données sont destinées exclusivement à M²P Coaching &amp; Développement. Elles peuvent être transmises à des prestataires techniques strictement nécessaires au fonctionnement du site (hébergement, plateforme de coaching TheCoachPilot, outil de prise de rendez-vous).</p>
+        <p>Aucune donnée n'est vendue, louée ou cédée à des tiers à des fins commerciales.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>7. Hébergement des données</h2>
+        <p>Le site est hébergé par Vercel Inc. (San Francisco, États-Unis), qui dispose de garanties de conformité RGPD via des clauses contractuelles types. La plateforme TheCoachPilot assure l'hébergement sécurisé des données liées aux parcours de coaching.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>8. Droits des utilisateurs</h2>
+        <p>Conformément à la réglementation en vigueur, vous disposez des droits suivants :</p>
+        <ul>
+          <li>Droit d'accès à vos données</li>
+          <li>Droit de rectification</li>
+          <li>Droit d'effacement</li>
+          <li>Droit à la limitation du traitement</li>
+          <li>Droit d'opposition</li>
+          <li>Droit à la portabilité</li>
+        </ul>
+        <p>Vous pouvez exercer vos droits en adressant une demande à : <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a></p>
+        <p>Vous avez également la possibilité d'introduire une réclamation auprès de la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></p>
+      </div>
+
+      <div class="legal-block">
+        <h2>9. Cookies</h2>
+        <p>Le site utilise des cookies afin de garantir son bon fonctionnement et mesurer son audience. Un bandeau de gestion des cookies permet de paramétrer votre consentement lors de votre première visite.</p>
+        <p>Pour en savoir plus : <a href="/cookies">Politique de gestion des cookies</a></p>
+      </div>
+
+      <div class="legal-block">
+        <h2>10. Sécurité</h2>
+        <p>M²P Coaching &amp; Développement met en oeuvre des mesures techniques et organisationnelles appropriées pour garantir la sécurité et la confidentialité de vos données personnelles, notamment le recours à des connexions sécurisées (HTTPS) et à des prestataires certifiés.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>11. Modification</h2>
+        <p>La présente politique peut être modifiée à tout moment pour refléter les évolutions légales ou techniques. Les utilisateurs sont invités à la consulter régulièrement.</p>
+      </div>
+
+      <nav class="legal-nav">
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/cookies">Gestion des cookies</a>
+        <a href="/">Retour à l'accueil</a>
+      </nav>
+
+    </div>
+
+    <footer class="lp-footer">
+      M²P Coaching &amp; Développement &middot; SASU &middot; RC Pro &middot;
+      <a href="/">Retour au site</a> &middot;
+      <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a>
+    </footer>
+
+  </body>
+</html>

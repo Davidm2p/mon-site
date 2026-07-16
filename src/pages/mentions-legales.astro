@@ -1,0 +1,209 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+
+const SITE_TITLE = "Mentions légales | M²P Coaching & Développement";
+const SITE_DESCRIPTION = "Mentions légales du site m2p-coaching.fr — M²P Coaching & Développement, David Delord, coach professionnel certifié RNCP 6.";
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+        background: #F4F1EA;
+        color: #535861;
+        line-height: 1.7;
+      }
+
+      .lp-header {
+        background: #535861;
+        padding: 0.875rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .lp-logo img { height: 64px; display: block; padding: 4px; background: #F4F1EA; border-radius: 4px; }
+      .lp-cta {
+        background: #C99763;
+        color: #fff;
+        font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px 20px;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .page-hero {
+        background: #535861;
+        padding: 3rem 2rem 2.5rem;
+      }
+      .page-hero-inner {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .page-hero h1 {
+        color: #F4F1EA;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+      }
+      .page-hero p {
+        color: #A8B8A2;
+        font-size: 1rem;
+      }
+
+      .page-body {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 3rem 2rem 4rem;
+      }
+
+      .legal-block {
+        margin-bottom: 2.5rem;
+      }
+      .legal-block h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #535861;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #C99763;
+      }
+      .legal-block p {
+        margin-bottom: 0.6rem;
+        font-size: 0.97rem;
+      }
+      .legal-block a {
+        color: #7F9B88;
+        text-decoration: underline;
+      }
+      .legal-block a:hover {
+        color: #C99763;
+      }
+
+      .breadcrumb {
+        font-size: 0.85rem;
+        margin-bottom: 2rem;
+        color: #A8B8A2;
+      }
+      .breadcrumb a {
+        color: #7F9B88;
+        text-decoration: none;
+      }
+      .breadcrumb a:hover { text-decoration: underline; }
+
+      .lp-footer {
+        background: #535861;
+        color: #A8B8A2;
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 1.25rem 2rem;
+        line-height: 2;
+      }
+      .lp-footer a {
+        color: #C99763;
+        text-decoration: none;
+      }
+      .lp-footer a:hover { text-decoration: underline; }
+
+      .legal-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #C9976340;
+      }
+      .legal-nav a {
+        font-size: 0.85rem;
+        color: #7F9B88;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .page-body { padding: 2rem 1.25rem 3rem; }
+        .lp-header { padding: 0.75rem 1.25rem; }
+        .lp-cta { font-size: 12px; padding: 8px 14px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="lp-header">
+      <a href="/" class="lp-logo">
+        <img src="/logo.png" alt="M²P Coaching & Développement" />
+      </a>
+      <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching"
+         target="_blank" rel="noopener" class="lp-cta">
+        Échange découverte 30 min &rarr;
+      </a>
+    </header>
+
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Mentions légales</h1>
+        <p>Informations légales relatives au site m2p-coaching.fr</p>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a> &nbsp;&rsaquo;&nbsp; Mentions légales
+      </nav>
+
+      <div class="legal-block">
+        <h2>Éditeur du site</h2>
+        <p>Nom du site : M²P Coaching &amp; Développement</p>
+        <p>URL : <a href="https://www.m2p-coaching.fr">https://www.m2p-coaching.fr</a></p>
+        <p>Responsable de la publication : David Delord</p>
+        <p>Forme juridique : Société par Actions Simplifiée Unipersonnelle (SASU)</p>
+        <p>Numéro SIREN : 107 090 896</p>
+        <p>RCS : Montpellier</p>
+        <p>Siège social : 5 Impasse Johannes Kepler, 34070 Montpellier</p>
+        <p>Email : <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a></p>
+      </div>
+
+      <div class="legal-block">
+        <h2>Hébergement</h2>
+        <p>Le site est hébergé par :</p>
+        <p>Vercel Inc.</p>
+        <p>340 Pine Street, Suite 701 &mdash; San Francisco, CA 94104 &mdash; États-Unis</p>
+        <p>Site : <a href="https://vercel.com" target="_blank" rel="noopener">https://vercel.com</a></p>
+      </div>
+
+      <div class="legal-block">
+        <h2>Propriété intellectuelle</h2>
+        <p>L'ensemble des contenus présents sur le site www.m2p-coaching.fr (textes, images, graphismes, logos, structure) est protégé par le droit d'auteur et reste la propriété exclusive de M²P Coaching &amp; Développement, sauf mention contraire.</p>
+        <p>Toute reproduction, représentation, modification, publication ou adaptation, totale ou partielle, de ces éléments, par quelque procédé que ce soit, est interdite sans autorisation écrite préalable.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>Responsabilité</h2>
+        <p>M²P Coaching &amp; Développement s'efforce de fournir sur le site des informations aussi précises que possible. Toutefois, la responsabilité de l'éditeur ne saurait être engagée en cas d'omissions, d'inexactitudes ou de carences dans la mise à jour des informations.</p>
+        <p>Le site peut contenir des liens hypertextes vers des sites tiers. M²P Coaching &amp; Développement ne peut être tenu responsable du contenu de ces sites externes.</p>
+      </div>
+
+      <nav class="legal-nav">
+        <a href="/politique-de-confidentialite">Politique de confidentialité</a>
+        <a href="/cookies">Gestion des cookies</a>
+        <a href="/">Retour à l'accueil</a>
+      </nav>
+
+    </div>
+
+    <footer class="lp-footer">
+      M²P Coaching &amp; Développement &middot; SASU &middot; RC Pro &middot;
+      <a href="/">Retour au site</a> &middot;
+      <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a>
+    </footer>
+
+  </body>
+</html>

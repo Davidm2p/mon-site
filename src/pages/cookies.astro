@@ -1,0 +1,284 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+
+const SITE_TITLE = "Gestion des cookies | M²P Coaching & Développement";
+const SITE_DESCRIPTION = "Politique de gestion des cookies du site m2p-coaching.fr — M²P Coaching & Développement, David Delord.";
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+        background: #F4F1EA;
+        color: #535861;
+        line-height: 1.7;
+      }
+
+      .lp-header {
+        background: #535861;
+        padding: 0.875rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .lp-logo img { height: 64px; display: block; padding: 4px; background: #F4F1EA; border-radius: 4px; }
+      .lp-cta {
+        background: #C99763;
+        color: #fff;
+        font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px 20px;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .page-hero {
+        background: #535861;
+        padding: 3rem 2rem 2.5rem;
+      }
+      .page-hero-inner {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .page-hero h1 {
+        color: #F4F1EA;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+      }
+      .page-hero p {
+        color: #A8B8A2;
+        font-size: 1rem;
+      }
+
+      .page-body {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 3rem 2rem 4rem;
+      }
+
+      .legal-block {
+        margin-bottom: 2.5rem;
+      }
+      .legal-block h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #535861;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #C99763;
+      }
+      .legal-block p {
+        margin-bottom: 0.6rem;
+        font-size: 0.97rem;
+      }
+      .legal-block ul {
+        margin: 0.5rem 0 0.75rem 1.4rem;
+        font-size: 0.97rem;
+      }
+      .legal-block li {
+        margin-bottom: 0.35rem;
+      }
+      .legal-block a {
+        color: #7F9B88;
+        text-decoration: underline;
+      }
+      .legal-block a:hover { color: #C99763; }
+
+      .cookie-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+        font-size: 0.9rem;
+      }
+      .cookie-table th {
+        background: #535861;
+        color: #F4F1EA;
+        padding: 0.6rem 0.75rem;
+        text-align: left;
+        font-weight: 700;
+      }
+      .cookie-table td {
+        padding: 0.6rem 0.75rem;
+        border-bottom: 1px solid #C9976330;
+      }
+      .cookie-table tr:nth-child(even) td {
+        background: #F4F1EA;
+      }
+
+      .breadcrumb {
+        font-size: 0.85rem;
+        margin-bottom: 2rem;
+        color: #A8B8A2;
+      }
+      .breadcrumb a {
+        color: #7F9B88;
+        text-decoration: none;
+      }
+      .breadcrumb a:hover { text-decoration: underline; }
+
+      .lp-footer {
+        background: #535861;
+        color: #A8B8A2;
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 1.25rem 2rem;
+        line-height: 2;
+      }
+      .lp-footer a {
+        color: #C99763;
+        text-decoration: none;
+      }
+      .lp-footer a:hover { text-decoration: underline; }
+
+      .legal-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #C9976340;
+      }
+      .legal-nav a {
+        font-size: 0.85rem;
+        color: #7F9B88;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .page-body { padding: 2rem 1.25rem 3rem; }
+        .lp-header { padding: 0.75rem 1.25rem; }
+        .lp-cta { font-size: 12px; padding: 8px 14px; }
+        .cookie-table { font-size: 0.8rem; }
+        .cookie-table th, .cookie-table td { padding: 0.4rem 0.5rem; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="lp-header">
+      <a href="/" class="lp-logo">
+        <img src="/logo.png" alt="M²P Coaching & Développement" />
+      </a>
+      <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching"
+         target="_blank" rel="noopener" class="lp-cta">
+        Échange découverte 30 min &rarr;
+      </a>
+    </header>
+
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Gestion des cookies</h1>
+        <p>Utilisation des traceurs sur le site m2p-coaching.fr</p>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a> &nbsp;&rsaquo;&nbsp; Gestion des cookies
+      </nav>
+
+      <div class="legal-block">
+        <p>La présente politique a pour objectif d'informer les utilisateurs du site <a href="https://www.m2p-coaching.fr">www.m2p-coaching.fr</a> de l'utilisation de cookies et autres traceurs lors de leur navigation, conformément à la directive ePrivacy et au RGPD (UE 2016/679).</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>1. Qu'est-ce qu'un cookie ?</h2>
+        <p>Un cookie est un petit fichier texte déposé sur le terminal de l'utilisateur (ordinateur, tablette, smartphone) lors de la consultation d'un site internet. Il permet notamment de mémoriser des préférences de navigation et de collecter des données d'audience.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>2. Cookies utilisés sur le site</h2>
+        <p>Le site www.m2p-coaching.fr utilise deux catégories de cookies :</p>
+
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Catégorie</th>
+              <th>Finalité</th>
+              <th>Consentement requis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cookies fonctionnels</td>
+              <td>Bon fonctionnement du site, mémorisation des préférences de consentement</td>
+              <td>Non (nécessaires)</td>
+            </tr>
+            <tr>
+              <td>Cookies d'audience</td>
+              <td>Mesure de fréquentation via Google Analytics (données anonymisées)</td>
+              <td>Oui</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="legal-block">
+        <h2>3. Google Analytics</h2>
+        <p>Google Analytics est un service d'analyse d'audience fourni par Google LLC. Les informations collectées (comportement de navigation, pages consultées, durée des sessions) sont anonymisées et transmises à Google.</p>
+        <p>M²P Coaching &amp; Développement a configuré Google Analytics afin de :</p>
+        <ul>
+          <li>Anonymiser les adresses IP des visiteurs</li>
+          <li>Désactiver le partage de données avec les services Google</li>
+          <li>Limiter la durée de conservation des données à 13 mois</li>
+        </ul>
+        <p>Pour en savoir plus sur la politique de Google : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+      </div>
+
+      <div class="legal-block">
+        <h2>4. Consentement</h2>
+        <p>Lors de votre première visite sur le site, un bandeau d'information vous permet :</p>
+        <ul>
+          <li>D'accepter les cookies de mesure d'audience</li>
+          <li>De les refuser</li>
+          <li>De modifier vos préférences à tout moment</li>
+        </ul>
+        <p>Aucun cookie de mesure d'audience n'est déposé sans votre consentement préalable. Les cookies fonctionnels strictement nécessaires au fonctionnement du site ne requièrent pas de consentement.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>5. Durée de conservation</h2>
+        <p>Les cookies de mesure d'audience sont conservés pour une durée maximale de 13 mois, conformément aux recommandations de la CNIL. Le cookie mémorisant vos préférences de consentement est conservé 6 mois.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>6. Gestion de vos préférences</h2>
+        <p>Vous pouvez à tout moment modifier vos choix :</p>
+        <ul>
+          <li>Via le bandeau de gestion des cookies présent sur le site</li>
+          <li>En paramétrant directement votre navigateur pour refuser les cookies</li>
+        </ul>
+        <p>Le refus des cookies de mesure d'audience n'a aucune incidence sur l'accès au contenu du site ni sur la qualité de navigation.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>7. Modification de la politique</h2>
+        <p>La présente politique de gestion des cookies peut être modifiée à tout moment pour s'adapter à l'évolution du site ou de la réglementation. Les utilisateurs sont invités à la consulter régulièrement.</p>
+      </div>
+
+      <nav class="legal-nav">
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/politique-de-confidentialite">Politique de confidentialité</a>
+        <a href="/">Retour à l'accueil</a>
+      </nav>
+
+    </div>
+
+    <footer class="lp-footer">
+      M²P Coaching &amp; Développement &middot; SASU &middot; RC Pro &middot;
+      <a href="/">Retour au site</a> &middot;
+      <a href="mailto:david.delord@m2p-coaching.fr">david.delord@m2p-coaching.fr</a>
+    </footer>
+
+  </body>
+</html>
