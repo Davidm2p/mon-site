@@ -27,6 +27,13 @@ const today = new Date();
         LinkedIn — David Delord
       </a>
     </p>
+    <p class="footer-legal">
+      <a href="/mentions-legales">Mentions légales</a>
+      <span class="footer-sep">·</span>
+      <a href="/politique-de-confidentialite">Politique de confidentialité</a>
+      <span class="footer-sep">·</span>
+      <a href="/cookies">Cookies</a>
+    </p>
   </div>
 </footer>
 
@@ -100,7 +107,24 @@ const today = new Date();
     flex-shrink: 0;
   }
 
-  /* ── Bouton retour en haut ── */
+  .footer-legal {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #2e3329;
+    font-size: 0.78rem;
+    color: #555;
+  }
+
+  .footer-legal a {
+    color: #666;
+    font-size: 0.78rem;
+  }
+
+  .footer-legal a:hover {
+    color: #b8975a;
+  }
+
+  /* Bouton retour en haut */
   #back-to-top {
     position: fixed;
     bottom: 1.5rem;
@@ -131,7 +155,7 @@ const today = new Date();
 
   #back-to-top:hover { background: #a97a42; }
 
-  /* ── Mobile ── */
+  /* Mobile */
   @media (max-width: 768px) {
     footer {
       padding: 2rem 1.25rem;
@@ -146,6 +170,13 @@ const today = new Date();
 
     .footer-sep {
       display: none;
+    }
+
+    .footer-legal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
     }
 
     #back-to-top {
