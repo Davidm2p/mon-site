@@ -1,0 +1,266 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const SITE_TITLE = '3 questions à se poser avant une décision qui pèse | Guide gratuit M²P';
+const SITE_DESCRIPTION = "Un guide court, à garder sous la main, pour retrouver de la clarté avant d'agir. Construit à partir du protocole M²P, Maîtrise, Mouvement, Progression.";
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+
+      <!-- ════════════════════════════════
+           HERO
+           ════════════════════════════════ -->
+      <section class="gd-hero" style="background: #535861; color: #F4F1EA;">
+        <div class="container">
+          <p class="label">Guide gratuit, M²P Coaching</p>
+          <h1>3 questions à se poser avant une décision qui pèse</h1>
+          <p class="gd-hero-sous">Un outil court, à garder sous la main, pour retrouver de la clarté avant d'agir. Construit à partir du protocole utilisé dans les accompagnements M²P.</p>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+           APERÇU DES 3 QUESTIONS
+           ════════════════════════════════ -->
+      <section class="gd-apercu">
+        <div class="container">
+          <p class="label">Ce que contient le guide</p>
+          <h2 class="gd-apercu-title">Trois repères, à parcourir en quelques minutes</h2>
+
+          <div class="gd-questions">
+            <div class="gd-question gd-question--un">
+              <span class="gd-num">1</span>
+              <p>Une question pour distinguer une décision alignée sur votre objectif réel d'une décision dictée par l'urgence du moment.</p>
+            </div>
+            <div class="gd-question gd-question--deux">
+              <span class="gd-num">2</span>
+              <p>Une question pour repérer ce qui relève de la pression de l'organisation, et ce qui relève de votre propre jugement.</p>
+            </div>
+            <div class="gd-question gd-question--trois">
+              <span class="gd-num">3</span>
+              <p>Une question pour vérifier, avec le recul d'un an, si cette décision tient encore debout.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+           FORMULAIRE
+           ════════════════════════════════ -->
+      <section class="gd-form-section">
+        <div class="container gd-form-container">
+          <h2>Recevez le guide par e-mail</h2>
+          <p class="gd-form-note">Format PDF, 2 pages. Aucun spam, désinscription en un clic.</p>
+
+          <!--
+            ══════════════════════════════════════════════════════════
+            ACTION REQUISE : une fois votre compte Systeme.io (ou Brevo)
+            créé et le formulaire configuré pour ce guide, remplacez tout
+            le bloc <form> ci-dessous par le code d'intégration fourni par
+            l'outil. Conservez si possible les classes gd-input et
+            gd-submit en les appliquant aux champs générés, pour garder
+            le même habillage visuel.
+            ══════════════════════════════════════════════════════════
+          -->
+          <form class="gd-form" method="post" action="#">
+            <input class="gd-input" type="text" name="prenom" placeholder="Votre prénom" required />
+            <input class="gd-input" type="email" name="email" placeholder="Votre e-mail" required />
+            <button class="gd-submit" type="submit">Je reçois le guide</button>
+          </form>
+
+          <p class="gd-confidentialite">Vos données ne sont ni cédées ni revendues.</p>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+           CTA ALTERNATIF
+           ════════════════════════════════ -->
+      <section class="gd-alt">
+        <div class="container">
+          <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener">Vous préférez en parler directement ? Réservez un échange de 30 minutes →</a>
+        </div>
+      </section>
+
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  img { display: block; max-width: 100%; }
+
+  :root {
+    --kaki:      #535861;
+    --or:        #C99763;
+    --or-p:      #b07d45;
+    --creme:     #F4F1EA;
+    --sage:      #7F9B88;
+    --vert-the:  #A8B8A2;
+    --texte:     #3F4247;
+    --blanc:     #ffffff;
+    --rayon:     4px;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--or);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  /* ── HERO ── */
+  .gd-hero {
+    padding: 4rem 1.5rem 3.5rem;
+  }
+  .gd-hero h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--creme);
+    margin: 0 0 1rem;
+    max-width: 640px;
+  }
+  .gd-hero-sous {
+    font-size: 1rem;
+    color: #C8C4B8;
+    line-height: 1.75;
+    max-width: 600px;
+  }
+
+  /* ── APERÇU DES QUESTIONS ── */
+  .gd-apercu {
+    background: var(--blanc);
+    padding: 4rem 1.5rem;
+  }
+  .gd-apercu .label { color: var(--sage); }
+  .gd-apercu-title {
+    font-size: 1.4rem;
+    color: var(--kaki);
+    margin-bottom: 2rem;
+    line-height: 1.3;
+  }
+  .gd-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .gd-question {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--creme);
+    border-radius: var(--rayon);
+    border-left: 4px solid var(--accent);
+    padding: 1.1rem 1.3rem;
+  }
+  .gd-question--un    { --accent: var(--kaki); }
+  .gd-question--deux  { --accent: var(--sage); }
+  .gd-question--trois { --accent: var(--or-p); }
+  .gd-num {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--blanc);
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+  .gd-question p {
+    margin: 0;
+    color: var(--texte);
+    line-height: 1.65;
+    font-size: 0.95rem;
+    padding-top: 0.2rem;
+  }
+
+  /* ── FORMULAIRE ── */
+  .gd-form-section {
+    background: var(--creme);
+    padding: 4rem 1.5rem;
+  }
+  .gd-form-container {
+    text-align: center;
+    max-width: 480px;
+  }
+  .gd-form-section h2 {
+    font-size: 1.3rem;
+    color: var(--kaki);
+    margin-bottom: 0.5rem;
+  }
+  .gd-form-note {
+    font-size: 0.9rem;
+    color: var(--texte);
+    margin-bottom: 1.75rem;
+  }
+  .gd-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .gd-input {
+    padding: 0.85rem 1rem;
+    border: 1px solid #D8D3C6;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--texte);
+    background: var(--blanc);
+  }
+  .gd-submit {
+    background: var(--or);
+    color: var(--blanc);
+    border: none;
+    border-radius: 50px;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .gd-submit:hover { background: var(--or-p); }
+  .gd-confidentialite {
+    font-size: 0.78rem;
+    color: #9A968A;
+    margin-top: 1rem;
+  }
+
+  /* ── CTA ALTERNATIF ── */
+  .gd-alt {
+    background: var(--blanc);
+    text-align: center;
+    padding: 0 1.5rem 3.5rem;
+  }
+  .gd-alt a {
+    color: var(--sage);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .gd-alt a:hover { text-decoration: underline; }
+
+  @media (min-width: 768px) {
+    .gd-hero h1 { font-size: 2.3rem; }
+  }
+</style>
