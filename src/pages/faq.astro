@@ -1,0 +1,284 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const SITE_TITLE = 'Questions fréquentes | M²P Coaching & Développement';
+const SITE_DESCRIPTION = "Le coaching concrètement, la méthode M²P, l'éthique, le cadre professionnel et le financement. Toutes les réponses avant de réserver un premier échange.";
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+
+      <!-- ════════════════════════════════
+           HERO FAQ
+           ════════════════════════════════ -->
+      <section class="faq-hero" style="background: #535861; color: #F4F1EA;">
+        <div class="container">
+          <p class="label">Questions fréquentes</p>
+          <h1>Le coaching, la méthode, le cadre. Sans détour.</h1>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+           FAQ
+           ════════════════════════════════ -->
+      <section class="faq">
+        <div class="container">
+
+          <div class="faq-block faq-block--concret">
+            <h2 class="faq-block-title">Le coaching, concrètement</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Qu'est-ce qu'un coach humaniste non directif, concrètement ?</summary>
+                <p>Je ne vous apporte pas de solutions toutes faites. Mon rôle consiste à poser un cadre clair et à mener une écoute exigeante, pour que vos propres réponses émergent. Vous restez l'auteur de vos décisions, du premier au dernier échange.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Le coaching remplace-t-il une thérapie ?</summary>
+                <p>Le coaching porte sur un objectif présent et sur l'action, professionnelle ou personnelle. Un suivi thérapeutique explore davantage le passé et le fonctionnement psychique. Les deux démarches peuvent se compléter selon votre situation.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Travaillez-vous pour moi, ou pour l'organisation qui finance l'accompagnement ?</summary>
+                <p>Mon engagement va dans un seul sens, vers vous et vers l'atteinte de votre objectif. Même dans le cadre d'un contrat tripartite avec votre organisation, ce qui se dit en séance reste strictement entre nous. Aucun compte rendu de contenu n'est transmis à votre direction ou à vos RH.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Faut-il déjà savoir précisément ce que je veux travailler avant de commencer ?</summary>
+                <p>Beaucoup de personnes viennent avec une intuition plutôt qu'un objectif formulé. Le premier échange sert justement à clarifier ensemble votre situation réelle et à poser un objectif de travail concret, avant tout engagement.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Pourquoi un parcours structuré plutôt qu'une séance ponctuelle ?</summary>
+                <p>Un parcours en plusieurs séances permet d'aller en profondeur sur une problématique, de mesurer une vraie progression, et d'ancrer les changements dans la durée. Une séance isolée reste utile pour une question précise et immédiate.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Comment l'accompagnement s'organise-t-il avec un emploi du temps chargé ?</summary>
+                <p>Le rythme des séances se cale sur votre disponibilité réelle, généralement toutes les deux à trois semaines. La structure du parcours reste stable, le tempo s'adapte à vous.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Combien de temps avant de percevoir des premiers changements ?</summary>
+                <p>Chaque situation reste unique, mais la plupart des personnes accompagnées identifient des premiers changements concrets dès les toutes premières séances, une clarté retrouvée sur une décision, une posture qui se stabilise.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Comment se passe la confidentialité dans le cadre d'un accompagnement financé par mon organisation ?</summary>
+                <p>L'étanchéité entre la séance et l'institution reste absolue. Seuls les objectifs généraux du parcours peuvent être partagés avec votre organisation si vous le souhaitez, jamais le contenu des séances.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Visio ou présentiel ?</summary>
+                <p>Les séances se déroulent en visio pour la France entière, ou en présentiel en Occitanie, selon votre préférence.</p>
+              </details>
+            </div>
+            <p class="faq-cta"><a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener">Une question ne trouve pas sa réponse ici ? Réservez un premier échange de 30 minutes →</a></p>
+          </div>
+
+          <div class="faq-block faq-block--methode">
+            <h2 class="faq-block-title">La méthode M²P en bref</h2>
+            <div class="faq-list">
+              <details class="faq-item faq-item--methode">
+                <summary>En quoi consiste la méthode M²P ?</summary>
+                <div class="methode-etapes">
+                  <span class="etape etape--maitrise">Maîtrise</span>
+                  <span class="etape etape--mouvement">Mouvement</span>
+                  <span class="etape etape--progression">Progression</span>
+                </div>
+                <p>M²P structure l'accompagnement en trois temps. <strong>Maîtrise</strong> pose un diagnostic clair de votre situation et de vos marges de manœuvre réelles. <strong>Mouvement</strong> engage l'action sur les décisions ou postures à faire évoluer. <strong>Progression</strong> stabilise ces changements dans la durée, pour qu'ils tiennent au delà de nos séances. L'objectif reste le même à chaque étape, diriger avec clarté, et rester aligné avec ce qui compte pour vous.</p>
+              </details>
+            </div>
+            <p class="faq-cta"><a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener">Vous voulez savoir comment cette méthode s'applique à votre situation ? Réservez un premier échange →</a></p>
+          </div>
+
+          <div class="faq-block faq-block--cadre">
+            <h2 class="faq-block-title">Éthique, cadre professionnel et financement</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Le métier de coach est-il réglementé ?</summary>
+                <p>Non, le coaching reste un secteur non réglementé en France, n'importe qui peut se déclarer coach sans formation ni contrôle. C'est pour cette raison que la pratique supervisée et l'engagement sur une charte éthique deviennent les seuls repères objectifs pour distinguer une pratique sérieuse.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Qu'est-ce que la supervision, et pourquoi vous l'imposez-vous ?</summary>
+                <p>La supervision consiste à faire réviser régulièrement ma pratique par un coach senior, extérieur à mes accompagnements. Ce n'est pas une obligation légale, mais une exigence éthique que je m'impose mensuellement pour garantir que mon regard reste neutre, et que mon passé de professionnel RH n'interfère jamais avec votre accompagnement.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Sur quels principes déontologiques vous engagez-vous ?</summary>
+                <p>Je souscris formellement à la Charte Éthique du Coaching, respect absolu de votre autonomie, absence de toute manipulation, clarté sur les rôles et les limites de mon intervention.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Êtes-vous assuré pour cette activité ?</summary>
+                <p>Oui, une responsabilité civile professionnelle est souscrite pour l'ensemble de mes accompagnements, dans le cadre de la SASU M²P Coaching et Développement.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Quelle est la différence entre coaching, conseil et formation ?</summary>
+                <p>Le coaching ne consiste ni à transmettre un savoir, ce qui relève de la formation, ni à recommander une solution experte, ce qui relève du conseil. Il s'agit de créer un cadre dans lequel vous trouvez vos propres réponses, à votre rythme, sur vos propres problématiques.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Le CPF peut-il financer un accompagnement avec vous ?</summary>
+                <p>Non. Le CPF finance uniquement des formations certifiantes inscrites au RNCP ou au Répertoire Spécifique, pas un accompagnement individuel de coaching. Si votre organisation prend en charge la démarche, elle peut en revanche financer directement les séances dans le cadre d'un contrat professionnel, en dehors des dispositifs CPF.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Que se passe-t-il si je souhaite arrêter en cours de parcours ?</summary>
+                <p>Vous restez libre à tout moment. Si vous décidez d'arrêter avant la fin du parcours, nous en discutons directement, aucune pénalité n'est appliquée au delà des séances déjà réalisées ou engagées selon les modalités convenues à la signature.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Que se passe-t-il si j'annule ou déplace une séance ?</summary>
+                <p>Toute séance annulée avec un préavis de 48 heures peut être reprogrammée sans frais. En deçà de ce délai, la séance reste due, sauf situation exceptionnelle.</p>
+              </details>
+            </div>
+            <p class="faq-cta"><a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener">Une question reste sans réponse ? Réservez un premier échange de 30 minutes →</a></p>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  img { display: block; max-width: 100%; }
+
+  :root {
+    --kaki:      #535861;
+    --or:        #C99763;
+    --or-p:      #b07d45;
+    --creme:     #F4F1EA;
+    --sage:      #7F9B88;
+    --vert-the:  #A8B8A2;
+    --texte:     #535861;
+    --blanc:     #ffffff;
+    --rayon:     4px;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--sage);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  /* ── HERO ── */
+  .faq-hero {
+    padding: 3.5rem 1.5rem 3rem;
+  }
+  .faq-hero .label {
+    color: var(--or);
+  }
+  .faq-hero h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--creme);
+    margin: 0;
+    max-width: 700px;
+  }
+
+  /* ── FAQ ── */
+  .faq {
+    background: var(--creme);
+    padding: 4rem 1.5rem;
+  }
+  .faq-block {
+    margin-bottom: 3.5rem;
+  }
+  .faq-block:last-child {
+    margin-bottom: 0;
+  }
+  .faq-block-title {
+    font-size: 1.4rem;
+    color: var(--kaki);
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+  .faq-block--concret   { --accent: var(--kaki); }
+  .faq-block--methode   { --accent: var(--sage); }
+  .faq-block--cadre     { --accent: var(--or-p); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .faq-item {
+    background: var(--blanc);
+    border-radius: var(--rayon);
+    border-left: 4px solid var(--accent);
+    overflow: hidden;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 1.05rem 2.6rem 1.05rem 1.3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.96rem;
+    line-height: 1.4;
+    position: relative;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 1.3rem;
+    top: 1.0rem;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .faq-item[open] summary::after { content: '\2212'; }
+  .faq-item p {
+    margin: 0;
+    padding: 0 1.3rem 1.15rem;
+    color: var(--texte);
+    line-height: 1.75;
+    font-size: 0.94rem;
+  }
+  .faq-item strong { color: var(--accent); }
+
+  .methode-etapes {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 0 1.3rem;
+    margin-bottom: 0.9rem;
+  }
+  .etape {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--blanc);
+  }
+  .etape--maitrise    { background: var(--kaki); }
+  .etape--mouvement   { background: var(--sage); }
+  .etape--progression { background: var(--or-p); }
+
+  .faq-cta {
+    margin-top: 1.4rem;
+    font-size: 0.92rem;
+  }
+  .faq-cta a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .faq-cta a:hover { text-decoration: underline; }
+
+  @media (min-width: 768px) {
+    .faq-hero h1 { font-size: 2.3rem; }
+  }
+</style>
