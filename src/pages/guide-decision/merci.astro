@@ -1,0 +1,93 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+const SITE_TITLE = 'Merci, votre guide arrive | M²P Coaching';
+const SITE_DESCRIPTION = "Votre guide 3 questions à se poser avant une décision importante arrive dans votre boîte mail.";
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class="merci-section">
+        <div class="container">
+          <p class="label">M²P Coaching</p>
+          <h1>Merci, votre guide est en route</h1>
+          <p class="merci-texte">Vous allez recevoir "3 questions à se poser avant une décision importante" par e-mail dans quelques instants. Pensez à vérifier votre dossier spam ou courrier indésirable si rien n'apparaît d'ici quelques minutes.</p>
+          <a class="merci-cta" href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener">Réserver un échange de 30 minutes</a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    --kaki:  #535861;
+    --or:    #C99763;
+    --or-p:  #b07d45;
+    --creme: #F4F1EA;
+    --sage:  #7F9B88;
+    --texte: #3F4247;
+    --blanc: #ffffff;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .merci-section {
+    background: var(--creme);
+    padding: 6rem 1.5rem;
+  }
+
+  .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--or);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .merci-section h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--kaki);
+    margin: 0 0 1.25rem;
+    line-height: 1.25;
+  }
+
+  .merci-texte {
+    font-size: 1rem;
+    color: var(--texte);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+
+  .merci-cta {
+    display: inline-block;
+    background: var(--or);
+    color: var(--blanc);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.9rem 1.75rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+  }
+  .merci-cta:hover { background: var(--or-p); }
+
+  @media (min-width: 768px) {
+    .merci-section h1 { font-size: 2.2rem; }
+  }
+</style>
