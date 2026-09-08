@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-const SITE_TITLE = '3 questions à se poser avant une décision qui pèse | Guide gratuit M²P';
+const SITE_TITLE = '3 questions à se poser avant une décision importante | Guide gratuit M²P';
 const SITE_DESCRIPTION = "Un guide court, à garder sous la main, pour retrouver de la clarté avant d'agir. Construit à partir du protocole M²P, Maîtrise, Mouvement, Progression.";
 ---
 <!doctype html>
@@ -20,7 +20,7 @@ const SITE_DESCRIPTION = "Un guide court, à garder sous la main, pour retrouver
       <section class="gd-hero" style="background: #535861; color: #F4F1EA;">
         <div class="container">
           <p class="label">Guide gratuit, M²P Coaching</p>
-          <h1>3 questions à se poser avant une décision qui pèse</h1>
+          <h1>3 questions à se poser avant une décision importante</h1>
           <p class="gd-hero-sous">Un outil court, à garder sous la main, pour retrouver de la clarté avant d'agir. Construit à partir du protocole utilisé dans les accompagnements M²P.</p>
         </div>
       </section>
@@ -58,19 +58,10 @@ const SITE_DESCRIPTION = "Un guide court, à garder sous la main, pour retrouver
           <h2>Recevez le guide par e-mail</h2>
           <p class="gd-form-note">Format PDF, 2 pages. Aucun spam, désinscription en un clic.</p>
 
-          <!--
-            ══════════════════════════════════════════════════════════
-            ACTION REQUISE : une fois votre compte Systeme.io (ou Brevo)
-            créé et le formulaire configuré pour ce guide, remplacez tout
-            le bloc <form> ci-dessous par le code d'intégration fourni par
-            l'outil. Conservez si possible les classes gd-input et
-            gd-submit en les appliquant aux champs générés, pour garder
-            le même habillage visuel.
-            ══════════════════════════════════════════════════════════
-          -->
-          <form class="gd-form" method="post" action="#">
-            <input class="gd-input" type="text" name="prenom" placeholder="Votre prénom" required />
+          <form class="gd-form" method="post" action="https://systeme.io/embedded/44245959/subscription">
+            <input class="gd-input" type="text" name="first_name" placeholder="Votre prénom" required />
             <input class="gd-input" type="email" name="email" placeholder="Votre e-mail" required />
+            <input type="hidden" name="surname" value="" />
             <button class="gd-submit" type="submit">Je reçois le guide</button>
           </form>
 
