@@ -20,7 +20,7 @@ const SITE_DESCRIPTION = "Un guide court, à garder sous la main, pour retrouver
       <section class="gd-hero" style="background: #535861; color: #F4F1EA;">
         <div class="container">
           <p class="label">Guide gratuit, M²P Coaching</p>
-          <h1>3 questions à se poser avant une décision importante</h1>
+          <h1>3 questions à se poser avant une décision qui pèse</h1>
           <p class="gd-hero-sous">Un outil court, à garder sous la main, pour retrouver de la clarté avant d'agir. Construit à partir du protocole utilisé dans les accompagnements M²P.</p>
         </div>
       </section>
@@ -60,8 +60,8 @@ const SITE_DESCRIPTION = "Un guide court, à garder sous la main, pour retrouver
 
           <form class="gd-form" method="post" action="https://systeme.io/embedded/44245959/subscription">
             <input class="gd-input" type="text" name="first_name" placeholder="Votre prénom" required />
+            <input class="gd-input" type="text" name="surname" placeholder="Votre nom" required />
             <input class="gd-input" type="email" name="email" placeholder="Votre e-mail" required />
-            <input type="hidden" name="surname" value="" />
             <button class="gd-submit" type="submit">Je reçois le guide</button>
           </form>
 
@@ -115,7 +115,6 @@ const SITE_DESCRIPTION = "Un guide court, à garder sous la main, pour retrouver
     display: block;
   }
 
-  /* ── HERO ── */
   .gd-hero {
     padding: 4rem 1.5rem 3.5rem;
   }
@@ -134,7 +133,6 @@ const SITE_DESCRIPTION = "Un guide court, à garder sous la main, pour retrouver
     max-width: 600px;
   }
 
-  /* ── APERÇU DES QUESTIONS ── */
   .gd-apercu {
     background: var(--blanc);
     padding: 4rem 1.5rem;
@@ -185,7 +183,6 @@ const SITE_DESCRIPTION = "Un guide court, à garder sous la main, pour retrouver
     padding-top: 0.2rem;
   }
 
-  /* ── FORMULAIRE ── */
   .gd-form-section {
     background: var(--creme);
     padding: 4rem 1.5rem;
@@ -237,7 +234,6 @@ const SITE_DESCRIPTION = "Un guide court, à garder sous la main, pour retrouver
     margin-top: 1rem;
   }
 
-  /* ── CTA ALTERNATIF ── */
   .gd-alt {
     background: var(--blanc);
     text-align: center;
