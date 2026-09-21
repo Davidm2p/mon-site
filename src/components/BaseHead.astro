@@ -23,6 +23,23 @@ const { title, description } = Astro.props;
 
   gtag('config', 'AW-18428382539');
 </script>
+<!-- Conversion Google Ads : contact -->
+<script is:inline>
+  var CONVERSION_CONTACT = 'AW-18428382539/5BNiCK2iiYAdEMuaq9NE';
+
+  // Inscription au guide : la page merci s'affiche
+  if (window.location.pathname.indexOf('/guide-decision/merci') === 0 && typeof gtag === 'function') {
+    gtag('event', 'conversion', {'send_to': CONVERSION_CONTACT});
+  }
+
+  // Clic sur un lien e-mail ou téléphone
+  document.addEventListener('click', function (e) {
+    var lien = e.target.closest('a[href^="mailto:"], a[href^="tel:"]');
+    if (lien && typeof gtag === 'function') {
+      gtag('event', 'conversion', {'send_to': CONVERSION_CONTACT});
+    }
+  });
+</script>
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
