@@ -26,17 +26,23 @@ const { title, description } = Astro.props;
 <!-- Conversion Google Ads : contact -->
 <script is:inline>
   var CONVERSION_CONTACT = 'AW-18428382539/5BNiCK2iiYAdEMuaq9NE';
+  window.dataLayer = window.dataLayer || [];
+  function conversionM2P() {
+    window.dataLayer.push(arguments);
+  }
+  function envoyerConversion() {
+    conversionM2P('event', 'conversion', {'send_to': CONVERSION_CONTACT});
+  }
 
   // Inscription au guide : la page merci s'affiche
-  if (window.location.pathname.indexOf('/guide-decision/merci') === 0 && typeof gtag === 'function') {
-    gtag('event', 'conversion', {'send_to': CONVERSION_CONTACT});
+  if (window.location.pathname.indexOf('/guide-decision/merci') === 0) {
+    window.addEventListener('load', envoyerConversion);
   }
 
   // Clic sur un lien e-mail ou téléphone
   document.addEventListener('click', function (e) {
-    var lien = e.target.closest('a[href^="mailto:"], a[href^="tel:"]');
-    if (lien && typeof gtag === 'function') {
-      gtag('event', 'conversion', {'send_to': CONVERSION_CONTACT});
+    if (e.target.closest('a[href^="mailto:"], a[href^="tel:"]')) {
+      envoyerConversion();
     }
   });
 </script>
