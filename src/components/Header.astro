@@ -12,6 +12,15 @@ import { SITE_TITLE } from '../consts';
 		<div class="internal-links" id="nav-menu">
 			<HeaderLink href="/">Accueil</HeaderLink>
 			<HeaderLink href="/about">David Delord</HeaderLink>
+			<div class="dropdown" id="dropdown-pourqui">
+				<button type="button" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Pour qui ? <span class="chevron">&#9662;</span></button>
+				<div class="dropdown-menu">
+					<a href="/coaching-particuliers">Particuliers</a>
+					<a href="/directeur-etablissement">Directeurs d'établissement</a>
+					<a href="/drh-hospitalisation-privee">DRH hospitalisation privée</a>
+					<a href="/drh-pme">DRH et RRH de PME</a>
+				</div>
+			</div>
 			<HeaderLink href="/sante-privee">Hospitalisation privée</HeaderLink>
 			<HeaderLink href="/accompagnements">Accompagnements</HeaderLink>
 			<HeaderLink href="/outils-gratuits">Outils gratuits</HeaderLink>
@@ -37,6 +46,22 @@ import { SITE_TITLE } from '../consts';
       btn.classList.toggle('open');
       btn.setAttribute('aria-expanded', isOpen.toString());
     });
+
+    const dd = document.getElementById('dropdown-pourqui');
+    const ddBtn = dd?.querySelector('.dropdown-toggle');
+    if (dd && ddBtn) {
+      ddBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = dd.classList.toggle('open');
+        ddBtn.setAttribute('aria-expanded', open.toString());
+      });
+      document.addEventListener('click', (e) => {
+        if (!dd.contains(e.target as Node)) {
+          dd.classList.remove('open');
+          ddBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
 
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
@@ -95,6 +120,51 @@ nav {
   color: #fff !important;
 }
 
+
+/* ── Menu déroulant "Pour qui ?" ── */
+.dropdown {
+  position: relative;
+}
+.dropdown-toggle {
+  background: transparent;
+  border: none;
+  padding: 1.5rem 0;
+  font: inherit;
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+  color: rgba(45,51,40,0.7);
+  cursor: pointer;
+}
+.dropdown-toggle:hover { color: #535861; }
+.chevron { font-size: 0.7rem; margin-left: 0.2rem; }
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  min-width: 250px;
+  background: #F4F1EA;
+  border: 1px solid rgba(45,51,40,0.1);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  padding: 0.5rem 0;
+  z-index: 150;
+}
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown.open .dropdown-menu {
+  display: flex;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 0.6rem 1rem;
+  white-space: nowrap;
+}
+.dropdown-menu a:hover {
+  background: #fff;
+}
+
 /* ── Hamburger button ── */
 .hamburger {
   display: none;
@@ -145,6 +215,31 @@ nav {
 
   .internal-links.open {
     display: flex;
+  }
+
+  .dropdown { width: 100%; }
+  .dropdown-toggle {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(45,51,40,0.07);
+  }
+  .chevron { display: none; }
+  .dropdown-menu {
+    display: flex;
+    position: static;
+    min-width: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 0 0 1rem;
+    background: transparent;
+  }
+  .dropdown-menu a {
+    white-space: normal;
+    padding: 0.6rem 0;
+    font-size: 0.95rem;
   }
 
   .internal-links a {
