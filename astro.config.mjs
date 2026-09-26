@@ -8,6 +8,11 @@ import { defineConfig, fontProviders } from 'astro/config';
 export default defineConfig({
 	site: 'https://www.m2p-coaching.fr',
 	integrations: [mdx(), sitemap()],
+	redirects: {
+		'/particuliers': '/prise-de-poste',
+		'/coaching-particuliers': '/prise-de-poste',
+		'/professionnels': '/organisations',
+	},
 	fonts: [
 		{
 			provider: fontProviders.local(),
