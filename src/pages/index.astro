@@ -1,10 +1,10 @@
-﻿---
+---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactForm from '../components/ContactForm.astro';
-const SITE_TITLE = 'Coach Professionnel Certifié | Occitanie & Visio France | David Delord';
-const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez la direction ? Coach professionnel certifié, 22 ans d'expérience RH. Visio France entière, présentiel Occitanie.";
+const SITE_TITLE = 'Coaching prise de poste manager | Coach certifié Montpellier et visio | M²P';
+const SITE_DESCRIPTION = "Dès la signature ou la nomination, je prépare les managers à trouver leur place, et les organisations à confirmer leurs recrutements. Coach professionnel certifié. Visio France, présentiel Occitanie.";
 ---
 
 <!doctype html>
@@ -39,22 +39,10 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
       .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; }
       .hero-photo-wrap { position: relative; width: 100%; order: -1; }
      .hero-photo { width: 100%; aspect-ratio: 16/9; object-fit: contain; object-position: center 25%; display: block; background: var(--anthracite); }
-        display: block;
-        width: fit-content;
-        margin: 0 auto;
-        background: var(--ocre);
-        color: var(--blanc);
-        padding: .5rem 1.25rem;
-        border-radius: 50px;
-        text-align: center;
-        line-height: 1.3;
-        position: relative;
-        top: -1.25rem;
-      }
      .hero-texte { padding: 0 1.5rem 3rem; order: 1; text-align: center; display: flex; flex-direction: column; align-items: center; } .hero-texte a.btn-ocre { align-self: center; }
      .surtitre { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ocre); margin-bottom: .75rem; text-align: center; }
      .hero h1 { font-size: 2.2rem; font-weight: 700; line-height: 1.12; color: var(--fond); margin-bottom: 1.25rem; text-align: center; font-family: 'Montserrat', sans-serif; }
-      .sous-titre { font-size: 1rem; color: #8C8C4B8; margin-bottom: 2rem; font-style: italic; line-height: 1.6; text-align: center; }
+      .sous-titre { font-size: 1rem; color: #C9CCC4; margin-bottom: 2rem; font-style: italic; line-height: 1.6; text-align: center; }
 
       /* DIAGNOSTIC */
       .diagnostic { background: var(--fond); padding: 5rem 1.5rem; }
@@ -162,6 +150,43 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
       .cta-phrase { font-size: 1.3rem; color: var(--anthracite); margin-bottom: 2rem; line-height: 1.6; font-style: italic; }
 
       /* RESPONSIVE */
+      
+      /* DEUX PORTES */
+      .portes { background: var(--fond); padding: 4.5rem 1.5rem; }
+      .portes-h2 { font-size: 1.6rem; color: var(--anthracite); font-weight: 700; line-height: 1.25; text-align: center; margin: 0 auto 2.5rem; max-width: 700px; }
+      .portes-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; max-width: 960px; margin: 0 auto; }
+      .porte { display: flex; flex-direction: column; background: var(--blanc); border-top: 4px solid var(--ocre); padding: 2rem 1.75rem; text-decoration: none; color: var(--anthracite); transition: box-shadow .2s; }
+      .porte--orga { border-top-color: var(--sage); }
+      .porte:hover, .porte:focus-visible { box-shadow: 0 6px 24px rgba(83,88,97,.14); }
+      .porte:focus-visible { outline: 3px solid var(--ocre); outline-offset: 3px; }
+      .porte-pour { font-size: .85rem; color: var(--sage); font-weight: 600; margin-bottom: .5rem; }
+      .porte h3 { font-size: 1.3rem; font-weight: 700; line-height: 1.3; margin-bottom: .75rem; color: var(--anthracite); }
+      .porte p { font-size: .95rem; line-height: 1.65; color: #4a4f4b; margin-bottom: 1.25rem; }
+      .porte-lien { margin-top: auto; font-weight: 600; color: var(--ocre-h); font-size: .95rem; }
+
+      /* LE SAS */
+      .sas { background: var(--blanc); padding: 5rem 1.5rem; }
+      .sas-h2 { font-size: 1.7rem; color: var(--anthracite); font-weight: 700; line-height: 1.25; margin-bottom: 1rem; max-width: 720px; }
+      .sas-intro { font-size: 1rem; color: #4a4f4b; line-height: 1.7; max-width: 680px; margin-bottom: 3rem; }
+      .sas-frise { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 0; counter-reset: sas; }
+      .sas-etape { position: relative; padding: 0 0 2rem 3.25rem; counter-increment: sas; }
+      .sas-etape::before { content: counter(sas); position: absolute; left: 0; top: 0; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--ocre); color: var(--blanc); font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; }
+      .sas-etape::after { content: ""; position: absolute; left: 1.1rem; top: 2.5rem; bottom: .25rem; width: 2px; background: #E4DED2; }
+      .sas-etape:last-child::after { display: none; }
+      .sas-etape:last-child::before { background: var(--sage); }
+      .sas-etape h3 { font-size: 1.05rem; font-weight: 700; color: var(--anthracite); margin: .3rem 0 .4rem; }
+      .sas-etape p { font-size: .93rem; color: #4a4f4b; line-height: 1.65; margin: 0; }
+
+      @media (min-width: 860px) {
+        .portes-grid { grid-template-columns: 1fr 1fr; }
+        .sas-frise { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .sas-etape { padding: 3.25rem 0 0 0; }
+        .sas-etape::after { left: 2.75rem; right: -1.25rem; top: 1.1rem; bottom: auto; width: auto; height: 2px; }
+        .m2p-trio { flex-direction: row; }
+        .m2p-item { flex: 1; }
+        .m2p-arrow { transform: none; align-self: center; }
+      }
+
       @media (min-width: 860px) {
   .hero-inner {
     flex-direction: row;
@@ -194,18 +219,64 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
       <section class="hero">
         <div class="hero-inner">
           <div class="hero-texte">
-            <p class="surtitre">Coach Professionnel CERTIFIÉ · 22 ans d'expérience RH</p>
-            <h1>Vous avancez. Mais est-ce vraiment vous qui choisissez la direction ?</h1>
-            <p class="sous-titre">Les personnes qui viennent travailler avec moi ont décidé de reprendre la main sur leur trajectoire. Certains sont à un tournant. D'autres veulent simplement avancer avec plus de clarté et d'intention.</p>
+            <p class="surtitre">Coach professionnel certifié · 22 ans d'expérience en recrutement et développement RH</p>
+            <h1>Pour le manager : trouver sa place. Pour l'organisation : confirmer son recrutement.</h1>
+            <p class="sous-titre">Dès la signature ou la nomination, je prépare les managers promus ou recrutés à prendre leur poste. Mon rôle commence là où le recrutement s'achève.</p>
             <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener" class="btn-ocre" style="display:block; margin:0 auto; width:fit-content;">
-              Je réserve
+              Réserver un échange de 30 minutes
             </a>
-            <p class="note">Sans engagement · Visio ou présentiel Occitanie</p>
+            <p class="note">Sans engagement · Visio France entière ou présentiel Occitanie</p>
           </div>
           <div class="hero-photo-wrap">
-            <img src="/david.jpg" alt="David Delord, Coach Professionnel CERTIFIÉ" class="hero-photo" loading="eager" />
-            </div>
+            <img src="/david.jpg" alt="David Delord, coach professionnel certifié" class="hero-photo" loading="eager" />
           </div>
+        </div>
+      </section>
+
+      <!-- DEUX PORTES -->
+      <section class="portes">
+        <div class="container">
+          <h2 class="portes-h2">Une même prise de poste, deux façons de la vivre.</h2>
+          <div class="portes-grid">
+            <a href="/prise-de-poste" class="porte">
+              <span class="porte-pour">Pour le manager</span>
+              <h3>Vous prenez un poste de manager.</h3>
+              <p>Promu en interne ou recruté à l'extérieur, vous préparez votre arrivée et vos premiers mois. Vous posez les intentions qui vous permettront de trouver votre place.</p>
+              <span class="porte-lien">Préparer ma prise de poste</span>
+            </a>
+            <a href="/organisations" class="porte porte--orga">
+              <span class="porte-pour">Pour les RH et les dirigeants</span>
+              <h3>Vous recrutez ou promouvez un manager.</h3>
+              <p>Votre décision est prise. Les premiers mois vont la confirmer. Vous donnez au manager qui arrive un espace pour s'installer dans son rôle.</p>
+              <span class="porte-lien">Accompagner un manager</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- LE SAS -->
+      <section class="sas">
+        <div class="container">
+          <h2 class="sas-h2">Entre la signature et les premiers mois, une place se construit.</h2>
+          <p class="sas-intro">Un recrutement se décide en quelques semaines. Il se confirme sur le terrain. C'est dans cet entre-deux que je travaille avec le manager, étape par étape.</p>
+          <ol class="sas-frise">
+            <li class="sas-etape">
+              <h3>La signature ou la nomination</h3>
+              <p>Le poste est acquis. Un temps de préparation s'ouvre : vous clarifiez ce que vous voulez installer et dans quel ordre.</p>
+            </li>
+            <li class="sas-etape">
+              <h3>L'arrivée</h3>
+              <p>Premières rencontres, premières impressions. Vous observez le terrain avec des repères clairs avant d'agir.</p>
+            </li>
+            <li class="sas-etape">
+              <h3>Les premiers mois</h3>
+              <p>Les attentes implicites apparaissent. Vous ajustez votre posture au réel de l'équipe et de l'organisation.</p>
+            </li>
+            <li class="sas-etape">
+              <h3>La confirmation</h3>
+              <p>Pour le manager, une place trouvée. Pour l'organisation, un recrutement confirmé.</p>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -213,7 +284,7 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
       <section class="diagnostic">
         <div class="container">
           <p class="eyebrow-ocre">Et vous, où en êtes-vous ?</p>
-          <h2 class="diag-h2">Deux minutes pour identifier ce qui compte vraiment pour vous.</h2>
+          <h2 class="diag-h2">Trois questions pour situer votre prise de poste.</h2>
           <div class="diag-wrap">
             <div class="diag-progress-row">
               <div class="diag-track"><div id="diag-bar"></div></div>
@@ -222,8 +293,8 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
             <p id="diag-question" class="diag-question"></p>
             <div id="diag-options" class="diag-options"></div>
             <div class="diag-nav" id="diag-nav">
-              <button id="diag-back" class="btn-retour" onclick="diagBack()" style="display:none">← Retour</button>
-              <button id="diag-next" class="btn-continuer" onclick="diagNext()" disabled>Continuer →</button>
+              <button id="diag-back" class="btn-retour" onclick="diagBack()" style="display:none">Retour</button>
+              <button id="diag-next" class="btn-continuer" onclick="diagNext()" disabled>Continuer</button>
             </div>
             <div id="diag-result" style="display:none">
               <div class="result-card">
@@ -232,42 +303,24 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
                 <p id="diag-rdesc" class="result-desc"></p>
                 <p id="diag-rphrase" class="result-phrase"></p>
               </div>
-              <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener" class="btn-ocre btn-block">
-                Je réserve
-              </a>
-              <p class="note" style="text-align:center">Sans engagement · Visio ou présentiel Occitanie</p>
-              <button class="btn-restart" onclick="diagRestart()">Recommencer le diagnostic</button>
+              <a id="diag-link" href="/prise-de-poste" class="btn-ocre btn-block">Voir la page qui vous concerne</a>
+              <button class="btn-restart" onclick="diagRestart()">Recommencer</button>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CE QUE MES CLIENTS ATTEIGNENT -->
+      <!-- CE QUE LA PRISE DE POSTE DEVIENT -->
       <section class="resultats">
         <div class="container">
-          <p class="eyebrow-ocre" style="color: var(--the);">Ce que mes clients atteignent</p>
-          <h2>Des résultats concrets, construits ensemble.</h2>
+          <p class="eyebrow-ocre" style="color: var(--the);">Ce que les managers construisent</p>
+          <h2>Une prise de poste préparée, une place tenue dans la durée.</h2>
           <div class="resultats-grid">
-            <div class="resultat-item">
-              <span class="resultat-icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-              <p class="resultat-texte">Ils prennent leur nouveau poste avec une posture claire et les idées en place.</p>
-            </div>
-            <div class="resultat-item">
-              <span class="resultat-icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
-              <p class="resultat-texte">Ils décident avec plus de fluidité, même sous pression, même dans la complexité.</p>
-            </div>
-            <div class="resultat-item">
-              <span class="resultat-icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-              <p class="resultat-texte">Ils savent ce qu'ils veulent construire, et avancent vers cet objectif avec intention.</p>
-            </div>
-            <div class="resultat-item">
-              <span class="resultat-icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-              <p class="resultat-texte">Ils font évoluer leur façon de décider ou de se positionner. Une chose concrète. Mais la bonne.</p>
-            </div>
-            <div class="resultat-item">
-              <span class="resultat-icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></span>
-              <p class="resultat-texte">Ils tiennent leur cap dans la durée, par eux-mêmes. C'est l'objectif du coaching.</p>
-            </div>
+            <div class="resultat-item"><span class="resultat-icone" aria-hidden="true">✓</span><p class="resultat-texte">Ils arrivent dans leur poste avec des intentions claires et un ordre de priorités.</p></div>
+            <div class="resultat-item"><span class="resultat-icone" aria-hidden="true">✓</span><p class="resultat-texte">Ils trouvent le ton juste avec leur équipe, y compris avec d'anciens collègues.</p></div>
+            <div class="resultat-item"><span class="resultat-icone" aria-hidden="true">✓</span><p class="resultat-texte">Ils construisent leur légitimité par leurs actes et leurs décisions.</p></div>
+            <div class="resultat-item"><span class="resultat-icone" aria-hidden="true">✓</span><p class="resultat-texte">Ils repèrent les attentes implicites et y répondent en conscience.</p></div>
+            <div class="resultat-item"><span class="resultat-icone" aria-hidden="true">✓</span><p class="resultat-texte">Ils tiennent leur posture dans la durée, par eux-mêmes. C'est l'objectif du coaching.</p></div>
           </div>
         </div>
       </section>
@@ -276,24 +329,24 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
       <section class="methode">
         <div class="container">
           <p class="eyebrow">La méthode</p>
-          <h2 class="methode-h2">M²P — Maîtrise. Mouvement. Progression.</h2>
+          <h2 class="methode-h2">M²P : Maîtrise. Mouvement. Progression.</h2>
           <div class="m2p-trio">
             <div class="m2p-item m2p-1">
               <div class="m2p-num">M</div>
               <h3>Maîtrise</h3>
-              <p>Vous nommez ce qui se joue vraiment. Les enjeux deviennent lisibles. La clarté remplace le bruit.</p>
+              <p>Vous nommez ce qui se joue dans ce nouveau rôle. Vos intentions deviennent claires avant d'agir.</p>
             </div>
-            <div class="m2p-arrow">→</div>
+            <div class="m2p-arrow" aria-hidden="true">→</div>
             <div class="m2p-item m2p-2">
               <div class="m2p-num">M</div>
               <h3>Mouvement</h3>
-              <p>Vos ressources émergent. Vous retrouvez votre capacité à décider et à agir. Je crée le cadre, vous trouvez la voie.</p>
+              <p>Vous passez de l'intention à l'action sur le terrain. Je tiens le cadre, vous trouvez votre voie.</p>
             </div>
-            <div class="m2p-arrow">→</div>
+            <div class="m2p-arrow" aria-hidden="true">→</div>
             <div class="m2p-item m2p-3">
               <div class="m2p-num">P</div>
               <h3>Progression</h3>
-              <p>Vous ancrez ce que vous avez construit. Vous avancez par vous-même. C'est l'objectif.</p>
+              <p>Vous ancrez votre posture et avancez par vous-même. C'est l'objectif.</p>
             </div>
           </div>
         </div>
@@ -305,18 +358,18 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
           <div class="chiffres-grid">
             <div class="chiffre-bloc">
               <span class="chiffre-n">22</span>
-              <span class="chiffre-l">ans d'expérience RH</span>
+              <span class="chiffre-l">ans d'expérience en recrutement et développement RH</span>
             </div>
             <div class="chiffre-bloc">
-              <span class="chiffre-n">100%</span>
-              <span class="chiffre-l">PRATIQUE SUPERVISÉE ET ENCADRÉE</span>
+              <span class="chiffre-n">2</span>
+              <span class="chiffre-l">côtés de la relation : celui qui recrute, celui qui arrive</span>
             </div>
             <div class="chiffre-bloc">
-              <span class="chiffre-n">250</span>
-              <span class="chiffre-l">recrutements par an · marque employeur, attractivité, QVT</span>
+              <span class="chiffre-n">100 %</span>
+              <span class="chiffre-l">pratique supervisée et encadrée</span>
             </div>
           </div>
-          <p class="chiffres-lien"><a href="/about">En savoir plus sur le parcours de David →</a></p>
+          <p class="chiffres-lien"><a href="/about">Découvrir le parcours de David</a></p>
         </div>
       </section>
 
@@ -325,7 +378,7 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
         <div class="container">
           <p class="eyebrow-ocre">Ce qu'ils disent</p>
           <div class="avis-card">
-            <div class="avis-etoiles">★★★★★</div>
+            <div class="avis-etoiles" aria-label="5 étoiles sur 5">★★★★★</div>
             <p class="avis-texte">"Mon accompagnement avec M. Delord a été de qualité. Cela m'a permis de comprendre quelles étaient mes forces et comment les mettre en pratique dans mon quotidien. Les séances ont toujours été faites avec une grande implication. Je recommande vivement."</p>
             <p class="avis-auteur">Clément · Client M²P Coaching</p>
           </div>
@@ -335,15 +388,11 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
       <!-- CTA FINAL -->
       <section class="cta-final">
         <div class="container">
-          <p class="cta-phrase">Trente minutes pour explorer votre situation.<br/>Et voir si nous avons envie de travailler ensemble.</p>
-          <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener" class="btn-ocre btn-grand">
-            Je réserve
-          </a>
-          <p class="note" style="text-align:center; margin-top:.75rem">Sans engagement · Visio ou présentiel Occitanie</p>
+          <p class="cta-phrase">Trente minutes pour parler de votre prise de poste.<br/>Et voir si nous avons envie de travailler ensemble.</p>
+          <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener" class="btn-ocre btn-grand">Réserver un échange de 30 minutes</a>
+          <p class="note" style="text-align:center; margin-top:.75rem">Sans engagement · Visio France entière ou présentiel Occitanie</p>
         </div>
       </section>
-
-      
 
       <ContactForm />
 
@@ -355,114 +404,95 @@ const SITE_DESCRIPTION = "Vous avancez. Mais est-ce vraiment vous qui choisissez
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var Q = [
-    { q: "Quelle situation vous correspond le plus ?", opts: [
-      { t: "Je gère, mais je ne sais plus très bien pourquoi.", s: [2,1,0,0] },
-      { t: "Je porte l'institution. Personne ne me porte.", s: [0,3,0,0] },
-      { t: "Mes managers ont besoin d'un espace que je ne peux pas leur donner.", s: [0,0,3,0] },
-      { t: "J'ai une direction. Je veux mettre toutes les chances de mon côté.", s: [0,0,0,3] }
+    { q: "Où en êtes-vous aujourd'hui ?", opts: [
+      { t: "Je viens d'être promu manager dans mon entreprise", s: [5,0,0,0] },
+      { t: "Je viens de signer pour un poste de manager dans une nouvelle organisation", s: [0,5,0,0] },
+      { t: "Je recrute ou je promeus un manager", s: [0,0,5,0] },
+      { t: "J'ai pris mon poste de manager il y a quelques mois", s: [0,0,0,5] }
     ]},
-    { q: "Votre principale source de tension ?", opts: [
-      { t: "La prise de décision sous pression constante", s: [2,2,0,0] },
-      { t: "Le sentiment de ne pas être à ma place", s: [3,0,0,0] },
-      { t: "Trouver les bons leviers pour mes équipes", s: [0,1,3,0] },
-      { t: "Une envie de passer à l'étape suivante", s: [0,0,0,3] }
+    { q: "Qu'est-ce qui vous occupe le plus en ce moment ?", opts: [
+      { t: "Trouver ma place face à d'anciens collègues", s: [3,0,0,0] },
+      { t: "Comprendre une culture et des codes que je découvre", s: [0,3,0,1] },
+      { t: "Donner toutes ses chances à la personne qui arrive", s: [0,0,3,0] },
+      { t: "Retrouver de l'assise dans un poste plus exigeant que prévu", s: [0,0,0,3] }
     ]},
     { q: "Si vous pouviez changer une chose dès demain ?", opts: [
-      { t: "Retrouver de la clarté sur ma trajectoire", s: [3,1,0,1] },
-      { t: "Avoir un espace pour réfléchir sans être jugé", s: [1,3,0,0] },
-      { t: "Mieux accompagner mes managers", s: [0,0,3,0] },
-      { t: "Structurer le projet que j'ai en tête", s: [0,0,0,3] }
-    ]},
-    { q: "Vous représentez plutôt...", opts: [
-      { t: "Un cadre ou manager en questionnement", s: [5,0,0,0] },
-      { t: "Un dirigeant ou directeur d'établissement", s: [0,5,0,0] },
-      { t: "Un DRH ou responsable RH", s: [0,0,5,0] },
-      { t: "Quelqu'un avec un projet ou une envie de progresser", s: [0,0,0,5] }
+      { t: "Savoir ce que j'installe en premier", s: [2,2,0,1] },
+      { t: "Asseoir ma légitimité avec justesse", s: [2,1,0,1] },
+      { t: "Voir le recrutement se confirmer dans les premiers mois", s: [0,0,3,0] },
+      { t: "Retrouver une posture qui me ressemble", s: [0,1,0,3] }
     ]}
   ];
   var P = [
-    { tag: "Cadre & Manager", titre: "Vous gérez un périmètre exigeant. Et votre propre trajectoire dans tout ça ?", desc: "Vous avancez, vous livrez. Et parfois une question se pose, discrètement : est-ce que je construis vraiment ce que je veux construire ? Je crée l'espace pour que vous fassiez ce point et décidiez avec clarté.", phrase: "De la charge à la clarté. Puis à une posture que vous tenez dans la durée." },
-    { tag: "Dirigeant", titre: "Piloter avec hauteur. Décider avec clarté. Tenir dans la durée.", desc: "A votre niveau, vous décidez seul. Ce qui se pose, c'est parfois simplement le besoin d'un espace pour penser votre fonction, pas seulement l'exercer. Je crée ce cadre.", phrase: "De la clarté à une souveraineté décisionnelle ancrée." },
-    { tag: "DRH & Organisation", titre: "Un intervenant qui connaît vos enjeux. Sans que vous ayez à tout réexpliquer.", desc: "22 ans de terrain RH, dont la responsabilité RH recrutement et développement d'un groupe de santé privée multi-sites. Vous n'aurez pas à contextualiser. On va droit à l'essentiel.", phrase: "Un regard extérieur. Une expertise RH de l'intérieur." },
-    { tag: "Particulier", titre: "Vous êtes à un moment où les choix comptent.", desc: "Une étape à franchir, une direction à clarifier, une décision importante à prendre en restant pleinement l'auteur de ce qui vient. Je crée l'espace pour que vous avanciez avec clarté et intention.", phrase: "Faire le point. Choisir sa direction. Avancer avec intention." }
+    { tag: "Promotion interne", link: "/prise-de-poste", titre: "Vous connaissez la maison. Votre place, elle, est nouvelle.", desc: "Vos anciens collègues deviennent votre équipe. Les relations se recomposent, les attentes aussi. Le coaching vous donne un espace pour définir la posture que vous voulez tenir, et la manière de l'installer.", phrase: "Passer de collègue à manager, en restant vous-même." },
+    { tag: "Recrutement externe", link: "/prise-de-poste", titre: "Vous avez signé. Votre place reste à construire.", desc: "Une équipe, une culture et des attentes à découvrir, dont une partie reste implicite. Ce moment se prépare. Nous travaillons vos intentions avant l'arrivée, puis votre lecture du terrain dans les premières semaines.", phrase: "Arriver préparé. Trouver sa place." },
+    { tag: "RH et dirigeants", link: "/organisations", titre: "Un recrutement se décide en quelques semaines. Il se confirme sur le terrain.", desc: "Vous avez choisi. Les premiers mois décident de la suite, pour la personne comme pour l'organisation. Je prépare le manager dès la signature ou la nomination. Vous gardez la maîtrise du cadre, je prends en charge l'espace de travail individuel.", phrase: "Confirmer un recrutement, c'est l'accompagner après la signature." },
+    { tag: "En poste depuis quelques mois", link: "/prise-de-poste", titre: "Votre prise de poste a soulevé des questions nouvelles.", desc: "Les premiers mois ont révélé des enjeux que la fiche de poste laissait dans l'ombre. C'est le bon moment pour faire le point : ce qui fonctionne, ce qui résiste, et la posture que vous voulez tenir désormais.", phrase: "Faire le point. Ajuster. S'installer durablement." }
   ];
-  var cur=0, sc=[0,0,0,0], ans=[-1,-1,-1,-1];
+  var cur=0, sc=[0,0,0,0], ans=[-1,-1,-1];
 
+  function el(id){ return document.getElementById(id); }
   function render() {
     var q = Q[cur];
-    document.getElementById('diag-num').textContent = 'Question '+(cur+1)+' sur '+Q.length;
-    document.getElementById('diag-question').textContent = q.q;
-    document.getElementById('diag-bar').style.width = (cur/Q.length*100)+'%';
-    var el = document.getElementById('diag-options');
-    el.innerHTML = '';
+    el('diag-num').textContent = 'Question '+(cur+1)+' sur '+Q.length;
+    el('diag-question').textContent = q.q;
+    el('diag-bar').style.width = (cur/Q.length*100)+'%';
+    var box = el('diag-options');
+    box.innerHTML = '';
     q.opts.forEach(function(o, i) {
       var btn = document.createElement('button');
+      btn.type = 'button';
       btn.className = 'diag-opt' + (ans[cur]===i ? ' active' : '');
-      var numSpan = document.createElement('span');
-      numSpan.className = 'opt-num';
-      numSpan.textContent = i+1;
-      var txtSpan = document.createElement('span');
-      txtSpan.className = 'opt-txt';
-      txtSpan.textContent = o.t;
-      btn.appendChild(numSpan);
-      btn.appendChild(txtSpan);
+      var n = document.createElement('span'); n.className = 'opt-num'; n.textContent = i+1;
+      var t = document.createElement('span'); t.className = 'opt-txt'; t.textContent = o.t;
+      btn.appendChild(n); btn.appendChild(t);
       btn.onclick = function() { pick(i); };
-      el.appendChild(btn);
+      box.appendChild(btn);
     });
-    var btnNext = document.getElementById('diag-next');
-    btnNext.disabled = ans[cur] < 0;
-    btnNext.textContent = cur === Q.length-1 ? 'Voir mon profil →' : 'Continuer →';
-    document.getElementById('diag-back').style.display = cur > 0 ? 'inline-block' : 'none';
-    document.getElementById('diag-result').style.display = 'none';
-    document.getElementById('diag-options').style.display = 'flex';
-    document.getElementById('diag-nav').style.display = 'flex';
-    document.getElementById('diag-question').style.display = 'block';
-    document.getElementById('diag-num').style.display = 'block';
-    document.getElementById('diag-bar').parentElement.parentElement.style.display = 'flex';
+    var next = el('diag-next');
+    next.disabled = ans[cur] < 0;
+    next.textContent = cur === Q.length-1 ? 'Voir le résultat' : 'Continuer';
+    el('diag-back').style.display = cur > 0 ? 'inline-block' : 'none';
+    el('diag-result').style.display = 'none';
+    box.style.display = 'flex';
+    el('diag-nav').style.display = 'flex';
+    el('diag-question').style.display = 'block';
+    el('diag-num').style.display = 'block';
+    el('diag-bar').parentElement.parentElement.style.display = 'flex';
   }
-
   function pick(i) {
     ans[cur] = i;
-    document.querySelectorAll('.diag-opt').forEach(function(b, idx) {
-      b.classList.toggle('active', idx === i);
-    });
-    document.getElementById('diag-next').disabled = false;
+    document.querySelectorAll('.diag-opt').forEach(function(b, idx) { b.classList.toggle('active', idx === i); });
+    el('diag-next').disabled = false;
   }
-
   window.diagNext = function() {
     if (ans[cur] < 0) return;
     Q[cur].opts[ans[cur]].s.forEach(function(v, i) { sc[i] += v; });
     if (cur < Q.length-1) { cur++; render(); } else { showResult(); }
   };
-
   window.diagBack = function() {
     if (cur === 0) return;
     Q[cur-1].opts[ans[cur-1]].s.forEach(function(v, i) { sc[i] -= v; });
     cur--; render();
   };
-
-  window.diagRestart = function() {
-    cur=0; sc=[0,0,0,0]; ans=[-1,-1,-1,-1];
-    render();
-  };
-
+  window.diagRestart = function() { cur=0; sc=[0,0,0,0]; ans=[-1,-1,-1]; render(); };
   function showResult() {
-    document.getElementById('diag-bar').style.width = '100%';
+    el('diag-bar').style.width = '100%';
     var best = 0;
     sc.forEach(function(v, i) { if (v > sc[best]) best = i; });
     var p = P[best];
-    document.getElementById('diag-tag').textContent = p.tag;
-    document.getElementById('diag-rtitle').textContent = p.titre;
-    document.getElementById('diag-rdesc').textContent = p.desc;
-    document.getElementById('diag-rphrase').textContent = p.phrase;
-    document.getElementById('diag-options').style.display = 'none';
-    document.getElementById('diag-nav').style.display = 'none';
-    document.getElementById('diag-question').style.display = 'none';
-    document.getElementById('diag-num').style.display = 'none';
-    document.getElementById('diag-bar').parentElement.parentElement.style.display = 'none';
-    document.getElementById('diag-result').style.display = 'block';
+    el('diag-tag').textContent = p.tag;
+    el('diag-rtitle').textContent = p.titre;
+    el('diag-rdesc').textContent = p.desc;
+    el('diag-rphrase').textContent = p.phrase;
+    el('diag-link').setAttribute('href', p.link);
+    el('diag-options').style.display = 'none';
+    el('diag-nav').style.display = 'none';
+    el('diag-question').style.display = 'none';
+    el('diag-num').style.display = 'none';
+    el('diag-bar').parentElement.parentElement.style.display = 'none';
+    el('diag-result').style.display = 'block';
   }
-
   render();
 });
 </script>
