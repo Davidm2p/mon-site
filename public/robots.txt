@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /guide-decision/merci
+
+Sitemap: https://www.m2p-coaching.fr/sitemap-index.xml

@@ -49,7 +49,6 @@ const { title, description } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -85,22 +84,29 @@ const { title, description } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content="/logo.png" />
-<!-- Schema.org LocalBusiness -->
-<script type="application/ld+json">
-{
+<!-- Schema.org ProfessionalService -->
+<script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://www.m2p-coaching.fr/#entreprise",
   "name": "M²P Coaching & Développement",
-  "description": "Coach professionnel certifié. Accompagnement de cadres, managers et dirigeants en Occitanie et visio France entière.",
+  "description": "Coaching de prise de poste pour les managers promus ou recrutés, et pour les organisations qui souhaitent confirmer leurs recrutements. Coach professionnel certifié à Montpellier, visio France entière.",
   "url": "https://www.m2p-coaching.fr",
+  "logo": "https://www.m2p-coaching.fr/logo.png",
+  "image": "https://www.m2p-coaching.fr/david.jpg",
   "telephone": "+33675747456",
   "email": "david.delord@m2p-coaching.fr",
   "address": {
     "@type": "PostalAddress",
+    "addressLocality": "Montpellier",
     "addressRegion": "Occitanie",
     "addressCountry": "FR"
   },
   "areaServed": [
+    {
+      "@type": "City",
+      "name": "Montpellier"
+    },
     {
       "@type": "State",
       "name": "Occitanie"
@@ -112,9 +118,17 @@ const { title, description } = Astro.props;
   ],
   "founder": {
     "@type": "Person",
+    "@id": "https://www.m2p-coaching.fr/about#david-delord",
     "name": "David Delord",
-    "jobTitle": "Coach Professionnel Certifié"
+    "jobTitle": "Coach professionnel certifié",
+    "url": "https://www.m2p-coaching.fr/about"
   },
-  "knowsAbout": ["coaching professionnel", "développement managérial", "coaching dirigeants", "ressources humaines"]
-}
-</script>
+  "knowsAbout": [
+    "coaching de prise de poste",
+    "coaching de nouveau manager",
+    "promotion interne",
+    "intégration des managers",
+    "coaching professionnel",
+    "recrutement et développement RH"
+  ]
+})} />
