@@ -20,7 +20,7 @@ const SITE_DESCRIPTION = "Le coaching concrètement, la méthode M²P, l'éthiqu
       <section class="faq-hero" style="background: #535861; color: #F4F1EA;">
         <div class="container">
           <p class="label">Questions fréquentes</p>
-          <h1>Le coaching, la méthode, le cadre. Sans détour.</h1>
+          <h1>La prise de poste, la méthode, le cadre. Les réponses avant un premier échange.</h1>
         </div>
       </section>
 
@@ -29,6 +29,32 @@ const SITE_DESCRIPTION = "Le coaching concrètement, la méthode M²P, l'éthiqu
            ════════════════════════════════ -->
       <section class="faq">
         <div class="container">
+
+          <div class="faq-block faq-block--prise">
+            <h2 class="faq-block-title">La prise de poste</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>À quel moment commencer un coaching de prise de poste ?</summary>
+                <p>Idéalement dès la signature ou la nomination. Le temps qui précède l'arrivée devient alors un temps de préparation : vous clarifiez vos intentions avant d'être pris par le quotidien. L'accompagnement peut aussi commencer après l'arrivée, quand les premières semaines ont fait apparaître des questions nouvelles.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Je suis en poste depuis plusieurs mois. Le coaching a-t-il encore du sens ?</summary>
+                <p>Oui. Les premiers mois révèlent souvent des enjeux que la fiche de poste laissait dans l'ombre : une relation à ajuster, une légitimité à asseoir, une posture à retrouver. C'est un bon moment pour faire le point et décider de ce que vous voulez installer pour la suite.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Quelle différence avec l'intégration organisée par l'entreprise ?</summary>
+                <p>L'intégration transmet l'information : les outils, les process, les interlocuteurs. Le coaching travaille ce qui appartient au manager : ses intentions, sa posture, sa façon de lire le terrain et d'y prendre sa place. Les deux démarches se complètent.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Intervenez-vous dans le recrutement ?</summary>
+                <p>Non. J'interviens après la décision, quand la personne est choisie. Mon rôle commence là où le recrutement s'achève. Cette séparation garantit au manager un espace de travail indépendant de toute évaluation.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Qui finance l'accompagnement, le manager ou l'organisation ?</summary>
+                <p>Les deux sont possibles. Si vous financez vous-même, le règlement se fait en 1, 2 ou 3 fois. Si votre organisation finance, je lui adresse une proposition sur devis, et les objectifs sont posés lors d'un lancement à trois. Dans les deux cas, le contenu des séances reste confidentiel.</p>
+              </details>
+            </div>
+          </div>
 
           <div class="faq-block faq-block--concret">
             <h2 class="faq-block-title">Le coaching, concrètement</h2>
@@ -84,7 +110,7 @@ const SITE_DESCRIPTION = "Le coaching concrètement, la méthode M²P, l'éthiqu
                   <span class="etape etape--mouvement">Mouvement</span>
                   <span class="etape etape--progression">Progression</span>
                 </div>
-                <p>M²P structure l'accompagnement en trois temps. <strong>Maîtrise</strong> pose un diagnostic clair de votre situation et de vos marges de manœuvre réelles. <strong>Mouvement</strong> engage l'action sur les décisions ou postures à faire évoluer. <strong>Progression</strong> stabilise ces changements dans la durée, pour qu'ils tiennent au delà de nos séances. L'objectif reste le même à chaque étape, diriger avec clarté, et rester aligné avec ce qui compte pour vous.</p>
+                <p>M²P structure l'accompagnement en trois temps. <strong>Maîtrise</strong> pose un diagnostic clair de votre situation et de vos marges de manœuvre réelles. <strong>Mouvement</strong> engage l'action sur les décisions ou postures à faire évoluer. <strong>Progression</strong> stabilise ces changements dans la durée, pour qu'ils tiennent au delà de nos séances. Dans une prise de poste, ces trois temps suivent le calendrier : Maîtrise avant ou dès l'arrivée, Mouvement dans les premières semaines, Progression dans les premiers mois.</p>
               </details>
             </div>
             <p class="faq-cta"><a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener">Vous voulez savoir comment cette méthode s'applique à votre situation ? Réservez un premier échange →</a></p>
@@ -202,6 +228,7 @@ const SITE_DESCRIPTION = "Le coaching concrètement, la méthode M²P, l'éthiqu
     margin-bottom: 1.25rem;
     line-height: 1.25;
   }
+  .faq-block--prise     { --accent: var(--ocre, #C99763); }
   .faq-block--concret   { --accent: var(--kaki); }
   .faq-block--methode   { --accent: var(--sage); }
   .faq-block--cadre     { --accent: var(--or-p); }
