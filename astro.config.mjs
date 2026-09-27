@@ -14,6 +14,8 @@ export default defineConfig({
 		'/particuliers': '/prise-de-poste',
 		'/coaching-particuliers': '/prise-de-poste',
 		'/professionnels': '/organisations',
+		'/drh-hospitalisation-privee': '/sante-privee',
+		'/drh-pme': '/organisations',
 	},
 	fonts: [
 		{
