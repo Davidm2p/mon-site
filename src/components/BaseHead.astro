@@ -3,8 +3,6 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
-import FallbackImage from '../assets/blog-placeholder-1.jpg';
-import { SITE_TITLE } from '../consts';
 import { Font } from 'astro:assets';
 interface Props {
 	title: string;
@@ -16,7 +14,7 @@ const { title, description } = Astro.props;
 ---
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18428382539"></script>
-<script>
+<script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -57,7 +55,7 @@ const { title, description } = Astro.props;
 <link
   rel="alternate"
   type="application/rss+xml"
-  title={SITE_TITLE}
+  title="M²P Coaching & Développement | Coaching prise de poste manager"
   href={new URL('rss.xml', Astro.site)}
 />
 <meta name="google-site-verification" content="CFk5O_F-P8kNH890oQxU6ntQ6ex6MOxzBoGNvxiLvOI" />
