@@ -11,8 +11,8 @@ export default defineConfig({
 		filter: (page) => !page.includes('/blog') && !page.includes('/guide-decision/merci'),
 	})],
 	redirects: {
-		'/particuliers': '/prise-de-poste',
-		'/coaching-particuliers': '/prise-de-poste',
+		'/particuliers': '/transition-professionnelle',
+		'/coaching-particuliers': '/transition-professionnelle',
 		'/professionnels': '/organisations',
 		'/drh-hospitalisation-privee': '/sante-privee',
 		'/drh-pme': '/organisations',
