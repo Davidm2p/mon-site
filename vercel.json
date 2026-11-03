@@ -1,3 +1,7 @@
 {
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/sante-privee", "destination": "/organisations", "permanent": false },
+    { "source": "/directeur-etablissement", "destination": "/prise-de-poste", "permanent": false }
+  ]
 }
