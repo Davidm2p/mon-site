@@ -104,6 +104,16 @@ const SITE_DESCRIPTION = "Coach professionnel certifié à Montpellier. Vous sav
       .result-titre { font-size: 1.15rem; font-weight: 700; color: var(--anthracite); line-height: 1.3; margin-bottom: .75rem; }
       .result-desc { font-size: .95rem; color: #5A5F5B; line-height: 1.75; margin-bottom: 1.25rem; }
       .result-phrase { border-left: 3px solid var(--ocre); padding-left: 1rem; font-size: .92rem; color: var(--ocre-h); font-style: italic; line-height: 1.6; margin: 0; }
+      .diag-scores { background: var(--blanc); border-radius: 16px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
+      .scores-titre { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--sage); font-weight: 700; margin: 0 0 1rem; }
+      .score-row { display: grid; grid-template-columns: 6.5rem 1fr 3.2rem; align-items: center; gap: .75rem; margin-bottom: .7rem; }
+      .score-lab { font-weight: 600; color: var(--anthracite); font-size: .95rem; }
+      .score-row--top .score-lab { color: var(--ocre-h); font-weight: 700; }
+      .score-track { height: 10px; background: #E8E3D8; border-radius: 5px; overflow: hidden; }
+      .score-fill { display: block; height: 100%; background: var(--sage); border-radius: 5px; transition: width .6s ease; }
+      .score-row--top .score-fill { background: var(--ocre); }
+      .score-val { text-align: right; font-weight: 700; color: var(--anthracite); font-size: .9rem; }
+      .diag-note { font-size: .95rem; color: var(--anthracite); line-height: 1.6; margin: 0 0 .5rem; font-weight: 500; }
       .btn-restart { display: block; width: 100%; background: transparent; border: 2px solid #C8C3BA; border-radius: 50px; padding: .75rem; font-size: .88rem; color: var(--sage); cursor: pointer; margin-top: .75rem; }
       .btn-restart:hover { border-color: var(--sage); }
 
@@ -304,12 +314,9 @@ const SITE_DESCRIPTION = "Coach professionnel certifié à Montpellier. Vous sav
               <button id="diag-next" class="btn-continuer" onclick="diagNext()" disabled>Continuer</button>
             </div>
             <div id="diag-result" style="display:none">
-              <div class="result-card">
-                <span id="diag-tag" class="result-tag"></span>
-                <p id="diag-rtitle" class="result-titre"></p>
-                <p id="diag-rdesc" class="result-desc"></p>
-                <p id="diag-rphrase" class="result-phrase"></p>
-              </div>
+              <div id="diag-scores" class="diag-scores"></div>
+              <div id="diag-cards"></div>
+              <p id="diag-note" class="diag-note"></p>
               <a id="diag-link" href="/accompagnements" class="btn-ocre btn-block">Trouver votre réglage caché</a>
               <button class="btn-restart" onclick="diagRestart()">Recommencer</button>
             </div>
@@ -497,14 +504,34 @@ document.addEventListener('DOMContentLoaded', function() {
   window.diagRestart = function() { cur=0; sc=[0,0,0]; ans=[-1,-1,-1,-1,-1,-1]; render(); };
   function showResult() {
     el('diag-bar').style.width = '100%';
-    var best = 0;
-    sc.forEach(function(v, i) { if (v > sc[best]) best = i; });
-    var p = P[best];
-    el('diag-tag').textContent = p.tag;
-    el('diag-rtitle').textContent = p.titre;
-    el('diag-rdesc').textContent = p.desc;
-    el('diag-rphrase').textContent = p.phrase;
-    el('diag-link').setAttribute('href', p.link);
+    var total = sc.reduce(function(x, y) { return x + y; }, 0) || 1;
+    var max = Math.max.apply(null, sc);
+    var box = el('diag-scores'); box.innerHTML = '';
+    var titre = document.createElement('p'); titre.className = 'scores-titre'; titre.textContent = 'Vos 3 D';
+    box.appendChild(titre);
+    P.forEach(function(p, i) {
+      var pct = Math.round(sc[i] / total * 100);
+      var row = document.createElement('div'); row.className = 'score-row' + (sc[i] === max ? ' score-row--top' : '');
+      var lab = document.createElement('span'); lab.className = 'score-lab'; lab.textContent = p.tag;
+      var tr = document.createElement('span'); tr.className = 'score-track';
+      var fill = document.createElement('span'); fill.className = 'score-fill'; fill.style.width = pct + '%';
+      tr.appendChild(fill);
+      var val = document.createElement('span'); val.className = 'score-val'; val.textContent = pct + ' %';
+      row.appendChild(lab); row.appendChild(tr); row.appendChild(val); box.appendChild(row);
+    });
+    var cards = el('diag-cards'); cards.innerHTML = '';
+    P.forEach(function(p, i) {
+      if (sc[i] !== max) return;
+      var c = document.createElement('div'); c.className = 'result-card';
+      [['span','result-tag',p.tag],['p','result-titre',p.titre],['p','result-desc',p.desc],['p','result-phrase',p.phrase]].forEach(function(d) {
+        var e = document.createElement(d[0]); e.className = d[1]; e.textContent = d[2]; c.appendChild(e);
+      });
+      cards.appendChild(c);
+    });
+    var concernes = sc.filter(function(v) { return v / total >= 0.3; }).length;
+    el('diag-note').textContent = concernes > 1
+      ? "Plusieurs D sont concernés. C'est souvent le signe que le réglage joue sur tout le rôle : c'est le terrain d'Ancrage."
+      : "Un D domine nettement. C'est souvent une situation précise qui bloque : c'est le terrain de Déclic.";
     el('diag-options').style.display = 'none';
     el('diag-nav').style.display = 'none';
     el('diag-question').style.display = 'none';
