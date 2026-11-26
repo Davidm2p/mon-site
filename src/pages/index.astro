@@ -302,7 +302,7 @@ const SITE_DESCRIPTION = "Coach professionnel certifié à Montpellier. Vous sav
       <section class="diagnostic" id="test-3d">
         <div class="container">
           <p class="eyebrow-ocre">Le test des 3 D</p>
-          <h2 class="diag-h2">Défendre, déléguer, déplaire : lequel est bloqué chez vous ?<br/><span style="font-size:.95rem; font-weight:500; color:var(--sage);">6 questions, une minute.</span></h2>
+          <h2 class="diag-h2">Défendre, déléguer, déplaire : lequel est bloqué chez vous ?<br/><span style="font-size:.95rem; font-weight:500; color:var(--sage);">7 questions, une minute.</span></h2>
           <div class="diag-wrap">
             <ul class="def-liste diag-defs"><li><span class="def-terme">Défendre</span> : vos idées, vos décisions et vos limites, face à votre direction, face à votre équipe, et face à vous-même.</li><li><span class="def-terme">Déléguer</span> : confier au lieu de faire vous-même, en posant clairement vos attentes et vos objectifs. Vous transmettez votre expertise, vous faites confiance, et votre équipe gagne en autonomie et en compétence.</li><li><span class="def-terme">Déplaire</span> : dire un refus, recadrer, porter une décision impopulaire. Ce n'est pas être désagréable : c'est accepter de ne pas faire plaisir, pour faire ce qui est juste.</li></ul>
             <div class="diag-progress-row">
@@ -421,35 +421,40 @@ const SITE_DESCRIPTION = "Coach professionnel certifié à Montpellier. Vous sav
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var Q = [
-    { q: "En réunion avec votre direction, une décision va pénaliser votre équipe. Le plus souvent :", opts: [
-      { t: "Je me tais, et je défendrai mieux mon équipe la prochaine fois.", s: [5,0,0] },
-      { t: "Je prévois déjà de compenser moi-même, en absorbant le surplus.", s: [0,5,0] },
-      { t: "Je l'annoncerai à mon équipe en l'adoucissant beaucoup.", s: [0,0,5] }
+    { q: "En réunion de direction, on fixe à votre équipe un objectif que vous jugez irréaliste :", opts: [
+      { t: "Je ne dis rien : ce n'est pas le moment de contester.", s: [5, 0, 0] },
+      { t: "J'en prendrai une bonne partie moi-même pour soulager l'équipe.", s: [0, 5, 0] },
+      { t: "Je l'annoncerai à l'équipe en l'enrobant, pour ne pas la braquer.", s: [0, 0, 5] }
     ]},
-    { q: "Un dossier important arrive. Votre premier réflexe :", opts: [
-      { t: "Le garder : ce sera plus rapide et mieux fait.", s: [0,5,0] },
-      { t: "Accepter le délai imposé, même s'il est intenable.", s: [5,0,0] },
-      { t: "Le confier à quelqu'un, mais sans oser fixer d'exigence claire.", s: [0,0,5] }
+    { q: "Un collaborateur vous demande de modifier le planning de l'équipe la semaine prochaine. La décision vous revient :", opts: [
+      { t: "Je demande l'aval de ma hiérarchie avant de répondre, même si c'est à moi de trancher.", s: [5, 0, 0] },
+      { t: "Je refais le planning moi-même, plutôt que de laisser l'équipe proposer une solution.", s: [0, 5, 0] },
+      { t: "Je dis oui, même si ça désorganise le service, pour ne pas le décevoir.", s: [0, 0, 5] }
+    ]},
+    { q: "Un dossier urgent arrive, avec un délai serré :", opts: [
+      { t: "J'accepte le délai, même si je sais qu'il va déborder sur mes soirées.", s: [5, 0, 0] },
+      { t: "Je le traite moi-même : expliquer prendrait plus de temps.", s: [0, 5, 0] },
+      { t: "Je le confie à celui qui ne protestera pas, plutôt qu'à celui qui serait le plus indiqué.", s: [0, 0, 5] }
     ]},
     { q: "Un collaborateur ne tient pas ses engagements depuis plusieurs semaines :", opts: [
-      { t: "Je repousse la conversation à la semaine prochaine.", s: [0,0,5] },
-      { t: "Je rattrape son travail le soir.", s: [0,5,0] },
-      { t: "Je n'ose pas en parler à ma direction, de peur que ça retombe sur moi.", s: [5,0,0] }
+      { t: "Je revois mes exigences à la baisse, pour que ça passe.", s: [5, 0, 0] },
+      { t: "Je lui reprends le dossier, sans lui avoir jamais vraiment dit ce que j'attendais.", s: [0, 5, 0] },
+      { t: "Je repousse la conversation, pour ne pas abîmer la relation.", s: [0, 0, 5] }
     ]},
-    { q: "Ce qu'on vous reproche le plus souvent, ou que vous vous reprochez :", opts: [
-      { t: "« Tu ne défends pas assez tes idées » ou « tu ne nous défends pas ».", s: [5,0,0] },
-      { t: "« Tu veux tout faire toi-même. »", s: [0,5,0] },
-      { t: "« Tu es trop gentil » ou « tu tardes à trancher ».", s: [0,0,5] }
+    { q: "Un projet transverse est lancé, et votre service doit y contribuer :", opts: [
+      { t: "J'accepte la charge demandée, sans négocier les moyens qui vont avec.", s: [5, 0, 0] },
+      { t: "Je le porte moi-même, plutôt que de le confier à un collaborateur qui grandirait avec.", s: [0, 5, 0] },
+      { t: "J'attends le dernier moment pour annoncer cette charge en plus à l'équipe.", s: [0, 0, 5] }
     ]},
-    { q: "Le soir, en repensant à votre journée, ce qui vous reste en travers :", opts: [
-      { t: "L'idée que j'ai lâchée, ou la limite que je n'ai pas tenue pour moi.", s: [5,0,0] },
-      { t: "Les tâches de mon équipe que j'ai encore faites à sa place.", s: [0,5,0] },
-      { t: "Le « non » que je n'ai pas dit à quelqu'un d'autre.", s: [0,0,5] }
+    { q: "À votre entretien annuel, ce que votre N+1 vous dit :", opts: [
+      { t: "« Prends plus de place en comité. Défends davantage tes positions. »", s: [5, 0, 0] },
+      { t: "« Sors de l'opérationnel. Fais monter ton équipe. »", s: [0, 5, 0] },
+      { t: "« Sois plus ferme. Tranche plus vite. »", s: [0, 0, 5] }
     ]},
-    { q: "Ce que vous remettez le plus souvent à demain :", opts: [
-      { t: "Défendre une idée, une décision ou une limite, face à ma direction, à mon équipe ou à moi-même.", s: [5,0,0] },
-      { t: "Confier un dossier, au lieu de le faire moi-même.", s: [0,5,0] },
-      { t: "Dire ce qui va déplaire : un refus, un recadrage, une décision impopulaire.", s: [0,0,5] }
+    { q: "Le dimanche soir, ce qui vous occupe l'esprit :", opts: [
+      { t: "Le temps que je n'ai pas su garder pour moi, encore cette semaine.", s: [5, 0, 0] },
+      { t: "Les dossiers de l'équipe qui m'attendent, parce que je les ai gardés.", s: [0, 5, 0] },
+      { t: "La conversation que je repousse depuis des semaines.", s: [0, 0, 5] }
     ]}
   ];
   var P = [
@@ -457,7 +462,7 @@ document.addEventListener('DOMContentLoaded', function() {
     { tag: "Déléguer", link: "/accompagnements", titre: "Vous faites à la place.", desc: "Plus vite, mieux, sans avoir à expliquer. Vos soirées y passent, et votre équipe attend. Vous savez déléguer. Au moment de lâcher, quelque chose vous retient. C'est un réglage caché, et il se change.", phrase: "Lâcher un dossier, ce n'est pas lâcher votre équipe." },
     { tag: "Déplaire", link: "/accompagnements", titre: "Vous adoucissez.", desc: "Le refus devient un « on verra ». Le recadrage attend la semaine prochaine. Vous préservez la relation, et c'est justement elle qui s'use. C'est un réglage caché, et il se change.", phrase: "Agir n'abîme pas la relation. C'est ne pas agir qui l'use." }
   ];
-  var cur=0, sc=[0,0,0], ans=[-1,-1,-1,-1,-1,-1], ordre=[];
+  var cur=0, sc=[0,0,0], ans=[-1,-1,-1,-1,-1,-1,-1], ordre=[];
   function melange(t) { for (var k = t.length - 1; k > 0; k--) { var j = Math.floor(Math.random() * (k + 1)); var x = t[k]; t[k] = t[j]; t[j] = x; } return t; }
 
   function el(id){ return document.getElementById(id); }
@@ -507,7 +512,7 @@ document.addEventListener('DOMContentLoaded', function() {
     Q[cur-1].opts[ans[cur-1]].s.forEach(function(v, i) { sc[i] -= v; });
     cur--; render();
   };
-  window.diagRestart = function() { cur=0; sc=[0,0,0]; ans=[-1,-1,-1,-1,-1,-1]; ordre=[]; render(); };
+  window.diagRestart = function() { cur=0; sc=[0,0,0]; ans=[-1,-1,-1,-1,-1,-1,-1]; ordre=[]; render(); };
   function showResult() {
     el('diag-bar').style.width = '100%';
     var total = sc.reduce(function(x, y) { return x + y; }, 0) || 1;
