@@ -235,3 +235,8 @@ h1 {
     padding: 1.5rem 1.25rem;
   }
 }
+/* Définitions : une puce par concept, terme en couleur (26/11/2026) */
+.def-liste { list-style: none; padding: 0; margin: .5rem 0 1rem; }
+.def-liste li { position: relative; padding-left: 1.4rem; margin: .5rem 0; line-height: 1.65; }
+.def-liste li::before { content: "•"; position: absolute; left: .25rem; top: 0; color: #C99763; font-weight: 700; font-size: 1.1em; }
+.def-terme { color: #b07d45; font-weight: 700; }
