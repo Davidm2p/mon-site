@@ -13,7 +13,8 @@ L'accompagnement « Clé de voûte » suit la méthode M²P en trois temps (Maî
 
 ## Pages principales
 
-- [Accueil et test des 3 D](https://www.m2p-coaching.fr/): le réglage caché et le test pour repérer le D bloqué
+- [Accueil](https://www.m2p-coaching.fr/): le réglage caché et les 3 D
+- [Le test des 3 D](https://www.m2p-coaching.fr/test-3d): 7 questions pour repérer le D bloqué
 - [Managers](https://www.m2p-coaching.fr/prise-de-poste): développer son leadership de manager, les 3 D
 - [RH et dirigeants](https://www.m2p-coaching.fr/organisations): accompagner un manager de valeur qui bloque au moment d'agir
 - [Accompagnements](https://www.m2p-coaching.fr/accompagnements): Déclic et Ancrage, prix et déroulé

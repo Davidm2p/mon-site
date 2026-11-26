@@ -1,0 +1,415 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+const SITE_TITLE = "Le test des 3 D : défendre, déléguer, déplaire | M²P";
+const SITE_DESCRIPTION = "Vous savez quoi faire, et au moment d'agir, rien ne se passe ? 7 questions, une minute : repérez lequel de vos 3 D est bloqué (défendre, déléguer, déplaire). Gratuit, sans inscription.";
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style is:global>
+      *, *::before, *::after { box-sizing: border-box; }
+      img { display: block; max-width: 100%; height: auto; }
+      :root {
+        --fond: #F4F1EA;
+        --anthracite: #535861;
+        --sage: #7F9B88;
+        --the: #A8B8A2;
+        --ocre: #C99763;
+        --ocre-h: #b07d45;
+        --blanc: #ffffff;
+      }
+      .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+      h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+      body { font-family: 'Inter', sans-serif; }
+      .eyebrow { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--sage); font-weight: 600; margin-bottom: .5rem; display: block; }
+      .eyebrow-ocre { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--ocre); font-weight: 600; margin-bottom: .5rem; display: block; text-align: center; }
+      .btn-ocre { display: inline-block; align-self: center; background: var(--ocre); color: var(--blanc); padding: .95rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: .95rem; text-align: center; transition: background .2s; border: none; cursor: pointer; }
+      .btn-ocre:hover { background: var(--ocre-h); color: var(--blanc); }
+      .btn-block { display: block; width: 100%; margin-top: 1rem; }
+      .btn-grand { font-size: 1.05rem; padding: 1.1rem 2.5rem; }
+     .note { font-size: .75rem; color: #9A9590; margin-top: .6rem; text-align: center; }
+
+      /* HERO */
+      .hero { background: var(--anthracite); color: var(--fond); overflow: hidden; }
+      .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; }
+      .hero-photo-wrap { position: relative; width: 100%; order: -1; }
+     .hero-photo { width: 100%; aspect-ratio: 16/9; object-fit: contain; object-position: center 25%; display: block; background: var(--anthracite); }
+     .hero-texte { padding: 0 1.5rem 3rem; order: 1; text-align: center; display: flex; flex-direction: column; align-items: center; } .hero-texte a.btn-ocre { align-self: center; }
+     .surtitre { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ocre); margin-bottom: .75rem; text-align: center; }
+     .hero h1 { font-size: 2.2rem; font-weight: 700; line-height: 1.12; color: var(--fond); margin-bottom: 1.25rem; text-align: center; font-family: 'Montserrat', sans-serif; }
+      .sous-titre { font-size: 1rem; color: #C9CCC4; margin-bottom: 2rem; font-style: italic; line-height: 1.6; text-align: center; }
+
+      /* DIAGNOSTIC */
+      .diagnostic { background: var(--fond); padding: 5rem 1.5rem; }
+      .diag-h2 { font-size: 1.6rem; color: var(--anthracite); margin-bottom: 2.5rem; line-height: 1.25; font-weight: 700; text-align: center; }
+      .diag-wrap { max-width: 620px; margin: 0 auto; }
+      .diag-progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
+      .diag-track { flex: 1; height: 6px; background: #DDD9D0; border-radius: 3px; overflow: hidden; }
+      .diag-track div { height: 100%; width: 0; background: var(--ocre); border-radius: 3px; transition: width .4s ease; }
+      .diag-step { font-size: .78rem; color: var(--sage); font-weight: 600; white-space: nowrap; margin: 0; }
+      .diag-question { font-size: 1.2rem; font-weight: 700; color: var(--anthracite); line-height: 1.4; margin-bottom: 1.5rem; }
+
+      /* OPTIONS */
+      .diag-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.5rem; }
+      .diag-opt {
+        display: flex; align-items: center; gap: 14px;
+        background: var(--blanc);
+        border: 2px solid #C8C3BA;
+        border-radius: 12px;
+        padding: 14px 18px;
+        cursor: pointer; text-align: left; width: 100%;
+        transition: border-color .18s, background .18s, transform .12s;
+      }
+      .diag-opt:hover { border-color: var(--ocre); background: #FDF0E0; transform: translateX(4px); }
+      .diag-opt.active { border-color: var(--ocre); background: #FDF0E0; }
+      .diag-opt.active .opt-num { background: var(--ocre); color: var(--blanc); }
+      .opt-num {
+        width: 32px; height: 32px; min-width: 32px;
+        border-radius: 50%;
+        background: var(--fond);
+        color: var(--ocre);
+        font-size: 13px; font-weight: 700;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+        border: 2px solid var(--ocre);
+        transition: background .18s, color .18s;
+      }
+      .opt-txt { font-size: 1rem; color: var(--anthracite); line-height: 1.4; font-weight: 500; }
+
+      /* BOUTONS DIAGNOSTIC */
+      .diag-nav { display: flex; gap: 10px; align-items: center; }
+      .btn-continuer {
+        flex: 1; background: var(--ocre); color: var(--blanc);
+        border: none; border-radius: 50px;
+        padding: .9rem 1.5rem; font-size: 1rem; font-weight: 600;
+        cursor: pointer; transition: background .2s;
+      }
+      .btn-continuer:hover:not([disabled]) { background: var(--ocre-h); }
+      .btn-continuer[disabled] { background: var(--anthracite); color: var(--ocre); cursor: not-allowed; }
+      .btn-retour {
+        background: transparent; border: 2px solid #C8C3BA;
+        border-radius: 50px; padding: .9rem 1.25rem;
+        font-size: .9rem; color: var(--sage); cursor: pointer;
+      }
+      .btn-retour:hover { border-color: var(--sage); }
+
+      /* RÉSULTAT */
+      .result-card { background: var(--blanc); border: 2px solid var(--ocre); border-radius: 16px; padding: 2rem 1.75rem; margin-bottom: 1.25rem; }
+      .result-tag { display: inline-block; background: var(--ocre); color: var(--blanc); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 12px; border-radius: 50px; margin-bottom: 1rem; }
+      .result-titre { font-size: 1.15rem; font-weight: 700; color: var(--anthracite); line-height: 1.3; margin-bottom: .75rem; }
+      .result-desc { font-size: .95rem; color: #5A5F5B; line-height: 1.75; margin-bottom: 1.25rem; }
+      .result-phrase { border-left: 3px solid var(--ocre); padding-left: 1rem; font-size: .92rem; color: var(--ocre-h); font-style: italic; line-height: 1.6; margin: 0; }
+      .diag-scores { background: var(--blanc); border-radius: 16px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
+      .scores-titre { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--sage); font-weight: 700; margin: 0 0 1rem; }
+      .score-row { display: grid; grid-template-columns: 6.5rem 1fr 3.2rem; align-items: center; gap: .75rem; margin-bottom: .7rem; }
+      .score-lab { font-weight: 600; color: var(--anthracite); font-size: .95rem; }
+      .score-row--top .score-lab { color: var(--ocre-h); font-weight: 700; }
+      .score-track { height: 10px; background: #E8E3D8; border-radius: 5px; overflow: hidden; }
+      .score-fill { display: block; height: 100%; background: var(--sage); border-radius: 5px; transition: width .6s ease; }
+      .score-row--top .score-fill { background: var(--ocre); }
+      .score-val { text-align: right; font-weight: 700; color: var(--anthracite); font-size: .9rem; }
+      .diag-defs { background: var(--blanc); border-radius: 16px; padding: 1.25rem 1.5rem; margin: 0 0 2rem; color: var(--anthracite); font-size: .95rem; }
+      .diag-note { font-size: .95rem; color: var(--anthracite); line-height: 1.6; margin: 0 0 .5rem; font-weight: 500; }
+      .btn-restart { display: block; width: 100%; background: transparent; border: 2px solid #C8C3BA; border-radius: 50px; padding: .75rem; font-size: .88rem; color: var(--sage); cursor: pointer; margin-top: .75rem; }
+      .btn-restart:hover { border-color: var(--sage); }
+
+      /* RÉSULTATS CLIENTS */
+      .resultats { background: var(--anthracite); padding: 5rem 1.5rem; }
+      .resultats-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; max-width: 900px; margin: 2rem auto 0; }
+      .resultat-item { display: flex; align-items: flex-start; gap: 1rem; background: rgba(255,255,255,.06); border-left: 3px solid var(--ocre); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; }
+    .resultat-icone { font-size: 1.5rem; flex-shrink: 0; margin-top: .1rem; color: var(--ocre); }
+      .resultat-texte { font-size: 1rem; color: var(--fond); line-height: 1.5; font-weight: 500; }
+      .resultats h2 { font-size: 1.7rem; color: var(--fond); font-weight: 700; line-height: 1.2; text-align: center; }
+
+      /* MÉTHODE */
+      .methode { background: var(--blanc); padding: 5rem 1.5rem; }
+      .methode-h2 { font-size: 1.7rem; color: var(--anthracite); margin-bottom: 2.5rem; line-height: 1.2; font-weight: 700; }
+      .m2p-trio { display: flex; flex-direction: column; gap: 0; }
+      .m2p-item { padding: 2.5rem 2rem; text-align: center; }
+      .m2p-1 { background: var(--anthracite); }
+      .m2p-2 { background: var(--sage); }
+      .m2p-3 { background: var(--the); }
+      .m2p-num { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,.2); color: var(--blanc); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+      .m2p-item h3 { font-size: 1.15rem; color: var(--blanc); margin-bottom: .5rem; font-weight: 700; }
+      .m2p-item p { font-size: .95rem; color: rgba(255,255,255,.85); line-height: 1.6; margin: 0; }
+      .m2p-arrow { text-align: center; font-size: 1.5rem; color: var(--ocre); padding: .5rem; transform: rotate(90deg); display: block; }
+
+      /* CHIFFRES */
+      .chiffres { background: var(--sage); padding: 5rem 1.5rem; }
+      .chiffres-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; max-width: 800px; margin: 0 auto; }
+      .chiffre-bloc { text-align: center; }
+      .chiffre-n { display: block; font-size: 3rem; font-weight: 700; color: var(--blanc); line-height: 1; margin-bottom: .5rem; }
+      .chiffre-l { display: block; font-size: .82rem; color: rgba(255,255,255,.85); text-transform: uppercase; letter-spacing: .08em; line-height: 1.4; }
+      .chiffres-lien { text-align: center; margin-top: 3rem; }
+      .chiffre-n--mot { font-size: 1.9rem; padding-top: .55rem; }
+      .portes-autre { text-align: center; font-size: .92rem; color: #4a4f4b; margin: 2rem auto 0; max-width: 700px; }
+      .portes-autre a { color: #b07d45; font-weight: 600; }
+      .chiffres-lien a { color: var(--fond); font-size: .9rem; text-decoration: none; border-bottom: 1px solid rgba(244,241,234,.4); padding-bottom: 2px; }
+      .chiffres-lien a:hover { border-color: var(--fond); }
+
+      /* AVIS */
+      .avis-section { background: var(--fond); padding: 4rem 1.5rem; }
+      .avis-card { max-width: 680px; margin: 0 auto; background: var(--blanc); border: 2px solid var(--ocre); border-radius: 16px; padding: 2rem 2rem 1.75rem; }
+      .avis-etoiles { color: var(--ocre); font-size: 1.2rem; margin-bottom: 1rem; letter-spacing: .1em; }
+      .avis-texte { font-size: 1rem; color: var(--anthracite); line-height: 1.75; font-style: italic; margin-bottom: 1.25rem; }
+      .avis-auteur { font-size: .82rem; color: var(--sage); font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
+
+      /* CTA FINAL */
+      .cta-final { background: var(--fond); padding: 6rem 1.5rem; text-align: center; }
+      .cta-phrase { font-size: 1.3rem; color: var(--anthracite); margin-bottom: 2rem; line-height: 1.6; font-style: italic; }
+
+      /* RESPONSIVE */
+      
+      .h1-ligne { display: block; }
+      .h1-ligne + .h1-ligne { margin-top: .35em; }
+
+      /* DEUX PORTES */
+      .portes { background: var(--fond); padding: 4.5rem 1.5rem; }
+      .portes-h2 { font-size: 1.6rem; color: var(--anthracite); font-weight: 700; line-height: 1.25; text-align: center; margin: 0 auto 2.5rem; max-width: 700px; }
+      .portes-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; max-width: 960px; margin: 0 auto; }
+      .porte { display: flex; flex-direction: column; background: var(--blanc); border-top: 4px solid var(--ocre); padding: 2rem 1.75rem; text-decoration: none; color: var(--anthracite); transition: box-shadow .2s; }
+      .porte--orga { border-top-color: var(--sage); }
+      .porte:hover, .porte:focus-visible { box-shadow: 0 6px 24px rgba(83,88,97,.14); }
+      .porte:focus-visible { outline: 3px solid var(--ocre); outline-offset: 3px; }
+      .porte-pour { font-size: .85rem; color: var(--sage); font-weight: 600; margin-bottom: .5rem; }
+      .porte h3 { font-size: 1.3rem; font-weight: 700; line-height: 1.3; margin-bottom: .75rem; color: var(--anthracite); }
+      .porte p { font-size: .95rem; line-height: 1.65; color: #4a4f4b; margin-bottom: 1.25rem; }
+      .porte-lien { margin-top: auto; font-weight: 600; color: var(--ocre-h); font-size: .95rem; }
+
+      /* LE SAS */
+      .sas { background: var(--blanc); padding: 5rem 1.5rem; }
+      .sas-h2 { font-size: 1.7rem; color: var(--anthracite); font-weight: 700; line-height: 1.25; margin-bottom: 1rem; max-width: 720px; }
+      .sas-intro { font-size: 1rem; color: #4a4f4b; line-height: 1.7; max-width: 680px; margin-bottom: 3rem; }
+      .sas-frise { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 0; counter-reset: sas; }
+      .sas-etape { position: relative; padding: 0 0 2rem 3.25rem; counter-increment: sas; }
+      .sas-etape::before { content: counter(sas); position: absolute; left: 0; top: 0; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--ocre); color: var(--blanc); font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; }
+      .sas-etape::after { content: ""; position: absolute; left: 1.1rem; top: 2.5rem; bottom: .25rem; width: 2px; background: #E4DED2; }
+      .sas-etape:last-child::after { display: none; }
+      .sas-etape:last-child::before { background: var(--sage); }
+      .sas-etape h3 { font-size: 1.05rem; font-weight: 700; color: var(--anthracite); margin: .3rem 0 .4rem; }
+      .sas-etape p { font-size: .93rem; color: #4a4f4b; line-height: 1.65; margin: 0; }
+
+      @media (min-width: 860px) {
+        .portes-grid { grid-template-columns: 1fr 1fr; }
+        .sas-frise { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .sas-etape { padding: 3.25rem 0 0 0; }
+        .sas-etape::after { left: 2.75rem; right: -1.25rem; top: 1.1rem; bottom: auto; width: auto; height: 2px; }
+        .m2p-trio { flex-direction: row; }
+        .m2p-item { flex: 1; }
+        .m2p-arrow { transform: none; align-self: center; }
+      }
+
+      @media (min-width: 860px) {
+  .hero-inner {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 580px;
+  }
+  .hero-texte {
+    flex: 1 1 0%;
+    min-width: 0;
+    overflow: hidden;
+    padding: 3rem 4rem 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 0;
+  }
+  .hero-photo-wrap { width: 300px; flex-shrink: 0; overflow: hidden; position: relative; order: 1; }
+  .hero-photo { width: 100%; height: 100%; aspect-ratio: unset; object-fit: cover; object-position: center 12%; display: block; }
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+
+      <!-- DIAGNOSTIC -->
+      <section class="diagnostic" id="test-3d" style="padding-top: 7rem;">
+        <div class="container">
+          <p class="eyebrow-ocre">Le test des 3 D · gratuit, sans inscription</p>
+          <h2 class="diag-h2">Défendre, déléguer, déplaire : lequel est bloqué chez vous ?<br/><span style="font-size:.95rem; font-weight:500; color:var(--sage);">7 questions, une minute.</span></h2>
+          <div class="diag-wrap">
+            <ul class="def-liste diag-defs"><li><span class="def-terme">Défendre</span> : vos idées, vos décisions et vos limites, face à votre direction, face à votre équipe, et face à vous-même.</li><li><span class="def-terme">Déléguer</span> : confier au lieu de faire vous-même, en posant clairement vos attentes et vos objectifs. Vous transmettez votre expertise, vous faites confiance, et votre équipe gagne en autonomie et en compétence.</li><li><span class="def-terme">Déplaire</span> : dire un refus, recadrer, porter une décision impopulaire. Ce n'est pas être désagréable : c'est accepter de ne pas faire plaisir, pour faire ce qui est juste.</li></ul>
+            <div class="diag-progress-row">
+              <div class="diag-track"><div id="diag-bar"></div></div>
+              <p id="diag-num" class="diag-step"></p>
+            </div>
+            <p id="diag-question" class="diag-question"></p>
+            <div id="diag-options" class="diag-options"></div>
+            <div class="diag-nav" id="diag-nav">
+              <button id="diag-back" class="btn-retour" onclick="diagBack()" style="display:none">Retour</button>
+              <button id="diag-next" class="btn-continuer" onclick="diagNext()" disabled>Continuer</button>
+            </div>
+            <div id="diag-result" style="display:none">
+              <div id="diag-scores" class="diag-scores"></div>
+              <div id="diag-cards"></div>
+              <p id="diag-note" class="diag-note"></p>
+              <a id="diag-link" href="/accompagnements" class="btn-ocre btn-block">Trouver votre réglage caché</a>
+              <button class="btn-restart" onclick="diagRestart()">Recommencer</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- CTA FINAL -->
+      <section class="cta-final">
+        <div class="container">
+          <p class="cta-phrase">Vous êtes la clé de voûte. C'est pour ça que vous encaissez seul toute la pression. Et c'est grâce à vous que tout tient.</p>
+          <p class="cta-phrase" style="font-style:normal; font-size:1.05rem;">Trente minutes pour repérer lequel de vos 3 D bloque.<br/>Et voir si nous avons envie de travailler ensemble.</p>
+          <a href="https://thecoachpilot.com/book/david-delord/echange-decouverte-30-min-m-p-coaching" target="_blank" rel="noopener" class="btn-ocre btn-grand">Réserver un échange de 30 minutes</a>
+          <p class="note" style="text-align:center; margin-top:.75rem">Sans engagement · Visio France entière ou présentiel Occitanie</p>
+        </div>
+      </section>
+
+      <ContactForm />
+
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var Q = [
+    { q: "En réunion de direction, on fixe à votre équipe un objectif que vous jugez irréaliste :", opts: [
+      { t: "Je ne dis rien : ce n'est pas le moment de contester.", s: [5, 0, 0] },
+      { t: "J'en prendrai une bonne partie moi-même pour soulager l'équipe.", s: [0, 5, 0] },
+      { t: "Je l'annoncerai à l'équipe en l'enrobant, pour ne pas la braquer.", s: [0, 0, 5] }
+    ]},
+    { q: "Un collaborateur vous demande de modifier le planning de l'équipe la semaine prochaine. La décision vous revient :", opts: [
+      { t: "Je demande l'aval de ma hiérarchie avant de répondre, même si c'est à moi de trancher.", s: [5, 0, 0] },
+      { t: "Je refais le planning moi-même, plutôt que de laisser l'équipe proposer une solution.", s: [0, 5, 0] },
+      { t: "Je dis oui, même si ça désorganise le service, pour ne pas le décevoir.", s: [0, 0, 5] }
+    ]},
+    { q: "Un dossier urgent arrive, avec un délai serré :", opts: [
+      { t: "J'accepte le délai, même si je sais qu'il va déborder sur mes soirées.", s: [5, 0, 0] },
+      { t: "Je le traite moi-même : expliquer prendrait plus de temps.", s: [0, 5, 0] },
+      { t: "Je le confie à celui qui ne protestera pas, plutôt qu'à celui qui serait le plus indiqué.", s: [0, 0, 5] }
+    ]},
+    { q: "Un collaborateur ne tient pas ses engagements depuis plusieurs semaines :", opts: [
+      { t: "Je revois mes exigences à la baisse, pour que ça passe.", s: [5, 0, 0] },
+      { t: "Je lui reprends le dossier, sans lui avoir jamais vraiment dit ce que j'attendais.", s: [0, 5, 0] },
+      { t: "Je repousse la conversation, pour ne pas abîmer la relation.", s: [0, 0, 5] }
+    ]},
+    { q: "Un projet transverse est lancé, et votre service doit y contribuer :", opts: [
+      { t: "J'accepte la charge demandée, sans négocier les moyens qui vont avec.", s: [5, 0, 0] },
+      { t: "Je le porte moi-même, plutôt que de le confier à un collaborateur qui grandirait avec.", s: [0, 5, 0] },
+      { t: "J'attends le dernier moment pour annoncer cette charge en plus à l'équipe.", s: [0, 0, 5] }
+    ]},
+    { q: "À votre entretien annuel, ce que votre N+1 vous dit :", opts: [
+      { t: "« Prends plus de place en comité. Défends davantage tes positions. »", s: [5, 0, 0] },
+      { t: "« Sors de l'opérationnel. Fais monter ton équipe. »", s: [0, 5, 0] },
+      { t: "« Sois plus ferme. Tranche plus vite. »", s: [0, 0, 5] }
+    ]},
+    { q: "Le dimanche soir, ce qui vous occupe l'esprit :", opts: [
+      { t: "Le temps que je n'ai pas su garder pour moi, encore cette semaine.", s: [5, 0, 0] },
+      { t: "Les dossiers de l'équipe qui m'attendent, parce que je les ai gardés.", s: [0, 5, 0] },
+      { t: "La conversation que je repousse depuis des semaines.", s: [0, 0, 5] }
+    ]}
+  ];
+  var P = [
+    { tag: "Défendre", link: "/accompagnements", titre: "Vous cédez du terrain.", desc: "Une idée face à votre direction. Une décision face à votre équipe. Une limite face à vous-même : votre soirée, vos priorités, ce qui compte pour vous. Vous attendez le bon moment, ou des arguments en béton. Ce n'est pas un manque de courage. C'est un réglage caché, et il se trouve.", phrase: "Défendre, c'est aussi tenir pour vous ce que vous tenez pour les autres." },
+    { tag: "Déléguer", link: "/accompagnements", titre: "Vous faites à la place.", desc: "Plus vite, mieux, sans avoir à expliquer. Vos soirées y passent, et votre équipe attend. Vous savez déléguer. Au moment de lâcher, quelque chose vous retient. C'est un réglage caché, et il se change.", phrase: "Lâcher un dossier, ce n'est pas lâcher votre équipe." },
+    { tag: "Déplaire", link: "/accompagnements", titre: "Vous adoucissez.", desc: "Le refus devient un « on verra ». Le recadrage attend la semaine prochaine. Vous préservez la relation, et c'est justement elle qui s'use. C'est un réglage caché, et il se change.", phrase: "Agir n'abîme pas la relation. C'est ne pas agir qui l'use." }
+  ];
+  var cur=0, sc=[0,0,0], ans=[-1,-1,-1,-1,-1,-1,-1], ordre=[];
+  function melange(t) { for (var k = t.length - 1; k > 0; k--) { var j = Math.floor(Math.random() * (k + 1)); var x = t[k]; t[k] = t[j]; t[j] = x; } return t; }
+
+  function el(id){ return document.getElementById(id); }
+  function render() {
+    var q = Q[cur];
+    el('diag-num').textContent = 'Question '+(cur+1)+' sur '+Q.length;
+    el('diag-question').textContent = q.q;
+    el('diag-bar').style.width = (cur/Q.length*100)+'%';
+    var box = el('diag-options');
+    box.innerHTML = '';
+    if (!ordre[cur]) { ordre[cur] = melange(q.opts.map(function(_, k) { return k; })); }
+    ordre[cur].forEach(function(i, pos) {
+      var o = q.opts[i];
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.dataset.k = i;
+      btn.className = 'diag-opt' + (ans[cur]===i ? ' active' : '');
+      var n = document.createElement('span'); n.className = 'opt-num'; n.textContent = pos+1;
+      var t = document.createElement('span'); t.className = 'opt-txt'; t.textContent = o.t;
+      btn.appendChild(n); btn.appendChild(t);
+      btn.onclick = function() { pick(i); };
+      box.appendChild(btn);
+    });
+    var next = el('diag-next');
+    next.disabled = ans[cur] < 0;
+    next.textContent = cur === Q.length-1 ? 'Voir le résultat' : 'Continuer';
+    el('diag-back').style.display = cur > 0 ? 'inline-block' : 'none';
+    el('diag-result').style.display = 'none';
+    box.style.display = 'flex';
+    el('diag-nav').style.display = 'flex';
+    el('diag-question').style.display = 'block';
+    el('diag-num').style.display = 'block';
+    el('diag-bar').parentElement.parentElement.style.display = 'flex';
+  }
+  function pick(i) {
+    ans[cur] = i;
+    document.querySelectorAll('.diag-opt').forEach(function(b, idx) { b.classList.toggle('active', Number(b.dataset.k) === i); });
+    el('diag-next').disabled = false;
+  }
+  window.diagNext = function() {
+    if (ans[cur] < 0) return;
+    Q[cur].opts[ans[cur]].s.forEach(function(v, i) { sc[i] += v; });
+    if (cur < Q.length-1) { cur++; render(); } else { showResult(); }
+  };
+  window.diagBack = function() {
+    if (cur === 0) return;
+    Q[cur-1].opts[ans[cur-1]].s.forEach(function(v, i) { sc[i] -= v; });
+    cur--; render();
+  };
+  window.diagRestart = function() { cur=0; sc=[0,0,0]; ans=[-1,-1,-1,-1,-1,-1,-1]; ordre=[]; render(); };
+  function showResult() {
+    el('diag-bar').style.width = '100%';
+    var total = sc.reduce(function(x, y) { return x + y; }, 0) || 1;
+    var max = Math.max.apply(null, sc);
+    var box = el('diag-scores'); box.innerHTML = '';
+    var titre = document.createElement('p'); titre.className = 'scores-titre'; titre.textContent = 'Vos 3 D';
+    box.appendChild(titre);
+    P.forEach(function(p, i) {
+      var pct = Math.round(sc[i] / total * 100);
+      var row = document.createElement('div'); row.className = 'score-row' + (sc[i] === max ? ' score-row--top' : '');
+      var lab = document.createElement('span'); lab.className = 'score-lab'; lab.textContent = p.tag;
+      var tr = document.createElement('span'); tr.className = 'score-track';
+      var fill = document.createElement('span'); fill.className = 'score-fill'; fill.style.width = pct + '%';
+      tr.appendChild(fill);
+      var val = document.createElement('span'); val.className = 'score-val'; val.textContent = pct + ' %';
+      row.appendChild(lab); row.appendChild(tr); row.appendChild(val); box.appendChild(row);
+    });
+    var cards = el('diag-cards'); cards.innerHTML = '';
+    P.forEach(function(p, i) {
+      if (sc[i] !== max) return;
+      var c = document.createElement('div'); c.className = 'result-card';
+      [['span','result-tag',p.tag],['p','result-titre',p.titre],['p','result-desc',p.desc],['p','result-phrase',p.phrase]].forEach(function(d) {
+        var e = document.createElement(d[0]); e.className = d[1]; e.textContent = d[2]; c.appendChild(e);
+      });
+      cards.appendChild(c);
+    });
+    var concernes = sc.filter(function(v) { return v / total >= 0.3; }).length;
+    el('diag-note').textContent = concernes > 1
+      ? "Plusieurs D sont concernés. C'est souvent le signe que le réglage joue sur tout le rôle : c'est le terrain d'Ancrage."
+      : "Un D domine nettement. C'est souvent une situation précise qui bloque : c'est le terrain de Déclic.";
+    el('diag-options').style.display = 'none';
+    el('diag-nav').style.display = 'none';
+    el('diag-question').style.display = 'none';
+    el('diag-num').style.display = 'none';
+    el('diag-bar').parentElement.parentElement.style.display = 'none';
+    el('diag-result').style.display = 'block';
+  }
+  render();
+});
+</script>
