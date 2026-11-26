@@ -455,7 +455,8 @@ document.addEventListener('DOMContentLoaded', function() {
     { tag: "Déléguer", link: "/accompagnements", titre: "Vous faites à la place.", desc: "Plus vite, mieux, sans avoir à expliquer. Vos soirées y passent, et votre équipe attend. Vous savez déléguer. Au moment de lâcher, quelque chose vous retient. C'est un réglage caché, et il se change.", phrase: "Lâcher un dossier, ce n'est pas lâcher votre équipe." },
     { tag: "Déplaire", link: "/accompagnements", titre: "Vous adoucissez.", desc: "Le refus devient un « on verra ». Le recadrage attend la semaine prochaine. Vous préservez la relation, et c'est justement elle qui s'use. C'est un réglage caché, et il se change.", phrase: "Agir n'abîme pas la relation. C'est ne pas agir qui l'use." }
   ];
-  var cur=0, sc=[0,0,0], ans=[-1,-1,-1,-1,-1,-1];
+  var cur=0, sc=[0,0,0], ans=[-1,-1,-1,-1,-1,-1], ordre=[];
+  function melange(t) { for (var k = t.length - 1; k > 0; k--) { var j = Math.floor(Math.random() * (k + 1)); var x = t[k]; t[k] = t[j]; t[j] = x; } return t; }
 
   function el(id){ return document.getElementById(id); }
   function render() {
@@ -465,11 +466,14 @@ document.addEventListener('DOMContentLoaded', function() {
     el('diag-bar').style.width = (cur/Q.length*100)+'%';
     var box = el('diag-options');
     box.innerHTML = '';
-    q.opts.forEach(function(o, i) {
+    if (!ordre[cur]) { ordre[cur] = melange(q.opts.map(function(_, k) { return k; })); }
+    ordre[cur].forEach(function(i, pos) {
+      var o = q.opts[i];
       var btn = document.createElement('button');
       btn.type = 'button';
+      btn.dataset.k = i;
       btn.className = 'diag-opt' + (ans[cur]===i ? ' active' : '');
-      var n = document.createElement('span'); n.className = 'opt-num'; n.textContent = i+1;
+      var n = document.createElement('span'); n.className = 'opt-num'; n.textContent = pos+1;
       var t = document.createElement('span'); t.className = 'opt-txt'; t.textContent = o.t;
       btn.appendChild(n); btn.appendChild(t);
       btn.onclick = function() { pick(i); };
@@ -488,7 +492,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   function pick(i) {
     ans[cur] = i;
-    document.querySelectorAll('.diag-opt').forEach(function(b, idx) { b.classList.toggle('active', idx === i); });
+    document.querySelectorAll('.diag-opt').forEach(function(b, idx) { b.classList.toggle('active', Number(b.dataset.k) === i); });
     el('diag-next').disabled = false;
   }
   window.diagNext = function() {
@@ -501,7 +505,7 @@ document.addEventListener('DOMContentLoaded', function() {
     Q[cur-1].opts[ans[cur-1]].s.forEach(function(v, i) { sc[i] -= v; });
     cur--; render();
   };
-  window.diagRestart = function() { cur=0; sc=[0,0,0]; ans=[-1,-1,-1,-1,-1,-1]; render(); };
+  window.diagRestart = function() { cur=0; sc=[0,0,0]; ans=[-1,-1,-1,-1,-1,-1]; ordre=[]; render(); };
   function showResult() {
     el('diag-bar').style.width = '100%';
     var total = sc.reduce(function(x, y) { return x + y; }, 0) || 1;
