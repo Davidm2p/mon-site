@@ -502,14 +502,14 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.diag-link-extra').forEach(function(x) { x.remove(); });
     var egaux = [];
     sc.forEach(function(v, i) { if (v === max) egaux.push(i); });
-    lien.href = url(top);
-    lien.textContent = (egaux.length > 1 ? "Recevoir l'analyse : " : 'Recevoir mon analyse complète et mon premier essai : ') + P[top].tag;
-    var prev = lien;
-    egaux.slice(1).forEach(function(i) {
-      var a = lien.cloneNode(false); a.removeAttribute('id'); a.classList.add('diag-link-extra');
-      a.href = url(i); a.textContent = "Recevoir l'analyse : " + P[i].tag;
-      prev.insertAdjacentElement('afterend', a); prev = a;
-    });
+    if (egaux.length === 2) {
+      var duo = egaux.map(function(i) { return slug(P[i].tag); }).join('-');
+      lien.href = 'https://portail.m2p-coaching.fr/analyse-' + duo + '?utm_source=site&utm_medium=test-3d&utm_campaign=' + duo;
+      lien.textContent = 'Recevoir mon analyse combinée : ' + P[egaux[0]].tag + ' et ' + P[egaux[1]].tag;
+    } else {
+      lien.href = url(top);
+      lien.textContent = 'Recevoir mon analyse complète et mon premier essai : ' + P[top].tag;
+    }
     if (window.gtag) { gtag('event', 'test_3d_resultat', { d_dominant: egaux.map(function(i) { return P[i].tag; }).join('+') }); }
     var concernes = sc.filter(function(v) { return v / total >= 0.3; }).length;
     el('diag-note').textContent = concernes > 1
