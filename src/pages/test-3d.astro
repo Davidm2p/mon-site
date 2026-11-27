@@ -401,9 +401,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     var top = sc.indexOf(max);
     var lien = el('diag-link');
-    lien.href = P[top].link + '?utm_source=site&utm_medium=test-3d&utm_campaign=' + encodeURIComponent(P[top].tag.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase());
-    lien.textContent = 'Recevoir mon analyse détaillée : ' + P[top].tag;
-    if (window.gtag) { gtag('event', 'test_3d_resultat', { d_dominant: P[top].tag }); }
+    var slug = function(t) { return t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); };
+    var url = function(i) { return P[i].link + '?utm_source=site&utm_medium=test-3d&utm_campaign=' + encodeURIComponent(slug(P[i].tag)); };
+    document.querySelectorAll('.diag-link-extra').forEach(function(x) { x.remove(); });
+    var egaux = [];
+    sc.forEach(function(v, i) { if (v === max) egaux.push(i); });
+    lien.href = url(top);
+    lien.textContent = (egaux.length > 1 ? "Recevoir l'analyse : " : 'Recevoir mon analyse détaillée : ') + P[top].tag;
+    var prev = lien;
+    egaux.slice(1).forEach(function(i) {
+      var a = lien.cloneNode(false); a.removeAttribute('id'); a.classList.add('diag-link-extra');
+      a.href = url(i); a.textContent = "Recevoir l'analyse : " + P[i].tag;
+      prev.insertAdjacentElement('afterend', a); prev = a;
+    });
+    if (window.gtag) { gtag('event', 'test_3d_resultat', { d_dominant: egaux.map(function(i) { return P[i].tag; }).join('+') }); }
     var concernes = sc.filter(function(v) { return v / total >= 0.3; }).length;
     el('diag-note').textContent = concernes > 1
       ? "Plusieurs D sont concernés. C'est souvent le signe que le réglage joue sur tout le rôle : c'est le terrain d'Ancrage."
