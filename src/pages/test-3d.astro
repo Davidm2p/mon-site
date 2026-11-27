@@ -103,6 +103,17 @@ const SITE_DESCRIPTION = "Vous savez quoi faire, et au moment d'agir, rien ne se
       .result-tag { display: inline-block; background: var(--ocre); color: var(--blanc); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 12px; border-radius: 50px; margin-bottom: 1rem; }
       .result-titre { font-size: 1.15rem; font-weight: 700; color: var(--anthracite); line-height: 1.3; margin-bottom: .75rem; }
       .result-desc { font-size: .95rem; color: #5A5F5B; line-height: 1.75; margin-bottom: 1.25rem; }
+      .result-accroche { font-size: 1.02rem; color: var(--anthracite); line-height: 1.6; margin: 0 0 1.25rem; font-weight: 500; }
+      .result-sec { border-top: 1px solid #E8E3D8; padding-top: 1.1rem; margin-top: 1.1rem; }
+      .result-sec--aide { background: #F1F5F2; border-top: none; border-radius: 12px; padding: 1.1rem 1.25rem; }
+      .result-count { font-size: .9rem; color: var(--ocre-h); font-weight: 700; margin: 0 0 .5rem; }
+      .result-list { margin: 0; padding-left: 1.1rem; color: #5A5F5B; font-size: .95rem; line-height: 1.65; }
+      .result-list li { margin-bottom: .35rem; }
+      .result-list li::marker { color: var(--sage); }
+      .result-list--cout li::marker { color: var(--ocre); }
+      .result-regle { font-size: 1.05rem; font-weight: 700; color: var(--anthracite); font-style: italic; margin: 0 0 .5rem; }
+      .result-sec .result-desc { margin-bottom: 0; }
+      .result-phrase { margin-top: 1.25rem !important; }
       .result-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--sage); font-weight: 700; margin: 0 0 .5rem; }
       .result-phrase { border-left: 3px solid var(--ocre); padding-left: 1rem; font-size: .92rem; color: var(--ocre-h); font-style: italic; line-height: 1.6; margin: 0; }
       .diag-scores { background: var(--blanc); border-radius: 16px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
@@ -319,9 +330,78 @@ document.addEventListener('DOMContentLoaded', function() {
     ]}
   ];
   var P = [
-    { tag: "Défendre", link: "https://portail.m2p-coaching.fr/analyse-defendre", titre: "Vous cédez du terrain.", desc: "Face à votre direction, vous gardez vos idées pour vous. Face à votre équipe, vous attendez d'avoir des arguments en béton pour trancher. Face à vous-même, vous laissez filer vos soirées et vos priorités. Le courage, vous l'avez. Au moment de prendre la parole, un réglage caché vous retient.", aide: "En coaching, nous repérons ensemble ce réglage : la règle intérieure qui vous fait céder. Vous testez ensuite une autre façon de faire, sur une situation réelle de votre semaine. Vous prenez votre place en comité, vous défendez vos positions et votre leadership s'affirme.", phrase: "Défendre, c'est aussi tenir pour vous ce que vous tenez pour les autres." },
-    { tag: "Déléguer", link: "https://portail.m2p-coaching.fr/analyse-deleguer", titre: "Vous faites à la place.", desc: "Vous traitez les dossiers vous-même : c'est plus rapide, c'est mieux fait, et vous n'avez rien à expliquer. Vos soirées y passent. Votre équipe attend vos décisions et gagne moins vite en autonomie. Déléguer, vous savez faire. Au moment de lâcher, un réglage caché vous retient.", aide: "En coaching, nous identifions ensemble ce qui vous retient au moment de confier. Vous choisissez un dossier réel et vous le déléguez autrement, étape par étape. Vous sortez de l'opérationnel, votre équipe prend de l'autonomie et vous retrouvez du temps pour votre rôle de manager.", phrase: "Lâcher un dossier, ce n'est pas lâcher votre équipe." },
-    { tag: "Déplaire", link: "https://portail.m2p-coaching.fr/analyse-deplaire", titre: "Vous adoucissez.", desc: "Votre refus devient un « on verra ». Le recadrage attend la semaine prochaine. La décision difficile attend le bon moment. Vous protégez la relation, et c'est justement elle qui s'use. Au moment de trancher, un réglage caché vous fait adoucir.", aide: "En coaching, nous mettons au jour la règle qui vous pousse à adoucir. Vous préparez la conversation que vous repoussez, puis vous la menez. Vous gagnez en fermeté, vous tranchez plus vite et la relation avec votre équipe en sort renforcée.", phrase: "Agir n'abîme pas la relation. C'est ne pas agir qui l'use." }
+    {
+      "tag": "Défendre",
+      "link": "https://portail.m2p-coaching.fr/analyse-defendre",
+      "titre": "Vous cédez du terrain.",
+      "accroche": "Vous portez les sujets des autres avec force. Les vôtres, vous les laissez passer.",
+      "miroir": [
+        "Face à un objectif irréaliste, vous gardez votre désaccord pour vous.",
+        "Pour une décision qui vous revient, vous attendez l'aval de votre hiérarchie.",
+        "Vous acceptez un délai qui déborde sur vos soirées.",
+        "Face à des engagements non tenus, vous revoyez vos exigences à la baisse.",
+        "Vous acceptez une charge en plus, sans négocier les moyens.",
+        "Votre N+1 vous demande de prendre plus de place.",
+        "Le dimanche soir, vous pensez au temps que vous n'avez pas gardé pour vous."
+      ],
+      "regle": "« Je prends la parole quand je suis sûr d'avoir raison. »",
+      "regleTxt": "Cette règle vous a construit : elle fait de vous quelqu'un de fiable et de mesuré. Aujourd'hui, elle vous fait arriver trop tard dans les décisions qui comptent.",
+      "cout": [
+        "En comité, vos idées passent après celles des autres.",
+        "Votre charge augmente, sans les moyens qui vont avec.",
+        "Vos soirées et vos priorités servent de variable d'ajustement."
+      ],
+      "aide": "Nous repérons ensemble le moment précis où vous cédez, et la règle qui s'active à ce moment-là. Vous préparez une prise de position sur un sujet réel, puis vous la portez. Séance après séance, vous prenez votre place en comité, vous défendez vos positions et votre leadership s'affirme.",
+      "phrase": "Défendre, c'est aussi tenir pour vous ce que vous tenez pour les autres."
+    },
+    {
+      "tag": "Déléguer",
+      "link": "https://portail.m2p-coaching.fr/analyse-deleguer",
+      "titre": "Vous faites à la place.",
+      "accroche": "Vous êtes le recours de votre équipe. C'est précisément ce qui vous enferme.",
+      "miroir": [
+        "Face à un objectif irréaliste, vous en prenez une bonne partie sur vos épaules.",
+        "Vous refaites le planning vous-même, au lieu de laisser l'équipe proposer.",
+        "Vous traitez le dossier urgent vous-même, pour aller plus vite.",
+        "Vous reprenez un dossier sans avoir dit clairement ce que vous attendiez.",
+        "Vous portez le projet transverse vous-même, au lieu de le confier.",
+        "Votre N+1 vous demande de sortir de l'opérationnel.",
+        "Le dimanche soir, vous pensez aux dossiers que vous avez gardés."
+      ],
+      "regle": "« Si je le fais moi-même, c'est bien fait. »",
+      "regleTxt": "Cette règle a fait votre réputation : vous êtes l'expert sur qui l'on compte. Aujourd'hui, elle vous garde dans l'opérationnel et freine la progression de votre équipe.",
+      "cout": [
+        "Vos journées se remplissent de dossiers qui ne sont plus à votre niveau.",
+        "Votre équipe attend vos décisions, au lieu de proposer.",
+        "Le temps pour manager, prendre du recul et anticiper disparaît."
+      ],
+      "aide": "Nous identifions ensemble ce qui vous retient au moment de confier. Vous choisissez un dossier réel et vous le déléguez autrement, avec un cadre clair. Séance après séance, vous sortez de l'opérationnel, votre équipe gagne en autonomie et vous retrouvez votre rôle de manager.",
+      "phrase": "Lâcher un dossier, ce n'est pas lâcher votre équipe."
+    },
+    {
+      "tag": "Déplaire",
+      "link": "https://portail.m2p-coaching.fr/analyse-deplaire",
+      "titre": "Vous adoucissez.",
+      "accroche": "Vous tenez à la relation. Pour la protéger, vous retardez les moments qui comptent.",
+      "miroir": [
+        "Face à un objectif irréaliste, vous l'annoncez à l'équipe en l'enrobant.",
+        "Vous acceptez une demande qui désorganise le service, pour ne pas décevoir.",
+        "Vous confiez le dossier urgent à la personne qui ne protestera pas.",
+        "Vous repoussez la conversation sur les engagements non tenus.",
+        "Vous attendez le dernier moment pour annoncer une charge en plus.",
+        "Votre N+1 vous demande d'être plus ferme.",
+        "Le dimanche soir, vous pensez à la conversation que vous repoussez."
+      ],
+      "regle": "« Si je dis non, j'abîme la relation. »",
+      "regleTxt": "Cette règle fait de vous un manager à l'écoute, apprécié de son équipe. Aujourd'hui, elle laisse les problèmes grossir et use la relation qu'elle veut protéger.",
+      "cout": [
+        "Les sujets difficiles s'accumulent et pèsent sur tout le service.",
+        "Les personnes fiables portent la charge des autres.",
+        "Votre parole perd du poids, faute de décisions tranchées."
+      ],
+      "aide": "Nous mettons au jour la règle qui vous pousse à adoucir. Vous préparez la conversation que vous repoussez, mot à mot, puis vous la menez. Séance après séance, vous gagnez en fermeté, vous tranchez plus vite et votre équipe sait où elle va.",
+      "phrase": "Agir n'abîme pas la relation. C'est ne pas agir qui l'use."
+    }
   ];
   var cur=0, sc=[0,0,0], ans=[-1,-1,-1,-1,-1,-1,-1], ordre=[];
   function melange(t) { for (var k = t.length - 1; k > 0; k--) { var j = Math.floor(Math.random() * (k + 1)); var x = t[k]; t[k] = t[j]; t[j] = x; } return t; }
@@ -392,13 +472,29 @@ document.addEventListener('DOMContentLoaded', function() {
       row.appendChild(lab); row.appendChild(tr); row.appendChild(val); box.appendChild(row);
     });
     var cards = el('diag-cards'); cards.innerHTML = '';
+    var mk = function(tag, cls, txt, parent) { var e = document.createElement(tag); e.className = cls; if (txt) e.textContent = txt; parent.appendChild(e); return e; };
     P.forEach(function(p, i) {
       if (sc[i] !== max) return;
-      var c = document.createElement('div'); c.className = 'result-card';
-      [['span','result-tag',p.tag],['p','result-titre',p.titre],['p','result-desc',p.desc],['p','result-label','Ce que le coaching change'],['p','result-desc',p.aide],['p','result-phrase',p.phrase]].forEach(function(d) {
-        var e = document.createElement(d[0]); e.className = d[1]; e.textContent = d[2]; c.appendChild(e);
-      });
-      cards.appendChild(c);
+      var c = mk('div', 'result-card', '', cards);
+      mk('span', 'result-tag', p.tag, c);
+      mk('p', 'result-titre', p.titre, c);
+      mk('p', 'result-accroche', p.accroche, c);
+      var vus = []; ans.forEach(function(k, q) { if (k === i) vus.push(p.miroir[q]); });
+      var s1 = mk('div', 'result-sec', '', c);
+      mk('p', 'result-label', 'Ce que vos réponses montrent', s1);
+      mk('p', 'result-count', vus.length + ' réponse' + (vus.length > 1 ? 's' : '') + ' sur ' + Q.length + ' vont dans ce sens.', s1);
+      var ul = mk('ul', 'result-list', '', s1); vus.forEach(function(t) { mk('li', '', t, ul); });
+      var s2 = mk('div', 'result-sec', '', c);
+      mk('p', 'result-label', 'Le réglage caché', s2);
+      mk('p', 'result-regle', p.regle, s2);
+      mk('p', 'result-desc', p.regleTxt, s2);
+      var s3 = mk('div', 'result-sec', '', c);
+      mk('p', 'result-label', 'Ce que ça vous coûte', s3);
+      var ul2 = mk('ul', 'result-list result-list--cout', '', s3); p.cout.forEach(function(t) { mk('li', '', t, ul2); });
+      var s4 = mk('div', 'result-sec result-sec--aide', '', c);
+      mk('p', 'result-label', 'Ce que le coaching change', s4);
+      mk('p', 'result-desc', p.aide, s4);
+      mk('p', 'result-phrase', p.phrase, c);
     });
     var top = sc.indexOf(max);
     var lien = el('diag-link');
@@ -408,7 +504,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var egaux = [];
     sc.forEach(function(v, i) { if (v === max) egaux.push(i); });
     lien.href = url(top);
-    lien.textContent = (egaux.length > 1 ? "Recevoir l'analyse : " : 'Recevoir mon analyse détaillée : ') + P[top].tag;
+    lien.textContent = (egaux.length > 1 ? "Recevoir l'analyse : " : 'Recevoir mon analyse complète et mon premier essai : ') + P[top].tag;
     var prev = lien;
     egaux.slice(1).forEach(function(i) {
       var a = lien.cloneNode(false); a.removeAttribute('id'); a.classList.add('diag-link-extra');
