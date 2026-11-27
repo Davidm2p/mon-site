@@ -114,6 +114,7 @@ const SITE_DESCRIPTION = "Coach professionnel certifié à Montpellier. Vous sav
       .result-regle { font-size: 1.05rem; font-weight: 700; color: var(--anthracite); font-style: italic; margin: 0 0 .5rem; }
       .result-sec .result-desc { margin-bottom: 0; }
       .result-phrase { margin-top: 1.25rem !important; }
+      .diag-teaser { background: var(--blanc); border: 1px dashed var(--ocre); border-radius: 16px; padding: 1.25rem 1.5rem; margin: 1rem 0 0; }
       .result-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--sage); font-weight: 700; margin: 0 0 .5rem; }
       .result-phrase { border-left: 3px solid var(--ocre); padding-left: 1rem; font-size: .92rem; color: var(--ocre-h); font-style: italic; line-height: 1.6; margin: 0; }
       .diag-scores { background: var(--blanc); border-radius: 16px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
@@ -331,6 +332,14 @@ const SITE_DESCRIPTION = "Coach professionnel certifié à Montpellier. Vous sav
               <div id="diag-scores" class="diag-scores"></div>
               <div id="diag-cards"></div>
               <p id="diag-note" class="diag-note"></p>
+              <div class="diag-teaser">
+                <p class="result-label">Dans votre analyse complète, par e-mail</p>
+                <ul class="result-list">
+                  <li>Le réglage caché qui décide à votre place, et d'où il vient.</li>
+                  <li>Ce qu'il vous coûte aujourd'hui, concrètement.</li>
+                  <li>Votre premier essai, à faire dès cette semaine.</li>
+                </ul>
+              </div>
               <a id="diag-link" href="/accompagnements" class="btn-ocre btn-block">Recevoir mon analyse détaillée</a>
               <button class="btn-restart" onclick="diagRestart()">Recommencer</button>
             </div>
@@ -624,16 +633,6 @@ document.addEventListener('DOMContentLoaded', function() {
       mk('p', 'result-label', 'Ce que vos réponses montrent', s1);
       mk('p', 'result-count', vus.length + ' réponse' + (vus.length > 1 ? 's' : '') + ' sur ' + Q.length + ' vont dans ce sens.', s1);
       var ul = mk('ul', 'result-list', '', s1); vus.forEach(function(t) { mk('li', '', t, ul); });
-      var s2 = mk('div', 'result-sec', '', c);
-      mk('p', 'result-label', 'Le réglage caché', s2);
-      mk('p', 'result-regle', p.regle, s2);
-      mk('p', 'result-desc', p.regleTxt, s2);
-      var s3 = mk('div', 'result-sec', '', c);
-      mk('p', 'result-label', 'Ce que ça vous coûte', s3);
-      var ul2 = mk('ul', 'result-list result-list--cout', '', s3); p.cout.forEach(function(t) { mk('li', '', t, ul2); });
-      var s4 = mk('div', 'result-sec result-sec--aide', '', c);
-      mk('p', 'result-label', 'Ce que le coaching change', s4);
-      mk('p', 'result-desc', p.aide, s4);
       mk('p', 'result-phrase', p.phrase, c);
     });
     var top = sc.indexOf(max);
