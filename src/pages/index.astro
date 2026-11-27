@@ -444,39 +444,39 @@ const SITE_DESCRIPTION = "Coach professionnel certifié à Montpellier. Vous sav
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var Q = [
-    { q: "En réunion de direction, on fixe à votre équipe un objectif que vous jugez irréaliste :", opts: [
-      { t: "Je ne dis rien : ce n'est pas le moment de contester.", s: [5, 0, 0] },
-      { t: "J'en prendrai une bonne partie moi-même pour soulager l'équipe.", s: [0, 5, 0] },
-      { t: "Je l'annoncerai à l'équipe en l'enrobant, pour ne pas la braquer.", s: [0, 0, 5] }
+    { q: "En comité de direction, un objectif est fixé à votre service. Vous le jugez trop ambitieux pour vos moyens :", opts: [
+      { t: "Je donne mon accord, en me disant que j'aurai l'occasion d'en reparler.", s: [5, 0, 0] },
+      { t: "Je donne mon accord, en me disant que je compenserai moi-même si besoin.", s: [0, 5, 0] },
+      { t: "Je donne mon accord, en pensant déjà à la façon de l'annoncer à l'équipe pour qu'elle le prenne bien.", s: [0, 0, 5] }
     ]},
-    { q: "Une personne de votre équipe vous demande de modifier le planning la semaine prochaine. La décision vous revient :", opts: [
-      { t: "Je demande l'aval de ma hiérarchie avant de répondre, même si c'est à moi de trancher.", s: [5, 0, 0] },
-      { t: "Je refais le planning moi-même, plutôt que de laisser l'équipe proposer une solution.", s: [0, 5, 0] },
-      { t: "Je dis oui, même si ça désorganise le service, pour ne pas la décevoir.", s: [0, 0, 5] }
+    { q: "Une personne de votre équipe vous demande de changer son planning. La décision vous revient :", opts: [
+      { t: "Je préfère en parler à ma hiérarchie avant de lui répondre.", s: [5, 0, 0] },
+      { t: "Je reprends le planning moi-même pour trouver la solution.", s: [0, 5, 0] },
+      { t: "J'accepte, même si cela complique l'organisation du service.", s: [0, 0, 5] }
     ]},
-    { q: "Un dossier urgent arrive, avec un délai serré :", opts: [
-      { t: "J'accepte le délai, même si je sais qu'il va déborder sur mes soirées.", s: [5, 0, 0] },
-      { t: "Je le traite moi-même : expliquer prendrait plus de temps.", s: [0, 5, 0] },
-      { t: "Je le confie à celui qui ne protestera pas, plutôt qu'à celui qui serait le plus indiqué.", s: [0, 0, 5] }
+    { q: "Votre N+1 vous transmet un dossier urgent, à rendre vendredi :", opts: [
+      { t: "J'accepte le délai, même si je sais que j'y passerai mes soirées.", s: [5, 0, 0] },
+      { t: "Je le traite moi-même : le temps de l'expliquer, il serait déjà fait.", s: [0, 5, 0] },
+      { t: "Je le confie à l'équipe, mais j'hésite à imposer le délai à quelqu'un.", s: [0, 0, 5] }
     ]},
-    { q: "Une personne de votre équipe ne tient pas ses engagements depuis plusieurs semaines :", opts: [
-      { t: "Je revois mes exigences à la baisse, pour que ça passe.", s: [5, 0, 0] },
-      { t: "Je lui reprends le dossier, sans lui avoir vraiment dit ce que j'attendais.", s: [0, 5, 0] },
-      { t: "Je repousse la conversation, pour ne pas abîmer la relation.", s: [0, 0, 5] }
+    { q: "Depuis trois semaines, une personne de votre équipe rend ses travaux en retard :", opts: [
+      { t: "J'ajuste mes attentes : l'essentiel est que le travail soit fait.", s: [5, 0, 0] },
+      { t: "Je reprends une partie de ses dossiers pour tenir les délais.", s: [0, 5, 0] },
+      { t: "J'attends le bon moment pour lui en parler, pour préserver la relation.", s: [0, 0, 5] }
     ]},
-    { q: "Un projet transverse est lancé, et votre service doit y contribuer :", opts: [
-      { t: "J'accepte la charge demandée, sans négocier les moyens qui vont avec.", s: [5, 0, 0] },
-      { t: "Je le porte moi-même, plutôt que de le confier à une personne de l'équipe qui grandirait avec.", s: [0, 5, 0] },
-      { t: "J'attends le dernier moment pour annoncer cette charge en plus à l'équipe.", s: [0, 0, 5] }
+    { q: "Un projet transverse est lancé et votre service doit y contribuer :", opts: [
+      { t: "J'accepte la charge demandée, sans discuter les moyens.", s: [5, 0, 0] },
+      { t: "Je le porte moi-même : c'est plus simple que de former quelqu'un.", s: [0, 5, 0] },
+      { t: "J'annonce cette charge à l'équipe le plus tard possible, pour éviter les tensions.", s: [0, 0, 5] }
     ]},
     { q: "À votre entretien annuel, ce que votre N+1 vous dit :", opts: [
-      { t: "« Prends plus de place en comité. Défends davantage tes positions. Développe ton leadership. »", s: [5, 0, 0] },
+      { t: "« Prends plus de place en comité. Défends tes positions. »", s: [5, 0, 0] },
       { t: "« Sors de l'opérationnel. Fais monter ton équipe. »", s: [0, 5, 0] },
       { t: "« Sois plus ferme. Tranche plus vite. »", s: [0, 0, 5] }
     ]},
     { q: "Le dimanche soir, ce qui vous occupe l'esprit :", opts: [
-      { t: "Le temps que je n'ai pas su garder pour moi, encore cette semaine.", s: [5, 0, 0] },
-      { t: "Les dossiers de l'équipe qui m'attendent, parce que je les ai gardés.", s: [0, 5, 0] },
+      { t: "Ce que j'ai accepté cette semaine alors que je n'étais pas d'accord.", s: [5, 0, 0] },
+      { t: "Les dossiers de l'équipe que j'ai gardés pour moi.", s: [0, 5, 0] },
       { t: "La conversation que je repousse depuis des semaines.", s: [0, 0, 5] }
     ]}
   ];
@@ -487,13 +487,13 @@ document.addEventListener('DOMContentLoaded', function() {
       "titre": "Vous cédez du terrain.",
       "accroche": "Vous portez les sujets des autres avec force. Les vôtres, vous les laissez passer.",
       "miroir": [
-        "Face à un objectif irréaliste, vous gardez votre désaccord pour vous.",
-        "Pour une décision qui vous revient, vous attendez l'aval de votre hiérarchie.",
-        "Vous acceptez un délai qui déborde sur vos soirées.",
-        "Face à des engagements non tenus, vous revoyez vos exigences à la baisse.",
-        "Vous acceptez une charge en plus, sans négocier les moyens.",
-        "Votre N+1 vous demande de prendre plus de place.",
-        "Le dimanche soir, vous pensez au temps que vous n'avez pas gardé pour vous."
+        "Face à un objectif trop ambitieux, vous donnez votre accord en remettant le débat à plus tard.",
+        "Pour une décision qui vous revient, vous en parlez d'abord à votre hiérarchie.",
+        "Vous acceptez un délai qui prendra sur vos soirées.",
+        "Face à des retards répétés, vous ajustez vos attentes.",
+        "Vous acceptez une charge en plus, sans discuter les moyens.",
+        "Votre N+1 vous demande de prendre plus de place en comité.",
+        "Le dimanche soir, vous pensez à ce que vous avez accepté sans être d'accord."
       ],
       "regle": "« Je prends la parole quand je suis sûr d'avoir raison. »",
       "regleTxt": "Cette règle vous a construit : elle fait de vous quelqu'un de fiable et de mesuré. Aujourd'hui, elle vous fait arriver trop tard dans les décisions qui comptent.",
@@ -511,11 +511,11 @@ document.addEventListener('DOMContentLoaded', function() {
       "titre": "Vous faites à la place.",
       "accroche": "Vous êtes le recours de votre équipe. C'est précisément ce qui vous enferme.",
       "miroir": [
-        "Face à un objectif irréaliste, vous en prenez une bonne partie sur vos épaules.",
-        "Vous refaites le planning vous-même, au lieu de laisser l'équipe proposer.",
+        "Face à un objectif trop ambitieux, vous prévoyez de compenser vous-même.",
+        "Vous reprenez le planning vous-même pour trouver la solution.",
         "Vous traitez le dossier urgent vous-même, pour aller plus vite.",
-        "Vous reprenez un dossier sans avoir dit clairement ce que vous attendiez.",
-        "Vous portez le projet transverse vous-même, au lieu de le confier.",
+        "Face à des retards répétés, vous reprenez une partie des dossiers.",
+        "Vous portez le projet transverse vous-même, plutôt que de former quelqu'un.",
         "Votre N+1 vous demande de sortir de l'opérationnel.",
         "Le dimanche soir, vous pensez aux dossiers que vous avez gardés."
       ],
@@ -535,11 +535,11 @@ document.addEventListener('DOMContentLoaded', function() {
       "titre": "Vous adoucissez.",
       "accroche": "Vous tenez à la relation. Pour la protéger, vous retardez les moments qui comptent.",
       "miroir": [
-        "Face à un objectif irréaliste, vous l'annoncez à l'équipe en l'enrobant.",
-        "Vous acceptez une demande qui désorganise le service, pour ne pas décevoir.",
-        "Vous confiez le dossier urgent à la personne qui ne protestera pas.",
-        "Vous repoussez la conversation sur les engagements non tenus.",
-        "Vous attendez le dernier moment pour annoncer une charge en plus.",
+        "Face à un objectif trop ambitieux, vous pensez d'abord à la façon de l'annoncer à l'équipe.",
+        "Vous acceptez une demande qui complique l'organisation du service.",
+        "Vous confiez le dossier urgent, mais vous hésitez à imposer le délai.",
+        "Face à des retards répétés, vous attendez le bon moment pour en parler.",
+        "Vous annoncez une charge en plus le plus tard possible.",
         "Votre N+1 vous demande d'être plus ferme.",
         "Le dimanche soir, vous pensez à la conversation que vous repoussez."
       ],
