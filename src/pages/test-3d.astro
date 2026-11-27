@@ -253,7 +253,7 @@ const SITE_DESCRIPTION = "Vous savez quoi faire, et au moment d'agir, rien ne se
               <div id="diag-scores" class="diag-scores"></div>
               <div id="diag-cards"></div>
               <p id="diag-note" class="diag-note"></p>
-              <a id="diag-link" href="/accompagnements" class="btn-ocre btn-block">Trouver votre réglage caché</a>
+              <a id="diag-link" href="/accompagnements" class="btn-ocre btn-block">Recevoir mon analyse détaillée</a>
               <button class="btn-restart" onclick="diagRestart()">Recommencer</button>
             </div>
           </div>
@@ -318,9 +318,9 @@ document.addEventListener('DOMContentLoaded', function() {
     ]}
   ];
   var P = [
-    { tag: "Défendre", link: "/accompagnements", titre: "Vous cédez du terrain.", desc: "Une idée face à votre direction. Une décision face à votre équipe. Une limite face à vous-même : votre soirée, vos priorités, ce qui compte pour vous. Vous attendez le bon moment, ou des arguments en béton. Ce n'est pas un manque de courage. C'est un réglage caché, et il se trouve.", phrase: "Défendre, c'est aussi tenir pour vous ce que vous tenez pour les autres." },
-    { tag: "Déléguer", link: "/accompagnements", titre: "Vous faites à la place.", desc: "Plus vite, mieux, sans avoir à expliquer. Vos soirées y passent, et votre équipe attend. Vous savez déléguer. Au moment de lâcher, quelque chose vous retient. C'est un réglage caché, et il se change.", phrase: "Lâcher un dossier, ce n'est pas lâcher votre équipe." },
-    { tag: "Déplaire", link: "/accompagnements", titre: "Vous adoucissez.", desc: "Le refus devient un « on verra ». Le recadrage attend la semaine prochaine. Vous préservez la relation, et c'est justement elle qui s'use. C'est un réglage caché, et il se change.", phrase: "Agir n'abîme pas la relation. C'est ne pas agir qui l'use." }
+    { tag: "Défendre", link: "https://portail.m2p-coaching.fr/analyse-defendre", titre: "Vous cédez du terrain.", desc: "Une idée face à votre direction. Une décision face à votre équipe. Une limite face à vous-même : votre soirée, vos priorités, ce qui compte pour vous. Vous attendez le bon moment, ou des arguments en béton. Ce n'est pas un manque de courage. C'est un réglage caché, et il se trouve.", phrase: "Défendre, c'est aussi tenir pour vous ce que vous tenez pour les autres." },
+    { tag: "Déléguer", link: "https://portail.m2p-coaching.fr/analyse-deleguer", titre: "Vous faites à la place.", desc: "Plus vite, mieux, sans avoir à expliquer. Vos soirées y passent, et votre équipe attend. Vous savez déléguer. Au moment de lâcher, quelque chose vous retient. C'est un réglage caché, et il se change.", phrase: "Lâcher un dossier, ce n'est pas lâcher votre équipe." },
+    { tag: "Déplaire", link: "https://portail.m2p-coaching.fr/analyse-deplaire", titre: "Vous adoucissez.", desc: "Le refus devient un « on verra ». Le recadrage attend la semaine prochaine. Vous préservez la relation, et c'est justement elle qui s'use. C'est un réglage caché, et il se change.", phrase: "Agir n'abîme pas la relation. C'est ne pas agir qui l'use." }
   ];
   var cur=0, sc=[0,0,0], ans=[-1,-1,-1,-1,-1,-1,-1], ordre=[];
   function melange(t) { for (var k = t.length - 1; k > 0; k--) { var j = Math.floor(Math.random() * (k + 1)); var x = t[k]; t[k] = t[j]; t[j] = x; } return t; }
@@ -399,6 +399,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       cards.appendChild(c);
     });
+    var top = sc.indexOf(max);
+    var lien = el('diag-link');
+    lien.href = P[top].link + '?utm_source=site&utm_medium=test-3d&utm_campaign=' + encodeURIComponent(P[top].tag.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase());
+    lien.textContent = 'Recevoir mon analyse détaillée : ' + P[top].tag;
+    if (window.gtag) { gtag('event', 'test_3d_resultat', { d_dominant: P[top].tag }); }
     var concernes = sc.filter(function(v) { return v / total >= 0.3; }).length;
     el('diag-note').textContent = concernes > 1
       ? "Plusieurs D sont concernés. C'est souvent le signe que le réglage joue sur tout le rôle : c'est le terrain d'Ancrage."
