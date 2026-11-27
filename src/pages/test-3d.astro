@@ -305,28 +305,28 @@ const SITE_DESCRIPTION = "Vous savez quoi faire, et au moment d'agir, rien ne se
 document.addEventListener('DOMContentLoaded', function() {
   var Q = [
     { q: "En comité de direction, un objectif est fixé à votre service. Vous le jugez trop ambitieux pour vos moyens :", opts: [
-      { t: "Je l'accepte : le comité a ses raisons, je trouverai comment faire.", s: [5, 0, 0] },
-      { t: "Je l'accepte, et je prévois de m'impliquer davantage pour l'atteindre.", s: [0, 5, 0] },
+      { t: "Je m'aligne : le comité a ses raisons, je trouverai comment faire.", s: [5, 0, 0] },
+      { t: "Je l'accepte, et je prévois d'en prendre une partie moi-même.", s: [0, 5, 0] },
       { t: "Je l'accepte, et je prépare une annonce qui ménage l'équipe.", s: [0, 0, 5] }
     ]},
     { q: "Une personne de votre équipe vous demande de changer son planning. La décision vous revient :", opts: [
-      { t: "J'accepte sa proposition plutôt que la mienne : elle connaît mieux son quotidien.", s: [5, 0, 0] },
+      { t: "Je retiens sa proposition plutôt que la mienne : elle connaît mieux son quotidien.", s: [5, 0, 0] },
       { t: "Je cherche moi-même la meilleure solution de planning.", s: [0, 5, 0] },
       { t: "J'accepte : garder une bonne entente dans l'équipe compte beaucoup pour moi.", s: [0, 0, 5] }
     ]},
     { q: "Votre N+1 vous transmet un dossier urgent, à rendre vendredi :", opts: [
-      { t: "J'accepte le délai : c'est ce qu'on attend de moi.", s: [5, 0, 0] },
-      { t: "Je m'en charge : je connais le sujet, j'irai plus vite.", s: [0, 5, 0] },
+      { t: "Je m'engage sur le délai : c'est ce qu'on attend de moi.", s: [5, 0, 0] },
+      { t: "Je m'en charge : le temps de l'expliquer, ce serait déjà fait.", s: [0, 5, 0] },
       { t: "Je le confie à l'équipe en restant souple sur le délai, pour ne mettre personne sous pression.", s: [0, 0, 5] }
     ]},
     { q: "Depuis trois semaines, une personne de votre équipe rend ses travaux en retard :", opts: [
       { t: "Je ne dis rien pour l'instant : je veux être sûr d'avoir tous les éléments.", s: [5, 0, 0] },
-      { t: "Je l'aide en prenant une partie de ses dossiers.", s: [0, 5, 0] },
+      { t: "Je reprends une partie de ses dossiers pour tenir les délais.", s: [0, 5, 0] },
       { t: "J'attends le bon moment pour en parler, sans la brusquer.", s: [0, 0, 5] }
     ]},
     { q: "Un projet transverse est lancé et votre service doit y contribuer :", opts: [
-      { t: "J'accepte la charge proposée : c'est un projet important pour l'entreprise.", s: [5, 0, 0] },
-      { t: "Je m'en occupe personnellement : le sujet demande de l'expertise.", s: [0, 5, 0] },
+      { t: "Je dis oui sans attendre : c'est un projet important pour l'entreprise.", s: [5, 0, 0] },
+      { t: "Je le prends en main moi-même : c'est plus sûr pour la qualité du résultat.", s: [0, 5, 0] },
       { t: "Je le présente à l'équipe comme une belle opportunité, sans trop insister sur l'effort demandé.", s: [0, 0, 5] }
     ]},
     { q: "À votre entretien annuel, ce que votre N+1 vous encourage à développer :", opts: [
@@ -347,11 +347,11 @@ document.addEventListener('DOMContentLoaded', function() {
       "titre": "Vous cédez du terrain.",
       "accroche": "Vous portez les sujets des autres avec force. Les vôtres, vous les laissez passer.",
       "miroir": [
-        "Face à un objectif trop ambitieux, vous l'acceptez en vous disant que vous trouverez comment faire.",
+        "Face à un objectif trop ambitieux, vous vous alignez en vous disant que vous trouverez comment faire.",
         "Pour le planning, vous retenez sa proposition plutôt que la vôtre.",
-        "Vous acceptez le délai, parce que c'est ce qu'on attend de vous.",
+        "Vous vous engagez sur le délai, parce que c'est ce qu'on attend de vous.",
         "Face à des retards répétés, vous attendez d'avoir tous les éléments avant de parler.",
-        "Vous acceptez la charge du projet transverse, parce qu'il compte pour l'entreprise.",
+        "Vous dites oui au projet transverse sans attendre, parce qu'il compte pour l'entreprise.",
         "Votre N+1 vous encourage à prendre plus de place en comité.",
         "Le dimanche soir, vous repensez à un désaccord gardé pour vous."
       ],
@@ -371,11 +371,11 @@ document.addEventListener('DOMContentLoaded', function() {
       "titre": "Vous faites à la place.",
       "accroche": "Vous êtes le recours de votre équipe. C'est précisément ce qui vous enferme.",
       "miroir": [
-        "Face à un objectif trop ambitieux, vous prévoyez de vous impliquer davantage.",
+        "Face à un objectif trop ambitieux, vous prévoyez d'en prendre une partie vous-même.",
         "Pour le planning, vous cherchez vous-même la solution.",
         "Vous prenez le dossier urgent vous-même, pour aller plus vite.",
         "Face à des retards répétés, vous reprenez une partie des dossiers.",
-        "Vous portez le projet transverse vous-même, au nom de l'expertise.",
+        "Vous prenez le projet transverse en main vous-même, pour la qualité du résultat.",
         "Votre N+1 vous encourage à sortir de l'opérationnel.",
         "Le dimanche soir, vous repensez aux dossiers que vous auriez pu confier."
       ],
