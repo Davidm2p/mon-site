@@ -52,7 +52,8 @@ const SITE_DESCRIPTION = "Vous savez quoi faire, et au moment d'agir, rien ne se
       .diag-track { flex: 1; height: 6px; background: #DDD9D0; border-radius: 3px; overflow: hidden; }
       .diag-track div { height: 100%; width: 0; background: var(--ocre); border-radius: 3px; transition: width .4s ease; }
       .diag-step { font-size: .78rem; color: var(--sage); font-weight: 600; white-space: nowrap; margin: 0; }
-      .diag-question { font-size: 1.2rem; font-weight: 700; color: var(--anthracite); line-height: 1.4; margin-bottom: 1.5rem; }
+      .diag-question { font-size: 1.2rem; font-weight: 700; color: var(--anthracite); line-height: 1.4; margin-bottom: .4rem; }
+      .diag-consigne { font-size: .9rem; font-style: italic; color: var(--sage); line-height: 1.5; margin: 0 0 1.25rem; }
 
       /* OPTIONS */
       .diag-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.5rem; }
@@ -257,6 +258,7 @@ const SITE_DESCRIPTION = "Vous savez quoi faire, et au moment d'agir, rien ne se
               <p id="diag-num" class="diag-step"></p>
             </div>
             <p id="diag-question" class="diag-question"></p>
+            <p id="diag-consigne" class="diag-consigne">Choisissez la réponse qui vous ressemble le plus : ce que vous faites vraiment, pas ce que vous aimeriez faire.</p>
             <div id="diag-options" class="diag-options"></div>
             <div class="diag-nav" id="diag-nav">
               <button id="diag-back" class="btn-retour" onclick="diagBack()" style="display:none">Retour</button>
@@ -443,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function() {
     el('diag-result').style.display = 'none';
     box.style.display = 'flex';
     el('diag-nav').style.display = 'flex';
-    el('diag-question').style.display = 'block';
+    el('diag-question').style.display = 'block'; el('diag-consigne').style.display = 'block';
     el('diag-num').style.display = 'block';
     el('diag-bar').parentElement.parentElement.style.display = 'flex';
   }
@@ -517,7 +519,7 @@ document.addEventListener('DOMContentLoaded', function() {
       : "Un D ressort nettement : une situation précise vous bloque. C'est le terrain de Déclic, l'accompagnement sur 4 mois.";
     el('diag-options').style.display = 'none';
     el('diag-nav').style.display = 'none';
-    el('diag-question').style.display = 'none';
+    el('diag-question').style.display = 'none'; el('diag-consigne').style.display = 'none';
     el('diag-num').style.display = 'none';
     el('diag-bar').parentElement.parentElement.style.display = 'none';
     el('diag-result').style.display = 'block';
